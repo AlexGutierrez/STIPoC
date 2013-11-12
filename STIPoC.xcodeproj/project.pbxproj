@@ -1028,6 +1028,7 @@
 				7C2A34AF1832A6EB004AE430 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7C2A34B01832A6EB004AE430 /* Build configuration list for PBXNativeTarget "STIPoCTests" */ = {
 			isa = XCConfigurationList;
@@ -1036,6 +1037,7 @@
 				7C2A34B21832A6EB004AE430 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
