@@ -950,6 +950,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -985,6 +986,7 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Release;
 		};
@@ -1000,7 +1002,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/STIPoC/Base.lproj/STIPoC-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/agutierrez/Dropbox/Dev/iOS/Verizon/STIPoC/External/OCMock/Static\\ Library",
+					"\"$(SRCROOT)/External/OCMock/Static\\ Library/\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "C365229D-24D2-40F3-8228-2981E32010D2";
@@ -1020,7 +1022,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/STIPoC/Base.lproj/STIPoC-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/agutierrez/Dropbox/Dev/iOS/Verizon/STIPoC/External/OCMock/Static\\ Library",
+					"\"$(SRCROOT)/External/OCMock/Static\\ Library/\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "C365229D-24D2-40F3-8228-2981E32010D2";
@@ -1047,7 +1049,7 @@
 				INFOPLIST_FILE = "STIPoCTests/Base.lproj/STIPoCTests-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/agutierrez/Dropbox/Dev/iOS/Verizon/STIPoC/External/OCMock/Static\\ Library",
+					"\"$(SRCROOT)/External/OCMock/Static\\ Library/\"",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -1079,7 +1081,7 @@
 				INFOPLIST_FILE = "STIPoCTests/Base.lproj/STIPoCTests-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/agutierrez/Dropbox/Dev/iOS/Verizon/STIPoC/External/OCMock/Static\\ Library",
+					"\"$(SRCROOT)/External/OCMock/Static\\ Library/\"",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
