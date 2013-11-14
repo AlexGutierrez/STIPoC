@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A982327183552DE00CB0BA5 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A982326183552DE00CB0BA5 /* libOCMock.a */; };
+		7A9823281835533B00CB0BA5 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A982326183552DE00CB0BA5 /* libOCMock.a */; };
 		7C2A34851832A6EB004AE430 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C2A34841832A6EB004AE430 /* Foundation.framework */; };
 		7C2A34871832A6EB004AE430 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C2A34861832A6EB004AE430 /* CoreGraphics.framework */; };
 		7C2A34891832A6EB004AE430 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C2A34881832A6EB004AE430 /* UIKit.framework */; };
@@ -89,6 +91,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7A982326183552DE00CB0BA5 /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libOCMock.a; sourceTree = "<group>"; };
+		7A982329183553DB00CB0BA5 /* NSNotificationCenter+OCMAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSNotificationCenter+OCMAdditions.h"; path = "External/OCMock/OCMock/NSNotificationCenter+OCMAdditions.h"; sourceTree = SOURCE_ROOT; };
+		7A98232A183553DB00CB0BA5 /* OCMArg.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OCMArg.h; path = External/OCMock/OCMock/OCMArg.h; sourceTree = SOURCE_ROOT; };
+		7A98232B183553DB00CB0BA5 /* OCMConstraint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OCMConstraint.h; path = External/OCMock/OCMock/OCMConstraint.h; sourceTree = SOURCE_ROOT; };
+		7A98232C183553DB00CB0BA5 /* OCMock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OCMock.h; path = External/OCMock/OCMock/OCMock.h; sourceTree = SOURCE_ROOT; };
+		7A98232D183553DB00CB0BA5 /* OCMockObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OCMockObject.h; path = External/OCMock/OCMock/OCMockObject.h; sourceTree = SOURCE_ROOT; };
+		7A98232E183553DB00CB0BA5 /* OCMockRecorder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OCMockRecorder.h; path = External/OCMock/OCMock/OCMockRecorder.h; sourceTree = SOURCE_ROOT; };
 		7C2A34811832A6EB004AE430 /* STIPoC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STIPoC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C2A34841832A6EB004AE430 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7C2A34861832A6EB004AE430 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -233,6 +242,7 @@
 				7C2A34871832A6EB004AE430 /* CoreGraphics.framework in Frameworks */,
 				7C2A34891832A6EB004AE430 /* UIKit.framework in Frameworks */,
 				7C2A34851832A6EB004AE430 /* Foundation.framework in Frameworks */,
+				7A982327183552DE00CB0BA5 /* libOCMock.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +250,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A9823281835533B00CB0BA5 /* libOCMock.a in Frameworks */,
 				7C2A349E1832A6EB004AE430 /* XCTest.framework in Frameworks */,
 				7C2A34A01832A6EB004AE430 /* UIKit.framework in Frameworks */,
 				7C2A349F1832A6EB004AE430 /* Foundation.framework in Frameworks */,
@@ -249,6 +260,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A98231D183552DE00CB0BA5 /* OCMock */ = {
+			isa = PBXGroup;
+			children = (
+				7A98231E183552DE00CB0BA5 /* Headers */,
+				7A982325183552DE00CB0BA5 /* Static Library */,
+			);
+			path = OCMock;
+			sourceTree = "<group>";
+		};
+		7A98231E183552DE00CB0BA5 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				7A982329183553DB00CB0BA5 /* NSNotificationCenter+OCMAdditions.h */,
+				7A98232A183553DB00CB0BA5 /* OCMArg.h */,
+				7A98232B183553DB00CB0BA5 /* OCMConstraint.h */,
+				7A98232C183553DB00CB0BA5 /* OCMock.h */,
+				7A98232D183553DB00CB0BA5 /* OCMockObject.h */,
+				7A98232E183553DB00CB0BA5 /* OCMockRecorder.h */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
+		7A982325183552DE00CB0BA5 /* Static Library */ = {
+			isa = PBXGroup;
+			children = (
+				7A982326183552DE00CB0BA5 /* libOCMock.a */,
+			);
+			path = "Static Library";
+			sourceTree = "<group>";
+		};
 		7C2A34781832A6EB004AE430 = {
 			isa = PBXGroup;
 			children = (
@@ -319,6 +360,7 @@
 				7C2A357E1832A7AD004AE430 /* AFNetworking */,
 				7C2A350B1832A734004AE430 /* Lumberjack */,
 				7C2A351B1832A734004AE430 /* Magical Record */,
+				7A98231D183552DE00CB0BA5 /* OCMock */,
 			);
 			path = External;
 			sourceTree = "<group>";
@@ -956,6 +998,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "STIPoC/Supporting Files/STIPoC-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/STIPoC/Base.lproj/STIPoC-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/agutierrez/Dropbox/Dev/iOS/Verizon/STIPoC/External/OCMock/Static\\ Library",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "C365229D-24D2-40F3-8228-2981E32010D2";
 				WRAPPER_EXTENSION = app;
@@ -972,6 +1018,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "STIPoC/Supporting Files/STIPoC-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/STIPoC/Base.lproj/STIPoC-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/agutierrez/Dropbox/Dev/iOS/Verizon/STIPoC/External/OCMock/Static\\ Library",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "C365229D-24D2-40F3-8228-2981E32010D2";
 				WRAPPER_EXTENSION = app;
@@ -995,8 +1045,21 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "STIPoCTests/Base.lproj/STIPoCTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/agutierrez/Dropbox/Dev/iOS/Verizon/STIPoC/External/OCMock/Static\\ Library",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					XCTest,
+					"-force_load",
+					"\"$(SRCROOT)/External/OCMock/Static Library/libOCMock.a\"",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/External/OCMock\"";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
@@ -1014,8 +1077,21 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "STIPoC/Supporting Files/STIPoC-Prefix.pch";
 				INFOPLIST_FILE = "STIPoCTests/Base.lproj/STIPoCTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/agutierrez/Dropbox/Dev/iOS/Verizon/STIPoC/External/OCMock/Static\\ Library",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					XCTest,
+					"-force_load",
+					"\"$(SRCROOT)/External/OCMock/Static Library/libOCMock.a\"",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/External/OCMock\"";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;

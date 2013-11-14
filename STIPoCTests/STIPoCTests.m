@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "OCMock/OCMock.h"
 
 @interface STIPoCTests : XCTestCase
 
@@ -17,7 +18,6 @@
 - (void)setUp
 {
     [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
 }
 
 - (void)tearDown
@@ -28,6 +28,11 @@
 
 - (void)testExample
 {
+    id stringMock = [OCMockObject niceMockForClass:[NSString class]];
+    [[[stringMock expect] andReturn:@"aString"] stringByAppendingString:[OCMArg any]];
+    
+    XCTAssertTrue([[stringMock stringByAppendingString:@"asd"] isEqualToString:@"aString"], @"FAIL!");
+    [stringMock verify];
     //XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
 }
 
