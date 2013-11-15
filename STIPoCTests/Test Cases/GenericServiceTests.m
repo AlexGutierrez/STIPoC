@@ -81,11 +81,11 @@
 
 - (void)testGenericServiceTruncatesAllData
 {
-    [[NSManagedObjectContext defaultContext] saveToPersistentStoreWithCompletion:^(BOOL completion, NSError *error) {
+    [MagicalRecord saveWithBlockAndWait:^(NSManagedObjectContext *localContext) {
         [Entity createEntity];
     }];
     
-    XCTAssert([Entity countOfEntities] == 0, @"Data before truncation test should be more than 0!");
+    XCTAssert([Entity countOfEntities] > 0, @"Data before truncation test should be more than 0!");
     
     [self.genericService truncateAll];
     
