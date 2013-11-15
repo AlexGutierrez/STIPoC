@@ -15,14 +15,14 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [[LoggingHelper sharedInstance] setupLogger];
-    [[GenericService sharedInstance] setupDatabase];
+    [[GenericService sharedInstance] setupCoreDataStack];
     
     return YES;
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
-    [[GenericService sharedInstance] cleanUpDatabase];
+    [[GenericService sharedInstance] cleanUpPersistenceChangesInMemory];
 }
 
 @end

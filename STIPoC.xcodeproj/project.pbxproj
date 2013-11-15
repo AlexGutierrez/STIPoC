@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7A982327183552DE00CB0BA5 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A982326183552DE00CB0BA5 /* libOCMock.a */; };
 		7A9823281835533B00CB0BA5 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A982326183552DE00CB0BA5 /* libOCMock.a */; };
+		7C1F23EA18367D5A00E90145 /* GenericServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1F23E918367D5A00E90145 /* GenericServiceTests.m */; };
 		7C2A34851832A6EB004AE430 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C2A34841832A6EB004AE430 /* Foundation.framework */; };
 		7C2A34871832A6EB004AE430 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C2A34861832A6EB004AE430 /* CoreGraphics.framework */; };
 		7C2A34891832A6EB004AE430 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C2A34881832A6EB004AE430 /* UIKit.framework */; };
@@ -16,7 +17,6 @@
 		7C2A349E1832A6EB004AE430 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C2A349D1832A6EB004AE430 /* XCTest.framework */; };
 		7C2A349F1832A6EB004AE430 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C2A34841832A6EB004AE430 /* Foundation.framework */; };
 		7C2A34A01832A6EB004AE430 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C2A34881832A6EB004AE430 /* UIKit.framework */; };
-		7C2A34AA1832A6EB004AE430 /* STIPoCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2A34A91832A6EB004AE430 /* STIPoCTests.m */; };
 		7C2A35571832A734004AE430 /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2A350D1832A734004AE430 /* DDAbstractDatabaseLogger.m */; };
 		7C2A35581832A734004AE430 /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2A350F1832A734004AE430 /* DDASLLogger.m */; };
 		7C2A35591832A734004AE430 /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2A35111832A734004AE430 /* DDFileLogger.m */; };
@@ -98,6 +98,7 @@
 		7A98232C183553DB00CB0BA5 /* OCMock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OCMock.h; path = External/OCMock/OCMock/OCMock.h; sourceTree = SOURCE_ROOT; };
 		7A98232D183553DB00CB0BA5 /* OCMockObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OCMockObject.h; path = External/OCMock/OCMock/OCMockObject.h; sourceTree = SOURCE_ROOT; };
 		7A98232E183553DB00CB0BA5 /* OCMockRecorder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OCMockRecorder.h; path = External/OCMock/OCMock/OCMockRecorder.h; sourceTree = SOURCE_ROOT; };
+		7C1F23E918367D5A00E90145 /* GenericServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenericServiceTests.m; sourceTree = "<group>"; };
 		7C2A34811832A6EB004AE430 /* STIPoC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STIPoC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C2A34841832A6EB004AE430 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7C2A34861832A6EB004AE430 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -105,7 +106,6 @@
 		7C2A34961832A6EB004AE430 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		7C2A349C1832A6EB004AE430 /* STIPoCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = STIPoCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C2A349D1832A6EB004AE430 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		7C2A34A91832A6EB004AE430 /* STIPoCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STIPoCTests.m; sourceTree = "<group>"; };
 		7C2A350C1832A734004AE430 /* DDAbstractDatabaseLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAbstractDatabaseLogger.h; sourceTree = "<group>"; };
 		7C2A350D1832A734004AE430 /* DDAbstractDatabaseLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDAbstractDatabaseLogger.m; sourceTree = "<group>"; };
 		7C2A350E1832A734004AE430 /* DDASLLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDASLLogger.h; sourceTree = "<group>"; };
@@ -290,6 +290,14 @@
 			path = "Static Library";
 			sourceTree = "<group>";
 		};
+		7C1F23E21836754C00E90145 /* Test Cases */ = {
+			isa = PBXGroup;
+			children = (
+				7C1F23E918367D5A00E90145 /* GenericServiceTests.m */,
+			);
+			path = "Test Cases";
+			sourceTree = "<group>";
+		};
 		7C2A34781832A6EB004AE430 = {
 			isa = PBXGroup;
 			children = (
@@ -340,7 +348,7 @@
 		7C2A34A31832A6EB004AE430 /* STIPoCTests */ = {
 			isa = PBXGroup;
 			children = (
-				7C2A34A91832A6EB004AE430 /* STIPoCTests.m */,
+				7C1F23E21836754C00E90145 /* Test Cases */,
 				7C2A34A41832A6EB004AE430 /* Supporting Files */,
 			);
 			path = STIPoCTests;
@@ -862,7 +870,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C2A34AA1832A6EB004AE430 /* STIPoCTests.m in Sources */,
+				7C1F23EA18367D5A00E90145 /* GenericServiceTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

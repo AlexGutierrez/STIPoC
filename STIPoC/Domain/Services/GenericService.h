@@ -13,13 +13,10 @@
 + (instancetype)sharedInstance;
 
 // Cleans up everything in memory
-- (void)cleanUpDatabase;
+- (void)cleanUpPersistenceChangesInMemory;
 
-// Only for migrations that are not lightweight
-- (void)setupDatabaseForMigrationPolicies;
-
-// Initialization of the database. Encapsulates the core data stack setup process
-- (void)setupDatabase;
+// Initialization of the core data stack. Encapsulates the core data stack setup process
+- (void)setupCoreDataStack;
 
 // Truncates all records
 - (void)truncateAll;
