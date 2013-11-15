@@ -10,6 +10,25 @@
 		7A982327183552DE00CB0BA5 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A982326183552DE00CB0BA5 /* libOCMock.a */; };
 		7A9823281835533B00CB0BA5 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A982326183552DE00CB0BA5 /* libOCMock.a */; };
 		7C1F23EA18367D5A00E90145 /* GenericServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1F23E918367D5A00E90145 /* GenericServiceTests.m */; };
+		7C1F24111836D3F500E90145 /* MDRadialProgressLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1F23F41836D3F500E90145 /* MDRadialProgressLabel.m */; };
+		7C1F24121836D3F500E90145 /* MDRadialProgressTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1F23F61836D3F500E90145 /* MDRadialProgressTheme.m */; };
+		7C1F24131836D3F500E90145 /* MDRadialProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1F23F81836D3F500E90145 /* MDRadialProgressView.m */; };
+		7C1F24141836D3F500E90145 /* MRBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1F23FC1836D3F500E90145 /* MRBlurView.m */; };
+		7C1F24151836D3F500E90145 /* UIImage+MRImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1F23FE1836D3F500E90145 /* UIImage+MRImageEffects.m */; };
+		7C1F24161836D3F500E90145 /* MRActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1F24011836D3F500E90145 /* MRActivityIndicatorView.m */; };
+		7C1F24171836D3F500E90145 /* MRCircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1F24031836D3F500E90145 /* MRCircularProgressView.m */; };
+		7C1F24181836D3F500E90145 /* MRIconView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1F24051836D3F500E90145 /* MRIconView.m */; };
+		7C1F24191836D3F500E90145 /* MRNavigationBarProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1F24071836D3F500E90145 /* MRNavigationBarProgressView.m */; };
+		7C1F241A1836D3F500E90145 /* MRProgressOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1F24091836D3F500E90145 /* MRProgressOverlayView.m */; };
+		7C1F241B1836D3F500E90145 /* MRMessageInterceptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1F240D1836D3F500E90145 /* MRMessageInterceptor.m */; };
+		7C1F241C1836D3F500E90145 /* MRWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1F24101836D3F500E90145 /* MRWeakProxy.m */; };
+		7C1F242A1836D40500E90145 /* NSDate+ISO8601Parsing.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1F241F1836D40500E90145 /* NSDate+ISO8601Parsing.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7C1F242B1836D40500E90145 /* NSDate+ISO8601Unparsing.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1F24211836D40500E90145 /* NSDate+ISO8601Unparsing.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7C1F242C1836D40500E90145 /* SelfService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1F24231836D40500E90145 /* SelfService.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7C1F242D1836D40500E90145 /* USAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1F24251836D40500E90145 /* USAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7C1F242E1836D40500E90145 /* USGlobals.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1F24271836D40500E90145 /* USGlobals.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7C1F242F1836D40500E90145 /* xsd.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1F24291836D40500E90145 /* xsd.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7C1F24351836D58F00E90145 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C1F24341836D58F00E90145 /* libxml2.dylib */; };
 		7C2A34851832A6EB004AE430 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C2A34841832A6EB004AE430 /* Foundation.framework */; };
 		7C2A34871832A6EB004AE430 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C2A34861832A6EB004AE430 /* CoreGraphics.framework */; };
 		7C2A34891832A6EB004AE430 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C2A34881832A6EB004AE430 /* UIKit.framework */; };
@@ -99,6 +118,45 @@
 		7A98232D183553DB00CB0BA5 /* OCMockObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OCMockObject.h; path = External/OCMock/OCMock/OCMockObject.h; sourceTree = SOURCE_ROOT; };
 		7A98232E183553DB00CB0BA5 /* OCMockRecorder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OCMockRecorder.h; path = External/OCMock/OCMock/OCMockRecorder.h; sourceTree = SOURCE_ROOT; };
 		7C1F23E918367D5A00E90145 /* GenericServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenericServiceTests.m; sourceTree = "<group>"; };
+		7C1F23F31836D3F500E90145 /* MDRadialProgressLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDRadialProgressLabel.h; sourceTree = "<group>"; };
+		7C1F23F41836D3F500E90145 /* MDRadialProgressLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDRadialProgressLabel.m; sourceTree = "<group>"; };
+		7C1F23F51836D3F500E90145 /* MDRadialProgressTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDRadialProgressTheme.h; sourceTree = "<group>"; };
+		7C1F23F61836D3F500E90145 /* MDRadialProgressTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDRadialProgressTheme.m; sourceTree = "<group>"; };
+		7C1F23F71836D3F500E90145 /* MDRadialProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDRadialProgressView.h; sourceTree = "<group>"; };
+		7C1F23F81836D3F500E90145 /* MDRadialProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDRadialProgressView.m; sourceTree = "<group>"; };
+		7C1F23FB1836D3F500E90145 /* MRBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRBlurView.h; sourceTree = "<group>"; };
+		7C1F23FC1836D3F500E90145 /* MRBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRBlurView.m; sourceTree = "<group>"; };
+		7C1F23FD1836D3F500E90145 /* UIImage+MRImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+MRImageEffects.h"; sourceTree = "<group>"; };
+		7C1F23FE1836D3F500E90145 /* UIImage+MRImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+MRImageEffects.m"; sourceTree = "<group>"; };
+		7C1F24001836D3F500E90145 /* MRActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRActivityIndicatorView.h; sourceTree = "<group>"; };
+		7C1F24011836D3F500E90145 /* MRActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRActivityIndicatorView.m; sourceTree = "<group>"; };
+		7C1F24021836D3F500E90145 /* MRCircularProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRCircularProgressView.h; sourceTree = "<group>"; };
+		7C1F24031836D3F500E90145 /* MRCircularProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRCircularProgressView.m; sourceTree = "<group>"; };
+		7C1F24041836D3F500E90145 /* MRIconView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRIconView.h; sourceTree = "<group>"; };
+		7C1F24051836D3F500E90145 /* MRIconView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRIconView.m; sourceTree = "<group>"; };
+		7C1F24061836D3F500E90145 /* MRNavigationBarProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRNavigationBarProgressView.h; sourceTree = "<group>"; };
+		7C1F24071836D3F500E90145 /* MRNavigationBarProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRNavigationBarProgressView.m; sourceTree = "<group>"; };
+		7C1F24081836D3F500E90145 /* MRProgressOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRProgressOverlayView.h; sourceTree = "<group>"; };
+		7C1F24091836D3F500E90145 /* MRProgressOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRProgressOverlayView.m; sourceTree = "<group>"; };
+		7C1F240A1836D3F500E90145 /* MRProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRProgress.h; sourceTree = "<group>"; };
+		7C1F240C1836D3F500E90145 /* MRMessageInterceptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRMessageInterceptor.h; sourceTree = "<group>"; };
+		7C1F240D1836D3F500E90145 /* MRMessageInterceptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRMessageInterceptor.m; sourceTree = "<group>"; };
+		7C1F240E1836D3F500E90145 /* MRProgressHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRProgressHelper.h; sourceTree = "<group>"; };
+		7C1F240F1836D3F500E90145 /* MRWeakProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRWeakProxy.h; sourceTree = "<group>"; };
+		7C1F24101836D3F500E90145 /* MRWeakProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRWeakProxy.m; sourceTree = "<group>"; };
+		7C1F241E1836D40500E90145 /* NSDate+ISO8601Parsing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ISO8601Parsing.h"; sourceTree = "<group>"; };
+		7C1F241F1836D40500E90145 /* NSDate+ISO8601Parsing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ISO8601Parsing.m"; sourceTree = "<group>"; };
+		7C1F24201836D40500E90145 /* NSDate+ISO8601Unparsing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ISO8601Unparsing.h"; sourceTree = "<group>"; };
+		7C1F24211836D40500E90145 /* NSDate+ISO8601Unparsing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ISO8601Unparsing.m"; sourceTree = "<group>"; };
+		7C1F24221836D40500E90145 /* SelfService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelfService.h; sourceTree = "<group>"; };
+		7C1F24231836D40500E90145 /* SelfService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelfService.m; sourceTree = "<group>"; };
+		7C1F24241836D40500E90145 /* USAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USAdditions.h; sourceTree = "<group>"; };
+		7C1F24251836D40500E90145 /* USAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USAdditions.m; sourceTree = "<group>"; };
+		7C1F24261836D40500E90145 /* USGlobals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USGlobals.h; sourceTree = "<group>"; };
+		7C1F24271836D40500E90145 /* USGlobals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USGlobals.m; sourceTree = "<group>"; };
+		7C1F24281836D40500E90145 /* xsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xsd.h; sourceTree = "<group>"; };
+		7C1F24291836D40500E90145 /* xsd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xsd.m; sourceTree = "<group>"; };
+		7C1F24341836D58F00E90145 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		7C2A34811832A6EB004AE430 /* STIPoC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STIPoC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C2A34841832A6EB004AE430 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7C2A34861832A6EB004AE430 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -236,6 +294,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C1F24351836D58F00E90145 /* libxml2.dylib in Frameworks */,
 				7C2A357D1832A785004AE430 /* MobileCoreServices.framework in Frameworks */,
 				7C2A357B1832A77E004AE430 /* SystemConfiguration.framework in Frameworks */,
 				7C2A35791832A776004AE430 /* CoreData.framework in Frameworks */,
@@ -298,6 +357,89 @@
 			path = "Test Cases";
 			sourceTree = "<group>";
 		};
+		7C1F23F21836D3F500E90145 /* MDRadialProgress */ = {
+			isa = PBXGroup;
+			children = (
+				7C1F23F31836D3F500E90145 /* MDRadialProgressLabel.h */,
+				7C1F23F41836D3F500E90145 /* MDRadialProgressLabel.m */,
+				7C1F23F51836D3F500E90145 /* MDRadialProgressTheme.h */,
+				7C1F23F61836D3F500E90145 /* MDRadialProgressTheme.m */,
+				7C1F23F71836D3F500E90145 /* MDRadialProgressView.h */,
+				7C1F23F81836D3F500E90145 /* MDRadialProgressView.m */,
+			);
+			path = MDRadialProgress;
+			sourceTree = "<group>";
+		};
+		7C1F23F91836D3F500E90145 /* MRProgress */ = {
+			isa = PBXGroup;
+			children = (
+				7C1F23FA1836D3F500E90145 /* Blur */,
+				7C1F23FF1836D3F500E90145 /* Components */,
+				7C1F240A1836D3F500E90145 /* MRProgress.h */,
+				7C1F240B1836D3F500E90145 /* Utils */,
+			);
+			path = MRProgress;
+			sourceTree = "<group>";
+		};
+		7C1F23FA1836D3F500E90145 /* Blur */ = {
+			isa = PBXGroup;
+			children = (
+				7C1F23FB1836D3F500E90145 /* MRBlurView.h */,
+				7C1F23FC1836D3F500E90145 /* MRBlurView.m */,
+				7C1F23FD1836D3F500E90145 /* UIImage+MRImageEffects.h */,
+				7C1F23FE1836D3F500E90145 /* UIImage+MRImageEffects.m */,
+			);
+			path = Blur;
+			sourceTree = "<group>";
+		};
+		7C1F23FF1836D3F500E90145 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				7C1F24001836D3F500E90145 /* MRActivityIndicatorView.h */,
+				7C1F24011836D3F500E90145 /* MRActivityIndicatorView.m */,
+				7C1F24021836D3F500E90145 /* MRCircularProgressView.h */,
+				7C1F24031836D3F500E90145 /* MRCircularProgressView.m */,
+				7C1F24041836D3F500E90145 /* MRIconView.h */,
+				7C1F24051836D3F500E90145 /* MRIconView.m */,
+				7C1F24061836D3F500E90145 /* MRNavigationBarProgressView.h */,
+				7C1F24071836D3F500E90145 /* MRNavigationBarProgressView.m */,
+				7C1F24081836D3F500E90145 /* MRProgressOverlayView.h */,
+				7C1F24091836D3F500E90145 /* MRProgressOverlayView.m */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		7C1F240B1836D3F500E90145 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				7C1F240C1836D3F500E90145 /* MRMessageInterceptor.h */,
+				7C1F240D1836D3F500E90145 /* MRMessageInterceptor.m */,
+				7C1F240E1836D3F500E90145 /* MRProgressHelper.h */,
+				7C1F240F1836D3F500E90145 /* MRWeakProxy.h */,
+				7C1F24101836D3F500E90145 /* MRWeakProxy.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		7C1F241D1836D40500E90145 /* Self Service */ = {
+			isa = PBXGroup;
+			children = (
+				7C1F241E1836D40500E90145 /* NSDate+ISO8601Parsing.h */,
+				7C1F241F1836D40500E90145 /* NSDate+ISO8601Parsing.m */,
+				7C1F24201836D40500E90145 /* NSDate+ISO8601Unparsing.h */,
+				7C1F24211836D40500E90145 /* NSDate+ISO8601Unparsing.m */,
+				7C1F24221836D40500E90145 /* SelfService.h */,
+				7C1F24231836D40500E90145 /* SelfService.m */,
+				7C1F24241836D40500E90145 /* USAdditions.h */,
+				7C1F24251836D40500E90145 /* USAdditions.m */,
+				7C1F24261836D40500E90145 /* USGlobals.h */,
+				7C1F24271836D40500E90145 /* USGlobals.m */,
+				7C1F24281836D40500E90145 /* xsd.h */,
+				7C1F24291836D40500E90145 /* xsd.m */,
+			);
+			path = "Self Service";
+			sourceTree = "<group>";
+		};
 		7C2A34781832A6EB004AE430 = {
 			isa = PBXGroup;
 			children = (
@@ -321,6 +463,7 @@
 		7C2A34831832A6EB004AE430 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7C1F24341836D58F00E90145 /* libxml2.dylib */,
 				7C2A357C1832A785004AE430 /* MobileCoreServices.framework */,
 				7C2A357A1832A77E004AE430 /* SystemConfiguration.framework */,
 				7C2A35781832A776004AE430 /* CoreData.framework */,
@@ -368,6 +511,8 @@
 				7C2A357E1832A7AD004AE430 /* AFNetworking */,
 				7C2A350B1832A734004AE430 /* Lumberjack */,
 				7C2A351B1832A734004AE430 /* Magical Record */,
+				7C1F23F21836D3F500E90145 /* MDRadialProgress */,
+				7C1F23F91836D3F500E90145 /* MRProgress */,
 				7A98231D183552DE00CB0BA5 /* OCMock */,
 			);
 			path = External;
@@ -672,6 +817,7 @@
 			isa = PBXGroup;
 			children = (
 				7C2A35C51832A7CE004AE430 /* DTOs */,
+				7C1F241D1836D40500E90145 /* Self Service */,
 				7C2A35C81832A7CE004AE430 /* Translators */,
 			);
 			path = "Service Agents";
@@ -812,11 +958,15 @@
 				7C2A355A1832A734004AE430 /* DDLog.m in Sources */,
 				7C2A35621832A734004AE430 /* NSObject+MagicalDataImport.m in Sources */,
 				7C2A35701832A734004AE430 /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */,
+				7C1F242F1836D40500E90145 /* xsd.m in Sources */,
 				7C2A35D01832A7CE004AE430 /* Entity.m in Sources */,
 				7C2A359A1832A7AD004AE430 /* AFURLSessionManager.m in Sources */,
+				7C1F242E1836D40500E90145 /* USGlobals.m in Sources */,
 				7C2A35941832A7AD004AE430 /* AFHTTPSessionManager.m in Sources */,
 				7C2A35581832A734004AE430 /* DDASLLogger.m in Sources */,
+				7C1F242B1836D40500E90145 /* NSDate+ISO8601Unparsing.m in Sources */,
 				7C2A35611832A734004AE430 /* NSNumber+MagicalDataImport.m in Sources */,
+				7C1F242D1836D40500E90145 /* USAdditions.m in Sources */,
 				7C2A356B1832A734004AE430 /* NSManagedObjectContext+MagicalRecord.m in Sources */,
 				7C2A35DB1832A7CE004AE430 /* GenericTranslator.m in Sources */,
 				7C2A35981832A7AD004AE430 /* AFURLRequestSerialization.m in Sources */,
@@ -844,12 +994,14 @@
 				7C2A35D41832A7CE004AE430 /* GenericFactory.m in Sources */,
 				7C2A355B1832A734004AE430 /* DDTTYLogger.m in Sources */,
 				7C2A35591832A734004AE430 /* DDFileLogger.m in Sources */,
+				7C1F242A1836D40500E90145 /* NSDate+ISO8601Parsing.m in Sources */,
 				7C2A35641832A734004AE430 /* NSString+MagicalDataImport.m in Sources */,
 				7C2A35741832A734004AE430 /* MagicalRecord+Options.m in Sources */,
 				7C2A35681832A734004AE430 /* NSManagedObject+MagicalRecord.m in Sources */,
 				7C2A35D51832A7CE004AE430 /* LoggingHelper.m in Sources */,
 				7C2A35711832A734004AE430 /* MagicalRecord+Actions.m in Sources */,
 				7C2A35661832A734004AE430 /* NSManagedObject+MagicalDataImport.m in Sources */,
+				7C1F242C1836D40500E90145 /* SelfService.m in Sources */,
 				7C2A35D21832A7CE004AE430 /* GenericService.m in Sources */,
 				7C2A35731832A734004AE430 /* MagicalRecord+iCloud.m in Sources */,
 				7C2A35601832A734004AE430 /* NSEntityDescription+MagicalDataImport.m in Sources */,
@@ -870,7 +1022,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C1F241A1836D3F500E90145 /* MRProgressOverlayView.m in Sources */,
 				7C1F23EA18367D5A00E90145 /* GenericServiceTests.m in Sources */,
+				7C1F24161836D3F500E90145 /* MRActivityIndicatorView.m in Sources */,
+				7C1F24121836D3F500E90145 /* MDRadialProgressTheme.m in Sources */,
+				7C1F241B1836D3F500E90145 /* MRMessageInterceptor.m in Sources */,
+				7C1F241C1836D3F500E90145 /* MRWeakProxy.m in Sources */,
+				7C1F24111836D3F500E90145 /* MDRadialProgressLabel.m in Sources */,
+				7C1F24131836D3F500E90145 /* MDRadialProgressView.m in Sources */,
+				7C1F24141836D3F500E90145 /* MRBlurView.m in Sources */,
+				7C1F24151836D3F500E90145 /* UIImage+MRImageEffects.m in Sources */,
+				7C1F24181836D3F500E90145 /* MRIconView.m in Sources */,
+				7C1F24191836D3F500E90145 /* MRNavigationBarProgressView.m in Sources */,
+				7C1F24171836D3F500E90145 /* MRCircularProgressView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1007,6 +1171,11 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "STIPoC/Supporting Files/STIPoC-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SDKROOT)/usr/include/libxml2",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/STIPoC/Base.lproj/STIPoC-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1027,6 +1196,11 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "STIPoC/Supporting Files/STIPoC-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SDKROOT)/usr/include/libxml2",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/STIPoC/Base.lproj/STIPoC-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
