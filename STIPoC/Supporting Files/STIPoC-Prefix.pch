@@ -25,4 +25,7 @@
     #import "AFNetworking.h"
     #import "CoreData+MagicalRecord.h"
 
+    #import "USAdditions.h"
+    #import <libxml/tree.h>
+    #import "USGlobals.h"
 #endif

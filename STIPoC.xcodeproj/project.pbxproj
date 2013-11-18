@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		7A982327183552DE00CB0BA5 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A982326183552DE00CB0BA5 /* libOCMock.a */; };
 		7A9823281835533B00CB0BA5 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A982326183552DE00CB0BA5 /* libOCMock.a */; };
+		7C13C813183A633800C12C54 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7C2A35E11832A8E7004AE430 /* InfoPlist.strings */; };
+		7C13C814183A633D00C12C54 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C2A35C21832A7CE004AE430 /* Storyboard.storyboard */; };
+		7C13C815183A634B00C12C54 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7C2A35DE1832A8DE004AE430 /* Localizable.strings */; };
 		7C1F23EA18367D5A00E90145 /* GenericServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1F23E918367D5A00E90145 /* GenericServiceTests.m */; };
 		7C1F24111836D3F500E90145 /* MDRadialProgressLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1F23F41836D3F500E90145 /* MDRadialProgressLabel.m */; };
 		7C1F24121836D3F500E90145 /* MDRadialProgressTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1F23F61836D3F500E90145 /* MDRadialProgressTheme.m */; };
@@ -22,12 +25,6 @@
 		7C1F241A1836D3F500E90145 /* MRProgressOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1F24091836D3F500E90145 /* MRProgressOverlayView.m */; };
 		7C1F241B1836D3F500E90145 /* MRMessageInterceptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1F240D1836D3F500E90145 /* MRMessageInterceptor.m */; };
 		7C1F241C1836D3F500E90145 /* MRWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1F24101836D3F500E90145 /* MRWeakProxy.m */; };
-		7C1F242A1836D40500E90145 /* NSDate+ISO8601Parsing.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1F241F1836D40500E90145 /* NSDate+ISO8601Parsing.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		7C1F242B1836D40500E90145 /* NSDate+ISO8601Unparsing.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1F24211836D40500E90145 /* NSDate+ISO8601Unparsing.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		7C1F242C1836D40500E90145 /* SelfService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1F24231836D40500E90145 /* SelfService.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		7C1F242D1836D40500E90145 /* USAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1F24251836D40500E90145 /* USAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		7C1F242E1836D40500E90145 /* USGlobals.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1F24271836D40500E90145 /* USGlobals.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		7C1F242F1836D40500E90145 /* xsd.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1F24291836D40500E90145 /* xsd.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		7C1F24351836D58F00E90145 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C1F24341836D58F00E90145 /* libxml2.dylib */; };
 		7C1F24371836D7D400E90145 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C1F24361836D7D400E90145 /* CFNetwork.framework */; };
 		7C2A34851832A6EB004AE430 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C2A34841832A6EB004AE430 /* Foundation.framework */; };
@@ -90,14 +87,17 @@
 		7C2A35D51832A7CE004AE430 /* LoggingHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2A35B51832A7CE004AE430 /* LoggingHelper.m */; };
 		7C2A35D61832A7CE004AE430 /* GenericViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2A35BB1832A7CE004AE430 /* GenericViewController.m */; };
 		7C2A35D71832A7CE004AE430 /* SampleCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2A35BE1832A7CE004AE430 /* SampleCustomView.m */; };
-		7C2A35D91832A7CE004AE430 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C2A35C21832A7CE004AE430 /* Storyboard.storyboard */; };
 		7C2A35DA1832A7CE004AE430 /* SampleDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2A35C71832A7CE004AE430 /* SampleDTO.m */; };
 		7C2A35DB1832A7CE004AE430 /* GenericTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2A35CA1832A7CE004AE430 /* GenericTranslator.m */; };
 		7C2A35DC1832A7CE004AE430 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2A35CD1832A7CE004AE430 /* AppDelegate.m */; };
 		7C2A35DD1832A7CE004AE430 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2A35CE1832A7CE004AE430 /* main.m */; };
-		7C2A35E01832A8DE004AE430 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7C2A35DE1832A8DE004AE430 /* Localizable.strings */; };
-		7C2A35E31832A8E7004AE430 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7C2A35E11832A8E7004AE430 /* InfoPlist.strings */; };
 		7C2A35E81832A9B5004AE430 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7C2A35E61832A9B5004AE430 /* InfoPlist.strings */; };
+		7C4A38FB183A67B100978149 /* NSDate+ISO8601Parsing.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C4A38F0183A67B100978149 /* NSDate+ISO8601Parsing.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7C4A38FC183A67B100978149 /* NSDate+ISO8601Unparsing.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C4A38F2183A67B100978149 /* NSDate+ISO8601Unparsing.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7C4A38FD183A67B100978149 /* SelfService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C4A38F4183A67B100978149 /* SelfService.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7C4A38FE183A67B100978149 /* USAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C4A38F6183A67B100978149 /* USAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7C4A38FF183A67B100978149 /* USGlobals.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C4A38F8183A67B100978149 /* USGlobals.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7C4A3900183A67B100978149 /* xsd.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C4A38FA183A67B100978149 /* xsd.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,18 +145,6 @@
 		7C1F240E1836D3F500E90145 /* MRProgressHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRProgressHelper.h; sourceTree = "<group>"; };
 		7C1F240F1836D3F500E90145 /* MRWeakProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRWeakProxy.h; sourceTree = "<group>"; };
 		7C1F24101836D3F500E90145 /* MRWeakProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRWeakProxy.m; sourceTree = "<group>"; };
-		7C1F241E1836D40500E90145 /* NSDate+ISO8601Parsing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ISO8601Parsing.h"; sourceTree = "<group>"; };
-		7C1F241F1836D40500E90145 /* NSDate+ISO8601Parsing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ISO8601Parsing.m"; sourceTree = "<group>"; };
-		7C1F24201836D40500E90145 /* NSDate+ISO8601Unparsing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ISO8601Unparsing.h"; sourceTree = "<group>"; };
-		7C1F24211836D40500E90145 /* NSDate+ISO8601Unparsing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ISO8601Unparsing.m"; sourceTree = "<group>"; };
-		7C1F24221836D40500E90145 /* SelfService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelfService.h; sourceTree = "<group>"; };
-		7C1F24231836D40500E90145 /* SelfService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelfService.m; sourceTree = "<group>"; };
-		7C1F24241836D40500E90145 /* USAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USAdditions.h; sourceTree = "<group>"; };
-		7C1F24251836D40500E90145 /* USAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USAdditions.m; sourceTree = "<group>"; };
-		7C1F24261836D40500E90145 /* USGlobals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USGlobals.h; sourceTree = "<group>"; };
-		7C1F24271836D40500E90145 /* USGlobals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USGlobals.m; sourceTree = "<group>"; };
-		7C1F24281836D40500E90145 /* xsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xsd.h; sourceTree = "<group>"; };
-		7C1F24291836D40500E90145 /* xsd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xsd.m; sourceTree = "<group>"; };
 		7C1F24341836D58F00E90145 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		7C1F24361836D7D400E90145 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		7C2A34811832A6EB004AE430 /* STIPoC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STIPoC.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -289,6 +277,18 @@
 		7C2A35DF1832A8DE004AE430 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = STIPoC/Base.lproj/Localizable.strings; sourceTree = SOURCE_ROOT; };
 		7C2A35E21832A8E7004AE430 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = STIPoC/Base.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
 		7C2A35E71832A9B5004AE430 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7C4A38EF183A67B100978149 /* NSDate+ISO8601Parsing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ISO8601Parsing.h"; sourceTree = "<group>"; };
+		7C4A38F0183A67B100978149 /* NSDate+ISO8601Parsing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ISO8601Parsing.m"; sourceTree = "<group>"; };
+		7C4A38F1183A67B100978149 /* NSDate+ISO8601Unparsing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ISO8601Unparsing.h"; sourceTree = "<group>"; };
+		7C4A38F2183A67B100978149 /* NSDate+ISO8601Unparsing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ISO8601Unparsing.m"; sourceTree = "<group>"; };
+		7C4A38F3183A67B100978149 /* SelfService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelfService.h; sourceTree = "<group>"; };
+		7C4A38F4183A67B100978149 /* SelfService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelfService.m; sourceTree = "<group>"; };
+		7C4A38F5183A67B100978149 /* USAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USAdditions.h; sourceTree = "<group>"; };
+		7C4A38F6183A67B100978149 /* USAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USAdditions.m; sourceTree = "<group>"; };
+		7C4A38F7183A67B100978149 /* USGlobals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USGlobals.h; sourceTree = "<group>"; };
+		7C4A38F8183A67B100978149 /* USGlobals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USGlobals.m; sourceTree = "<group>"; };
+		7C4A38F9183A67B100978149 /* xsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xsd.h; sourceTree = "<group>"; };
+		7C4A38FA183A67B100978149 /* xsd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xsd.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -427,18 +427,18 @@
 		7C1F241D1836D40500E90145 /* Self Service */ = {
 			isa = PBXGroup;
 			children = (
-				7C1F241E1836D40500E90145 /* NSDate+ISO8601Parsing.h */,
-				7C1F241F1836D40500E90145 /* NSDate+ISO8601Parsing.m */,
-				7C1F24201836D40500E90145 /* NSDate+ISO8601Unparsing.h */,
-				7C1F24211836D40500E90145 /* NSDate+ISO8601Unparsing.m */,
-				7C1F24221836D40500E90145 /* SelfService.h */,
-				7C1F24231836D40500E90145 /* SelfService.m */,
-				7C1F24241836D40500E90145 /* USAdditions.h */,
-				7C1F24251836D40500E90145 /* USAdditions.m */,
-				7C1F24261836D40500E90145 /* USGlobals.h */,
-				7C1F24271836D40500E90145 /* USGlobals.m */,
-				7C1F24281836D40500E90145 /* xsd.h */,
-				7C1F24291836D40500E90145 /* xsd.m */,
+				7C4A38EF183A67B100978149 /* NSDate+ISO8601Parsing.h */,
+				7C4A38F0183A67B100978149 /* NSDate+ISO8601Parsing.m */,
+				7C4A38F1183A67B100978149 /* NSDate+ISO8601Unparsing.h */,
+				7C4A38F2183A67B100978149 /* NSDate+ISO8601Unparsing.m */,
+				7C4A38F3183A67B100978149 /* SelfService.h */,
+				7C4A38F4183A67B100978149 /* SelfService.m */,
+				7C4A38F5183A67B100978149 /* USAdditions.h */,
+				7C4A38F6183A67B100978149 /* USAdditions.m */,
+				7C4A38F7183A67B100978149 /* USGlobals.h */,
+				7C4A38F8183A67B100978149 /* USGlobals.m */,
+				7C4A38F9183A67B100978149 /* xsd.h */,
+				7C4A38FA183A67B100978149 /* xsd.m */,
 			);
 			path = "Self Service";
 			sourceTree = "<group>";
@@ -937,10 +937,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C13C815183A634B00C12C54 /* Localizable.strings in Resources */,
+				7C13C814183A633D00C12C54 /* Storyboard.storyboard in Resources */,
+				7C13C813183A633800C12C54 /* InfoPlist.strings in Resources */,
 				7C2A34971832A6EB004AE430 /* Images.xcassets in Resources */,
-				7C2A35E31832A8E7004AE430 /* InfoPlist.strings in Resources */,
-				7C2A35E01832A8DE004AE430 /* Localizable.strings in Resources */,
-				7C2A35D91832A7CE004AE430 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -962,15 +962,15 @@
 				7C2A355A1832A734004AE430 /* DDLog.m in Sources */,
 				7C2A35621832A734004AE430 /* NSObject+MagicalDataImport.m in Sources */,
 				7C2A35701832A734004AE430 /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */,
-				7C1F242F1836D40500E90145 /* xsd.m in Sources */,
+				7C4A3900183A67B100978149 /* xsd.m in Sources */,
 				7C2A35D01832A7CE004AE430 /* Entity.m in Sources */,
 				7C2A359A1832A7AD004AE430 /* AFURLSessionManager.m in Sources */,
-				7C1F242E1836D40500E90145 /* USGlobals.m in Sources */,
+				7C4A38FF183A67B100978149 /* USGlobals.m in Sources */,
 				7C2A35941832A7AD004AE430 /* AFHTTPSessionManager.m in Sources */,
 				7C2A35581832A734004AE430 /* DDASLLogger.m in Sources */,
-				7C1F242B1836D40500E90145 /* NSDate+ISO8601Unparsing.m in Sources */,
+				7C4A38FC183A67B100978149 /* NSDate+ISO8601Unparsing.m in Sources */,
 				7C2A35611832A734004AE430 /* NSNumber+MagicalDataImport.m in Sources */,
-				7C1F242D1836D40500E90145 /* USAdditions.m in Sources */,
+				7C4A38FE183A67B100978149 /* USAdditions.m in Sources */,
 				7C2A356B1832A734004AE430 /* NSManagedObjectContext+MagicalRecord.m in Sources */,
 				7C2A35DB1832A7CE004AE430 /* GenericTranslator.m in Sources */,
 				7C2A35981832A7AD004AE430 /* AFURLRequestSerialization.m in Sources */,
@@ -998,14 +998,14 @@
 				7C2A35D41832A7CE004AE430 /* GenericFactory.m in Sources */,
 				7C2A355B1832A734004AE430 /* DDTTYLogger.m in Sources */,
 				7C2A35591832A734004AE430 /* DDFileLogger.m in Sources */,
-				7C1F242A1836D40500E90145 /* NSDate+ISO8601Parsing.m in Sources */,
+				7C4A38FB183A67B100978149 /* NSDate+ISO8601Parsing.m in Sources */,
 				7C2A35641832A734004AE430 /* NSString+MagicalDataImport.m in Sources */,
 				7C2A35741832A734004AE430 /* MagicalRecord+Options.m in Sources */,
 				7C2A35681832A734004AE430 /* NSManagedObject+MagicalRecord.m in Sources */,
 				7C2A35D51832A7CE004AE430 /* LoggingHelper.m in Sources */,
 				7C2A35711832A734004AE430 /* MagicalRecord+Actions.m in Sources */,
 				7C2A35661832A734004AE430 /* NSManagedObject+MagicalDataImport.m in Sources */,
-				7C1F242C1836D40500E90145 /* SelfService.m in Sources */,
+				7C4A38FD183A67B100978149 /* SelfService.m in Sources */,
 				7C2A35D21832A7CE004AE430 /* GenericService.m in Sources */,
 				7C2A35731832A734004AE430 /* MagicalRecord+iCloud.m in Sources */,
 				7C2A35601832A734004AE430 /* NSEntityDescription+MagicalDataImport.m in Sources */,
