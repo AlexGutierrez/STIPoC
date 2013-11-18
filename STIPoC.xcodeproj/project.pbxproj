@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		7A982327183552DE00CB0BA5 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A982326183552DE00CB0BA5 /* libOCMock.a */; };
 		7A9823281835533B00CB0BA5 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A982326183552DE00CB0BA5 /* libOCMock.a */; };
-		7AAD3131183ACDD60002F147 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AAD3130183ACDD60002F147 /* KeychainItemWrapper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		7C13C813183A633800C12C54 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7C2A35E11832A8E7004AE430 /* InfoPlist.strings */; };
 		7C13C814183A633D00C12C54 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C2A35C21832A7CE004AE430 /* Storyboard.storyboard */; };
 		7C13C815183A634B00C12C54 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7C2A35DE1832A8DE004AE430 /* Localizable.strings */; };
@@ -104,6 +103,9 @@
 		7C958445183AC35D0065C878 /* LoginViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C958444183AC35D0065C878 /* LoginViewControllerTests.m */; };
 		7C958448183AC4580065C878 /* LoginService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C958447183AC4580065C878 /* LoginService.m */; };
 		7C95844A183AC5280065C878 /* LoginServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C958449183AC5280065C878 /* LoginServiceTests.m */; };
+		7C958452183ACF4E0065C878 /* SSKeychain.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7C95844C183ACF4E0065C878 /* SSKeychain.strings */; };
+		7C958453183ACF4E0065C878 /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C95844F183ACF4E0065C878 /* SSKeychain.m */; };
+		7C958454183ACF4E0065C878 /* SSKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C958451183ACF4E0065C878 /* SSKeychainQuery.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,8 +126,6 @@
 		7A98232C183553DB00CB0BA5 /* OCMock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OCMock.h; path = External/OCMock/OCMock/OCMock.h; sourceTree = SOURCE_ROOT; };
 		7A98232D183553DB00CB0BA5 /* OCMockObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OCMockObject.h; path = External/OCMock/OCMock/OCMockObject.h; sourceTree = SOURCE_ROOT; };
 		7A98232E183553DB00CB0BA5 /* OCMockRecorder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OCMockRecorder.h; path = External/OCMock/OCMock/OCMockRecorder.h; sourceTree = SOURCE_ROOT; };
-		7AAD312F183ACDD60002F147 /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
-		7AAD3130183ACDD60002F147 /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
 		7C1F23F31836D3F500E90145 /* MDRadialProgressLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDRadialProgressLabel.h; sourceTree = "<group>"; };
 		7C1F23F41836D3F500E90145 /* MDRadialProgressLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDRadialProgressLabel.m; sourceTree = "<group>"; };
 		7C1F23F51836D3F500E90145 /* MDRadialProgressTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDRadialProgressTheme.h; sourceTree = "<group>"; };
@@ -303,6 +303,11 @@
 		7C958446183AC4580065C878 /* LoginService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginService.h; sourceTree = "<group>"; };
 		7C958447183AC4580065C878 /* LoginService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginService.m; sourceTree = "<group>"; };
 		7C958449183AC5280065C878 /* LoginServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginServiceTests.m; sourceTree = "<group>"; };
+		7C95844D183ACF4E0065C878 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SSKeychain.strings; sourceTree = "<group>"; };
+		7C95844E183ACF4E0065C878 /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
+		7C95844F183ACF4E0065C878 /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
+		7C958450183ACF4E0065C878 /* SSKeychainQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychainQuery.h; sourceTree = "<group>"; };
+		7C958451183ACF4E0065C878 /* SSKeychainQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychainQuery.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -364,15 +369,6 @@
 				7A982326183552DE00CB0BA5 /* libOCMock.a */,
 			);
 			path = "Static Library";
-			sourceTree = "<group>";
-		};
-		7AAD312E183ACDD60002F147 /* GenericKeychain */ = {
-			isa = PBXGroup;
-			children = (
-				7AAD312F183ACDD60002F147 /* KeychainItemWrapper.h */,
-				7AAD3130183ACDD60002F147 /* KeychainItemWrapper.m */,
-			);
-			path = GenericKeychain;
 			sourceTree = "<group>";
 		};
 		7C1F23E21836754C00E90145 /* Test Cases */ = {
@@ -538,7 +534,7 @@
 		7C2A350A1832A734004AE430 /* External */ = {
 			isa = PBXGroup;
 			children = (
-				7AAD312E183ACDD60002F147 /* GenericKeychain */,
+				7C95844B183ACF4E0065C878 /* SSKeychain */,
 				7C2A357E1832A7AD004AE430 /* AFNetworking */,
 				7C2A350B1832A734004AE430 /* Lumberjack */,
 				7C2A351B1832A734004AE430 /* Magical Record */,
@@ -912,6 +908,18 @@
 			path = "Service Agents";
 			sourceTree = "<group>";
 		};
+		7C95844B183ACF4E0065C878 /* SSKeychain */ = {
+			isa = PBXGroup;
+			children = (
+				7C95844C183ACF4E0065C878 /* SSKeychain.strings */,
+				7C95844E183ACF4E0065C878 /* SSKeychain.h */,
+				7C95844F183ACF4E0065C878 /* SSKeychain.m */,
+				7C958450183ACF4E0065C878 /* SSKeychainQuery.h */,
+				7C958451183ACF4E0065C878 /* SSKeychainQuery.m */,
+			);
+			path = SSKeychain;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -991,6 +999,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C958452183ACF4E0065C878 /* SSKeychain.strings in Resources */,
 				7C13C815183A634B00C12C54 /* Localizable.strings in Resources */,
 				7C13C814183A633D00C12C54 /* Storyboard.storyboard in Resources */,
 				7C13C813183A633800C12C54 /* InfoPlist.strings in Resources */,
@@ -1023,6 +1032,7 @@
 				7C958448183AC4580065C878 /* LoginService.m in Sources */,
 				7C2A35941832A7AD004AE430 /* AFHTTPSessionManager.m in Sources */,
 				7C2A35581832A734004AE430 /* DDASLLogger.m in Sources */,
+				7C958454183ACF4E0065C878 /* SSKeychainQuery.m in Sources */,
 				7C4A38FC183A67B100978149 /* NSDate+ISO8601Unparsing.m in Sources */,
 				7C2A35611832A734004AE430 /* NSNumber+MagicalDataImport.m in Sources */,
 				7C4A38FE183A67B100978149 /* USAdditions.m in Sources */,
@@ -1050,6 +1060,7 @@
 				7C2A35651832A734004AE430 /* NSManagedObject+MagicalAggregation.m in Sources */,
 				7C2A35761832A734004AE430 /* MagicalRecord+ShorthandSupport.m in Sources */,
 				7C2A35D41832A7CE004AE430 /* GenericFactory.m in Sources */,
+				7C958453183ACF4E0065C878 /* SSKeychain.m in Sources */,
 				7C2A355B1832A734004AE430 /* DDTTYLogger.m in Sources */,
 				7C2A35591832A734004AE430 /* DDFileLogger.m in Sources */,
 				7C4A38FB183A67B100978149 /* NSDate+ISO8601Parsing.m in Sources */,
@@ -1058,7 +1069,6 @@
 				7C2A35681832A734004AE430 /* NSManagedObject+MagicalRecord.m in Sources */,
 				7C2A35D51832A7CE004AE430 /* LoggingHelper.m in Sources */,
 				7C2A35711832A734004AE430 /* MagicalRecord+Actions.m in Sources */,
-				7AAD3131183ACDD60002F147 /* KeychainItemWrapper.m in Sources */,
 				7C2A35661832A734004AE430 /* NSManagedObject+MagicalDataImport.m in Sources */,
 				7C4A38FD183A67B100978149 /* SelfService.m in Sources */,
 				7C2A35D21832A7CE004AE430 /* GenericService.m in Sources */,
@@ -1143,6 +1153,14 @@
 				7C2A35E71832A9B5004AE430 /* Base */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		7C95844C183ACF4E0065C878 /* SSKeychain.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7C95844D183ACF4E0065C878 /* en */,
+			);
+			name = SSKeychain.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
