@@ -46,6 +46,11 @@
     XCTAssertEqualObjects(genericService2, self.genericService, @"Generic Service shared instance must be always the same.");
 }
 
+- (void)testLoginServiceSharedInstanceIsKindOfClassGenericService
+{
+    XCTAssertTrue([self.genericService isKindOfClass:[GenericService class]], @"Generic Service shared instance's class is not GenericService.");
+}
+
 - (void)testGenericServiceCreatesDefaultPersistentStore
 {
     XCTAssertNotNil([NSPersistentStore defaultPersistentStore], @"Default Persistent Store should be created.");

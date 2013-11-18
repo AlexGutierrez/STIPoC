@@ -12,7 +12,6 @@
 		7C13C813183A633800C12C54 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7C2A35E11832A8E7004AE430 /* InfoPlist.strings */; };
 		7C13C814183A633D00C12C54 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C2A35C21832A7CE004AE430 /* Storyboard.storyboard */; };
 		7C13C815183A634B00C12C54 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7C2A35DE1832A8DE004AE430 /* Localizable.strings */; };
-		7C1F23EA18367D5A00E90145 /* GenericServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1F23E918367D5A00E90145 /* GenericServiceTests.m */; };
 		7C1F24111836D3F500E90145 /* MDRadialProgressLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1F23F41836D3F500E90145 /* MDRadialProgressLabel.m */; };
 		7C1F24121836D3F500E90145 /* MDRadialProgressTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1F23F61836D3F500E90145 /* MDRadialProgressTheme.m */; };
 		7C1F24131836D3F500E90145 /* MDRadialProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1F23F81836D3F500E90145 /* MDRadialProgressView.m */; };
@@ -87,17 +86,23 @@
 		7C2A35D51832A7CE004AE430 /* LoggingHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2A35B51832A7CE004AE430 /* LoggingHelper.m */; };
 		7C2A35D61832A7CE004AE430 /* GenericViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2A35BB1832A7CE004AE430 /* GenericViewController.m */; };
 		7C2A35D71832A7CE004AE430 /* SampleCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2A35BE1832A7CE004AE430 /* SampleCustomView.m */; };
-		7C2A35DA1832A7CE004AE430 /* SampleDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2A35C71832A7CE004AE430 /* SampleDTO.m */; };
-		7C2A35DB1832A7CE004AE430 /* GenericTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2A35CA1832A7CE004AE430 /* GenericTranslator.m */; };
 		7C2A35DC1832A7CE004AE430 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2A35CD1832A7CE004AE430 /* AppDelegate.m */; };
 		7C2A35DD1832A7CE004AE430 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2A35CE1832A7CE004AE430 /* main.m */; };
 		7C2A35E81832A9B5004AE430 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7C2A35E61832A9B5004AE430 /* InfoPlist.strings */; };
+		7C2BF13C183A9E2800EEE4BF /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2BF13B183A9E2800EEE4BF /* LoginViewController.m */; };
 		7C4A38FB183A67B100978149 /* NSDate+ISO8601Parsing.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C4A38F0183A67B100978149 /* NSDate+ISO8601Parsing.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		7C4A38FC183A67B100978149 /* NSDate+ISO8601Unparsing.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C4A38F2183A67B100978149 /* NSDate+ISO8601Unparsing.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		7C4A38FD183A67B100978149 /* SelfService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C4A38F4183A67B100978149 /* SelfService.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		7C4A38FE183A67B100978149 /* USAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C4A38F6183A67B100978149 /* USAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		7C4A38FF183A67B100978149 /* USGlobals.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C4A38F8183A67B100978149 /* USGlobals.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		7C4A3900183A67B100978149 /* xsd.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C4A38FA183A67B100978149 /* xsd.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7C4A3917183A7D0600978149 /* GenericServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C4A3913183A7D0600978149 /* GenericServiceTests.m */; };
+		7C4A391D183A81E300978149 /* SelfServiceGenericTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C4A391B183A81E300978149 /* SelfServiceGenericTests.m */; };
+		7C4A391E183A81E300978149 /* SelfServiceGetOrdersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C4A391C183A81E300978149 /* SelfServiceGetOrdersTests.m */; };
+		7C958443183AC0570065C878 /* InspectableLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C958442183AC0570065C878 /* InspectableLoginViewController.m */; };
+		7C958445183AC35D0065C878 /* LoginViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C958444183AC35D0065C878 /* LoginViewControllerTests.m */; };
+		7C958448183AC4580065C878 /* LoginService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C958447183AC4580065C878 /* LoginService.m */; };
+		7C95844A183AC5280065C878 /* LoginServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C958449183AC5280065C878 /* LoginServiceTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,7 +123,6 @@
 		7A98232C183553DB00CB0BA5 /* OCMock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OCMock.h; path = External/OCMock/OCMock/OCMock.h; sourceTree = SOURCE_ROOT; };
 		7A98232D183553DB00CB0BA5 /* OCMockObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OCMockObject.h; path = External/OCMock/OCMock/OCMockObject.h; sourceTree = SOURCE_ROOT; };
 		7A98232E183553DB00CB0BA5 /* OCMockRecorder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OCMockRecorder.h; path = External/OCMock/OCMock/OCMockRecorder.h; sourceTree = SOURCE_ROOT; };
-		7C1F23E918367D5A00E90145 /* GenericServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenericServiceTests.m; sourceTree = "<group>"; };
 		7C1F23F31836D3F500E90145 /* MDRadialProgressLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDRadialProgressLabel.h; sourceTree = "<group>"; };
 		7C1F23F41836D3F500E90145 /* MDRadialProgressLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDRadialProgressLabel.m; sourceTree = "<group>"; };
 		7C1F23F51836D3F500E90145 /* MDRadialProgressTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDRadialProgressTheme.h; sourceTree = "<group>"; };
@@ -266,10 +270,6 @@
 		7C2A35BD1832A7CE004AE430 /* SampleCustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleCustomView.h; sourceTree = "<group>"; };
 		7C2A35BE1832A7CE004AE430 /* SampleCustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SampleCustomView.m; sourceTree = "<group>"; };
 		7C2A35C31832A7CE004AE430 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Storyboard.storyboard; sourceTree = "<group>"; };
-		7C2A35C61832A7CE004AE430 /* SampleDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleDTO.h; sourceTree = "<group>"; };
-		7C2A35C71832A7CE004AE430 /* SampleDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SampleDTO.m; sourceTree = "<group>"; };
-		7C2A35C91832A7CE004AE430 /* GenericTranslator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenericTranslator.h; sourceTree = "<group>"; };
-		7C2A35CA1832A7CE004AE430 /* GenericTranslator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenericTranslator.m; sourceTree = "<group>"; };
 		7C2A35CC1832A7CE004AE430 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7C2A35CD1832A7CE004AE430 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		7C2A35CE1832A7CE004AE430 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -277,6 +277,8 @@
 		7C2A35DF1832A8DE004AE430 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = STIPoC/Base.lproj/Localizable.strings; sourceTree = SOURCE_ROOT; };
 		7C2A35E21832A8E7004AE430 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = STIPoC/Base.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
 		7C2A35E71832A9B5004AE430 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7C2BF13A183A9E2800EEE4BF /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		7C2BF13B183A9E2800EEE4BF /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		7C4A38EF183A67B100978149 /* NSDate+ISO8601Parsing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ISO8601Parsing.h"; sourceTree = "<group>"; };
 		7C4A38F0183A67B100978149 /* NSDate+ISO8601Parsing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ISO8601Parsing.m"; sourceTree = "<group>"; };
 		7C4A38F1183A67B100978149 /* NSDate+ISO8601Unparsing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ISO8601Unparsing.h"; sourceTree = "<group>"; };
@@ -289,6 +291,15 @@
 		7C4A38F8183A67B100978149 /* USGlobals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USGlobals.m; sourceTree = "<group>"; };
 		7C4A38F9183A67B100978149 /* xsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xsd.h; sourceTree = "<group>"; };
 		7C4A38FA183A67B100978149 /* xsd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xsd.m; sourceTree = "<group>"; };
+		7C4A3913183A7D0600978149 /* GenericServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenericServiceTests.m; sourceTree = "<group>"; };
+		7C4A391B183A81E300978149 /* SelfServiceGenericTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelfServiceGenericTests.m; sourceTree = "<group>"; };
+		7C4A391C183A81E300978149 /* SelfServiceGetOrdersTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelfServiceGetOrdersTests.m; sourceTree = "<group>"; };
+		7C958441183AC0570065C878 /* InspectableLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InspectableLoginViewController.h; sourceTree = "<group>"; };
+		7C958442183AC0570065C878 /* InspectableLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InspectableLoginViewController.m; sourceTree = "<group>"; };
+		7C958444183AC35D0065C878 /* LoginViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewControllerTests.m; sourceTree = "<group>"; };
+		7C958446183AC4580065C878 /* LoginService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginService.h; sourceTree = "<group>"; };
+		7C958447183AC4580065C878 /* LoginService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginService.m; sourceTree = "<group>"; };
+		7C958449183AC5280065C878 /* LoginServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginServiceTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -355,7 +366,9 @@
 		7C1F23E21836754C00E90145 /* Test Cases */ = {
 			isa = PBXGroup;
 			children = (
-				7C1F23E918367D5A00E90145 /* GenericServiceTests.m */,
+				7C2BF139183A96CF00EEE4BF /* Presentation */,
+				7C4A391A183A81E300978149 /* Service Agents */,
+				7C4A3912183A7D0600978149 /* Domain */,
 			);
 			path = "Test Cases";
 			sourceTree = "<group>";
@@ -495,6 +508,7 @@
 		7C2A34A31832A6EB004AE430 /* STIPoCTests */ = {
 			isa = PBXGroup;
 			children = (
+				7C2BF13F183AB0AF00EEE4BF /* Inspectable Classes */,
 				7C1F23E21836754C00E90145 /* Test Cases */,
 				7C2A34A41832A6EB004AE430 /* Supporting Files */,
 			);
@@ -710,6 +724,8 @@
 			children = (
 				7C2A35A31832A7CE004AE430 /* GenericService.h */,
 				7C2A35A41832A7CE004AE430 /* GenericService.m */,
+				7C958446183AC4580065C878 /* LoginService.h */,
+				7C958447183AC4580065C878 /* LoginService.m */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -796,6 +812,8 @@
 			children = (
 				7C2A35BA1832A7CE004AE430 /* GenericViewController.h */,
 				7C2A35BB1832A7CE004AE430 /* GenericViewController.m */,
+				7C2BF13A183A9E2800EEE4BF /* LoginViewController.h */,
+				7C2BF13B183A9E2800EEE4BF /* LoginViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -820,29 +838,9 @@
 		7C2A35C41832A7CE004AE430 /* Service Agents */ = {
 			isa = PBXGroup;
 			children = (
-				7C2A35C51832A7CE004AE430 /* DTOs */,
 				7C1F241D1836D40500E90145 /* Self Service */,
-				7C2A35C81832A7CE004AE430 /* Translators */,
 			);
 			path = "Service Agents";
-			sourceTree = "<group>";
-		};
-		7C2A35C51832A7CE004AE430 /* DTOs */ = {
-			isa = PBXGroup;
-			children = (
-				7C2A35C61832A7CE004AE430 /* SampleDTO.h */,
-				7C2A35C71832A7CE004AE430 /* SampleDTO.m */,
-			);
-			path = DTOs;
-			sourceTree = "<group>";
-		};
-		7C2A35C81832A7CE004AE430 /* Translators */ = {
-			isa = PBXGroup;
-			children = (
-				7C2A35C91832A7CE004AE430 /* GenericTranslator.h */,
-				7C2A35CA1832A7CE004AE430 /* GenericTranslator.m */,
-			);
-			path = Translators;
 			sourceTree = "<group>";
 		};
 		7C2A35CB1832A7CE004AE430 /* Supporting Files */ = {
@@ -856,6 +854,49 @@
 				7C2A35CF1832A7CE004AE430 /* STIPoC-Prefix.pch */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7C2BF139183A96CF00EEE4BF /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				7C958444183AC35D0065C878 /* LoginViewControllerTests.m */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		7C2BF13F183AB0AF00EEE4BF /* Inspectable Classes */ = {
+			isa = PBXGroup;
+			children = (
+				7C2BF143183AB9FD00EEE4BF /* Presentation */,
+			);
+			path = "Inspectable Classes";
+			sourceTree = "<group>";
+		};
+		7C2BF143183AB9FD00EEE4BF /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				7C958441183AC0570065C878 /* InspectableLoginViewController.h */,
+				7C958442183AC0570065C878 /* InspectableLoginViewController.m */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		7C4A3912183A7D0600978149 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				7C4A3913183A7D0600978149 /* GenericServiceTests.m */,
+				7C958449183AC5280065C878 /* LoginServiceTests.m */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		7C4A391A183A81E300978149 /* Service Agents */ = {
+			isa = PBXGroup;
+			children = (
+				7C4A391B183A81E300978149 /* SelfServiceGenericTests.m */,
+				7C4A391C183A81E300978149 /* SelfServiceGetOrdersTests.m */,
+			);
+			path = "Service Agents";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -966,23 +1007,23 @@
 				7C2A35D01832A7CE004AE430 /* Entity.m in Sources */,
 				7C2A359A1832A7AD004AE430 /* AFURLSessionManager.m in Sources */,
 				7C4A38FF183A67B100978149 /* USGlobals.m in Sources */,
+				7C958448183AC4580065C878 /* LoginService.m in Sources */,
 				7C2A35941832A7AD004AE430 /* AFHTTPSessionManager.m in Sources */,
 				7C2A35581832A734004AE430 /* DDASLLogger.m in Sources */,
 				7C4A38FC183A67B100978149 /* NSDate+ISO8601Unparsing.m in Sources */,
 				7C2A35611832A734004AE430 /* NSNumber+MagicalDataImport.m in Sources */,
 				7C4A38FE183A67B100978149 /* USAdditions.m in Sources */,
 				7C2A356B1832A734004AE430 /* NSManagedObjectContext+MagicalRecord.m in Sources */,
-				7C2A35DB1832A7CE004AE430 /* GenericTranslator.m in Sources */,
 				7C2A35981832A7AD004AE430 /* AFURLRequestSerialization.m in Sources */,
 				7C2A356D1832A734004AE430 /* NSManagedObjectContext+MagicalThreading.m in Sources */,
 				7C2A35D31832A7CE004AE430 /* NSObject+SampleCategory.m in Sources */,
 				7C2A35961832A7AD004AE430 /* AFSecurityPolicy.m in Sources */,
+				7C2BF13C183A9E2800EEE4BF /* LoginViewController.m in Sources */,
 				7C2A35631832A734004AE430 /* NSRelationshipDescription+MagicalDataImport.m in Sources */,
 				7C2A35691832A734004AE430 /* NSManagedObject+MagicalRequests.m in Sources */,
 				7C2A35DD1832A7CE004AE430 /* main.m in Sources */,
 				7C2A35771832A734004AE430 /* MagicalRecord.m in Sources */,
 				7C2A355D1832A734004AE430 /* DispatchQueueLogFormatter.m in Sources */,
-				7C2A35DA1832A7CE004AE430 /* SampleDTO.m in Sources */,
 				7C2A35D71832A7CE004AE430 /* SampleCustomView.m in Sources */,
 				7C2A35971832A7AD004AE430 /* AFURLConnectionOperation.m in Sources */,
 				7C2A356F1832A734004AE430 /* NSPersistentStore+MagicalRecord.m in Sources */,
@@ -1027,15 +1068,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C1F241A1836D3F500E90145 /* MRProgressOverlayView.m in Sources */,
-				7C1F23EA18367D5A00E90145 /* GenericServiceTests.m in Sources */,
+				7C4A3917183A7D0600978149 /* GenericServiceTests.m in Sources */,
 				7C1F24161836D3F500E90145 /* MRActivityIndicatorView.m in Sources */,
 				7C1F24121836D3F500E90145 /* MDRadialProgressTheme.m in Sources */,
 				7C1F241B1836D3F500E90145 /* MRMessageInterceptor.m in Sources */,
+				7C95844A183AC5280065C878 /* LoginServiceTests.m in Sources */,
 				7C1F241C1836D3F500E90145 /* MRWeakProxy.m in Sources */,
 				7C1F24111836D3F500E90145 /* MDRadialProgressLabel.m in Sources */,
 				7C1F24131836D3F500E90145 /* MDRadialProgressView.m in Sources */,
 				7C1F24141836D3F500E90145 /* MRBlurView.m in Sources */,
+				7C4A391D183A81E300978149 /* SelfServiceGenericTests.m in Sources */,
 				7C1F24151836D3F500E90145 /* UIImage+MRImageEffects.m in Sources */,
+				7C958443183AC0570065C878 /* InspectableLoginViewController.m in Sources */,
+				7C4A391E183A81E300978149 /* SelfServiceGetOrdersTests.m in Sources */,
+				7C958445183AC35D0065C878 /* LoginViewControllerTests.m in Sources */,
 				7C1F24181836D3F500E90145 /* MRIconView.m in Sources */,
 				7C1F24191836D3F500E90145 /* MRNavigationBarProgressView.m in Sources */,
 				7C1F24171836D3F500E90145 /* MRCircularProgressView.m in Sources */,
