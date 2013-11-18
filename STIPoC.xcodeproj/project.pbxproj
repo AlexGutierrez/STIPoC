@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7A982327183552DE00CB0BA5 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A982326183552DE00CB0BA5 /* libOCMock.a */; };
 		7A9823281835533B00CB0BA5 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A982326183552DE00CB0BA5 /* libOCMock.a */; };
+		7AAD3131183ACDD60002F147 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AAD3130183ACDD60002F147 /* KeychainItemWrapper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		7C13C813183A633800C12C54 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7C2A35E11832A8E7004AE430 /* InfoPlist.strings */; };
 		7C13C814183A633D00C12C54 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C2A35C21832A7CE004AE430 /* Storyboard.storyboard */; };
 		7C13C815183A634B00C12C54 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7C2A35DE1832A8DE004AE430 /* Localizable.strings */; };
@@ -123,6 +124,8 @@
 		7A98232C183553DB00CB0BA5 /* OCMock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OCMock.h; path = External/OCMock/OCMock/OCMock.h; sourceTree = SOURCE_ROOT; };
 		7A98232D183553DB00CB0BA5 /* OCMockObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OCMockObject.h; path = External/OCMock/OCMock/OCMockObject.h; sourceTree = SOURCE_ROOT; };
 		7A98232E183553DB00CB0BA5 /* OCMockRecorder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OCMockRecorder.h; path = External/OCMock/OCMock/OCMockRecorder.h; sourceTree = SOURCE_ROOT; };
+		7AAD312F183ACDD60002F147 /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
+		7AAD3130183ACDD60002F147 /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
 		7C1F23F31836D3F500E90145 /* MDRadialProgressLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDRadialProgressLabel.h; sourceTree = "<group>"; };
 		7C1F23F41836D3F500E90145 /* MDRadialProgressLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDRadialProgressLabel.m; sourceTree = "<group>"; };
 		7C1F23F51836D3F500E90145 /* MDRadialProgressTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDRadialProgressTheme.h; sourceTree = "<group>"; };
@@ -363,6 +366,15 @@
 			path = "Static Library";
 			sourceTree = "<group>";
 		};
+		7AAD312E183ACDD60002F147 /* GenericKeychain */ = {
+			isa = PBXGroup;
+			children = (
+				7AAD312F183ACDD60002F147 /* KeychainItemWrapper.h */,
+				7AAD3130183ACDD60002F147 /* KeychainItemWrapper.m */,
+			);
+			path = GenericKeychain;
+			sourceTree = "<group>";
+		};
 		7C1F23E21836754C00E90145 /* Test Cases */ = {
 			isa = PBXGroup;
 			children = (
@@ -526,6 +538,7 @@
 		7C2A350A1832A734004AE430 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				7AAD312E183ACDD60002F147 /* GenericKeychain */,
 				7C2A357E1832A7AD004AE430 /* AFNetworking */,
 				7C2A350B1832A734004AE430 /* Lumberjack */,
 				7C2A351B1832A734004AE430 /* Magical Record */,
@@ -1045,6 +1058,7 @@
 				7C2A35681832A734004AE430 /* NSManagedObject+MagicalRecord.m in Sources */,
 				7C2A35D51832A7CE004AE430 /* LoggingHelper.m in Sources */,
 				7C2A35711832A734004AE430 /* MagicalRecord+Actions.m in Sources */,
+				7AAD3131183ACDD60002F147 /* KeychainItemWrapper.m in Sources */,
 				7C2A35661832A734004AE430 /* NSManagedObject+MagicalDataImport.m in Sources */,
 				7C4A38FD183A67B100978149 /* SelfService.m in Sources */,
 				7C2A35D21832A7CE004AE430 /* GenericService.m in Sources */,
