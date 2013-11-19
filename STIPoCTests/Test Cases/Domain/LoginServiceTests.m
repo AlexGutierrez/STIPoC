@@ -8,6 +8,9 @@
 
 #import <XCTest/XCTest.h>
 #import "LoginService.h"
+#import "SSKeychain.h"
+
+#define EMPTY_TEXT @""
 
 #define WRONG_USER_ID @"WrongUserID"
 #define VALID_USER_ID @"ValidUserID"
@@ -15,7 +18,11 @@
 #define VALID_PASSWORD @"ValidPassword"
 #define WRONG_DOMAIN @"WrongDomain"
 #define VALID_DOMAIN @"ValidDomain"
-#define EMPTY_TEXT @""
+
+#define DUMMY_PASSWORD @"DummyPassword"
+#define DUMMY_ACCOUNT @"DummyAccount"
+#define DUMMY_SERVICE @"DummyService"
+#define DUMMY_DOMAIN @"DummyDomain"
 
 @interface LoginServiceTests : XCTestCase
 
@@ -37,8 +44,17 @@
 {
     self.loginService = nil;
     
+    NSArray *accounts = [SSKeychain accountsForService:DUMMY_SERVICE];
+    for (NSDictionary *account in accounts) {
+        NSString *accountName = [account objectForKey:kSSKeychainAccountKey];
+        [SSKeychain deletePasswordForService:DUMMY_SERVICE account:accountName];
+    }
+    
     [super tearDown];
 }
+
+#pragma mark -
+#pragma mark Login
 
 - (void)testLoginServiceSharedInstanceCannotBeNil
 {
@@ -135,5 +151,49 @@
     
     XCTAssertTrue(credentialsAreValid, @"Right credentials validation failed.");
 }
+
+#pragma mark -
+#pragma mark Accounts storage in keychain
+
+- (void)testLoginServiceKeychainPasswordStorageAndRetrieval
+{
+    NSString *account = DUMMY_ACCOUNT;
+    NSString *service = DUMMY_SERVICE;
+    NSString *password = DUMMY_PASSWORD;
+    NSString *domain = DUMMY_DOMAIN;
+    
+    [[LoginService sharedInstance] storeInKeychainPassword:password forAssociatedAccount:account domain:domain andService:service];
+    NSString *retrievedPassword = [[LoginService sharedInstance] retrieveFromKeychainPasswordForAssociatedAccount:account domain:domain andService:service];
+    
+    XCTAssertTrue([password isEqualToString:retrievedPassword], @"Retrieved password should be the same as the one stored.");
+}
+
+- (void)testLoginServiceDeletesFromKeychainAllPasswordsForService
+{
+    NSString *service = DUMMY_SERVICE;
+    NSString *domain = DUMMY_DOMAIN;
+    
+    NSString *account = DUMMY_ACCOUNT;
+    NSString *password = DUMMY_PASSWORD;
+    
+    NSString *account2 = @"Account2";
+    NSString *password2 = @"Password2";
+    
+    NSString *account3 = @"Account3";
+    NSString *password3 = @"Password3";
+    
+    [[LoginService sharedInstance] storeInKeychainPassword:password forAssociatedAccount:account domain:domain andService:service];
+    [[LoginService sharedInstance] storeInKeychainPassword:password2 forAssociatedAccount:account2 domain:domain andService:service];
+    [[LoginService sharedInstance] storeInKeychainPassword:password3 forAssociatedAccount:account3 domain:domain andService:service];
+    
+    [[LoginService sharedInstance] deleteAllPasswordsForService:service];
+    
+    NSString *retrievedPassword = [[LoginService sharedInstance] retrieveFromKeychainPasswordForAssociatedAccount:account domain:domain andService:service];
+    NSString *retrievedPassword2 = [[LoginService sharedInstance] retrieveFromKeychainPasswordForAssociatedAccount:account2 domain:domain andService:service];
+    NSString *retrievedPassword3 = [[LoginService sharedInstance] retrieveFromKeychainPasswordForAssociatedAccount:account3 domain:domain andService:service];
+    
+    XCTAssertFalse((retrievedPassword || retrievedPassword2 || retrievedPassword3), @"All passwords retrieved for service must be nil after deletion.");
+}
+
 
 @end

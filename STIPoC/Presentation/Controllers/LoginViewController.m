@@ -33,17 +33,7 @@
     NSString *userID = self.userIDField.text;
     NSString *password = self.passwordField.text;
     NSString *domain = self.domainField.text;
-    
-    // Empty fields
-    if ([userID isEqualToString:@""] || [password isEqualToString:@""] || [domain isEqualToString:@""]) {
-        return NO;
-    }
-    
-    // Validating credentials against DB
-    if (!([userID isEqualToString:@"ValidUserID"] && [password isEqualToString:@"ValidPassword"] && [domain isEqualToString:@"ValidDomain"])) {
-        return NO;
-    }
-    
+
     return YES;
 }
 

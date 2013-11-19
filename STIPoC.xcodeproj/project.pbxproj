@@ -81,11 +81,9 @@
 		7C2A35D01832A7CE004AE430 /* Entity.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2A359E1832A7CE004AE430 /* Entity.m */; };
 		7C2A35D11832A7CE004AE430 /* STIPoC.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7C2A35A01832A7CE004AE430 /* STIPoC.xcdatamodeld */; };
 		7C2A35D21832A7CE004AE430 /* GenericService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2A35A41832A7CE004AE430 /* GenericService.m */; };
-		7C2A35D31832A7CE004AE430 /* NSObject+SampleCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2A35A81832A7CE004AE430 /* NSObject+SampleCategory.m */; };
 		7C2A35D41832A7CE004AE430 /* GenericFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2A35B21832A7CE004AE430 /* GenericFactory.m */; };
 		7C2A35D51832A7CE004AE430 /* LoggingHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2A35B51832A7CE004AE430 /* LoggingHelper.m */; };
 		7C2A35D61832A7CE004AE430 /* GenericViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2A35BB1832A7CE004AE430 /* GenericViewController.m */; };
-		7C2A35D71832A7CE004AE430 /* SampleCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2A35BE1832A7CE004AE430 /* SampleCustomView.m */; };
 		7C2A35DC1832A7CE004AE430 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2A35CD1832A7CE004AE430 /* AppDelegate.m */; };
 		7C2A35DD1832A7CE004AE430 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2A35CE1832A7CE004AE430 /* main.m */; };
 		7C2A35E81832A9B5004AE430 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7C2A35E61832A9B5004AE430 /* InfoPlist.strings */; };
@@ -256,22 +254,16 @@
 		7C2A35A11832A7CE004AE430 /* STIPoC.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = STIPoC.xcdatamodel; sourceTree = "<group>"; };
 		7C2A35A31832A7CE004AE430 /* GenericService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenericService.h; sourceTree = "<group>"; };
 		7C2A35A41832A7CE004AE430 /* GenericService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenericService.m; sourceTree = "<group>"; };
-		7C2A35A71832A7CE004AE430 /* NSObject+SampleCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SampleCategory.h"; sourceTree = "<group>"; };
-		7C2A35A81832A7CE004AE430 /* NSObject+SampleCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SampleCategory.m"; sourceTree = "<group>"; };
 		7C2A35AA1832A7CE004AE430 /* ApplicationConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationConstants.h; sourceTree = "<group>"; };
 		7C2A35AB1832A7CE004AE430 /* LoggingConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoggingConstants.h; sourceTree = "<group>"; };
 		7C2A35AC1832A7CE004AE430 /* SegueIdentifiers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegueIdentifiers.h; sourceTree = "<group>"; };
 		7C2A35AD1832A7CE004AE430 /* ViewControllerIdentifiers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerIdentifiers.h; sourceTree = "<group>"; };
-		7C2A35AF1832A7CE004AE430 /* SampleEnums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleEnums.h; sourceTree = "<group>"; };
 		7C2A35B11832A7CE004AE430 /* GenericFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenericFactory.h; sourceTree = "<group>"; };
 		7C2A35B21832A7CE004AE430 /* GenericFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenericFactory.m; sourceTree = "<group>"; };
 		7C2A35B41832A7CE004AE430 /* LoggingHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoggingHelper.h; sourceTree = "<group>"; };
 		7C2A35B51832A7CE004AE430 /* LoggingHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoggingHelper.m; sourceTree = "<group>"; };
-		7C2A35B71832A7CE004AE430 /* SampleProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleProtocol.h; sourceTree = "<group>"; };
 		7C2A35BA1832A7CE004AE430 /* GenericViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenericViewController.h; sourceTree = "<group>"; };
 		7C2A35BB1832A7CE004AE430 /* GenericViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenericViewController.m; sourceTree = "<group>"; };
-		7C2A35BD1832A7CE004AE430 /* SampleCustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleCustomView.h; sourceTree = "<group>"; };
-		7C2A35BE1832A7CE004AE430 /* SampleCustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SampleCustomView.m; sourceTree = "<group>"; };
 		7C2A35C31832A7CE004AE430 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Storyboard.storyboard; sourceTree = "<group>"; };
 		7C2A35CC1832A7CE004AE430 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7C2A35CD1832A7CE004AE430 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -742,23 +734,11 @@
 		7C2A35A51832A7CE004AE430 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
-				7C2A35A61832A7CE004AE430 /* Categories */,
 				7C2A35A91832A7CE004AE430 /* Constants */,
-				7C2A35AE1832A7CE004AE430 /* Enums */,
 				7C2A35B01832A7CE004AE430 /* Factories */,
 				7C2A35B31832A7CE004AE430 /* Helpers */,
-				7C2A35B61832A7CE004AE430 /* Protocols */,
 			);
 			path = Infrastructure;
-			sourceTree = "<group>";
-		};
-		7C2A35A61832A7CE004AE430 /* Categories */ = {
-			isa = PBXGroup;
-			children = (
-				7C2A35A71832A7CE004AE430 /* NSObject+SampleCategory.h */,
-				7C2A35A81832A7CE004AE430 /* NSObject+SampleCategory.m */,
-			);
-			path = Categories;
 			sourceTree = "<group>";
 		};
 		7C2A35A91832A7CE004AE430 /* Constants */ = {
@@ -770,14 +750,6 @@
 				7C2A35AD1832A7CE004AE430 /* ViewControllerIdentifiers.h */,
 			);
 			path = Constants;
-			sourceTree = "<group>";
-		};
-		7C2A35AE1832A7CE004AE430 /* Enums */ = {
-			isa = PBXGroup;
-			children = (
-				7C2A35AF1832A7CE004AE430 /* SampleEnums.h */,
-			);
-			path = Enums;
 			sourceTree = "<group>";
 		};
 		7C2A35B01832A7CE004AE430 /* Factories */ = {
@@ -798,19 +770,10 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		7C2A35B61832A7CE004AE430 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				7C2A35B71832A7CE004AE430 /* SampleProtocol.h */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
 		7C2A35B81832A7CE004AE430 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
 				7C2A35B91832A7CE004AE430 /* Controllers */,
-				7C2A35BC1832A7CE004AE430 /* Custom Views */,
 				7C2A35BF1832A7CE004AE430 /* Storyboard */,
 			);
 			path = Presentation;
@@ -825,15 +788,6 @@
 				7C2BF13B183A9E2800EEE4BF /* LoginViewController.m */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		7C2A35BC1832A7CE004AE430 /* Custom Views */ = {
-			isa = PBXGroup;
-			children = (
-				7C2A35BD1832A7CE004AE430 /* SampleCustomView.h */,
-				7C2A35BE1832A7CE004AE430 /* SampleCustomView.m */,
-			);
-			path = "Custom Views";
 			sourceTree = "<group>";
 		};
 		7C2A35BF1832A7CE004AE430 /* Storyboard */ = {
@@ -1039,7 +993,6 @@
 				7C2A356B1832A734004AE430 /* NSManagedObjectContext+MagicalRecord.m in Sources */,
 				7C2A35981832A7AD004AE430 /* AFURLRequestSerialization.m in Sources */,
 				7C2A356D1832A734004AE430 /* NSManagedObjectContext+MagicalThreading.m in Sources */,
-				7C2A35D31832A7CE004AE430 /* NSObject+SampleCategory.m in Sources */,
 				7C2A35961832A7AD004AE430 /* AFSecurityPolicy.m in Sources */,
 				7C2BF13C183A9E2800EEE4BF /* LoginViewController.m in Sources */,
 				7C2A35631832A734004AE430 /* NSRelationshipDescription+MagicalDataImport.m in Sources */,
@@ -1047,7 +1000,6 @@
 				7C2A35DD1832A7CE004AE430 /* main.m in Sources */,
 				7C2A35771832A734004AE430 /* MagicalRecord.m in Sources */,
 				7C2A355D1832A734004AE430 /* DispatchQueueLogFormatter.m in Sources */,
-				7C2A35D71832A7CE004AE430 /* SampleCustomView.m in Sources */,
 				7C2A35971832A7AD004AE430 /* AFURLConnectionOperation.m in Sources */,
 				7C2A356F1832A734004AE430 /* NSPersistentStore+MagicalRecord.m in Sources */,
 				7C2A35D61832A7CE004AE430 /* GenericViewController.m in Sources */,

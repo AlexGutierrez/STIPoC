@@ -10,8 +10,13 @@
 
 @interface LoginViewController : GenericViewController
 
+/// The userID UITextField IBOutlet
 @property (weak, nonatomic) IBOutlet UITextField *userIDField;
+
+/// The domain UITextField IBOutlet
 @property (weak, nonatomic) IBOutlet UITextField *domainField;
+
+/// The password secure UITextField IBOutlet
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
 
 - (IBAction)login:(UIButton *)sender;

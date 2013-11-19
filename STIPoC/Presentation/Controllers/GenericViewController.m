@@ -18,12 +18,7 @@
 {
     [super didReceiveMemoryWarning];
 
-#if DEBUG
-
     DDLogWarn(@"Memory Warning Detected! - %@", [self class]);
-    
-#endif
-    
 }
 
 @end

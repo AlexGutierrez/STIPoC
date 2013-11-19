@@ -12,13 +12,25 @@
 
 + (instancetype)sharedInstance;
 
-// Cleans up everything in memory
+/**
+ *  Cleans up any pending persistence change in memory.
+ */
 - (void)cleanUpPersistenceChangesInMemory;
 
-// Initialization of the core data stack. Encapsulates the core data stack setup process
+/**
+ *  Initialization of the core data stack. Encapsulates the core data stack setup process in one single method.
+ */
 - (void)setupCoreDataStack;
 
+/**
+ *  Truncates all existing data in the store.
+ */
 // Truncates all records
 - (void)truncateAll;
+
+/**
+ *  When you don't have any real data... 
+ */
+- (void)dummyDataGeneration;
 
 @end
