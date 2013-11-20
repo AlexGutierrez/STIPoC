@@ -30,9 +30,9 @@
 
 - (BOOL)inputsAreValid
 {
-    NSString *userID = self.userIDField.text;
-    NSString *password = self.passwordField.text;
-    NSString *domain = self.domainField.text;
+    //NSString *userID = self.userIDField.text;
+    //NSString *password = self.passwordField.text;
+    //NSString *domain = self.domainField.text;
 
     return YES;
 }
