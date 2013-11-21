@@ -19,12 +19,7 @@
 #if (!defined(TEST))
     [[GenericService sharedInstance] setupCoreDataStack];
     [[GenericService sharedInstance] createDummyDataForProd];
-#else 
-    [[GenericService sharedInstance] setupCoreDataStackForTesting];
 #endif
-    
-    DDLogError(@"%i", [Domain countOfEntities]);
-    
     
     return YES;
 }
