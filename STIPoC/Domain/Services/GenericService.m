@@ -12,6 +12,11 @@
 
 @interface GenericService ()
 
+/**
+ *  Creates a bunch of users with its associated customer...
+ */
+- (void) createDummyCredentials;
+
 @end
 
 @implementation GenericService
@@ -70,52 +75,72 @@
 
 - (void)setupCoreDataStack
 {
+    [MagicalRecord cleanUp];
     [MagicalRecord setShouldDeleteStoreOnModelMismatch:NO];
     [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:kSTIPoCDefaultStoreName];
+    [self createDummyDataForTest:NO];
 }
 
 - (void)setupTestCoreDataStack
 {
+    [MagicalRecord cleanUp];
     [MagicalRecord setShouldDeleteStoreOnModelMismatch:NO];
     [MagicalRecord setupCoreDataStackWithInMemoryStore];
+    [self createDummyDataForTest:YES];
 }
 
 - (void)truncateAll
 {
-    [MagicalRecord saveUsingCurrentThreadContextWithBlockAndWait:^(NSManagedObjectContext *localContext) {
-        [Domain truncateAllInContext:localContext];
-    }];
+    [Domain truncateAll];
+    [[NSManagedObjectContext contextForCurrentThread] saveOnlySelfAndWait];
 }
 
-- (void)createDummyData
+- (void)createDummyDataForTest:(BOOL)forTest
 {
-    NSNumber *isFirstTime = [[NSUserDefaults standardUserDefaults] objectForKey:kSTIPoCDefaultsIsFirstTimeKey];
-    if (!isFirstTime || isFirstTime.boolValue) {
+    if (forTest) {
+        [Domain truncateAll];
         
-        [[NSUserDefaults standardUserDefaults] setObject:@NO forKey:kSTIPoCDefaultsIsFirstTimeKey];
-        
-        [MagicalRecord saveUsingCurrentThreadContextWithBlockAndWait:^(NSManagedObjectContext *localContext) {
-            
-            Customer *dummyCustomer = [Customer createInContext:localContext];
-            dummyCustomer.domainID = kSTIPoCDummyCustomerID;
-            dummyCustomer.name = kSTIPoCDummyCustomerName;
-            
-            User *dummyUser1 = [User createInContext:localContext];
-            dummyUser1.domainID = kSTIPoCDummyUser1UserID;
-            dummyUser1.firstName = kSTIPoCDummyUser1FirstName;
-            dummyUser1.lastName = kSTIPoCDummyUser1LastName;
-            dummyUser1.password = kSTIPoCDummyUser1Password;
-            dummyUser1.customer = dummyCustomer;
-            
-            User *dummyUser2 = [User createInContext:localContext];
-            dummyUser2.domainID = kSTIPoCDummyUser2UserID;
-            dummyUser2.firstName = kSTIPoCDummyUser2FirstName;
-            dummyUser2.lastName = kSTIPoCDummyUser2LastName;
-            dummyUser2.password = kSTIPoCDummyUser2Password;
-            dummyUser2.customer = dummyCustomer;
-            
-        }];
+        [self createDummyCredentials];
     }
+    else {
+        NSNumber *isFirstTime = [[NSUserDefaults standardUserDefaults] objectForKey:kSTIPoCDefaultsIsFirstTimeKey];
+        
+        if (!isFirstTime || isFirstTime.boolValue) {
+            
+            [[NSUserDefaults standardUserDefaults] setObject:@NO forKey:kSTIPoCDefaultsIsFirstTimeKey];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            
+            [self createDummyCredentials];
+            
+            
+        }
+    }
+}
+
+#pragma mark -
+#pragma mark Private Methods
+
+- (void)createDummyCredentials
+{
+    Customer *dummyCustomer = [Customer createEntity];
+    dummyCustomer.domainID = kSTIPoCDummyCustomerID;
+    dummyCustomer.name = kSTIPoCDummyCustomerName;
+    
+    User *dummyUser1 = [User createEntity];
+    dummyUser1.domainID = kSTIPoCDummyUser1UserID;
+    dummyUser1.firstName = kSTIPoCDummyUser1FirstName;
+    dummyUser1.lastName = kSTIPoCDummyUser1LastName;
+    dummyUser1.password = kSTIPoCDummyUser1Password;
+    dummyUser1.customer = dummyCustomer;
+    
+    User *dummyUser2 = [User createEntity];
+    dummyUser2.domainID = kSTIPoCDummyUser2UserID;
+    dummyUser2.firstName = kSTIPoCDummyUser2FirstName;
+    dummyUser2.lastName = kSTIPoCDummyUser2LastName;
+    dummyUser2.password = kSTIPoCDummyUser2Password;
+    dummyUser2.customer = dummyCustomer;
+    
+    [[NSManagedObjectContext contextForCurrentThread] saveOnlySelfAndWait];
 }
 
 @end

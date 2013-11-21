@@ -81,6 +81,8 @@ static NSString *const kSTIPoCDummyUser2Password = @"1234";
 
 /**
  *  Cleans up any pending persistence change in memory.
+ *
+ *  @param forTest whether the dummy creation is for testing or not
  */
 - (void)cleanUpPersistenceChangesInMemory;
 
@@ -100,8 +102,10 @@ static NSString *const kSTIPoCDummyUser2Password = @"1234";
 - (void)truncateAll;
 
 /**
- *  When you don't have any real data... 
+ *  When you don't have any real data...
+ *
+ *  @param forTest whether the dummy creation is for testing or not
  */
-- (void)createDummyData;
+- (void)createDummyDataForTest:(BOOL)forTest;
 
 @end

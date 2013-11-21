@@ -89,7 +89,7 @@
 		7C2BF13C183A9E2800EEE4BF /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2BF13B183A9E2800EEE4BF /* LoginViewController.m */; };
 		7C358BDE183BF25E00B9390D /* GenericServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C358BDC183BF25E00B9390D /* GenericServiceTests.m */; };
 		7C358BDF183BF25E00B9390D /* SessionsServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C358BDD183BF25E00B9390D /* SessionsServiceTests.m */; };
-		7C3D1004183D58E1003FAC3F /* ATestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C3D1003183D58E1003FAC3F /* ATestCase.m */; };
+		7C3D1004183D58E1003FAC3F /* UserTestCases.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C3D1003183D58E1003FAC3F /* UserTestCases.m */; };
 		7C4A38FB183A67B100978149 /* NSDate+ISO8601Parsing.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C4A38F0183A67B100978149 /* NSDate+ISO8601Parsing.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		7C4A38FC183A67B100978149 /* NSDate+ISO8601Unparsing.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C4A38F2183A67B100978149 /* NSDate+ISO8601Unparsing.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		7C4A38FD183A67B100978149 /* SelfService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C4A38F4183A67B100978149 /* SelfService.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -279,7 +279,7 @@
 		7C2BF13B183A9E2800EEE4BF /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		7C358BDC183BF25E00B9390D /* GenericServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenericServiceTests.m; sourceTree = "<group>"; };
 		7C358BDD183BF25E00B9390D /* SessionsServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionsServiceTests.m; sourceTree = "<group>"; };
-		7C3D1003183D58E1003FAC3F /* ATestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATestCase.m; sourceTree = "<group>"; };
+		7C3D1003183D58E1003FAC3F /* UserTestCases.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTestCases.m; sourceTree = "<group>"; };
 		7C4A38EF183A67B100978149 /* NSDate+ISO8601Parsing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ISO8601Parsing.h"; sourceTree = "<group>"; };
 		7C4A38F0183A67B100978149 /* NSDate+ISO8601Parsing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ISO8601Parsing.m"; sourceTree = "<group>"; };
 		7C4A38F1183A67B100978149 /* NSDate+ISO8601Unparsing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ISO8601Unparsing.h"; sourceTree = "<group>"; };
@@ -861,7 +861,7 @@
 		7C3D1002183D58D5003FAC3F /* Managed Objects */ = {
 			isa = PBXGroup;
 			children = (
-				7C3D1003183D58E1003FAC3F /* ATestCase.m */,
+				7C3D1003183D58E1003FAC3F /* UserTestCases.m */,
 			);
 			path = "Managed Objects";
 			sourceTree = "<group>";
@@ -1105,7 +1105,7 @@
 				7C1F241C1836D3F500E90145 /* MRWeakProxy.m in Sources */,
 				7C1F24111836D3F500E90145 /* MDRadialProgressLabel.m in Sources */,
 				7C1F24131836D3F500E90145 /* MDRadialProgressView.m in Sources */,
-				7C3D1004183D58E1003FAC3F /* ATestCase.m in Sources */,
+				7C3D1004183D58E1003FAC3F /* UserTestCases.m in Sources */,
 				7C1F24141836D3F500E90145 /* MRBlurView.m in Sources */,
 				7C4A391D183A81E300978149 /* SelfServiceGenericTests.m in Sources */,
 				7C1F24151836D3F500E90145 /* UIImage+MRImageEffects.m in Sources */,

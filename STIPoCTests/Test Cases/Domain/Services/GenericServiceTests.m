@@ -20,21 +20,16 @@ static GenericService *genericService;
 
 @implementation GenericServiceTests
 
-+ (void)setUp
+- (void)setUp
 {
     [super setUp];
     
     genericService = [GenericService sharedInstance];
     [genericService setupTestCoreDataStack];
-    [genericService createDummyData];
 }
 
-+ (void)tearDown
+- (void)tearDown
 {
-    [MagicalRecord saveUsingCurrentThreadContextWithBlockAndWait:^(NSManagedObjectContext *localContext) {
-         [Domain truncateAllInContext:localContext];
-     }];
-    
     [genericService cleanUpPersistenceChangesInMemory];
     genericService = nil;
     
@@ -91,24 +86,19 @@ static GenericService *genericService;
     XCTAssertNil([NSPersistentStore defaultPersistentStore], @"Default Persistent Store should be cleaned up.");
     XCTAssertNil([NSPersistentStoreCoordinator defaultStoreCoordinator], @"Default Persistent Store Coordinator should be cleaned up.");
     XCTAssertNil([NSManagedObjectContext defaultContext], @"Default Managed Object Context should be cleaned up.");
-    [genericService setupTestCoreDataStack];
 }
 
 - (void)testGenericServiceTruncatesAllData
 {
-    [MagicalRecord saveWithBlockAndWait:^(NSManagedObjectContext *localContext) {
-        [Domain createInContext:localContext];
-        [Domain createInContext:localContext];
-        [Domain createInContext:localContext];
-    }];
+    [Domain createEntity];
+    [Domain createEntity];
+    [Domain createEntity];
     
-    XCTAssert([Domain countOfEntities] > 0, @"Data before truncation test should be more than 0!");
+    XCTAssertTrue([Domain countOfEntities] > 0, @"Data before truncation test should be more than 0!");
     
     [genericService truncateAll];
     
-    XCTAssert([Domain countOfEntities] == 0, @"All data should be truncated");
-    
-    [genericService createDummyData];
+    XCTAssertTrue([Domain countOfEntities] == 0, @"All data should be truncated");
 }
 
 #pragma mark -
@@ -164,22 +154,27 @@ static GenericService *genericService;
 
 - (void)testDummyDataCreationSetsFirstTimeKeyValueInDefaults
 {
+    [genericService cleanUpPersistenceChangesInMemory];
+    
+    [genericService setupCoreDataStack];
+    
     id firstTimeKeyValue = [[NSUserDefaults standardUserDefaults] objectForKey:kSTIPoCDefaultsIsFirstTimeKey];
     
     XCTAssertNotNil(firstTimeKeyValue,  @"First time key value not set in defaults.");
 }
 
-- (void)testDummyDataCreationsExecutedOnlyTheFirstTime
+- (void)testDummyDataCreationExecutedOnlyTheFirstTime
 {
-    [MagicalRecord saveUsingCurrentThreadContextWithBlockAndWait:^(NSManagedObjectContext *localContext) {
-        [Domain truncateAllInContext:localContext];
-    }];
-    [genericService createDummyData];
+    [genericService cleanUpPersistenceChangesInMemory];
+    
+    [genericService createDummyDataForTest:NO];
+    [Domain truncateAll];
+    [genericService createDummyDataForTest:NO];
+    [[NSManagedObjectContext contextForCurrentThread] saveOnlySelfAndWait];
     
     XCTAssertFalse(([genericService dummyUser1] || [genericService dummyUser2] || [genericService dummyCustomer]), @"Dummy data should be stored only the first time.");
     
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:kSTIPoCDefaultsIsFirstTimeKey];
-    [genericService createDummyData];
 }
 
 @end

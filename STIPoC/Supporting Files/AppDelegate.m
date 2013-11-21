@@ -9,13 +9,23 @@
 #import "AppDelegate.h"
 #import "GenericService.h"
 #import "LoggingHelper.h"
-
+#import "User.h"
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [[LoggingHelper sharedInstance] setupLogger];
-    [[GenericService sharedInstance] setupCoreDataStack];
+    [[GenericService sharedInstance] setupTestCoreDataStack];
+    
+    //[Domain truncateAll];
+    //[[NSManagedObjectContext contextForCurrentThread] saveOnlySelfAndWait];
+    DDLogError(@"%@", [Domain findAll]);
+    /*[MagicalRecord saveUsingCurrentThreadContextWithBlockAndWait:^(NSManagedObjectContext *localContext) {
+        [User createEntity];
+        [User createEntity];
+        [User createEntity];
+        [User createEntity];
+    }];*/
     
     return YES;
 }

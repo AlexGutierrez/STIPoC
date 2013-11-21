@@ -9,6 +9,7 @@
 #import <XCTest/XCTest.h>
 #import "User+CustomAccessors.h"
 #import "Customer.h"
+#import "GenericService.h"
 
 static NSString *const kSTIPoCTestsUserID = @"agutierrez";
 static NSString *const kSTIPoCTestsUserFirstName = @"Alex";
@@ -17,19 +18,22 @@ static NSString *const kSTIPoCTestsUserLastName = @"Gutierrez";
 static NSString *const kSTIPoCTestsCustomerID = @"40257";
 static NSString *const kSTIPoCTestsCustomerName = @"NASDAQ";
 
-@interface ATestCase : XCTestCase
+@interface UserTestCases : XCTestCase
 
 @end
 
-@implementation ATestCase
+@implementation UserTestCases
 
 - (void)setUp
 {
+    [[GenericService sharedInstance] setupTestCoreDataStack];
     [super setUp];
 }
 
 - (void)tearDown
 {
+    [[GenericService sharedInstance] cleanUpPersistenceChangesInMemory];
+    
     [super tearDown];
 }
 

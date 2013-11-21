@@ -27,42 +27,18 @@ static SessionsService *sessionsService;
 
 @implementation SessionsServiceTests
 
-+ (void)setUp
+- (void)setUp
 {
     [super setUp];
     
     sessionsService = [SessionsService sharedInstance];
     [sessionsService setupTestCoreDataStack];
-    [sessionsService createDummyData];
-}
-
-+ (void)tearDown
-{
-    [MagicalRecord saveUsingCurrentThreadContextWithBlockAndWait:^(NSManagedObjectContext *localContext) {
-        [Domain truncateAllInContext:localContext];
-    }];
-    
-    [sessionsService cleanUpPersistenceChangesInMemory];
-    sessionsService = nil;
-    
-    [super tearDown];
-}
-
-- (void)setUp
-{
-    [super setUp];
-    
-    [sessionsService createDummyData];
 }
 
 - (void)tearDown
 {
-    [sessionsService setValue:nil forKey:@"currentUser"];
-    [sessionsService setValue:nil forKey:@"lastUser"];
-    
-    [[NSUserDefaults standardUserDefaults] removeObjectForKey:kSTIPoCDefaultsIsFirstTimeKey];
-    [[NSUserDefaults standardUserDefaults] removeObjectForKey:[NSString stringWithFormat:@"%@/%@/%@", kSTIPoCDummyUser1UserID, kSTIPoCDummyCustomerID, kSTIPoCDummyUser1Password]];
-    [[NSUserDefaults standardUserDefaults] removeObjectForKey:[NSString stringWithFormat:@"%@/%@/%@", kSTIPoCDummyUser2UserID, kSTIPoCDummyCustomerID, kSTIPoCDummyUser2Password]];
+    [sessionsService cleanUpPersistenceChangesInMemory];
+    sessionsService = nil;
     
     [SSKeychain deletePasswordForService:kSTIPoCServiceName account:[NSString stringWithFormat:@"%@/%@", [sessionsService dummyUser1].customer.domainID, [sessionsService dummyUser1].domainID]];
     [SSKeychain deletePasswordForService:kSTIPoCServiceName account:[NSString stringWithFormat:@"%@/%@", [sessionsService dummyUser2].customer.domainID, [sessionsService dummyUser2].domainID]];
@@ -100,15 +76,19 @@ static SessionsService *sessionsService;
 
 - (void)testCurrentUserIsTheSameAsInDefaults
 {
+    [sessionsService loginWithUserID:[sessionsService dummyUser1].domainID customerID:[sessionsService dummyUser1].customer.domainID password:kSTIPoCDummyUser1Password remember:YES];
+    
     User *currentUser = [sessionsService currentUser];
-    User *currentUser2 = [[NSUserDefaults standardUserDefaults] objectForKey:kSTIPoCDefaultsCurrentUserKey];
+    User *currentUser2 = [User findFirstByAttribute:kSTIPoCDomainIDAttributeKey withValue:[[NSUserDefaults standardUserDefaults] objectForKey:kSTIPoCDefaultsCurrentUserKey]];
     XCTAssertEqualObjects(currentUser, currentUser2, @"User retrieved from the service must be equal to the one retrieved from the defaults");
 }
 
 - (void)testLastUserIsTheSameAsInDefaults
 {
+    [sessionsService loginWithUserID:[sessionsService dummyUser1].domainID customerID:[sessionsService dummyUser1].customer.domainID password:kSTIPoCDummyUser1Password remember:YES];
+    
     User *lastUser = [sessionsService lastUser];
-    User *lastUser2 = [[NSUserDefaults standardUserDefaults] objectForKey:kSTIPoCDefaultsLastUserKey];
+    User *lastUser2 = [User findFirstByAttribute:kSTIPoCDomainIDAttributeKey withValue:[[NSUserDefaults standardUserDefaults] objectForKey:kSTIPoCDefaultsLastUserKey]];
     XCTAssertEqualObjects(lastUser, lastUser2, @"User retrieved from the service must be equal to the one retrieved from the defaults");
 }
 
