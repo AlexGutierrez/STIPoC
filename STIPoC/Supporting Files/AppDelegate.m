@@ -15,17 +15,16 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [[LoggingHelper sharedInstance] setupLogger];
-    [[GenericService sharedInstance] setupTestCoreDataStack];
     
-    //[Domain truncateAll];
-    //[[NSManagedObjectContext contextForCurrentThread] saveOnlySelfAndWait];
-    DDLogError(@"%@", [Domain findAll]);
-    /*[MagicalRecord saveUsingCurrentThreadContextWithBlockAndWait:^(NSManagedObjectContext *localContext) {
-        [User createEntity];
-        [User createEntity];
-        [User createEntity];
-        [User createEntity];
-    }];*/
+#if (!defined(TEST))
+    [[GenericService sharedInstance] setupCoreDataStack];
+    [[GenericService sharedInstance] createDummyDataForProd];
+#else 
+    [[GenericService sharedInstance] setupCoreDataStackForTesting];
+#endif
+    
+    DDLogError(@"%i", [Domain countOfEntities]);
+    
     
     return YES;
 }

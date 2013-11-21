@@ -94,7 +94,7 @@ static NSString *const kSTIPoCDummyUser2Password = @"1234";
 /**
  *  Initialization of the core data stack for testing. Instead of using the real one, it creates a core data stack in memory.
  */
-- (void)setupTestCoreDataStack;
+- (void)setupCoreDataStackForTesting;
 
 /**
  *  Truncates all existing data in the store.
@@ -102,10 +102,15 @@ static NSString *const kSTIPoCDummyUser2Password = @"1234";
 - (void)truncateAll;
 
 /**
- *  When you don't have any real data...
+ *  Creates dummy data only the first time the app runs...
  *
- *  @param forTest whether the dummy creation is for testing or not
  */
-- (void)createDummyDataForTest:(BOOL)forTest;
+- (void)createDummyDataForProd;
+
+/**
+ *  Creates dummy data...
+ *
+ */
+- (void)createDummyData;
 
 @end

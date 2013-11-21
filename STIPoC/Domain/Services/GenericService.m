@@ -12,11 +12,6 @@
 
 @interface GenericService ()
 
-/**
- *  Creates a bunch of users with its associated customer...
- */
-- (void) createDummyCredentials;
-
 @end
 
 @implementation GenericService
@@ -78,15 +73,13 @@
     [MagicalRecord cleanUp];
     [MagicalRecord setShouldDeleteStoreOnModelMismatch:NO];
     [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:kSTIPoCDefaultStoreName];
-    [self createDummyDataForTest:NO];
 }
 
-- (void)setupTestCoreDataStack
+- (void)setupCoreDataStackForTesting
 {
     [MagicalRecord cleanUp];
     [MagicalRecord setShouldDeleteStoreOnModelMismatch:NO];
     [MagicalRecord setupCoreDataStackWithInMemoryStore];
-    [self createDummyDataForTest:YES];
 }
 
 - (void)truncateAll
@@ -95,32 +88,22 @@
     [[NSManagedObjectContext contextForCurrentThread] saveOnlySelfAndWait];
 }
 
-- (void)createDummyDataForTest:(BOOL)forTest
+- (void)createDummyDataForProd
 {
-    if (forTest) {
-        [Domain truncateAll];
+    NSNumber *isFirstTime = [[NSUserDefaults standardUserDefaults] objectForKey:kSTIPoCDefaultsIsFirstTimeKey];
+    
+    if (!isFirstTime || isFirstTime.boolValue) {
         
-        [self createDummyCredentials];
-    }
-    else {
-        NSNumber *isFirstTime = [[NSUserDefaults standardUserDefaults] objectForKey:kSTIPoCDefaultsIsFirstTimeKey];
+        [[NSUserDefaults standardUserDefaults] setObject:@NO forKey:kSTIPoCDefaultsIsFirstTimeKey];
+        [[NSUserDefaults standardUserDefaults] synchronize];
         
-        if (!isFirstTime || isFirstTime.boolValue) {
-            
-            [[NSUserDefaults standardUserDefaults] setObject:@NO forKey:kSTIPoCDefaultsIsFirstTimeKey];
-            [[NSUserDefaults standardUserDefaults] synchronize];
-            
-            [self createDummyCredentials];
-            
-            
-        }
+#if (!defined(TEST))
+        [self createDummyData];
+#endif
     }
 }
 
-#pragma mark -
-#pragma mark Private Methods
-
-- (void)createDummyCredentials
+- (void)createDummyData
 {
     Customer *dummyCustomer = [Customer createEntity];
     dummyCustomer.domainID = kSTIPoCDummyCustomerID;
