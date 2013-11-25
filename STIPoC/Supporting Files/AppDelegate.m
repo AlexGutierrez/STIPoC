@@ -9,7 +9,9 @@
 #import "AppDelegate.h"
 #import "GenericService.h"
 #import "LoggingHelper.h"
-#import "User.h"
+
+#import "SelfServiceManager.h"
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -20,6 +22,8 @@
     [[GenericService sharedInstance] setupCoreDataStack];
     [[GenericService sharedInstance] createDummyDataForProd];
 #endif
+    
+    [[SelfServiceManager sharedInstance] startGetOrdersRequestOperation];
     
     return YES;
 }

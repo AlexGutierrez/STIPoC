@@ -87,12 +87,19 @@
 		7C2A35DD1832A7CE004AE430 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2A35CE1832A7CE004AE430 /* main.m */; };
 		7C2A35E81832A9B5004AE430 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7C2A35E61832A9B5004AE430 /* InfoPlist.strings */; };
 		7C2BF13C183A9E2800EEE4BF /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2BF13B183A9E2800EEE4BF /* LoginViewController.m */; };
-		7C4A38FB183A67B100978149 /* NSDate+ISO8601Parsing.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C4A38F0183A67B100978149 /* NSDate+ISO8601Parsing.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		7C4A38FC183A67B100978149 /* NSDate+ISO8601Unparsing.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C4A38F2183A67B100978149 /* NSDate+ISO8601Unparsing.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		7C4A38FD183A67B100978149 /* SelfService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C4A38F4183A67B100978149 /* SelfService.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		7C4A38FE183A67B100978149 /* USAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C4A38F6183A67B100978149 /* USAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		7C4A38FF183A67B100978149 /* USGlobals.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C4A38F8183A67B100978149 /* USGlobals.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		7C4A3900183A67B100978149 /* xsd.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C4A38FA183A67B100978149 /* xsd.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7C363C95183FA7CA00003723 /* LineItemAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C363C88183FA7CA00003723 /* LineItemAttribute.m */; };
+		7C363C96183FA7CA00003723 /* OrderSummary.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C363C8A183FA7CA00003723 /* OrderSummary.m */; };
+		7C363C97183FA7CA00003723 /* QuoteLineItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C363C8C183FA7CA00003723 /* QuoteLineItem.m */; };
+		7C363C98183FA7CA00003723 /* GetOrderRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C363C8F183FA7CA00003723 /* GetOrderRequest.m */; };
+		7C363C99183FA7CA00003723 /* GetOrdersRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C363C92183FA7CA00003723 /* GetOrdersRequest.m */; };
+		7C363C9C183FA96D00003723 /* GetOrdersResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C363C9B183FA96D00003723 /* GetOrdersResult.m */; };
+		7C363C9F183FAA4600003723 /* GetOrderResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C363C9E183FAA4600003723 /* GetOrderResult.m */; };
+		7C363CA5183FAB5900003723 /* GenericSelfServiceResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C363CA4183FAB5900003723 /* GenericSelfServiceResult.m */; };
+		7C363CAB183FAFD600003723 /* GetOrdersXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C363CAA183FAFD600003723 /* GetOrdersXMLParser.m */; };
+		7C363CAF183FB35000003723 /* NSObject+ObjectMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C363CAE183FB35000003723 /* NSObject+ObjectMap.m */; };
+		7C363CB2183FB9DA00003723 /* GenericXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C363CB1183FB9DA00003723 /* GenericXMLParser.m */; };
+		7C363CB9183FEE2C00003723 /* SelfServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C363CB8183FEE2C00003723 /* SelfServiceManager.m */; };
+		7C363CBC1840082000003723 /* GenericSelfServiceRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C363CBB1840082000003723 /* GenericSelfServiceRequest.m */; };
 		7C4A391D183A81E300978149 /* SelfServiceGenericTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C4A391B183A81E300978149 /* SelfServiceGenericTests.m */; };
 		7C4A391E183A81E300978149 /* SelfServiceGetOrdersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C4A391C183A81E300978149 /* SelfServiceGetOrdersTests.m */; };
 		7C78B0BF183E64330022922D /* GenericServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C78B0BD183E64330022922D /* GenericServiceTests.m */; };
@@ -101,6 +108,11 @@
 		7C8A3505183D0FC400802B89 /* Domain.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8A3504183D0FC400802B89 /* Domain.m */; };
 		7C8A350B183D100500802B89 /* Customer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8A350A183D100500802B89 /* Customer.m */; };
 		7C8A3510183D109400802B89 /* User+CustomAccessors.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8A350F183D109400802B89 /* User+CustomAccessors.m */; };
+		7C9569F6184394BC000A5595 /* GetOrderXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C9569F5184394BC000A5595 /* GetOrderXMLParser.m */; };
+		7C9569FA18439C43000A5595 /* SelfServiceEnumTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C9569F918439C43000A5595 /* SelfServiceEnumTranslator.m */; };
+		7C956A021843A5B5000A5595 /* ModifyOrderDetailsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C956A011843A5B5000A5595 /* ModifyOrderDetailsRequest.m */; };
+		7C956A051843A5C6000A5595 /* ModifyOrderDetailsResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C956A041843A5C6000A5595 /* ModifyOrderDetailsResult.m */; };
+		7C956A081843A5E6000A5595 /* ModifyOrderDetailsXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C956A071843A5E6000A5595 /* ModifyOrderDetailsXMLParser.m */; };
 		7C958443183AC0570065C878 /* InspectableLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C958442183AC0570065C878 /* InspectableLoginViewController.m */; };
 		7C958445183AC35D0065C878 /* LoginViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C958444183AC35D0065C878 /* LoginViewControllerTests.m */; };
 		7C958448183AC4580065C878 /* SessionsService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C958447183AC4580065C878 /* SessionsService.m */; };
@@ -276,18 +288,32 @@
 		7C2A35E71832A9B5004AE430 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7C2BF13A183A9E2800EEE4BF /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		7C2BF13B183A9E2800EEE4BF /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		7C4A38EF183A67B100978149 /* NSDate+ISO8601Parsing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ISO8601Parsing.h"; sourceTree = "<group>"; };
-		7C4A38F0183A67B100978149 /* NSDate+ISO8601Parsing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ISO8601Parsing.m"; sourceTree = "<group>"; };
-		7C4A38F1183A67B100978149 /* NSDate+ISO8601Unparsing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ISO8601Unparsing.h"; sourceTree = "<group>"; };
-		7C4A38F2183A67B100978149 /* NSDate+ISO8601Unparsing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ISO8601Unparsing.m"; sourceTree = "<group>"; };
-		7C4A38F3183A67B100978149 /* SelfService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelfService.h; sourceTree = "<group>"; };
-		7C4A38F4183A67B100978149 /* SelfService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelfService.m; sourceTree = "<group>"; };
-		7C4A38F5183A67B100978149 /* USAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USAdditions.h; sourceTree = "<group>"; };
-		7C4A38F6183A67B100978149 /* USAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USAdditions.m; sourceTree = "<group>"; };
-		7C4A38F7183A67B100978149 /* USGlobals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USGlobals.h; sourceTree = "<group>"; };
-		7C4A38F8183A67B100978149 /* USGlobals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USGlobals.m; sourceTree = "<group>"; };
-		7C4A38F9183A67B100978149 /* xsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xsd.h; sourceTree = "<group>"; };
-		7C4A38FA183A67B100978149 /* xsd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xsd.m; sourceTree = "<group>"; };
+		7C363C87183FA7CA00003723 /* LineItemAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineItemAttribute.h; sourceTree = "<group>"; };
+		7C363C88183FA7CA00003723 /* LineItemAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineItemAttribute.m; sourceTree = "<group>"; };
+		7C363C89183FA7CA00003723 /* OrderSummary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderSummary.h; sourceTree = "<group>"; };
+		7C363C8A183FA7CA00003723 /* OrderSummary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderSummary.m; sourceTree = "<group>"; };
+		7C363C8B183FA7CA00003723 /* QuoteLineItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteLineItem.h; sourceTree = "<group>"; };
+		7C363C8C183FA7CA00003723 /* QuoteLineItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteLineItem.m; sourceTree = "<group>"; };
+		7C363C8E183FA7CA00003723 /* GetOrderRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetOrderRequest.h; sourceTree = "<group>"; };
+		7C363C8F183FA7CA00003723 /* GetOrderRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetOrderRequest.m; sourceTree = "<group>"; };
+		7C363C91183FA7CA00003723 /* GetOrdersRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetOrdersRequest.h; sourceTree = "<group>"; };
+		7C363C92183FA7CA00003723 /* GetOrdersRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetOrdersRequest.m; sourceTree = "<group>"; };
+		7C363C9A183FA96D00003723 /* GetOrdersResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetOrdersResult.h; sourceTree = "<group>"; };
+		7C363C9B183FA96D00003723 /* GetOrdersResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetOrdersResult.m; sourceTree = "<group>"; };
+		7C363C9D183FAA4600003723 /* GetOrderResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetOrderResult.h; sourceTree = "<group>"; };
+		7C363C9E183FAA4600003723 /* GetOrderResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetOrderResult.m; sourceTree = "<group>"; };
+		7C363CA3183FAB5900003723 /* GenericSelfServiceResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenericSelfServiceResult.h; sourceTree = "<group>"; };
+		7C363CA4183FAB5900003723 /* GenericSelfServiceResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenericSelfServiceResult.m; sourceTree = "<group>"; };
+		7C363CA9183FAFD600003723 /* GetOrdersXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetOrdersXMLParser.h; sourceTree = "<group>"; };
+		7C363CAA183FAFD600003723 /* GetOrdersXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetOrdersXMLParser.m; sourceTree = "<group>"; };
+		7C363CAD183FB35000003723 /* NSObject+ObjectMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ObjectMap.h"; sourceTree = "<group>"; };
+		7C363CAE183FB35000003723 /* NSObject+ObjectMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ObjectMap.m"; sourceTree = "<group>"; };
+		7C363CB0183FB9DA00003723 /* GenericXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenericXMLParser.h; sourceTree = "<group>"; };
+		7C363CB1183FB9DA00003723 /* GenericXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenericXMLParser.m; sourceTree = "<group>"; };
+		7C363CB7183FEE2C00003723 /* SelfServiceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelfServiceManager.h; sourceTree = "<group>"; };
+		7C363CB8183FEE2C00003723 /* SelfServiceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelfServiceManager.m; sourceTree = "<group>"; };
+		7C363CBA1840082000003723 /* GenericSelfServiceRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenericSelfServiceRequest.h; sourceTree = "<group>"; };
+		7C363CBB1840082000003723 /* GenericSelfServiceRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenericSelfServiceRequest.m; sourceTree = "<group>"; };
 		7C4A391B183A81E300978149 /* SelfServiceGenericTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelfServiceGenericTests.m; sourceTree = "<group>"; };
 		7C4A391C183A81E300978149 /* SelfServiceGetOrdersTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelfServiceGetOrdersTests.m; sourceTree = "<group>"; };
 		7C78B0BD183E64330022922D /* GenericServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenericServiceTests.m; sourceTree = "<group>"; };
@@ -300,6 +326,22 @@
 		7C8A350A183D100500802B89 /* Customer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Customer.m; sourceTree = "<group>"; };
 		7C8A350E183D109400802B89 /* User+CustomAccessors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "User+CustomAccessors.h"; sourceTree = "<group>"; };
 		7C8A350F183D109400802B89 /* User+CustomAccessors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+CustomAccessors.m"; sourceTree = "<group>"; };
+		7C9569F4184394BC000A5595 /* GetOrderXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetOrderXMLParser.h; sourceTree = "<group>"; };
+		7C9569F5184394BC000A5595 /* GetOrderXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetOrderXMLParser.m; sourceTree = "<group>"; };
+		7C9569F818439C43000A5595 /* SelfServiceEnumTranslator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelfServiceEnumTranslator.h; sourceTree = "<group>"; };
+		7C9569F918439C43000A5595 /* SelfServiceEnumTranslator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelfServiceEnumTranslator.m; sourceTree = "<group>"; };
+		7C9569FB18439C69000A5595 /* OrderIdType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderIdType.h; sourceTree = "<group>"; };
+		7C9569FC18439D1B000A5595 /* OrderingType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderingType.h; sourceTree = "<group>"; };
+		7C9569FD18439D31000A5595 /* CustomerIdType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomerIdType.h; sourceTree = "<group>"; };
+		7C9569FE1843A0BD000A5595 /* ResponseCode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResponseCode.h; sourceTree = "<group>"; };
+		7C9569FF1843A115000A5595 /* SourceSystem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SourceSystem.h; sourceTree = "<group>"; };
+		7C956A001843A5B5000A5595 /* ModifyOrderDetailsRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModifyOrderDetailsRequest.h; sourceTree = "<group>"; };
+		7C956A011843A5B5000A5595 /* ModifyOrderDetailsRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModifyOrderDetailsRequest.m; sourceTree = "<group>"; };
+		7C956A031843A5C6000A5595 /* ModifyOrderDetailsResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModifyOrderDetailsResult.h; sourceTree = "<group>"; };
+		7C956A041843A5C6000A5595 /* ModifyOrderDetailsResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModifyOrderDetailsResult.m; sourceTree = "<group>"; };
+		7C956A061843A5E6000A5595 /* ModifyOrderDetailsXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModifyOrderDetailsXMLParser.h; sourceTree = "<group>"; };
+		7C956A071843A5E6000A5595 /* ModifyOrderDetailsXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModifyOrderDetailsXMLParser.m; sourceTree = "<group>"; };
+		7C956A0B1843E0F7000A5595 /* SelfServiceConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelfServiceConstants.h; sourceTree = "<group>"; };
 		7C958441183AC0570065C878 /* InspectableLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InspectableLoginViewController.h; sourceTree = "<group>"; };
 		7C958442183AC0570065C878 /* InspectableLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InspectableLoginViewController.m; sourceTree = "<group>"; };
 		7C958444183AC35D0065C878 /* LoginViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewControllerTests.m; sourceTree = "<group>"; };
@@ -447,25 +489,6 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		7C1F241D1836D40500E90145 /* Self Service */ = {
-			isa = PBXGroup;
-			children = (
-				7C4A38EF183A67B100978149 /* NSDate+ISO8601Parsing.h */,
-				7C4A38F0183A67B100978149 /* NSDate+ISO8601Parsing.m */,
-				7C4A38F1183A67B100978149 /* NSDate+ISO8601Unparsing.h */,
-				7C4A38F2183A67B100978149 /* NSDate+ISO8601Unparsing.m */,
-				7C4A38F3183A67B100978149 /* SelfService.h */,
-				7C4A38F4183A67B100978149 /* SelfService.m */,
-				7C4A38F5183A67B100978149 /* USAdditions.h */,
-				7C4A38F6183A67B100978149 /* USAdditions.m */,
-				7C4A38F7183A67B100978149 /* USGlobals.h */,
-				7C4A38F8183A67B100978149 /* USGlobals.m */,
-				7C4A38F9183A67B100978149 /* xsd.h */,
-				7C4A38FA183A67B100978149 /* xsd.m */,
-			);
-			path = "Self Service";
-			sourceTree = "<group>";
-		};
 		7C2A34781832A6EB004AE430 = {
 			isa = PBXGroup;
 			children = (
@@ -536,6 +559,7 @@
 		7C2A350A1832A734004AE430 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				7C363CAC183FB35000003723 /* NSObject-ObjectMap */,
 				7C95844B183ACF4E0065C878 /* SSKeychain */,
 				7C2A357E1832A7AD004AE430 /* AFNetworking */,
 				7C2A350B1832A734004AE430 /* Lumberjack */,
@@ -751,6 +775,7 @@
 				7C2A35AC1832A7CE004AE430 /* SegueIdentifiers.h */,
 				7C2A35AD1832A7CE004AE430 /* ViewControllerIdentifiers.h */,
 				7C15477D183D4EA400792B0A /* CoreDataAttributeKeys.h */,
+				7C956A0B1843E0F7000A5595 /* SelfServiceConstants.h */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -804,7 +829,7 @@
 		7C2A35C41832A7CE004AE430 /* Service Agents */ = {
 			isa = PBXGroup;
 			children = (
-				7C1F241D1836D40500E90145 /* Self Service */,
+				7C363C85183FA7CA00003723 /* Self Service */,
 			);
 			path = "Service Agents";
 			sourceTree = "<group>";
@@ -845,6 +870,103 @@
 				7C958442183AC0570065C878 /* InspectableLoginViewController.m */,
 			);
 			path = Presentation;
+			sourceTree = "<group>";
+		};
+		7C363C85183FA7CA00003723 /* Self Service */ = {
+			isa = PBXGroup;
+			children = (
+				7C363C86183FA7CA00003723 /* Entities */,
+				7C9569F718439C33000A5595 /* Enums */,
+				7C363C8D183FA7CA00003723 /* Get Order */,
+				7C363C90183FA7CA00003723 /* Get Orders */,
+				7C363C93183FA7CA00003723 /* Global */,
+				7C363CB6183FEE2C00003723 /* Manager */,
+				7C363C94183FA7CA00003723 /* Modify Order Details */,
+			);
+			path = "Self Service";
+			sourceTree = "<group>";
+		};
+		7C363C86183FA7CA00003723 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				7C363C87183FA7CA00003723 /* LineItemAttribute.h */,
+				7C363C88183FA7CA00003723 /* LineItemAttribute.m */,
+				7C363C89183FA7CA00003723 /* OrderSummary.h */,
+				7C363C8A183FA7CA00003723 /* OrderSummary.m */,
+				7C363C8B183FA7CA00003723 /* QuoteLineItem.h */,
+				7C363C8C183FA7CA00003723 /* QuoteLineItem.m */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		7C363C8D183FA7CA00003723 /* Get Order */ = {
+			isa = PBXGroup;
+			children = (
+				7C363C8E183FA7CA00003723 /* GetOrderRequest.h */,
+				7C363C8F183FA7CA00003723 /* GetOrderRequest.m */,
+				7C363C9D183FAA4600003723 /* GetOrderResult.h */,
+				7C363C9E183FAA4600003723 /* GetOrderResult.m */,
+				7C9569F4184394BC000A5595 /* GetOrderXMLParser.h */,
+				7C9569F5184394BC000A5595 /* GetOrderXMLParser.m */,
+			);
+			path = "Get Order";
+			sourceTree = "<group>";
+		};
+		7C363C90183FA7CA00003723 /* Get Orders */ = {
+			isa = PBXGroup;
+			children = (
+				7C363C91183FA7CA00003723 /* GetOrdersRequest.h */,
+				7C363C92183FA7CA00003723 /* GetOrdersRequest.m */,
+				7C363C9A183FA96D00003723 /* GetOrdersResult.h */,
+				7C363C9B183FA96D00003723 /* GetOrdersResult.m */,
+				7C363CA9183FAFD600003723 /* GetOrdersXMLParser.h */,
+				7C363CAA183FAFD600003723 /* GetOrdersXMLParser.m */,
+			);
+			path = "Get Orders";
+			sourceTree = "<group>";
+		};
+		7C363C93183FA7CA00003723 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				7C363CA3183FAB5900003723 /* GenericSelfServiceResult.h */,
+				7C363CA4183FAB5900003723 /* GenericSelfServiceResult.m */,
+				7C363CBA1840082000003723 /* GenericSelfServiceRequest.h */,
+				7C363CBB1840082000003723 /* GenericSelfServiceRequest.m */,
+				7C363CB0183FB9DA00003723 /* GenericXMLParser.h */,
+				7C363CB1183FB9DA00003723 /* GenericXMLParser.m */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		7C363C94183FA7CA00003723 /* Modify Order Details */ = {
+			isa = PBXGroup;
+			children = (
+				7C956A001843A5B5000A5595 /* ModifyOrderDetailsRequest.h */,
+				7C956A011843A5B5000A5595 /* ModifyOrderDetailsRequest.m */,
+				7C956A031843A5C6000A5595 /* ModifyOrderDetailsResult.h */,
+				7C956A041843A5C6000A5595 /* ModifyOrderDetailsResult.m */,
+				7C956A061843A5E6000A5595 /* ModifyOrderDetailsXMLParser.h */,
+				7C956A071843A5E6000A5595 /* ModifyOrderDetailsXMLParser.m */,
+			);
+			path = "Modify Order Details";
+			sourceTree = "<group>";
+		};
+		7C363CAC183FB35000003723 /* NSObject-ObjectMap */ = {
+			isa = PBXGroup;
+			children = (
+				7C363CAD183FB35000003723 /* NSObject+ObjectMap.h */,
+				7C363CAE183FB35000003723 /* NSObject+ObjectMap.m */,
+			);
+			path = "NSObject-ObjectMap";
+			sourceTree = "<group>";
+		};
+		7C363CB6183FEE2C00003723 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				7C363CB7183FEE2C00003723 /* SelfServiceManager.h */,
+				7C363CB8183FEE2C00003723 /* SelfServiceManager.m */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		7C4A391A183A81E300978149 /* Service Agents */ = {
@@ -901,6 +1023,20 @@
 				7C8A350F183D109400802B89 /* User+CustomAccessors.m */,
 			);
 			path = "Managed Objects";
+			sourceTree = "<group>";
+		};
+		7C9569F718439C33000A5595 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				7C9569FD18439D31000A5595 /* CustomerIdType.h */,
+				7C9569FB18439C69000A5595 /* OrderIdType.h */,
+				7C9569FC18439D1B000A5595 /* OrderingType.h */,
+				7C9569FE1843A0BD000A5595 /* ResponseCode.h */,
+				7C9569F818439C43000A5595 /* SelfServiceEnumTranslator.h */,
+				7C9569F918439C43000A5595 /* SelfServiceEnumTranslator.m */,
+				7C9569FF1843A115000A5595 /* SourceSystem.h */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 		7C95844B183ACF4E0065C878 /* SSKeychain */ = {
@@ -1019,36 +1155,44 @@
 			files = (
 				7C2A355A1832A734004AE430 /* DDLog.m in Sources */,
 				7C2A35621832A734004AE430 /* NSObject+MagicalDataImport.m in Sources */,
+				7C363CAB183FAFD600003723 /* GetOrdersXMLParser.m in Sources */,
 				7C2A35701832A734004AE430 /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */,
-				7C4A3900183A67B100978149 /* xsd.m in Sources */,
+				7C363C9C183FA96D00003723 /* GetOrdersResult.m in Sources */,
 				7C2A359A1832A7AD004AE430 /* AFURLSessionManager.m in Sources */,
-				7C4A38FF183A67B100978149 /* USGlobals.m in Sources */,
+				7C363C95183FA7CA00003723 /* LineItemAttribute.m in Sources */,
+				7C363C9F183FAA4600003723 /* GetOrderResult.m in Sources */,
 				7C958448183AC4580065C878 /* SessionsService.m in Sources */,
 				7C8A3510183D109400802B89 /* User+CustomAccessors.m in Sources */,
+				7C363C98183FA7CA00003723 /* GetOrderRequest.m in Sources */,
 				7C2A35941832A7AD004AE430 /* AFHTTPSessionManager.m in Sources */,
 				7C2A35581832A734004AE430 /* DDASLLogger.m in Sources */,
+				7C363CA5183FAB5900003723 /* GenericSelfServiceResult.m in Sources */,
 				7C958454183ACF4E0065C878 /* SSKeychainQuery.m in Sources */,
-				7C4A38FC183A67B100978149 /* NSDate+ISO8601Unparsing.m in Sources */,
 				7C2A35611832A734004AE430 /* NSNumber+MagicalDataImport.m in Sources */,
-				7C4A38FE183A67B100978149 /* USAdditions.m in Sources */,
 				7C2A356B1832A734004AE430 /* NSManagedObjectContext+MagicalRecord.m in Sources */,
 				7C2A35981832A7AD004AE430 /* AFURLRequestSerialization.m in Sources */,
 				7C2A356D1832A734004AE430 /* NSManagedObjectContext+MagicalThreading.m in Sources */,
+				7C956A021843A5B5000A5595 /* ModifyOrderDetailsRequest.m in Sources */,
 				7C2A35961832A7AD004AE430 /* AFSecurityPolicy.m in Sources */,
 				7C2BF13C183A9E2800EEE4BF /* LoginViewController.m in Sources */,
 				7C2A35631832A734004AE430 /* NSRelationshipDescription+MagicalDataImport.m in Sources */,
 				7C2A35691832A734004AE430 /* NSManagedObject+MagicalRequests.m in Sources */,
 				7C2A35DD1832A7CE004AE430 /* main.m in Sources */,
+				7C363CB2183FB9DA00003723 /* GenericXMLParser.m in Sources */,
 				7C2A35771832A734004AE430 /* MagicalRecord.m in Sources */,
 				7C2A355D1832A734004AE430 /* DispatchQueueLogFormatter.m in Sources */,
 				7C2A35971832A7AD004AE430 /* AFURLConnectionOperation.m in Sources */,
 				7C2A356F1832A734004AE430 /* NSPersistentStore+MagicalRecord.m in Sources */,
 				7C2A35D61832A7CE004AE430 /* GenericViewController.m in Sources */,
 				7C2A356E1832A734004AE430 /* NSManagedObjectModel+MagicalRecord.m in Sources */,
+				7C9569F6184394BC000A5595 /* GetOrderXMLParser.m in Sources */,
 				7C2A355F1832A734004AE430 /* NSAttributeDescription+MagicalDataImport.m in Sources */,
 				7C2A355E1832A734004AE430 /* MagicalImportFunctions.m in Sources */,
 				7C2A35571832A734004AE430 /* DDAbstractDatabaseLogger.m in Sources */,
+				7C363CB9183FEE2C00003723 /* SelfServiceManager.m in Sources */,
 				7C2A356A1832A734004AE430 /* NSManagedObjectContext+MagicalObserving.m in Sources */,
+				7C363CBC1840082000003723 /* GenericSelfServiceRequest.m in Sources */,
+				7C363CAF183FB35000003723 /* NSObject+ObjectMap.m in Sources */,
 				7C2A35751832A734004AE430 /* MagicalRecord+Setup.m in Sources */,
 				7C2A35651832A734004AE430 /* NSManagedObject+MagicalAggregation.m in Sources */,
 				7C2A35761832A734004AE430 /* MagicalRecord+ShorthandSupport.m in Sources */,
@@ -1056,15 +1200,16 @@
 				7C958453183ACF4E0065C878 /* SSKeychain.m in Sources */,
 				7C2A355B1832A734004AE430 /* DDTTYLogger.m in Sources */,
 				7C2A35591832A734004AE430 /* DDFileLogger.m in Sources */,
-				7C4A38FB183A67B100978149 /* NSDate+ISO8601Parsing.m in Sources */,
+				7C363C97183FA7CA00003723 /* QuoteLineItem.m in Sources */,
+				7C363C96183FA7CA00003723 /* OrderSummary.m in Sources */,
 				7C2A35641832A734004AE430 /* NSString+MagicalDataImport.m in Sources */,
 				7C2A35741832A734004AE430 /* MagicalRecord+Options.m in Sources */,
 				7C8A3502183D0FC400802B89 /* User.m in Sources */,
 				7C2A35681832A734004AE430 /* NSManagedObject+MagicalRecord.m in Sources */,
 				7C2A35D51832A7CE004AE430 /* LoggingHelper.m in Sources */,
+				7C956A081843A5E6000A5595 /* ModifyOrderDetailsXMLParser.m in Sources */,
 				7C2A35711832A734004AE430 /* MagicalRecord+Actions.m in Sources */,
 				7C2A35661832A734004AE430 /* NSManagedObject+MagicalDataImport.m in Sources */,
-				7C4A38FD183A67B100978149 /* SelfService.m in Sources */,
 				7C2A35D21832A7CE004AE430 /* GenericService.m in Sources */,
 				7C2A35731832A734004AE430 /* MagicalRecord+iCloud.m in Sources */,
 				7C2A35601832A734004AE430 /* NSEntityDescription+MagicalDataImport.m in Sources */,
@@ -1076,7 +1221,10 @@
 				7C2A35D11832A7CE004AE430 /* STIPoC.xcdatamodeld in Sources */,
 				7C2A35951832A7AD004AE430 /* AFNetworkReachabilityManager.m in Sources */,
 				7C2A355C1832A734004AE430 /* ContextFilterLogFormatter.m in Sources */,
+				7C363C99183FA7CA00003723 /* GetOrdersRequest.m in Sources */,
+				7C956A051843A5C6000A5595 /* ModifyOrderDetailsResult.m in Sources */,
 				7C2A35931832A7AD004AE430 /* AFHTTPRequestOperationManager.m in Sources */,
+				7C9569FA18439C43000A5595 /* SelfServiceEnumTranslator.m in Sources */,
 				7C2A35991832A7AD004AE430 /* AFURLResponseSerialization.m in Sources */,
 				7C2A35921832A7AD004AE430 /* AFHTTPRequestOperation.m in Sources */,
 				7C2A35721832A734004AE430 /* MagicalRecord+ErrorHandling.m in Sources */,

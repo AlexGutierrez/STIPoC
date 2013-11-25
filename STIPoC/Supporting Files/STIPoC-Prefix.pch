@@ -26,7 +26,7 @@
     #import "CoreData+MagicalRecord.h"
     #import "CoreDataAttributeKeys.h"
 
-    #import "USAdditions.h"
+    #import "SelfServiceConstants.h"
+
     #import <libxml/tree.h>
-    #import "USGlobals.h"
 #endif
