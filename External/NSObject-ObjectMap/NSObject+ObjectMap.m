@@ -120,6 +120,9 @@ static const short _base64DecodingTable[256] = {
             else if ([className isEqualToString:@"NSArray"]) {
                 objForKey = [[NSArray alloc] init];
             }
+            else if ([className isEqualToString:@"NSMutableArray"]) {
+                objForKey = [[NSMutableArray alloc] init];
+            }
             else if ([className isEqualToString:@"NSData"]){
                 objForKey = [[NSData alloc] init];
             }
@@ -148,7 +151,7 @@ static const short _base64DecodingTable[256] = {
     [xmlScanner scanString:@">" intoString:&trash];
     
     // Check property type
-    if ([self isKindOfClass:[NSArray class]]) {
+    if ([self isKindOfClass:[NSArray class]] || [self isKindOfClass:[NSMutableArray class]]) {
         // Set up a new scanner for xml substring
         [xmlScanner scanUpToString:[NSString stringWithFormat:@"</%@", node] intoString:&value];
         NSString *filteredArrayObj = @"";

@@ -22,6 +22,8 @@ static NSString *const kSTIPoCSelfServiceContentType = @"text/xml; charset=utf-8
 static NSString *const kSTIPoCSelfServiceSOAPActionBaseURL = @"http://tempuri.org/";
 
 static NSString *const kSTIPoCSelfServiceGetOrdersActionName = @"GetOrders";
+static NSString *const kSTIPoCSelfServiceGetOrderActionName = @"GetOrder";
+static NSString *const kSTIPoCSelfServiceModifyOrderDetailsActionName = @"ModifyOrderDetails";
 
 static NSString *const kSTIPoCSelfServiceOrderIdTypeOrderId = @"OrderId";
 static NSString *const kSTIPoCSelfServiceOrderIdTypeProjectId = @"ProjectId";
@@ -62,3 +64,4 @@ static NSString *const kSTIPoCSelfServiceModifyOrderDetailsResultCloseTag = @"</
 static NSString *const kSTIPoCSelfServiceGenericECommerceLoginId = @"SDP-Implementation Team";
 static NSString *const kSTIPoCSelfServiceGenericUserName = @"Carlos Ponce";
 
+static NSString *const kSTIPoCSelfServiceLegoCustomerInstanceId = @"12284";

@@ -12,6 +12,6 @@
 @interface GetOrdersResult : GenericSelfServiceResult
 
 @property (strong, nonatomic) NSNumber *TotalCount;
-@property (strong, nonatomic) NSArray *Orders;
+@property (strong, nonatomic) NSMutableArray *Orders;
 
 @end

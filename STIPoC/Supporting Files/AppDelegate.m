@@ -11,6 +11,7 @@
 #import "LoggingHelper.h"
 
 #import "SelfServiceManager.h"
+#import "OrderSummary.h"
 
 @implementation AppDelegate
 
@@ -23,7 +24,9 @@
     [[GenericService sharedInstance] createDummyDataForProd];
 #endif
     
-    [[SelfServiceManager sharedInstance] startGetOrdersRequestOperation];
+    OrderSummary *orderSummary = [OrderSummary new];
+    orderSummary.OrderId = @"727";
+    [[SelfServiceManager sharedInstance] startGetOrderRequestOperationWithOrderSummary:orderSummary];
     
     return YES;
 }

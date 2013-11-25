@@ -8,10 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+@class OrderSummary;
+
 @interface SelfServiceManager : AFHTTPRequestOperationManager
 
 + (instancetype)sharedInstance;
 
 - (void)startGetOrdersRequestOperation;
+- (void)startGetOrderRequestOperationWithOrderSummary:(OrderSummary *)orderSummary;
 
 @end

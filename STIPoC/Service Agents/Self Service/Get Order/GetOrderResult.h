@@ -16,6 +16,6 @@
 @property (strong, nonatomic) NSString *OrderFriendlyId;
 @property (strong, nonatomic) NSString *ProjectId;
 @property (strong, nonatomic) NSString *ProjectStatus;
-@property (strong, nonatomic) NSString *QuoteLineItems;
+@property (strong, nonatomic) NSMutableArray *QuoteLineItems;
 
 @end

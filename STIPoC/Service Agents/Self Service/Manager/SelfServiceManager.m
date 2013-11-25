@@ -10,6 +10,13 @@
 #import "GetOrdersXMLParser.h"
 #import "GetOrdersRequest.h"
 
+#import "OrderSummary.h"
+#import "GetOrderXMLParser.h"
+#import "GetOrderRequest.h"
+
+#import "ModifyOrderDetailsRequest.h"
+#import "ModifyOrderDetailsXMLParser.h"
+
 @interface SelfServiceManager ()
 
 - (NSMutableURLRequest *)newSelfServiceURLRequestWithActionName:(NSString *)actionName;
@@ -55,7 +62,7 @@
 
 - (void)startGetOrdersRequestOperation
 {
-    getOrdersRequest *request = [getOrdersRequest newRequestWithCustomerId:@"12284" customerIdType:CustomerIdTypeInstanceId pageSize:10 pageNumber:1];
+    getOrdersRequest *request = [getOrdersRequest newRequestWithCustomerId:kSTIPoCSelfServiceLegoCustomerInstanceId customerIdType:CustomerIdTypeInstanceId pageSize:10 pageNumber:1];
     
     NSString * getOrdersBodyXMLString = [GetOrdersXMLParser xmlStringFromGetOrdersRequest:request];
     
@@ -68,6 +75,34 @@
         [GetOrdersXMLParser getOrdersResultFromXMLString:[[NSString alloc] initWithData:operation.responseData encoding:NSUTF8StringEncoding]];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         DDLogWarn(@"URL: %@", getOrdersURLRequest.URL.absoluteString);
+        DDLogError(@"HTTP METHOD: %@", operation.request.HTTPMethod);
+        DDLogVerbose(@"ALL HTTP HEADER KEYS: %@", operation.request.allHTTPHeaderFields.allKeys);
+        DDLogVerbose(@"ALL HTTP HEADER VALUES: %@", operation.request.allHTTPHeaderFields.allValues);
+        DDLogVerbose(@"ALL HTTP HEADER ALL: %@", operation.request.allHTTPHeaderFields);
+        DDLogInfo(@"BODY: %@", [[NSString alloc] initWithData:operation.request.HTTPBody encoding:NSUTF8StringEncoding]);
+        
+        DDLogError(@"STATUS CODE: %i", operation.response.statusCode);
+    }];
+    
+    
+    [getOrdersHTTPRequestOperation start];
+}
+
+- (void)startGetOrderRequestOperationWithOrderSummary:(OrderSummary *)orderSummary
+{
+    getOrderRequest *request = [getOrderRequest newRequestWithOrderId:orderSummary.OrderId andOrderIdType:OrderIdTypeOrderId];
+    
+    NSString * getOrderBodyXMLString = [GetOrderXMLParser xmlStringFromGetOrderRequest:request];
+    
+    NSMutableURLRequest *getOrderURLRequest = [self newSelfServiceURLRequestWithActionName:kSTIPoCSelfServiceGetOrderActionName];
+    getOrderURLRequest.HTTPBody = [getOrderBodyXMLString dataUsingEncoding:NSUTF8StringEncoding];
+    
+    AFHTTPRequestOperation *getOrdersHTTPRequestOperation = [self HTTPRequestOperationWithRequest:getOrderURLRequest success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        DDLogWarn(@"SUCCESS");
+        DDLogWarn(@"Raw XML Data: %@", [[NSString alloc] initWithData:operation.responseData encoding:NSUTF8StringEncoding]);
+        [GetOrderXMLParser getOrderResultFromXMLString:[[NSString alloc] initWithData:operation.responseData encoding:NSUTF8StringEncoding]];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        DDLogWarn(@"URL: %@", getOrderURLRequest.URL.absoluteString);
         DDLogError(@"HTTP METHOD: %@", operation.request.HTTPMethod);
         DDLogVerbose(@"ALL HTTP HEADER KEYS: %@", operation.request.allHTTPHeaderFields.allKeys);
         DDLogVerbose(@"ALL HTTP HEADER VALUES: %@", operation.request.allHTTPHeaderFields.allValues);
