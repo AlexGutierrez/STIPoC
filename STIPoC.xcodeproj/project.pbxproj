@@ -100,8 +100,6 @@
 		7C363CB2183FB9DA00003723 /* GenericXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C363CB1183FB9DA00003723 /* GenericXMLParser.m */; };
 		7C363CB9183FEE2C00003723 /* SelfServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C363CB8183FEE2C00003723 /* SelfServiceManager.m */; };
 		7C363CBC1840082000003723 /* GenericSelfServiceRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C363CBB1840082000003723 /* GenericSelfServiceRequest.m */; };
-		7C4A391D183A81E300978149 /* SelfServiceGenericTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C4A391B183A81E300978149 /* SelfServiceGenericTests.m */; };
-		7C4A391E183A81E300978149 /* SelfServiceGetOrdersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C4A391C183A81E300978149 /* SelfServiceGetOrdersTests.m */; };
 		7C78B0BF183E64330022922D /* GenericServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C78B0BD183E64330022922D /* GenericServiceTests.m */; };
 		7C78B0C0183E64330022922D /* SessionsServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C78B0BE183E64330022922D /* SessionsServiceTests.m */; };
 		7C8A3502183D0FC400802B89 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8A3501183D0FC400802B89 /* User.m */; };
@@ -314,8 +312,6 @@
 		7C363CB8183FEE2C00003723 /* SelfServiceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelfServiceManager.m; sourceTree = "<group>"; };
 		7C363CBA1840082000003723 /* GenericSelfServiceRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenericSelfServiceRequest.h; sourceTree = "<group>"; };
 		7C363CBB1840082000003723 /* GenericSelfServiceRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenericSelfServiceRequest.m; sourceTree = "<group>"; };
-		7C4A391B183A81E300978149 /* SelfServiceGenericTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelfServiceGenericTests.m; sourceTree = "<group>"; };
-		7C4A391C183A81E300978149 /* SelfServiceGetOrdersTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelfServiceGetOrdersTests.m; sourceTree = "<group>"; };
 		7C78B0BD183E64330022922D /* GenericServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenericServiceTests.m; sourceTree = "<group>"; };
 		7C78B0BE183E64330022922D /* SessionsServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionsServiceTests.m; sourceTree = "<group>"; };
 		7C8A3500183D0FC400802B89 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
@@ -420,7 +416,6 @@
 			children = (
 				7C78B0BB183E64330022922D /* Domain */,
 				7C2BF139183A96CF00EEE4BF /* Presentation */,
-				7C4A391A183A81E300978149 /* Service Agents */,
 			);
 			path = "Test Cases";
 			sourceTree = "<group>";
@@ -969,15 +964,6 @@
 			path = Manager;
 			sourceTree = "<group>";
 		};
-		7C4A391A183A81E300978149 /* Service Agents */ = {
-			isa = PBXGroup;
-			children = (
-				7C4A391B183A81E300978149 /* SelfServiceGenericTests.m */,
-				7C4A391C183A81E300978149 /* SelfServiceGetOrdersTests.m */,
-			);
-			path = "Service Agents";
-			sourceTree = "<group>";
-		};
 		7C78B0BB183E64330022922D /* Domain */ = {
 			isa = PBXGroup;
 			children = (
@@ -1245,10 +1231,8 @@
 				7C1F24111836D3F500E90145 /* MDRadialProgressLabel.m in Sources */,
 				7C1F24131836D3F500E90145 /* MDRadialProgressView.m in Sources */,
 				7C1F24141836D3F500E90145 /* MRBlurView.m in Sources */,
-				7C4A391D183A81E300978149 /* SelfServiceGenericTests.m in Sources */,
 				7C1F24151836D3F500E90145 /* UIImage+MRImageEffects.m in Sources */,
 				7C958443183AC0570065C878 /* InspectableLoginViewController.m in Sources */,
-				7C4A391E183A81E300978149 /* SelfServiceGetOrdersTests.m in Sources */,
 				7C958445183AC35D0065C878 /* LoginViewControllerTests.m in Sources */,
 				7C1F24181836D3F500E90145 /* MRIconView.m in Sources */,
 				7C1F24191836D3F500E90145 /* MRNavigationBarProgressView.m in Sources */,
