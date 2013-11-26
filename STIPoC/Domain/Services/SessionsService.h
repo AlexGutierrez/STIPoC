@@ -38,11 +38,16 @@ static NSString *const kSTIPoCDefaultsLastUserKey = @"com.STIPoC.DefaultsLastUse
  *  @param  accountNumber the customers account number i.e. 30246
  *  @param  password the user's password
  *  @param  remember whether the app should remember the user or not (password not included)
+ *  @param  error the representation of the error, in case something wrong happens during the login process
  *
  *  @return a BOOL telling wheter the login was successful or not.
  *
  */
-- (BOOL)loginWithUserID:(NSString *)userID customerID:(NSString *)customerID password:(NSString *)password remember:(BOOL)remember;
+- (BOOL)loginWithUserID:(NSString *)userID
+             customerID:(NSString *)customerID
+               password:(NSString *)password
+               remember:(BOOL)remember
+                  error:(NSError **)error;
 
 /**
  *  Logs out from the app and removes password from keychain if stored.

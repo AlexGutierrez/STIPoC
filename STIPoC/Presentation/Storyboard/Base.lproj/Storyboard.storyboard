@@ -20,10 +20,10 @@
             </objects>
             <point key="canvasLocation" x="-351" y="-1"/>
         </scene>
-        <!--View Controller - Login-->
+        <!--Login View Controller - Login-->
         <scene sceneID="K44-XU-Gio">
             <objects>
-                <viewController id="1Nh-er-6Jb" sceneMemberID="viewController">
+                <viewController id="1Nh-er-6Jb" customClass="LoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AnK-Mp-NI2"/>
                         <viewControllerLayoutGuide type="bottom" id="BWn-I6-EZc"/>
@@ -42,17 +42,17 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Domain" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GsS-yJ-JSj">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Customer ID" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GsS-yJ-JSj">
                                         <rect key="frame" x="20" y="87" width="268" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hU2-Rr-nYl">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hU2-Rr-nYl">
                                         <rect key="frame" x="20" y="125" width="268" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zIM-CL-3Yw">
                                         <rect key="frame" x="20" y="166" width="188" height="30"/>
@@ -62,6 +62,9 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="login:" destination="1Nh-er-6Jb" eventType="touchUpInside" id="CEJ-EM-J1a"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SDP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G6r-v6-VST">
                                         <rect key="frame" x="118" y="0.0" width="73" height="41"/>
@@ -70,30 +73,40 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="mlj-dW-IsB">
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mlj-dW-IsB">
                                         <rect key="frame" x="216" y="166" width="51" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="onTintColor" red="0.94117653369999998" green="0.94117653369999998" blue="0.94117653369999998" alpha="1" colorSpace="deviceRGB"/>
                                     </switch>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.66666666666666663" green="0.0" blue="0.15025734056017784" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" title="Login" id="hQ4-sr-X6a"/>
                     <connections>
-                        <segue destination="vDj-Fh-bo9" kind="push" identifier="MainViewControllerPushSegue" id="efX-aQ-8v6"/>
+                        <outlet property="customerIDField" destination="GsS-yJ-JSj" id="7O4-ma-Hmb"/>
+                        <outlet property="loginFieldsContainer" destination="DBY-v9-wFG" id="A22-HL-v1h"/>
+                        <outlet property="passwordField" destination="hU2-Rr-nYl" id="9h0-rv-eri"/>
+                        <outlet property="rememberSwitch" destination="mlj-dW-IsB" id="CqG-Ez-Do1"/>
+                        <outlet property="userIDField" destination="jnC-EA-KwU" id="V7h-qs-tmp"/>
+                        <outletCollection property="loginFields" destination="jnC-EA-KwU" id="wWh-UA-U5v"/>
+                        <outletCollection property="loginFields" destination="GsS-yJ-JSj" id="1N1-7n-rTf"/>
+                        <outletCollection property="loginFields" destination="hU2-Rr-nYl" id="qsU-0z-XQP"/>
+                        <segue destination="vDj-Fh-bo9" kind="push" identifier="OrderStatusControllerPushSegue" id="efX-aQ-8v6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uKk-jV-Fgo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="794" y="-1"/>
         </scene>
-        <!--View Controller - Your Order Status-->
+        <!--Order Status View Controller - Your Order Status-->
         <scene sceneID="tqi-RD-MVH">
             <objects>
-                <viewController id="vDj-Fh-bo9" sceneMemberID="viewController">
+                <viewController id="vDj-Fh-bo9" customClass="OrderStatusViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1BH-5i-2FO"/>
                         <viewControllerLayoutGuide type="bottom" id="dth-Zz-LNX"/>
@@ -120,10 +133,10 @@
             </objects>
             <point key="canvasLocation" x="2016" y="-1"/>
         </scene>
-        <!--View Controller-->
+        <!--Orders Extensive View Controller-->
         <scene sceneID="JZT-Y9-ct4">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="RGr-fL-tE6" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="RGr-fL-tE6" customClass="OrdersExtensiveViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Egq-US-eF7"/>
                         <viewControllerLayoutGuide type="bottom" id="nAY-1n-00t"/>
@@ -132,6 +145,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="984" height="661"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <containerView hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dCl-OF-Tvc">
+                                <rect key="frame" x="0.0" y="292" width="984" height="260"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="2sH-8z-6Le" kind="embed" id="QhF-Id-yEd"/>
+                                </connections>
+                            </containerView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="cdg-eP-GXq">
                                 <rect key="frame" x="0.0" y="0.0" width="984" height="661"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -148,7 +169,7 @@
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="OrderSummaryTableViewCell" rowHeight="50" id="eBv-6e-ZiZ">
                                         <rect key="frame" x="0.0" y="66" width="984" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eBv-6e-ZiZ">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eBv-6e-ZiZ" id="Y69-tl-jk1">
                                             <rect key="frame" x="0.0" y="0.0" width="984" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
@@ -197,6 +218,26 @@
                 </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="3215" y="52"/>
+        </scene>
+        <!--Order Detail View Controller-->
+        <scene sceneID="BgV-kE-aod">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="2sH-8z-6Le" customClass="OrderDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Iog-dj-9W0"/>
+                        <viewControllerLayoutGuide type="bottom" id="NXm-od-apk"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="t46-2n-FzP">
+                        <rect key="frame" x="0.0" y="0.0" width="984" height="260"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.66666666669999997" green="0.0" blue="0.15025734060000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <toolbarItems/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0t1-XF-ruq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4359" y="253"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

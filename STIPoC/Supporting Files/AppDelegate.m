@@ -22,13 +22,11 @@
 #if (!defined(TEST))
     [[GenericService sharedInstance] setupCoreDataStack];
     [[GenericService sharedInstance] createDummyDataForProd];
-#endif
-    
-    OrderSummary *orderSummary = [OrderSummary new];
-    orderSummary.OrderId = @"727";
-    [[SelfServiceManager sharedInstance] startGetOrderRequestOperationWithOrderSummary:orderSummary];
     
     return YES;
+#else
+    return NO;
+#endif
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application

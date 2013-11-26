@@ -21,12 +21,12 @@
     #import "ViewControllerIdentifiers.h"
     #import "SegueIdentifiers.h"
     #import "LoggingConstants.h"
+    #import "UITableViewCellReuseIdentifiers.h"
+    #import "SelfServiceConstants.h"
 
     #import "AFNetworking.h"
     #import "CoreData+MagicalRecord.h"
     #import "CoreDataAttributeKeys.h"
-
-    #import "SelfServiceConstants.h"
 
     #import <libxml/tree.h>
 #endif

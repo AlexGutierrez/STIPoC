@@ -14,13 +14,20 @@
 @property (weak, nonatomic) IBOutlet UITextField *userIDField;
 
 /// The domain UITextField IBOutlet
-@property (weak, nonatomic) IBOutlet UITextField *domainField;
+@property (weak, nonatomic) IBOutlet UITextField *customerIDField;
 
 /// The password secure UITextField IBOutlet
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
 
+/// A collection of the loginFields
+@property (nonatomic, strong) IBOutletCollection(UIView) NSArray *loginFields;
+
+/// The remember UISwitch IBOutlet
+@property (weak, nonatomic) IBOutlet UISwitch *rememberSwitch;
+
+/// The UIView that contains all the login fields
+@property (weak, nonatomic) IBOutlet UIView *loginFieldsContainer;
+
 - (IBAction)login:(UIButton *)sender;
-
-
 
 @end

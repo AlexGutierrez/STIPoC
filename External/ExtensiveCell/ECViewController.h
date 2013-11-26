@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GenericViewController.h"
 
 #define MAIN_CELLS_HEIGHT 44
 
@@ -85,7 +86,7 @@
 
 @end
 
-@interface ECViewController : UIViewController <ECTableViewDataSource>
+@interface ECViewController : GenericViewController <ECTableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 

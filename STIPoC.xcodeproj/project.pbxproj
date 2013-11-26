@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7A982327183552DE00CB0BA5 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A982326183552DE00CB0BA5 /* libOCMock.a */; };
 		7A9823281835533B00CB0BA5 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A982326183552DE00CB0BA5 /* libOCMock.a */; };
+		7C1168A118455EE300334AF9 /* XCDFormInputAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1168A018455EE300334AF9 /* XCDFormInputAccessoryView.m */; };
 		7C13C813183A633800C12C54 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7C2A35E11832A8E7004AE430 /* InfoPlist.strings */; };
 		7C13C814183A633D00C12C54 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C2A35C21832A7CE004AE430 /* Storyboard.storyboard */; };
 		7C13C815183A634B00C12C54 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7C2A35DE1832A8DE004AE430 /* Localizable.strings */; };
@@ -80,7 +81,7 @@
 		7C2A359A1832A7AD004AE430 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2A35911832A7AD004AE430 /* AFURLSessionManager.m */; };
 		7C2A35D11832A7CE004AE430 /* STIPoC.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7C2A35A01832A7CE004AE430 /* STIPoC.xcdatamodeld */; };
 		7C2A35D21832A7CE004AE430 /* GenericService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2A35A41832A7CE004AE430 /* GenericService.m */; };
-		7C2A35D41832A7CE004AE430 /* GenericFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2A35B21832A7CE004AE430 /* GenericFactory.m */; };
+		7C2A35D41832A7CE004AE430 /* AlertViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2A35B21832A7CE004AE430 /* AlertViewFactory.m */; };
 		7C2A35D51832A7CE004AE430 /* LoggingHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2A35B51832A7CE004AE430 /* LoggingHelper.m */; };
 		7C2A35D61832A7CE004AE430 /* GenericViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2A35BB1832A7CE004AE430 /* GenericViewController.m */; };
 		7C2A35DC1832A7CE004AE430 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2A35CD1832A7CE004AE430 /* AppDelegate.m */; };
@@ -125,6 +126,9 @@
 		7C9D6BCC1845008D0018E0E4 /* MNMBottomPullToRefreshArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C9D6BC51845008D0018E0E4 /* MNMBottomPullToRefreshArrow@2x.png */; };
 		7C9D6BCD1845008D0018E0E4 /* MNMBottomPullToRefreshManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C9D6BC71845008D0018E0E4 /* MNMBottomPullToRefreshManager.m */; };
 		7C9D6BCE1845008D0018E0E4 /* MNMBottomPullToRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C9D6BC91845008D0018E0E4 /* MNMBottomPullToRefreshView.m */; };
+		7C9D6BD618452E120018E0E4 /* OrderStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C9D6BD518452E120018E0E4 /* OrderStatusViewController.m */; };
+		7C9D6BD9184535710018E0E4 /* OrdersExtensiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C9D6BD8184535710018E0E4 /* OrdersExtensiveViewController.m */; };
+		7C9D6BDC184535860018E0E4 /* OrderDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C9D6BDB184535860018E0E4 /* OrderDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,6 +149,8 @@
 		7A98232C183553DB00CB0BA5 /* OCMock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OCMock.h; path = External/OCMock/OCMock/OCMock.h; sourceTree = SOURCE_ROOT; };
 		7A98232D183553DB00CB0BA5 /* OCMockObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OCMockObject.h; path = External/OCMock/OCMock/OCMockObject.h; sourceTree = SOURCE_ROOT; };
 		7A98232E183553DB00CB0BA5 /* OCMockRecorder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OCMockRecorder.h; path = External/OCMock/OCMock/OCMockRecorder.h; sourceTree = SOURCE_ROOT; };
+		7C11689F18455EE300334AF9 /* XCDFormInputAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCDFormInputAccessoryView.h; sourceTree = "<group>"; };
+		7C1168A018455EE300334AF9 /* XCDFormInputAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCDFormInputAccessoryView.m; sourceTree = "<group>"; };
 		7C15477D183D4EA400792B0A /* CoreDataAttributeKeys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataAttributeKeys.h; sourceTree = "<group>"; };
 		7C1F23F31836D3F500E90145 /* MDRadialProgressLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDRadialProgressLabel.h; sourceTree = "<group>"; };
 		7C1F23F41836D3F500E90145 /* MDRadialProgressLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDRadialProgressLabel.m; sourceTree = "<group>"; };
@@ -278,8 +284,8 @@
 		7C2A35AB1832A7CE004AE430 /* LoggingConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoggingConstants.h; sourceTree = "<group>"; };
 		7C2A35AC1832A7CE004AE430 /* SegueIdentifiers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegueIdentifiers.h; sourceTree = "<group>"; };
 		7C2A35AD1832A7CE004AE430 /* ViewControllerIdentifiers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerIdentifiers.h; sourceTree = "<group>"; };
-		7C2A35B11832A7CE004AE430 /* GenericFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenericFactory.h; sourceTree = "<group>"; };
-		7C2A35B21832A7CE004AE430 /* GenericFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenericFactory.m; sourceTree = "<group>"; };
+		7C2A35B11832A7CE004AE430 /* AlertViewFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertViewFactory.h; sourceTree = "<group>"; };
+		7C2A35B21832A7CE004AE430 /* AlertViewFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertViewFactory.m; sourceTree = "<group>"; };
 		7C2A35B41832A7CE004AE430 /* LoggingHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoggingHelper.h; sourceTree = "<group>"; };
 		7C2A35B51832A7CE004AE430 /* LoggingHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoggingHelper.m; sourceTree = "<group>"; };
 		7C2A35BA1832A7CE004AE430 /* GenericViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenericViewController.h; sourceTree = "<group>"; };
@@ -368,6 +374,13 @@
 		7C9D6BC71845008D0018E0E4 /* MNMBottomPullToRefreshManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNMBottomPullToRefreshManager.m; sourceTree = "<group>"; };
 		7C9D6BC81845008D0018E0E4 /* MNMBottomPullToRefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNMBottomPullToRefreshView.h; sourceTree = "<group>"; };
 		7C9D6BC91845008D0018E0E4 /* MNMBottomPullToRefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNMBottomPullToRefreshView.m; sourceTree = "<group>"; };
+		7C9D6BD418452E120018E0E4 /* OrderStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderStatusViewController.h; sourceTree = "<group>"; };
+		7C9D6BD518452E120018E0E4 /* OrderStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderStatusViewController.m; sourceTree = "<group>"; };
+		7C9D6BD7184535710018E0E4 /* OrdersExtensiveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrdersExtensiveViewController.h; sourceTree = "<group>"; };
+		7C9D6BD8184535710018E0E4 /* OrdersExtensiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrdersExtensiveViewController.m; sourceTree = "<group>"; };
+		7C9D6BDA184535860018E0E4 /* OrderDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderDetailViewController.h; sourceTree = "<group>"; };
+		7C9D6BDB184535860018E0E4 /* OrderDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderDetailViewController.m; sourceTree = "<group>"; };
+		7C9D6BDD18453C930018E0E4 /* UITableViewCellReuseIdentifiers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UITableViewCellReuseIdentifiers.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -429,6 +442,15 @@
 				7A982326183552DE00CB0BA5 /* libOCMock.a */,
 			);
 			path = "Static Library";
+			sourceTree = "<group>";
+		};
+		7C11689E18455EE300334AF9 /* XCDFormInputAccessoryView */ = {
+			isa = PBXGroup;
+			children = (
+				7C11689F18455EE300334AF9 /* XCDFormInputAccessoryView.h */,
+				7C1168A018455EE300334AF9 /* XCDFormInputAccessoryView.m */,
+			);
+			path = XCDFormInputAccessoryView;
 			sourceTree = "<group>";
 		};
 		7C1F23E21836754C00E90145 /* Test Cases */ = {
@@ -574,12 +596,13 @@
 		7C2A350A1832A734004AE430 /* External */ = {
 			isa = PBXGroup;
 			children = (
-				7C9D6BC21845008D0018E0E4 /* MNMBottomPullToRefresh */,
+				7C11689E18455EE300334AF9 /* XCDFormInputAccessoryView */,
 				7C2A357E1832A7AD004AE430 /* AFNetworking */,
 				7C9D6BB91844F7930018E0E4 /* ExtensiveCell */,
 				7C2A350B1832A734004AE430 /* Lumberjack */,
 				7C2A351B1832A734004AE430 /* Magical Record */,
 				7C1F23F21836D3F500E90145 /* MDRadialProgress */,
+				7C9D6BC21845008D0018E0E4 /* MNMBottomPullToRefresh */,
 				7C1F23F91836D3F500E90145 /* MRProgress */,
 				7C363CAC183FB35000003723 /* NSObject-ObjectMap */,
 				7A98231D183552DE00CB0BA5 /* OCMock */,
@@ -793,6 +816,7 @@
 				7C2A35AD1832A7CE004AE430 /* ViewControllerIdentifiers.h */,
 				7C15477D183D4EA400792B0A /* CoreDataAttributeKeys.h */,
 				7C956A0B1843E0F7000A5595 /* SelfServiceConstants.h */,
+				7C9D6BDD18453C930018E0E4 /* UITableViewCellReuseIdentifiers.h */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -800,8 +824,8 @@
 		7C2A35B01832A7CE004AE430 /* Factories */ = {
 			isa = PBXGroup;
 			children = (
-				7C2A35B11832A7CE004AE430 /* GenericFactory.h */,
-				7C2A35B21832A7CE004AE430 /* GenericFactory.m */,
+				7C2A35B11832A7CE004AE430 /* AlertViewFactory.h */,
+				7C2A35B21832A7CE004AE430 /* AlertViewFactory.m */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -819,6 +843,7 @@
 			isa = PBXGroup;
 			children = (
 				7C2A35B91832A7CE004AE430 /* Controllers */,
+				7C9D6BCF184501B20018E0E4 /* Custom Views */,
 				7C2A35BF1832A7CE004AE430 /* Storyboard */,
 			);
 			path = Presentation;
@@ -831,6 +856,12 @@
 				7C2A35BB1832A7CE004AE430 /* GenericViewController.m */,
 				7C2BF13A183A9E2800EEE4BF /* LoginViewController.h */,
 				7C2BF13B183A9E2800EEE4BF /* LoginViewController.m */,
+				7C9D6BD418452E120018E0E4 /* OrderStatusViewController.h */,
+				7C9D6BD518452E120018E0E4 /* OrderStatusViewController.m */,
+				7C9D6BD7184535710018E0E4 /* OrdersExtensiveViewController.h */,
+				7C9D6BD8184535710018E0E4 /* OrdersExtensiveViewController.m */,
+				7C9D6BDA184535860018E0E4 /* OrderDetailViewController.h */,
+				7C9D6BDB184535860018E0E4 /* OrderDetailViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1085,6 +1116,21 @@
 			path = MNMBottomPullToRefresh;
 			sourceTree = "<group>";
 		};
+		7C9D6BCF184501B20018E0E4 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				7C9D6BD0184503EA0018E0E4 /* Custom Table View Cells */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		7C9D6BD0184503EA0018E0E4 /* Custom Table View Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Custom Table View Cells";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1217,6 +1263,7 @@
 				7C2A35631832A734004AE430 /* NSRelationshipDescription+MagicalDataImport.m in Sources */,
 				7C2A35691832A734004AE430 /* NSManagedObject+MagicalRequests.m in Sources */,
 				7C2A35DD1832A7CE004AE430 /* main.m in Sources */,
+				7C9D6BDC184535860018E0E4 /* OrderDetailViewController.m in Sources */,
 				7C363CB2183FB9DA00003723 /* GenericXMLParser.m in Sources */,
 				7C2A35771832A734004AE430 /* MagicalRecord.m in Sources */,
 				7C2A355D1832A734004AE430 /* DispatchQueueLogFormatter.m in Sources */,
@@ -1228,6 +1275,7 @@
 				7C9569F6184394BC000A5595 /* GetOrderXMLParser.m in Sources */,
 				7C2A355F1832A734004AE430 /* NSAttributeDescription+MagicalDataImport.m in Sources */,
 				7C2A355E1832A734004AE430 /* MagicalImportFunctions.m in Sources */,
+				7C9D6BD618452E120018E0E4 /* OrderStatusViewController.m in Sources */,
 				7C2A35571832A734004AE430 /* DDAbstractDatabaseLogger.m in Sources */,
 				7C363CB9183FEE2C00003723 /* SelfServiceManager.m in Sources */,
 				7C2A356A1832A734004AE430 /* NSManagedObjectContext+MagicalObserving.m in Sources */,
@@ -1236,7 +1284,7 @@
 				7C2A35751832A734004AE430 /* MagicalRecord+Setup.m in Sources */,
 				7C2A35651832A734004AE430 /* NSManagedObject+MagicalAggregation.m in Sources */,
 				7C2A35761832A734004AE430 /* MagicalRecord+ShorthandSupport.m in Sources */,
-				7C2A35D41832A7CE004AE430 /* GenericFactory.m in Sources */,
+				7C2A35D41832A7CE004AE430 /* AlertViewFactory.m in Sources */,
 				7C958453183ACF4E0065C878 /* SSKeychain.m in Sources */,
 				7C2A355B1832A734004AE430 /* DDTTYLogger.m in Sources */,
 				7C2A35591832A734004AE430 /* DDFileLogger.m in Sources */,
@@ -1254,6 +1302,7 @@
 				7C2A35D21832A7CE004AE430 /* GenericService.m in Sources */,
 				7C2A35731832A734004AE430 /* MagicalRecord+iCloud.m in Sources */,
 				7C2A35601832A734004AE430 /* NSEntityDescription+MagicalDataImport.m in Sources */,
+				7C1168A118455EE300334AF9 /* XCDFormInputAccessoryView.m in Sources */,
 				7C2A35DC1832A7CE004AE430 /* AppDelegate.m in Sources */,
 				7C2A356C1832A734004AE430 /* NSManagedObjectContext+MagicalSaves.m in Sources */,
 				7C2A35671832A734004AE430 /* NSManagedObject+MagicalFinders.m in Sources */,
@@ -1270,6 +1319,7 @@
 				7C2A35991832A7AD004AE430 /* AFURLResponseSerialization.m in Sources */,
 				7C2A35921832A7AD004AE430 /* AFHTTPRequestOperation.m in Sources */,
 				7C2A35721832A734004AE430 /* MagicalRecord+ErrorHandling.m in Sources */,
+				7C9D6BD9184535710018E0E4 /* OrdersExtensiveViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
