@@ -117,6 +117,9 @@
 		7C958452183ACF4E0065C878 /* SSKeychain.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7C95844C183ACF4E0065C878 /* SSKeychain.strings */; };
 		7C958453183ACF4E0065C878 /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C95844F183ACF4E0065C878 /* SSKeychain.m */; };
 		7C958454183ACF4E0065C878 /* SSKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C958451183ACF4E0065C878 /* SSKeychainQuery.m */; };
+		7C9D6BBF1844F7930018E0E4 /* ECViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C9D6BBB1844F7930018E0E4 /* ECViewController.m */; };
+		7C9D6BC01844F7930018E0E4 /* ExtensiveCellContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C9D6BBD1844F7930018E0E4 /* ExtensiveCellContainer.m */; };
+		7C9D6BC11844F7930018E0E4 /* ExtensiveCellContainer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C9D6BBE1844F7930018E0E4 /* ExtensiveCellContainer.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -348,6 +351,11 @@
 		7C95844F183ACF4E0065C878 /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
 		7C958450183ACF4E0065C878 /* SSKeychainQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychainQuery.h; sourceTree = "<group>"; };
 		7C958451183ACF4E0065C878 /* SSKeychainQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychainQuery.m; sourceTree = "<group>"; };
+		7C9D6BBA1844F7930018E0E4 /* ECViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECViewController.h; sourceTree = "<group>"; };
+		7C9D6BBB1844F7930018E0E4 /* ECViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECViewController.m; sourceTree = "<group>"; };
+		7C9D6BBC1844F7930018E0E4 /* ExtensiveCellContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtensiveCellContainer.h; sourceTree = "<group>"; };
+		7C9D6BBD1844F7930018E0E4 /* ExtensiveCellContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtensiveCellContainer.m; sourceTree = "<group>"; };
+		7C9D6BBE1844F7930018E0E4 /* ExtensiveCellContainer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExtensiveCellContainer.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -554,14 +562,15 @@
 		7C2A350A1832A734004AE430 /* External */ = {
 			isa = PBXGroup;
 			children = (
-				7C363CAC183FB35000003723 /* NSObject-ObjectMap */,
-				7C95844B183ACF4E0065C878 /* SSKeychain */,
 				7C2A357E1832A7AD004AE430 /* AFNetworking */,
+				7C9D6BB91844F7930018E0E4 /* ExtensiveCell */,
 				7C2A350B1832A734004AE430 /* Lumberjack */,
 				7C2A351B1832A734004AE430 /* Magical Record */,
 				7C1F23F21836D3F500E90145 /* MDRadialProgress */,
 				7C1F23F91836D3F500E90145 /* MRProgress */,
+				7C363CAC183FB35000003723 /* NSObject-ObjectMap */,
 				7A98231D183552DE00CB0BA5 /* OCMock */,
+				7C95844B183ACF4E0065C878 /* SSKeychain */,
 			);
 			path = External;
 			sourceTree = "<group>";
@@ -1037,6 +1046,18 @@
 			path = SSKeychain;
 			sourceTree = "<group>";
 		};
+		7C9D6BB91844F7930018E0E4 /* ExtensiveCell */ = {
+			isa = PBXGroup;
+			children = (
+				7C9D6BBA1844F7930018E0E4 /* ECViewController.h */,
+				7C9D6BBB1844F7930018E0E4 /* ECViewController.m */,
+				7C9D6BBC1844F7930018E0E4 /* ExtensiveCellContainer.h */,
+				7C9D6BBD1844F7930018E0E4 /* ExtensiveCellContainer.m */,
+				7C9D6BBE1844F7930018E0E4 /* ExtensiveCellContainer.xib */,
+			);
+			path = ExtensiveCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1121,6 +1142,7 @@
 				7C13C814183A633D00C12C54 /* Storyboard.storyboard in Resources */,
 				7C13C813183A633800C12C54 /* InfoPlist.strings in Resources */,
 				7C2A34971832A6EB004AE430 /* Images.xcassets in Resources */,
+				7C9D6BC11844F7930018E0E4 /* ExtensiveCellContainer.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1171,6 +1193,7 @@
 				7C2A356F1832A734004AE430 /* NSPersistentStore+MagicalRecord.m in Sources */,
 				7C2A35D61832A7CE004AE430 /* GenericViewController.m in Sources */,
 				7C2A356E1832A734004AE430 /* NSManagedObjectModel+MagicalRecord.m in Sources */,
+				7C9D6BBF1844F7930018E0E4 /* ECViewController.m in Sources */,
 				7C9569F6184394BC000A5595 /* GetOrderXMLParser.m in Sources */,
 				7C2A355F1832A734004AE430 /* NSAttributeDescription+MagicalDataImport.m in Sources */,
 				7C2A355E1832A734004AE430 /* MagicalImportFunctions.m in Sources */,
@@ -1207,6 +1230,7 @@
 				7C2A35D11832A7CE004AE430 /* STIPoC.xcdatamodeld in Sources */,
 				7C2A35951832A7AD004AE430 /* AFNetworkReachabilityManager.m in Sources */,
 				7C2A355C1832A734004AE430 /* ContextFilterLogFormatter.m in Sources */,
+				7C9D6BC01844F7930018E0E4 /* ExtensiveCellContainer.m in Sources */,
 				7C363C99183FA7CA00003723 /* GetOrdersRequest.m in Sources */,
 				7C956A051843A5C6000A5595 /* ModifyOrderDetailsResult.m in Sources */,
 				7C2A35931832A7AD004AE430 /* AFHTTPRequestOperationManager.m in Sources */,
