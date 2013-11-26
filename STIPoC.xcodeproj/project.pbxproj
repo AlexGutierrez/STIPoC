@@ -120,6 +120,11 @@
 		7C9D6BBF1844F7930018E0E4 /* ECViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C9D6BBB1844F7930018E0E4 /* ECViewController.m */; };
 		7C9D6BC01844F7930018E0E4 /* ExtensiveCellContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C9D6BBD1844F7930018E0E4 /* ExtensiveCellContainer.m */; };
 		7C9D6BC11844F7930018E0E4 /* ExtensiveCellContainer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C9D6BBE1844F7930018E0E4 /* ExtensiveCellContainer.xib */; };
+		7C9D6BCA1845008D0018E0E4 /* MNMBottomPullToRefresh.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7C9D6BC31845008D0018E0E4 /* MNMBottomPullToRefresh.strings */; };
+		7C9D6BCB1845008D0018E0E4 /* MNMBottomPullToRefreshArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C9D6BC41845008D0018E0E4 /* MNMBottomPullToRefreshArrow.png */; };
+		7C9D6BCC1845008D0018E0E4 /* MNMBottomPullToRefreshArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C9D6BC51845008D0018E0E4 /* MNMBottomPullToRefreshArrow@2x.png */; };
+		7C9D6BCD1845008D0018E0E4 /* MNMBottomPullToRefreshManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C9D6BC71845008D0018E0E4 /* MNMBottomPullToRefreshManager.m */; };
+		7C9D6BCE1845008D0018E0E4 /* MNMBottomPullToRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C9D6BC91845008D0018E0E4 /* MNMBottomPullToRefreshView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -356,6 +361,13 @@
 		7C9D6BBC1844F7930018E0E4 /* ExtensiveCellContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtensiveCellContainer.h; sourceTree = "<group>"; };
 		7C9D6BBD1844F7930018E0E4 /* ExtensiveCellContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtensiveCellContainer.m; sourceTree = "<group>"; };
 		7C9D6BBE1844F7930018E0E4 /* ExtensiveCellContainer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExtensiveCellContainer.xib; sourceTree = "<group>"; };
+		7C9D6BC31845008D0018E0E4 /* MNMBottomPullToRefresh.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = MNMBottomPullToRefresh.strings; sourceTree = "<group>"; };
+		7C9D6BC41845008D0018E0E4 /* MNMBottomPullToRefreshArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MNMBottomPullToRefreshArrow.png; sourceTree = "<group>"; };
+		7C9D6BC51845008D0018E0E4 /* MNMBottomPullToRefreshArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MNMBottomPullToRefreshArrow@2x.png"; sourceTree = "<group>"; };
+		7C9D6BC61845008D0018E0E4 /* MNMBottomPullToRefreshManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNMBottomPullToRefreshManager.h; sourceTree = "<group>"; };
+		7C9D6BC71845008D0018E0E4 /* MNMBottomPullToRefreshManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNMBottomPullToRefreshManager.m; sourceTree = "<group>"; };
+		7C9D6BC81845008D0018E0E4 /* MNMBottomPullToRefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNMBottomPullToRefreshView.h; sourceTree = "<group>"; };
+		7C9D6BC91845008D0018E0E4 /* MNMBottomPullToRefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNMBottomPullToRefreshView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -562,6 +574,7 @@
 		7C2A350A1832A734004AE430 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				7C9D6BC21845008D0018E0E4 /* MNMBottomPullToRefresh */,
 				7C2A357E1832A7AD004AE430 /* AFNetworking */,
 				7C9D6BB91844F7930018E0E4 /* ExtensiveCell */,
 				7C2A350B1832A734004AE430 /* Lumberjack */,
@@ -1058,6 +1071,20 @@
 			path = ExtensiveCell;
 			sourceTree = "<group>";
 		};
+		7C9D6BC21845008D0018E0E4 /* MNMBottomPullToRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				7C9D6BC31845008D0018E0E4 /* MNMBottomPullToRefresh.strings */,
+				7C9D6BC41845008D0018E0E4 /* MNMBottomPullToRefreshArrow.png */,
+				7C9D6BC51845008D0018E0E4 /* MNMBottomPullToRefreshArrow@2x.png */,
+				7C9D6BC61845008D0018E0E4 /* MNMBottomPullToRefreshManager.h */,
+				7C9D6BC71845008D0018E0E4 /* MNMBottomPullToRefreshManager.m */,
+				7C9D6BC81845008D0018E0E4 /* MNMBottomPullToRefreshView.h */,
+				7C9D6BC91845008D0018E0E4 /* MNMBottomPullToRefreshView.m */,
+			);
+			path = MNMBottomPullToRefresh;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1138,9 +1165,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C958452183ACF4E0065C878 /* SSKeychain.strings in Resources */,
+				7C9D6BCB1845008D0018E0E4 /* MNMBottomPullToRefreshArrow.png in Resources */,
 				7C13C815183A634B00C12C54 /* Localizable.strings in Resources */,
+				7C9D6BCC1845008D0018E0E4 /* MNMBottomPullToRefreshArrow@2x.png in Resources */,
 				7C13C814183A633D00C12C54 /* Storyboard.storyboard in Resources */,
 				7C13C813183A633800C12C54 /* InfoPlist.strings in Resources */,
+				7C9D6BCA1845008D0018E0E4 /* MNMBottomPullToRefresh.strings in Resources */,
 				7C2A34971832A6EB004AE430 /* Images.xcassets in Resources */,
 				7C9D6BC11844F7930018E0E4 /* ExtensiveCellContainer.xib in Resources */,
 			);
@@ -1174,6 +1204,7 @@
 				7C363C98183FA7CA00003723 /* GetOrderRequest.m in Sources */,
 				7C2A35941832A7AD004AE430 /* AFHTTPSessionManager.m in Sources */,
 				7C2A35581832A734004AE430 /* DDASLLogger.m in Sources */,
+				7C9D6BCD1845008D0018E0E4 /* MNMBottomPullToRefreshManager.m in Sources */,
 				7C363CA5183FAB5900003723 /* GenericSelfServiceResult.m in Sources */,
 				7C958454183ACF4E0065C878 /* SSKeychainQuery.m in Sources */,
 				7C2A35611832A734004AE430 /* NSNumber+MagicalDataImport.m in Sources */,
@@ -1218,6 +1249,7 @@
 				7C2A35D51832A7CE004AE430 /* LoggingHelper.m in Sources */,
 				7C956A081843A5E6000A5595 /* ModifyOrderDetailsXMLParser.m in Sources */,
 				7C2A35711832A734004AE430 /* MagicalRecord+Actions.m in Sources */,
+				7C9D6BCE1845008D0018E0E4 /* MNMBottomPullToRefreshView.m in Sources */,
 				7C2A35661832A734004AE430 /* NSManagedObject+MagicalDataImport.m in Sources */,
 				7C2A35D21832A7CE004AE430 /* GenericService.m in Sources */,
 				7C2A35731832A734004AE430 /* MagicalRecord+iCloud.m in Sources */,
