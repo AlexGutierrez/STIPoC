@@ -34,13 +34,6 @@ NSString *const kSTIPoCSeguePushMainViewController = @"MainViewControllerPushSeg
 #pragma mark -
 #pragma mark View Lifecycle
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    
-    self.navigationController.navigationBarHidden = YES;
-}
-
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];

@@ -13,6 +13,7 @@
 #import "OrderSummary.h"
 #import "GetOrderXMLParser.h"
 #import "GetOrderRequest.h"
+#import "GetOrderResult.h"
 
 #import "ModifyOrderDetailsRequest.h"
 #import "ModifyOrderDetailsXMLParser.h"
@@ -73,7 +74,7 @@ static NSString *const kSTIPoCSelfServiceLegoCustomerInstanceId = @"12284";
 #pragma mark -
 #pragma Self Service Operations
 
-- (void)startGetOrdersRequestOperation
+- (void)startGetOrdersRequestOperationWithCompletionBlock:(void(^)())completion andFailureBlock:(void(^)(NSError *error))failure
 {
     getOrdersRequest *request = [getOrdersRequest newRequestWithCustomerId:kSTIPoCSelfServiceLegoCustomerInstanceId customerIdType:CustomerIdTypeInstanceId pageSize:10 pageNumber:1];
     
@@ -83,18 +84,13 @@ static NSString *const kSTIPoCSelfServiceLegoCustomerInstanceId = @"12284";
     getOrdersURLRequest.HTTPBody = [getOrdersBodyXMLString dataUsingEncoding:NSUTF8StringEncoding];
                         
     AFHTTPRequestOperation *getOrdersHTTPRequestOperation = [self HTTPRequestOperationWithRequest:getOrdersURLRequest success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        DDLogWarn(@"SUCCESS");
-        DDLogWarn(@"Raw XML Data: %@", [[NSString alloc] initWithData:operation.responseData encoding:NSUTF8StringEncoding]);
-        [GetOrdersXMLParser getOrdersResultFromXMLString:[[NSString alloc] initWithData:operation.responseData encoding:NSUTF8StringEncoding]];
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        DDLogWarn(@"URL: %@", getOrdersURLRequest.URL.absoluteString);
-        DDLogError(@"HTTP METHOD: %@", operation.request.HTTPMethod);
-        DDLogVerbose(@"ALL HTTP HEADER KEYS: %@", operation.request.allHTTPHeaderFields.allKeys);
-        DDLogVerbose(@"ALL HTTP HEADER VALUES: %@", operation.request.allHTTPHeaderFields.allValues);
-        DDLogVerbose(@"ALL HTTP HEADER ALL: %@", operation.request.allHTTPHeaderFields);
-        DDLogInfo(@"BODY: %@", [[NSString alloc] initWithData:operation.request.HTTPBody encoding:NSUTF8StringEncoding]);
+        GetOrdersResult *result = [GetOrdersXMLParser getOrdersResultFromXMLString:[[NSString alloc] initWithData:operation.responseData encoding:NSUTF8StringEncoding]];
+        [result.responseCode isEqualToString:]
         
-        DDLogError(@"STATUS CODE: %i", operation.response.statusCode);
+        completion();
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        failure(error);
     }];
     
     

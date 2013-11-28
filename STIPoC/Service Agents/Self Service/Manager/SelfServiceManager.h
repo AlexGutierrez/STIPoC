@@ -14,7 +14,9 @@
 
 + (instancetype)sharedInstance;
 
-- (void)startGetOrdersRequestOperation;
-- (void)startGetOrderRequestOperationWithOrderSummary:(OrderSummary *)orderSummary;
+- (void)startGetOrdersRequestOperationWithCompletionBlock:(void(^)())completion andFailureBlock:(void(^)(NSError *error))failure;
+- (void)startGetOrderRequestOperationWithOrderSummary:(OrderSummary *)orderSummary completionBlock:(void(^)())completion andFailureBlock:(void(^)(NSError *error))failure;
+- (void)startUpdateOrderStatusOperationWithOrderSummary:(OrderSummary *)orderSummary completionBlock:(void(^)())completion andFailureBlock:(void(^)(NSError *error))failure;
+- (void)startModifyOrderDetailsOperationWithOrders:(NSArray *)orders completionBlock:(void(^)())completion andFailureBlock:(void(^)(NSError *error))failure;
 
 @end

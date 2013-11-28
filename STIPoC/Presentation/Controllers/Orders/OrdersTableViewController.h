@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface OrdersTableViewController : UIViewController
+@interface OrdersTableViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end

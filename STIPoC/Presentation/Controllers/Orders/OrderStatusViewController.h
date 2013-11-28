@@ -6,8 +6,10 @@
 //  Copyright (c) 2013 Administrator. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "GenericViewController.h"
 
-@interface OrderStatusViewController : UIViewController
+@interface OrderStatusViewController : GenericViewController
+
+- (IBAction)menuButtonTapped:(id)sender;
 
 @end

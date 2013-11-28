@@ -7,8 +7,11 @@
 //
 
 #import "MainViewController.h"
+#import "ECZoomAnimationController.h"
 
 @interface MainViewController ()
+
+@property (strong, nonatomic) ECZoomAnimationController *zoomAnimationController;
 
 @end
 
@@ -23,9 +26,7 @@
     
     self.navigationController.navigationBarHidden = YES;
     
-    self.topViewAnchoredGesture = ECSlidingViewControllerAnchoredGestureTapping | ECSlidingViewControllerAnchoredGesturePanning;
-    self.customAnchoredGestures = @[];
-    [self.navigationController.view addGestureRecognizer:self.panGesture];
+    self.topViewAnchoredGesture = ECSlidingViewControllerAnchoredGestureTapping;
 }
 
 @end
