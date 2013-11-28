@@ -10,6 +10,8 @@
 #import "User.h"
 #import "Customer.h"
 
+static NSString *const kSTIPoCDefaultStoreName = @"com.STIPoC.DefaultStoreName";
+
 @interface GenericService ()
 
 @end

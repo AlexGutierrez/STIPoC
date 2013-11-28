@@ -16,6 +16,8 @@
 #define LOGIN_FIELDS_DEFAULT_POSITION_Y 277
 #define LOGIN_FIELDS_KEYBOARD_Y_DIFF 120
 
+NSString *const kSTIPoCSeguePushMainViewController = @"MainViewControllerPushSegue";
+
 @interface LoginViewController ()
 {
     XCDFormInputAccessoryView *_inputAccessoryView;
@@ -32,10 +34,17 @@
 #pragma mark -
 #pragma mark View Lifecycle
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    self.navigationController.navigationBarHidden = YES;
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
+
     self.userIDField.text = nil;
     self.customerIDField.text = nil;
     self.passwordField.text = nil;
@@ -43,7 +52,7 @@
     User *lastUser = [[SessionsService sharedInstance] lastUser];
     if (lastUser) {
         if ([[SessionsService sharedInstance] retrieveFromKeychainPasswordForUser:lastUser]) {
-            [self performSegueWithIdentifier:kSTIPoCSeguePushOrderStatusController sender:self];
+            [self performSegueWithIdentifier:kSTIPoCSeguePushMainViewController sender:self];
         }
         else {
             self.userIDField.text = lastUser.domainID;
@@ -101,7 +110,7 @@
                                                                       error:&error];
     
     if (loginSucceeded) {
-        [self performSegueWithIdentifier:kSTIPoCSeguePushOrderStatusController sender:self];
+        [self performSegueWithIdentifier:kSTIPoCSeguePushMainViewController sender:self];
     }
     else {
         UIAlertView *alertView = (error)? [[AlertViewFactory sharedInstance] createAlertViewWithTitle:error.domain andMessage:error.localizedDescription] : [[AlertViewFactory sharedInstance] createLoginDefaultAlertView];

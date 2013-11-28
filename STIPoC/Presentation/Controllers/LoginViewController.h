@@ -8,6 +8,8 @@
 
 #import "GenericViewController.h"
 
+extern NSString *const kSTIPoCSeguePushMainViewController;
+
 @interface LoginViewController : GenericViewController
 
 /// The userID UITextField IBOutlet

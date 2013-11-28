@@ -13,6 +13,18 @@
 		7C13C813183A633800C12C54 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7C2A35E11832A8E7004AE430 /* InfoPlist.strings */; };
 		7C13C814183A633D00C12C54 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C2A35C21832A7CE004AE430 /* Storyboard.storyboard */; };
 		7C13C815183A634B00C12C54 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7C2A35DE1832A8DE004AE430 /* Localizable.strings */; };
+		7C1A986B1847990F0045ED8C /* ECPercentDrivenInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1A985F1847990F0045ED8C /* ECPercentDrivenInteractiveTransition.m */; };
+		7C1A986C1847990F0045ED8C /* ECSlidingAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1A98611847990F0045ED8C /* ECSlidingAnimationController.m */; };
+		7C1A986D1847990F0045ED8C /* ECSlidingInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1A98641847990F0045ED8C /* ECSlidingInteractiveTransition.m */; };
+		7C1A986E1847990F0045ED8C /* ECSlidingSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1A98661847990F0045ED8C /* ECSlidingSegue.m */; };
+		7C1A986F1847990F0045ED8C /* ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1A98681847990F0045ED8C /* ECSlidingViewController.m */; };
+		7C1A98701847990F0045ED8C /* UIViewController+ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1A986A1847990F0045ED8C /* UIViewController+ECSlidingViewController.m */; };
+		7C1A98781847A0CF0045ED8C /* ECDynamicTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1A98731847A0CF0045ED8C /* ECDynamicTransition.m */; };
+		7C1A98791847A0CF0045ED8C /* ECFoldAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1A98751847A0CF0045ED8C /* ECFoldAnimationController.m */; };
+		7C1A987A1847A0CF0045ED8C /* ECZoomAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1A98771847A0CF0045ED8C /* ECZoomAnimationController.m */; };
+		7C1A987D1847A19C0045ED8C /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1A987C1847A19C0045ED8C /* MainViewController.m */; };
+		7C1A98801847A9EB0045ED8C /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1A987F1847A9EB0045ED8C /* MenuViewController.m */; };
+		7C1A98831847AA260045ED8C /* MenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1A98821847AA260045ED8C /* MenuTableViewController.m */; };
 		7C1F24111836D3F500E90145 /* MDRadialProgressLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1F23F41836D3F500E90145 /* MDRadialProgressLabel.m */; };
 		7C1F24121836D3F500E90145 /* MDRadialProgressTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1F23F61836D3F500E90145 /* MDRadialProgressTheme.m */; };
 		7C1F24131836D3F500E90145 /* MDRadialProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1F23F81836D3F500E90145 /* MDRadialProgressView.m */; };
@@ -118,16 +130,13 @@
 		7C958452183ACF4E0065C878 /* SSKeychain.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7C95844C183ACF4E0065C878 /* SSKeychain.strings */; };
 		7C958453183ACF4E0065C878 /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C95844F183ACF4E0065C878 /* SSKeychain.m */; };
 		7C958454183ACF4E0065C878 /* SSKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C958451183ACF4E0065C878 /* SSKeychainQuery.m */; };
-		7C9D6BBF1844F7930018E0E4 /* ECViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C9D6BBB1844F7930018E0E4 /* ECViewController.m */; };
-		7C9D6BC01844F7930018E0E4 /* ExtensiveCellContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C9D6BBD1844F7930018E0E4 /* ExtensiveCellContainer.m */; };
-		7C9D6BC11844F7930018E0E4 /* ExtensiveCellContainer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C9D6BBE1844F7930018E0E4 /* ExtensiveCellContainer.xib */; };
 		7C9D6BCA1845008D0018E0E4 /* MNMBottomPullToRefresh.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7C9D6BC31845008D0018E0E4 /* MNMBottomPullToRefresh.strings */; };
 		7C9D6BCB1845008D0018E0E4 /* MNMBottomPullToRefreshArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C9D6BC41845008D0018E0E4 /* MNMBottomPullToRefreshArrow.png */; };
 		7C9D6BCC1845008D0018E0E4 /* MNMBottomPullToRefreshArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C9D6BC51845008D0018E0E4 /* MNMBottomPullToRefreshArrow@2x.png */; };
 		7C9D6BCD1845008D0018E0E4 /* MNMBottomPullToRefreshManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C9D6BC71845008D0018E0E4 /* MNMBottomPullToRefreshManager.m */; };
 		7C9D6BCE1845008D0018E0E4 /* MNMBottomPullToRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C9D6BC91845008D0018E0E4 /* MNMBottomPullToRefreshView.m */; };
 		7C9D6BD618452E120018E0E4 /* OrderStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C9D6BD518452E120018E0E4 /* OrderStatusViewController.m */; };
-		7C9D6BD9184535710018E0E4 /* OrdersExtensiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C9D6BD8184535710018E0E4 /* OrdersExtensiveViewController.m */; };
+		7C9D6BD9184535710018E0E4 /* OrdersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C9D6BD8184535710018E0E4 /* OrdersTableViewController.m */; };
 		7C9D6BDC184535860018E0E4 /* OrderDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C9D6BDB184535860018E0E4 /* OrderDetailViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -151,7 +160,31 @@
 		7A98232E183553DB00CB0BA5 /* OCMockRecorder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OCMockRecorder.h; path = External/OCMock/OCMock/OCMockRecorder.h; sourceTree = SOURCE_ROOT; };
 		7C11689F18455EE300334AF9 /* XCDFormInputAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCDFormInputAccessoryView.h; sourceTree = "<group>"; };
 		7C1168A018455EE300334AF9 /* XCDFormInputAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCDFormInputAccessoryView.m; sourceTree = "<group>"; };
-		7C15477D183D4EA400792B0A /* CoreDataAttributeKeys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataAttributeKeys.h; sourceTree = "<group>"; };
+		7C1A985E1847990F0045ED8C /* ECPercentDrivenInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECPercentDrivenInteractiveTransition.h; sourceTree = "<group>"; };
+		7C1A985F1847990F0045ED8C /* ECPercentDrivenInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECPercentDrivenInteractiveTransition.m; sourceTree = "<group>"; };
+		7C1A98601847990F0045ED8C /* ECSlidingAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSlidingAnimationController.h; sourceTree = "<group>"; };
+		7C1A98611847990F0045ED8C /* ECSlidingAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSlidingAnimationController.m; sourceTree = "<group>"; };
+		7C1A98621847990F0045ED8C /* ECSlidingConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSlidingConstants.h; sourceTree = "<group>"; };
+		7C1A98631847990F0045ED8C /* ECSlidingInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSlidingInteractiveTransition.h; sourceTree = "<group>"; };
+		7C1A98641847990F0045ED8C /* ECSlidingInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSlidingInteractiveTransition.m; sourceTree = "<group>"; };
+		7C1A98651847990F0045ED8C /* ECSlidingSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSlidingSegue.h; sourceTree = "<group>"; };
+		7C1A98661847990F0045ED8C /* ECSlidingSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSlidingSegue.m; sourceTree = "<group>"; };
+		7C1A98671847990F0045ED8C /* ECSlidingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSlidingViewController.h; sourceTree = "<group>"; };
+		7C1A98681847990F0045ED8C /* ECSlidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSlidingViewController.m; sourceTree = "<group>"; };
+		7C1A98691847990F0045ED8C /* UIViewController+ECSlidingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ECSlidingViewController.h"; sourceTree = "<group>"; };
+		7C1A986A1847990F0045ED8C /* UIViewController+ECSlidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ECSlidingViewController.m"; sourceTree = "<group>"; };
+		7C1A98721847A0CF0045ED8C /* ECDynamicTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECDynamicTransition.h; sourceTree = "<group>"; };
+		7C1A98731847A0CF0045ED8C /* ECDynamicTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDynamicTransition.m; sourceTree = "<group>"; };
+		7C1A98741847A0CF0045ED8C /* ECFoldAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECFoldAnimationController.h; sourceTree = "<group>"; };
+		7C1A98751847A0CF0045ED8C /* ECFoldAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECFoldAnimationController.m; sourceTree = "<group>"; };
+		7C1A98761847A0CF0045ED8C /* ECZoomAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECZoomAnimationController.h; sourceTree = "<group>"; };
+		7C1A98771847A0CF0045ED8C /* ECZoomAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECZoomAnimationController.m; sourceTree = "<group>"; };
+		7C1A987B1847A19C0045ED8C /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		7C1A987C1847A19C0045ED8C /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		7C1A987E1847A9EB0045ED8C /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		7C1A987F1847A9EB0045ED8C /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		7C1A98811847AA260045ED8C /* MenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuTableViewController.h; sourceTree = "<group>"; };
+		7C1A98821847AA260045ED8C /* MenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuTableViewController.m; sourceTree = "<group>"; };
 		7C1F23F31836D3F500E90145 /* MDRadialProgressLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDRadialProgressLabel.h; sourceTree = "<group>"; };
 		7C1F23F41836D3F500E90145 /* MDRadialProgressLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDRadialProgressLabel.m; sourceTree = "<group>"; };
 		7C1F23F51836D3F500E90145 /* MDRadialProgressTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDRadialProgressTheme.h; sourceTree = "<group>"; };
@@ -280,10 +313,6 @@
 		7C2A35A11832A7CE004AE430 /* STIPoC.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = STIPoC.xcdatamodel; sourceTree = "<group>"; };
 		7C2A35A31832A7CE004AE430 /* GenericService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenericService.h; sourceTree = "<group>"; };
 		7C2A35A41832A7CE004AE430 /* GenericService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenericService.m; sourceTree = "<group>"; };
-		7C2A35AA1832A7CE004AE430 /* ApplicationConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationConstants.h; sourceTree = "<group>"; };
-		7C2A35AB1832A7CE004AE430 /* LoggingConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoggingConstants.h; sourceTree = "<group>"; };
-		7C2A35AC1832A7CE004AE430 /* SegueIdentifiers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegueIdentifiers.h; sourceTree = "<group>"; };
-		7C2A35AD1832A7CE004AE430 /* ViewControllerIdentifiers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerIdentifiers.h; sourceTree = "<group>"; };
 		7C2A35B11832A7CE004AE430 /* AlertViewFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertViewFactory.h; sourceTree = "<group>"; };
 		7C2A35B21832A7CE004AE430 /* AlertViewFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertViewFactory.m; sourceTree = "<group>"; };
 		7C2A35B41832A7CE004AE430 /* LoggingHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoggingHelper.h; sourceTree = "<group>"; };
@@ -351,7 +380,6 @@
 		7C956A041843A5C6000A5595 /* ModifyOrderDetailsResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModifyOrderDetailsResult.m; sourceTree = "<group>"; };
 		7C956A061843A5E6000A5595 /* ModifyOrderDetailsXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModifyOrderDetailsXMLParser.h; sourceTree = "<group>"; };
 		7C956A071843A5E6000A5595 /* ModifyOrderDetailsXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModifyOrderDetailsXMLParser.m; sourceTree = "<group>"; };
-		7C956A0B1843E0F7000A5595 /* SelfServiceConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelfServiceConstants.h; sourceTree = "<group>"; };
 		7C958441183AC0570065C878 /* InspectableLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InspectableLoginViewController.h; sourceTree = "<group>"; };
 		7C958442183AC0570065C878 /* InspectableLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InspectableLoginViewController.m; sourceTree = "<group>"; };
 		7C958444183AC35D0065C878 /* LoginViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewControllerTests.m; sourceTree = "<group>"; };
@@ -362,11 +390,6 @@
 		7C95844F183ACF4E0065C878 /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
 		7C958450183ACF4E0065C878 /* SSKeychainQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychainQuery.h; sourceTree = "<group>"; };
 		7C958451183ACF4E0065C878 /* SSKeychainQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychainQuery.m; sourceTree = "<group>"; };
-		7C9D6BBA1844F7930018E0E4 /* ECViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECViewController.h; sourceTree = "<group>"; };
-		7C9D6BBB1844F7930018E0E4 /* ECViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECViewController.m; sourceTree = "<group>"; };
-		7C9D6BBC1844F7930018E0E4 /* ExtensiveCellContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtensiveCellContainer.h; sourceTree = "<group>"; };
-		7C9D6BBD1844F7930018E0E4 /* ExtensiveCellContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtensiveCellContainer.m; sourceTree = "<group>"; };
-		7C9D6BBE1844F7930018E0E4 /* ExtensiveCellContainer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExtensiveCellContainer.xib; sourceTree = "<group>"; };
 		7C9D6BC31845008D0018E0E4 /* MNMBottomPullToRefresh.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = MNMBottomPullToRefresh.strings; sourceTree = "<group>"; };
 		7C9D6BC41845008D0018E0E4 /* MNMBottomPullToRefreshArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MNMBottomPullToRefreshArrow.png; sourceTree = "<group>"; };
 		7C9D6BC51845008D0018E0E4 /* MNMBottomPullToRefreshArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MNMBottomPullToRefreshArrow@2x.png"; sourceTree = "<group>"; };
@@ -376,11 +399,10 @@
 		7C9D6BC91845008D0018E0E4 /* MNMBottomPullToRefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNMBottomPullToRefreshView.m; sourceTree = "<group>"; };
 		7C9D6BD418452E120018E0E4 /* OrderStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderStatusViewController.h; sourceTree = "<group>"; };
 		7C9D6BD518452E120018E0E4 /* OrderStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderStatusViewController.m; sourceTree = "<group>"; };
-		7C9D6BD7184535710018E0E4 /* OrdersExtensiveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrdersExtensiveViewController.h; sourceTree = "<group>"; };
-		7C9D6BD8184535710018E0E4 /* OrdersExtensiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrdersExtensiveViewController.m; sourceTree = "<group>"; };
+		7C9D6BD7184535710018E0E4 /* OrdersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrdersTableViewController.h; sourceTree = "<group>"; };
+		7C9D6BD8184535710018E0E4 /* OrdersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrdersTableViewController.m; sourceTree = "<group>"; };
 		7C9D6BDA184535860018E0E4 /* OrderDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderDetailViewController.h; sourceTree = "<group>"; };
 		7C9D6BDB184535860018E0E4 /* OrderDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderDetailViewController.m; sourceTree = "<group>"; };
-		7C9D6BDD18453C930018E0E4 /* UITableViewCellReuseIdentifiers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UITableViewCellReuseIdentifiers.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -451,6 +473,40 @@
 				7C1168A018455EE300334AF9 /* XCDFormInputAccessoryView.m */,
 			);
 			path = XCDFormInputAccessoryView;
+			sourceTree = "<group>";
+		};
+		7C1A985D1847990F0045ED8C /* ECSlidingViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7C1A98711847A0CF0045ED8C /* Transitions */,
+				7C1A985E1847990F0045ED8C /* ECPercentDrivenInteractiveTransition.h */,
+				7C1A985F1847990F0045ED8C /* ECPercentDrivenInteractiveTransition.m */,
+				7C1A98601847990F0045ED8C /* ECSlidingAnimationController.h */,
+				7C1A98611847990F0045ED8C /* ECSlidingAnimationController.m */,
+				7C1A98621847990F0045ED8C /* ECSlidingConstants.h */,
+				7C1A98631847990F0045ED8C /* ECSlidingInteractiveTransition.h */,
+				7C1A98641847990F0045ED8C /* ECSlidingInteractiveTransition.m */,
+				7C1A98651847990F0045ED8C /* ECSlidingSegue.h */,
+				7C1A98661847990F0045ED8C /* ECSlidingSegue.m */,
+				7C1A98671847990F0045ED8C /* ECSlidingViewController.h */,
+				7C1A98681847990F0045ED8C /* ECSlidingViewController.m */,
+				7C1A98691847990F0045ED8C /* UIViewController+ECSlidingViewController.h */,
+				7C1A986A1847990F0045ED8C /* UIViewController+ECSlidingViewController.m */,
+			);
+			path = ECSlidingViewController;
+			sourceTree = "<group>";
+		};
+		7C1A98711847A0CF0045ED8C /* Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				7C1A98721847A0CF0045ED8C /* ECDynamicTransition.h */,
+				7C1A98731847A0CF0045ED8C /* ECDynamicTransition.m */,
+				7C1A98741847A0CF0045ED8C /* ECFoldAnimationController.h */,
+				7C1A98751847A0CF0045ED8C /* ECFoldAnimationController.m */,
+				7C1A98761847A0CF0045ED8C /* ECZoomAnimationController.h */,
+				7C1A98771847A0CF0045ED8C /* ECZoomAnimationController.m */,
+			);
+			path = Transitions;
 			sourceTree = "<group>";
 		};
 		7C1F23E21836754C00E90145 /* Test Cases */ = {
@@ -596,9 +652,8 @@
 		7C2A350A1832A734004AE430 /* External */ = {
 			isa = PBXGroup;
 			children = (
-				7C11689E18455EE300334AF9 /* XCDFormInputAccessoryView */,
 				7C2A357E1832A7AD004AE430 /* AFNetworking */,
-				7C9D6BB91844F7930018E0E4 /* ExtensiveCell */,
+				7C1A985D1847990F0045ED8C /* ECSlidingViewController */,
 				7C2A350B1832A734004AE430 /* Lumberjack */,
 				7C2A351B1832A734004AE430 /* Magical Record */,
 				7C1F23F21836D3F500E90145 /* MDRadialProgress */,
@@ -607,6 +662,7 @@
 				7C363CAC183FB35000003723 /* NSObject-ObjectMap */,
 				7A98231D183552DE00CB0BA5 /* OCMock */,
 				7C95844B183ACF4E0065C878 /* SSKeychain */,
+				7C11689E18455EE300334AF9 /* XCDFormInputAccessoryView */,
 			);
 			path = External;
 			sourceTree = "<group>";
@@ -800,25 +856,10 @@
 			isa = PBXGroup;
 			children = (
 				7C8A350C183D105D00802B89 /* Categories */,
-				7C2A35A91832A7CE004AE430 /* Constants */,
 				7C2A35B01832A7CE004AE430 /* Factories */,
 				7C2A35B31832A7CE004AE430 /* Helpers */,
 			);
 			path = Infrastructure;
-			sourceTree = "<group>";
-		};
-		7C2A35A91832A7CE004AE430 /* Constants */ = {
-			isa = PBXGroup;
-			children = (
-				7C2A35AA1832A7CE004AE430 /* ApplicationConstants.h */,
-				7C2A35AB1832A7CE004AE430 /* LoggingConstants.h */,
-				7C2A35AC1832A7CE004AE430 /* SegueIdentifiers.h */,
-				7C2A35AD1832A7CE004AE430 /* ViewControllerIdentifiers.h */,
-				7C15477D183D4EA400792B0A /* CoreDataAttributeKeys.h */,
-				7C956A0B1843E0F7000A5595 /* SelfServiceConstants.h */,
-				7C9D6BDD18453C930018E0E4 /* UITableViewCellReuseIdentifiers.h */,
-			);
-			path = Constants;
 			sourceTree = "<group>";
 		};
 		7C2A35B01832A7CE004AE430 /* Factories */ = {
@@ -858,10 +899,16 @@
 				7C2BF13B183A9E2800EEE4BF /* LoginViewController.m */,
 				7C9D6BD418452E120018E0E4 /* OrderStatusViewController.h */,
 				7C9D6BD518452E120018E0E4 /* OrderStatusViewController.m */,
-				7C9D6BD7184535710018E0E4 /* OrdersExtensiveViewController.h */,
-				7C9D6BD8184535710018E0E4 /* OrdersExtensiveViewController.m */,
+				7C9D6BD7184535710018E0E4 /* OrdersTableViewController.h */,
+				7C9D6BD8184535710018E0E4 /* OrdersTableViewController.m */,
 				7C9D6BDA184535860018E0E4 /* OrderDetailViewController.h */,
 				7C9D6BDB184535860018E0E4 /* OrderDetailViewController.m */,
+				7C1A987B1847A19C0045ED8C /* MainViewController.h */,
+				7C1A987C1847A19C0045ED8C /* MainViewController.m */,
+				7C1A987E1847A9EB0045ED8C /* MenuViewController.h */,
+				7C1A987F1847A9EB0045ED8C /* MenuViewController.m */,
+				7C1A98811847AA260045ED8C /* MenuTableViewController.h */,
+				7C1A98821847AA260045ED8C /* MenuTableViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1090,18 +1137,6 @@
 			path = SSKeychain;
 			sourceTree = "<group>";
 		};
-		7C9D6BB91844F7930018E0E4 /* ExtensiveCell */ = {
-			isa = PBXGroup;
-			children = (
-				7C9D6BBA1844F7930018E0E4 /* ECViewController.h */,
-				7C9D6BBB1844F7930018E0E4 /* ECViewController.m */,
-				7C9D6BBC1844F7930018E0E4 /* ExtensiveCellContainer.h */,
-				7C9D6BBD1844F7930018E0E4 /* ExtensiveCellContainer.m */,
-				7C9D6BBE1844F7930018E0E4 /* ExtensiveCellContainer.xib */,
-			);
-			path = ExtensiveCell;
-			sourceTree = "<group>";
-		};
 		7C9D6BC21845008D0018E0E4 /* MNMBottomPullToRefresh */ = {
 			isa = PBXGroup;
 			children = (
@@ -1218,7 +1253,6 @@
 				7C13C813183A633800C12C54 /* InfoPlist.strings in Resources */,
 				7C9D6BCA1845008D0018E0E4 /* MNMBottomPullToRefresh.strings in Resources */,
 				7C2A34971832A6EB004AE430 /* Images.xcassets in Resources */,
-				7C9D6BC11844F7930018E0E4 /* ExtensiveCellContainer.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1238,18 +1272,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C2A355A1832A734004AE430 /* DDLog.m in Sources */,
+				7C1A98831847AA260045ED8C /* MenuTableViewController.m in Sources */,
 				7C2A35621832A734004AE430 /* NSObject+MagicalDataImport.m in Sources */,
 				7C363CAB183FAFD600003723 /* GetOrdersXMLParser.m in Sources */,
 				7C2A35701832A734004AE430 /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */,
+				7C1A987D1847A19C0045ED8C /* MainViewController.m in Sources */,
 				7C363C9C183FA96D00003723 /* GetOrdersResult.m in Sources */,
 				7C2A359A1832A7AD004AE430 /* AFURLSessionManager.m in Sources */,
 				7C363C95183FA7CA00003723 /* LineItemAttribute.m in Sources */,
 				7C363C9F183FAA4600003723 /* GetOrderResult.m in Sources */,
 				7C958448183AC4580065C878 /* SessionsService.m in Sources */,
 				7C8A3510183D109400802B89 /* User+CustomAccessors.m in Sources */,
+				7C1A986E1847990F0045ED8C /* ECSlidingSegue.m in Sources */,
+				7C1A986F1847990F0045ED8C /* ECSlidingViewController.m in Sources */,
 				7C363C98183FA7CA00003723 /* GetOrderRequest.m in Sources */,
 				7C2A35941832A7AD004AE430 /* AFHTTPSessionManager.m in Sources */,
 				7C2A35581832A734004AE430 /* DDASLLogger.m in Sources */,
+				7C1A986C1847990F0045ED8C /* ECSlidingAnimationController.m in Sources */,
+				7C1A98791847A0CF0045ED8C /* ECFoldAnimationController.m in Sources */,
 				7C9D6BCD1845008D0018E0E4 /* MNMBottomPullToRefreshManager.m in Sources */,
 				7C363CA5183FAB5900003723 /* GenericSelfServiceResult.m in Sources */,
 				7C958454183ACF4E0065C878 /* SSKeychainQuery.m in Sources */,
@@ -1259,6 +1299,7 @@
 				7C2A356D1832A734004AE430 /* NSManagedObjectContext+MagicalThreading.m in Sources */,
 				7C956A021843A5B5000A5595 /* ModifyOrderDetailsRequest.m in Sources */,
 				7C2A35961832A7AD004AE430 /* AFSecurityPolicy.m in Sources */,
+				7C1A98701847990F0045ED8C /* UIViewController+ECSlidingViewController.m in Sources */,
 				7C2BF13C183A9E2800EEE4BF /* LoginViewController.m in Sources */,
 				7C2A35631832A734004AE430 /* NSRelationshipDescription+MagicalDataImport.m in Sources */,
 				7C2A35691832A734004AE430 /* NSManagedObject+MagicalRequests.m in Sources */,
@@ -1266,13 +1307,14 @@
 				7C9D6BDC184535860018E0E4 /* OrderDetailViewController.m in Sources */,
 				7C363CB2183FB9DA00003723 /* GenericXMLParser.m in Sources */,
 				7C2A35771832A734004AE430 /* MagicalRecord.m in Sources */,
+				7C1A986B1847990F0045ED8C /* ECPercentDrivenInteractiveTransition.m in Sources */,
 				7C2A355D1832A734004AE430 /* DispatchQueueLogFormatter.m in Sources */,
 				7C2A35971832A7AD004AE430 /* AFURLConnectionOperation.m in Sources */,
 				7C2A356F1832A734004AE430 /* NSPersistentStore+MagicalRecord.m in Sources */,
 				7C2A35D61832A7CE004AE430 /* GenericViewController.m in Sources */,
 				7C2A356E1832A734004AE430 /* NSManagedObjectModel+MagicalRecord.m in Sources */,
-				7C9D6BBF1844F7930018E0E4 /* ECViewController.m in Sources */,
 				7C9569F6184394BC000A5595 /* GetOrderXMLParser.m in Sources */,
+				7C1A987A1847A0CF0045ED8C /* ECZoomAnimationController.m in Sources */,
 				7C2A355F1832A734004AE430 /* NSAttributeDescription+MagicalDataImport.m in Sources */,
 				7C2A355E1832A734004AE430 /* MagicalImportFunctions.m in Sources */,
 				7C9D6BD618452E120018E0E4 /* OrderStatusViewController.m in Sources */,
@@ -1299,6 +1341,7 @@
 				7C2A35711832A734004AE430 /* MagicalRecord+Actions.m in Sources */,
 				7C9D6BCE1845008D0018E0E4 /* MNMBottomPullToRefreshView.m in Sources */,
 				7C2A35661832A734004AE430 /* NSManagedObject+MagicalDataImport.m in Sources */,
+				7C1A98781847A0CF0045ED8C /* ECDynamicTransition.m in Sources */,
 				7C2A35D21832A7CE004AE430 /* GenericService.m in Sources */,
 				7C2A35731832A734004AE430 /* MagicalRecord+iCloud.m in Sources */,
 				7C2A35601832A734004AE430 /* NSEntityDescription+MagicalDataImport.m in Sources */,
@@ -1311,15 +1354,16 @@
 				7C2A35D11832A7CE004AE430 /* STIPoC.xcdatamodeld in Sources */,
 				7C2A35951832A7AD004AE430 /* AFNetworkReachabilityManager.m in Sources */,
 				7C2A355C1832A734004AE430 /* ContextFilterLogFormatter.m in Sources */,
-				7C9D6BC01844F7930018E0E4 /* ExtensiveCellContainer.m in Sources */,
 				7C363C99183FA7CA00003723 /* GetOrdersRequest.m in Sources */,
 				7C956A051843A5C6000A5595 /* ModifyOrderDetailsResult.m in Sources */,
 				7C2A35931832A7AD004AE430 /* AFHTTPRequestOperationManager.m in Sources */,
 				7C9569FA18439C43000A5595 /* SelfServiceEnumTranslator.m in Sources */,
 				7C2A35991832A7AD004AE430 /* AFURLResponseSerialization.m in Sources */,
+				7C1A986D1847990F0045ED8C /* ECSlidingInteractiveTransition.m in Sources */,
 				7C2A35921832A7AD004AE430 /* AFHTTPRequestOperation.m in Sources */,
 				7C2A35721832A734004AE430 /* MagicalRecord+ErrorHandling.m in Sources */,
-				7C9D6BD9184535710018E0E4 /* OrdersExtensiveViewController.m in Sources */,
+				7C9D6BD9184535710018E0E4 /* OrdersTableViewController.m in Sources */,
+				7C1A98801847A9EB0045ED8C /* MenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

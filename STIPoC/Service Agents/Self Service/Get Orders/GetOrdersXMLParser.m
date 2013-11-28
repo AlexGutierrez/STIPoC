@@ -10,6 +10,12 @@
 #import "getOrdersRequest.h"
 #import "GetOrdersResult.h"
 
+static NSString *const kSTIPoCSelfServiceGetOrdersOpenTagFormat = @"<GetOrders %@>";
+static NSString *const kSTIPoCSelfServiceGetOrdersCloseTag = @"</GetOrders>";
+
+static NSString *const kSTIPoCSelfServiceGetOrdersResultOpenTag = @"<GetOrdersResult>";
+static NSString *const kSTIPoCSelfServiceGetOrdersResultCloseTag = @"</GetOrdersResult>";
+
 @implementation GetOrdersXMLParser
 
 + (NSString *)xmlStringFromGetOrdersRequest:(getOrdersRequest *)getOrdersRequest

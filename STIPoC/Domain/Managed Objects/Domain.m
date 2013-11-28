@@ -8,6 +8,7 @@
 
 #import "Domain.h"
 
+NSString *const kSTIPoCDomainIDAttributeKey = @"domainID";
 
 @implementation Domain
 

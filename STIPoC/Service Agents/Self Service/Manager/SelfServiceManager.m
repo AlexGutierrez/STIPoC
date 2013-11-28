@@ -17,6 +17,19 @@
 #import "ModifyOrderDetailsRequest.h"
 #import "ModifyOrderDetailsXMLParser.h"
 
+static NSString *const kSTIPoCSelfServiceEndpointURLBaseString = @"https://services-qa.oss.terremark.com/SelfService/SelfService.asmx";
+static NSString *const kSTIPoCSelfServiceHTTPPOSTMethod = @"Post";
+static NSString *const kSTIPoCSelfServiceContentTypeHeader = @"Content-Type";
+static NSString *const kSTIPoCSelfServiceSOAPActionHeader = @"SOAPAction";
+static NSString *const kSTIPoCSelfServiceContentType = @"text/xml; charset=utf-8";
+static NSString *const kSTIPoCSelfServiceSOAPActionBaseURL = @"http://tempuri.org/";
+
+static NSString *const kSTIPoCSelfServiceGetOrdersActionName = @"GetOrders";
+static NSString *const kSTIPoCSelfServiceGetOrderActionName = @"GetOrder";
+static NSString *const kSTIPoCSelfServiceModifyOrderDetailsActionName = @"ModifyOrderDetails";
+
+static NSString *const kSTIPoCSelfServiceLegoCustomerInstanceId = @"12284";
+
 @interface SelfServiceManager ()
 
 - (NSMutableURLRequest *)newSelfServiceURLRequestWithActionName:(NSString *)actionName;

@@ -10,6 +10,12 @@
 #import "ModifyOrderDetailsRequest.h"
 #import "ModifyOrderDetailsResult.h"
 
+static NSString *const kSTIPoCSelfServiceModifyOrderDetailsOpenTagFormat = @"<ModifyOrderDetails %@>";
+static NSString *const kSTIPoCSelfServiceModifyOrderDetailsCloseTag = @"</ModifyOrderDetails>";
+
+static NSString *const kSTIPoCSelfServiceModifyOrderDetailsResultOpenTag = @"<ModifyOrderDetailsResult>";
+static NSString *const kSTIPoCSelfServiceModifyOrderDetailsResultCloseTag = @"</ModifyOrderDetailsResult>";
+
 @implementation ModifyOrderDetailsXMLParser
 
 + (NSString *)xmlStringFromModifyOrderDetailsRequest:(modifyOrderDetailsRequest *)modifyOrderDetailsRequest

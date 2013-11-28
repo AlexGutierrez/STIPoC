@@ -16,17 +16,17 @@
     #import <Foundation/Foundation.h>
     #import <CoreData/CoreData.h>
 
-    #import "ApplicationConstants.h"
-
-    #import "ViewControllerIdentifiers.h"
-    #import "SegueIdentifiers.h"
-    #import "LoggingConstants.h"
-    #import "UITableViewCellReuseIdentifiers.h"
-    #import "SelfServiceConstants.h"
-
-    #import "AFNetworking.h"
+    #define MR_SHORTHAND
+    #define MR_ENABLE_ACTIVE_RECORD_LOGGING 0
     #import "CoreData+MagicalRecord.h"
-    #import "CoreDataAttributeKeys.h"
-
+    #import "AFNetworking.h"
     #import <libxml/tree.h>
+    #import "DDLog.h"
+
+    #ifdef DEBUG
+        static const int ddLogLevel = LOG_LEVEL_VERBOSE;
+    #else
+        static const int ddLogLevel = LOG_LEVEL_OFF;
+    #endif
+
 #endif

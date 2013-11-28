@@ -11,6 +11,8 @@
 #import "User+CustomAccessors.h"
 #import "Customer.h"
 
+static NSString *const kSTIPoCServiceName = @"com.STIPoC.SelfService";
+
 @interface SessionsService ()
 
 /// The current logged in user.

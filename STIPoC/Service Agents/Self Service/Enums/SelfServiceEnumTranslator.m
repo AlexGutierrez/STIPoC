@@ -8,6 +8,24 @@
 
 #import "SelfServiceEnumTranslator.h"
 
+static NSString *const kSTIPoCSelfServiceOrderIdTypeOrderId = @"OrderId";
+static NSString *const kSTIPoCSelfServiceOrderIdTypeProjectId = @"ProjectId";
+static NSString *const kSTIPoCSelfServiceOrderIdTypeFriendlyOrderId = @"FriendlyOrderId";
+
+static NSString *const kSTIPoCSelfServiceOrderingTypeAsc = @"Asc";
+static NSString *const kSTIPoCSelfServiceOrderingTypeDesc = @"Desc";
+
+static NSString *const kSTIPoCSelfServiceCustomerIdTypeAccountNumber = @"AccountNumber";
+static NSString *const kSTIPoCSelfServiceCustomerIdTypeBillingId = @"BillingId";
+static NSString *const kSTIPoCSelfServiceCustomerIdTypeInstanceId = @"InstanceId";
+static NSString *const kSTIPoCSelfServiceCustomerIdTypeNSAP = @"NSAP";
+
+static NSString *const kSTIPoCSelfServiceSourceSystemEcommerce = @"0";
+static NSString *const kSTIPoCSelfServiceSourceSystemCAP = @"1";
+
+static NSString *const kSTIPoCSelfServiceResponseCodeSuccess = @"0";
+static NSString *const kSTIPoCSelfServiceResponseCodeError = @"1";
+
 @implementation SelfServiceEnumTranslator
 
 #pragma mark -

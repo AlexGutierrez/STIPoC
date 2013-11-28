@@ -8,6 +8,9 @@
 
 #import "ModifyOrderDetailsRequest.h"
 
+static NSString *const kSTIPoCSelfServiceGenericECommerceLoginId = @"SDP-Implementation Team";
+static NSString *const kSTIPoCSelfServiceGenericUserName = @"Carlos Ponce";
+
 @implementation modifyOrderDetailsRequest
 
 #pragma mark -

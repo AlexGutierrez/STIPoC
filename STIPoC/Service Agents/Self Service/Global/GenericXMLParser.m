@@ -8,6 +8,9 @@
 
 #import "GenericXMLParser.h"
 
+NSString *const kSTIPoCSOAPActionAttributes = @"xmlns=\"http://tempuri.org/\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\"";
+NSString *const kSTIPoCSOAPActionFormat = @"<s:Envelope xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\"><s:Body>%@%@%@</s:Body></s:Envelope>";
+
 @implementation GenericXMLParser
 
 + (NSString *)elementStringFromXMLString:(NSString *)xmlString withOpenTag:(NSString *)openTag andCloseTag:(NSString *)closeTag

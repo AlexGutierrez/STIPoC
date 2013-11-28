@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ECViewController.h"
 
-@interface OrdersExtensiveViewController : ECViewController
+@interface OrdersTableViewController : UIViewController
 
 @end
