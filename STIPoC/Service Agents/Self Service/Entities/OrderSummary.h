@@ -10,6 +10,10 @@
 
 @class GetOrderResult;
 
+extern NSString *const kSTIPoCSelfServiceGenericUserId;
+extern NSString *const kSTIPoCSelfServiceGenericUserName;
+extern NSString *const kSTIPoCSelfServiceGenericModifiedBy;
+
 @interface OrderSummary : NSObject
 
 @property (strong, nonatomic) NSString *OrderId;

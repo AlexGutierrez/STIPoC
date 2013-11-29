@@ -26,6 +26,9 @@ NSString *const kSTIPoCSelfServiceSourceSystemCAP = @"1";
 NSString *const kSTIPoCSelfServiceResponseCodeSuccess = @"0";
 NSString *const kSTIPoCSelfServiceResponseCodeError = @"1";
 
+NSString *const kSTIPoCSelfServiceOrderStatusSubmitted = @"Submitted";
+NSString *const kSTIPoCSelfServiceOrderStatusRejected = @"Rejected";
+
 @implementation SelfServiceEnumTranslator
 
 #pragma mark -
@@ -178,6 +181,33 @@ NSString *const kSTIPoCSelfServiceResponseCodeError = @"1";
     }
     else {
         return SourceSystemCAP;
+    }
+}
+
+#pragma mark -
+#pragma mark Order Status
+
++ (NSString *)stringFromOrderStatus:(OrderStatus)orderStatus
+{
+    switch (orderStatus) {
+        case OrderStatusSubmitted:
+            return kSTIPoCSelfServiceOrderStatusSubmitted;
+            break;
+        case OrderStatusRejected:
+            return kSTIPoCSelfServiceOrderStatusRejected;
+            break;
+        default:
+            break;
+    }
+}
+
++ (OrderStatus)orderStatusFromString:(NSString *)orderStatusString
+{
+    if ([orderStatusString isEqualToString:kSTIPoCSelfServiceOrderStatusSubmitted]) {
+        return OrderStatusSubmitted;
+    }
+    else {
+        return OrderStatusRejected;
     }
 }
 

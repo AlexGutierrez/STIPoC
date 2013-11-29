@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		7A982327183552DE00CB0BA5 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A982326183552DE00CB0BA5 /* libOCMock.a */; };
 		7A9823281835533B00CB0BA5 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A982326183552DE00CB0BA5 /* libOCMock.a */; };
+		7AA569F41848F2630095C98A /* UpdateOrderStatusRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA569F31848F2630095C98A /* UpdateOrderStatusRequest.m */; };
+		7AA569F71848F2950095C98A /* UpdateOrderStatusResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA569F61848F2950095C98A /* UpdateOrderStatusResult.m */; };
+		7AA569FA1848F2B40095C98A /* UpdateOrderStatusXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA569F91848F2B40095C98A /* UpdateOrderStatusXMLParser.m */; };
 		7C1168A118455EE300334AF9 /* XCDFormInputAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1168A018455EE300334AF9 /* XCDFormInputAccessoryView.m */; };
 		7C13C813183A633800C12C54 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7C2A35E11832A8E7004AE430 /* InfoPlist.strings */; };
 		7C13C814183A633D00C12C54 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C2A35C21832A7CE004AE430 /* Storyboard.storyboard */; };
@@ -159,6 +162,13 @@
 		7A98232C183553DB00CB0BA5 /* OCMock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OCMock.h; path = External/OCMock/OCMock/OCMock.h; sourceTree = SOURCE_ROOT; };
 		7A98232D183553DB00CB0BA5 /* OCMockObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OCMockObject.h; path = External/OCMock/OCMock/OCMockObject.h; sourceTree = SOURCE_ROOT; };
 		7A98232E183553DB00CB0BA5 /* OCMockRecorder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OCMockRecorder.h; path = External/OCMock/OCMock/OCMockRecorder.h; sourceTree = SOURCE_ROOT; };
+		7AA569F21848F2630095C98A /* UpdateOrderStatusRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateOrderStatusRequest.h; sourceTree = "<group>"; };
+		7AA569F31848F2630095C98A /* UpdateOrderStatusRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateOrderStatusRequest.m; sourceTree = "<group>"; };
+		7AA569F51848F2950095C98A /* UpdateOrderStatusResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateOrderStatusResult.h; sourceTree = "<group>"; };
+		7AA569F61848F2950095C98A /* UpdateOrderStatusResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateOrderStatusResult.m; sourceTree = "<group>"; };
+		7AA569F81848F2B40095C98A /* UpdateOrderStatusXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateOrderStatusXMLParser.h; sourceTree = "<group>"; };
+		7AA569F91848F2B40095C98A /* UpdateOrderStatusXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateOrderStatusXMLParser.m; sourceTree = "<group>"; };
+		7AA569FB1848F6E40095C98A /* OrderStatus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderStatus.h; sourceTree = "<group>"; };
 		7C11689F18455EE300334AF9 /* XCDFormInputAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCDFormInputAccessoryView.h; sourceTree = "<group>"; };
 		7C1168A018455EE300334AF9 /* XCDFormInputAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCDFormInputAccessoryView.m; sourceTree = "<group>"; };
 		7C1A985E1847990F0045ED8C /* ECPercentDrivenInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECPercentDrivenInteractiveTransition.h; sourceTree = "<group>"; };
@@ -467,6 +477,19 @@
 				7A982326183552DE00CB0BA5 /* libOCMock.a */,
 			);
 			path = "Static Library";
+			sourceTree = "<group>";
+		};
+		7AA569F11848F2320095C98A /* Update Order Status */ = {
+			isa = PBXGroup;
+			children = (
+				7AA569F21848F2630095C98A /* UpdateOrderStatusRequest.h */,
+				7AA569F31848F2630095C98A /* UpdateOrderStatusRequest.m */,
+				7AA569F51848F2950095C98A /* UpdateOrderStatusResult.h */,
+				7AA569F61848F2950095C98A /* UpdateOrderStatusResult.m */,
+				7AA569F81848F2B40095C98A /* UpdateOrderStatusXMLParser.h */,
+				7AA569F91848F2B40095C98A /* UpdateOrderStatusXMLParser.m */,
+			);
+			path = "Update Order Status";
 			sourceTree = "<group>";
 		};
 		7C11689E18455EE300334AF9 /* XCDFormInputAccessoryView */ = {
@@ -1005,6 +1028,7 @@
 		7C363C85183FA7CA00003723 /* Self Service */ = {
 			isa = PBXGroup;
 			children = (
+				7AA569F11848F2320095C98A /* Update Order Status */,
 				7C363C86183FA7CA00003723 /* Entities */,
 				7C9569F718439C33000A5595 /* Enums */,
 				7C363C8D183FA7CA00003723 /* Get Order */,
@@ -1156,6 +1180,7 @@
 				7C9569F818439C43000A5595 /* SelfServiceEnumTranslator.h */,
 				7C9569F918439C43000A5595 /* SelfServiceEnumTranslator.m */,
 				7C9569FF1843A115000A5595 /* SourceSystem.h */,
+				7AA569FB1848F6E40095C98A /* OrderStatus.h */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -1334,6 +1359,7 @@
 				7C1A98A11847E1DF0045ED8C /* OrdersTableViewController.m in Sources */,
 				7C9D6BCD1845008D0018E0E4 /* MNMBottomPullToRefreshManager.m in Sources */,
 				7C363CA5183FAB5900003723 /* GenericSelfServiceResult.m in Sources */,
+				7AA569F71848F2950095C98A /* UpdateOrderStatusResult.m in Sources */,
 				7C958454183ACF4E0065C878 /* SSKeychainQuery.m in Sources */,
 				7C2A35611832A734004AE430 /* NSNumber+MagicalDataImport.m in Sources */,
 				7C2A356B1832A734004AE430 /* NSManagedObjectContext+MagicalRecord.m in Sources */,
@@ -1390,6 +1416,7 @@
 				7C2A35731832A734004AE430 /* MagicalRecord+iCloud.m in Sources */,
 				7C2A35601832A734004AE430 /* NSEntityDescription+MagicalDataImport.m in Sources */,
 				7C1168A118455EE300334AF9 /* XCDFormInputAccessoryView.m in Sources */,
+				7AA569FA1848F2B40095C98A /* UpdateOrderStatusXMLParser.m in Sources */,
 				7C2A35DC1832A7CE004AE430 /* AppDelegate.m in Sources */,
 				7C2A356C1832A734004AE430 /* NSManagedObjectContext+MagicalSaves.m in Sources */,
 				7C2A35671832A734004AE430 /* NSManagedObject+MagicalFinders.m in Sources */,
@@ -1399,6 +1426,7 @@
 				7C2A35951832A7AD004AE430 /* AFNetworkReachabilityManager.m in Sources */,
 				7C2A355C1832A734004AE430 /* ContextFilterLogFormatter.m in Sources */,
 				7C363C99183FA7CA00003723 /* GetOrdersRequest.m in Sources */,
+				7AA569F41848F2630095C98A /* UpdateOrderStatusRequest.m in Sources */,
 				7C956A051843A5C6000A5595 /* ModifyOrderDetailsResult.m in Sources */,
 				7C2A35931832A7AD004AE430 /* AFHTTPRequestOperationManager.m in Sources */,
 				7C9569FA18439C43000A5595 /* SelfServiceEnumTranslator.m in Sources */,

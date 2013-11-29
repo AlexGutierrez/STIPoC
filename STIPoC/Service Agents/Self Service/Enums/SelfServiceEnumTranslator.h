@@ -12,6 +12,7 @@
 #import "CustomerIdType.h"
 #import "ResponseCode.h"
 #import "SourceSystem.h"
+#import "OrderStatus.h"
 
 extern NSString *const kSTIPoCSelfServiceOrderIdTypeOrderId;
 extern NSString *const kSTIPoCSelfServiceOrderIdTypeProjectId;
@@ -31,6 +32,9 @@ extern NSString *const kSTIPoCSelfServiceSourceSystemCAP;
 extern NSString *const kSTIPoCSelfServiceResponseCodeSuccess;
 extern NSString *const kSTIPoCSelfServiceResponseCodeError;
 
+extern NSString *const kSTIPoCSelfServiceOrderStatusSubmitted;
+extern NSString *const kSTIPoCSelfServiceOrderStatusRejected;
+
 @interface SelfServiceEnumTranslator : NSObject
 
 + (NSString *)stringFromOrderIdType:(OrderIdType)orderIdType;
@@ -47,5 +51,8 @@ extern NSString *const kSTIPoCSelfServiceResponseCodeError;
 
 + (NSString *)stringFromSourceSystem:(SourceSystem)sourceSystem;
 + (SourceSystem)sourceSystemFromString:(NSString *)sourceSystemString;
+
++ (NSString *)stringFromOrderStatus:(OrderStatus)orderStatus;
++ (OrderStatus)orderStatusFromString:(NSString *)orderStatusString;
 
 @end

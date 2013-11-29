@@ -1,25 +1,28 @@
 //
-//  ModifyOrderDetailsRequest.m
+//  UpdateOrderStatusRequest.m
 //  STIPoC
 //
-//  Created by Administrator on 11/25/13.
+//  Created by Alex Gutierrez on 11/29/13.
 //  Copyright (c) 2013 Administrator. All rights reserved.
 //
 
-#import "ModifyOrderDetailsRequest.h"
+#import "UpdateOrderStatusRequest.h"
 #import "OrderSummary.h"
 
-@implementation modifyOrderDetailsRequest
+@implementation quoteOrderRequest
 
 #pragma mark -
 #pragma mark Initialization
 
 + (instancetype)newRequestWithOrderSummary:(OrderSummary *)orderSummary
+                            newOrderStatus:(OrderStatus)orderStatus
+                                  comments:(NSString *)comments
 {
-    modifyOrderDetailsRequest *request = [modifyOrderDetailsRequest new];
+    quoteOrderRequest *request = [quoteOrderRequest new];
     request.OrderId = orderSummary.OrderId;
     request.OrderIdType = [SelfServiceEnumTranslator stringFromOrderIdType:OrderIdTypeOrderId];
-    request.QuoteLineItems = orderSummary.QuoteLineItems;
+    request.OrderStatus = [SelfServiceEnumTranslator stringFromOrderStatus:orderStatus];
+    request.Comments = comments;
     
     return request;
 }

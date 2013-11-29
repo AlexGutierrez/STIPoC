@@ -8,6 +8,8 @@
 
 #import "GenericSelfServiceRequest.h"
 
+@class OrderSummary;
+
 @interface modifyOrderDetailsRequest : GenericSelfServiceRequest
 
 @property (strong, nonatomic) NSString *OrderId;
@@ -16,5 +18,8 @@
 @property (strong, nonatomic) NSString *ModifiedBy;
 @property (strong, nonatomic) NSString *UserName;
 @property (strong, nonatomic) NSString *UserId;
+
++ (instancetype)newRequestWithOrderSummary:(OrderSummary *)orderSummary;
+
 
 @end
