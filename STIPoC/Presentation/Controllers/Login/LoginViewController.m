@@ -106,7 +106,7 @@ NSString *const kSTIPoCSeguePushMainViewController = @"MainViewControllerPushSeg
         [self performSegueWithIdentifier:kSTIPoCSeguePushMainViewController sender:self];
     }
     else {
-        UIAlertView *alertView = (error)? [[AlertViewFactory sharedInstance] createAlertViewWithTitle:error.domain andMessage:error.localizedDescription] : [[AlertViewFactory sharedInstance] createLoginDefaultAlertView];
+        UIAlertView *alertView = (error)? [[AlertViewFactory sharedFactory] createAlertViewWithTitle:error.domain andMessage:error.localizedDescription] : [[AlertViewFactory sharedFactory] createDefaultAlertView];
         [alertView show];
     }
 }

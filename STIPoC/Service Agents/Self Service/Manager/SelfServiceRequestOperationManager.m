@@ -6,18 +6,27 @@
 //  Copyright (c) 2013 Administrator. All rights reserved.
 //
 
-#import "SelfServiceManager.h"
+#import "SelfServiceRequestOperationManager.h"
+
+#import "ErrorFactory.h"
+
 #import "GetOrdersXMLParser.h"
 #import "GetOrdersRequest.h"
 #import "GetOrdersResult.h"
 
-#import "OrderSummary.h"
 #import "GetOrderXMLParser.h"
 #import "GetOrderRequest.h"
 #import "GetOrderResult.h"
 
+#import "UpdateOrderStatusXMLParser.h"
+#import "UpdateOrderStatusRequest.h"
+#import "UpdateOrderStatusResult.h"
+
 #import "ModifyOrderDetailsRequest.h"
+#import "ModifyOrderDetailsResult.h"
 #import "ModifyOrderDetailsXMLParser.h"
+
+#import "OrderSummary.h"
 
 static NSString *const kSTIPoCSelfServiceEndpointURLBaseString = @"https://services-qa.oss.terremark.com/SelfService/SelfService.asmx";
 static NSString *const kSTIPoCSelfServiceHTTPPOSTMethod = @"Post";
@@ -28,38 +37,39 @@ static NSString *const kSTIPoCSelfServiceSOAPActionBaseURL = @"http://tempuri.or
 
 static NSString *const kSTIPoCSelfServiceGetOrdersActionName = @"GetOrders";
 static NSString *const kSTIPoCSelfServiceGetOrderActionName = @"GetOrder";
+static NSString *const kSTIPoCSelfServiceUpdateOrderStatusActionName = @"UpdateOrderStatus";
 static NSString *const kSTIPoCSelfServiceModifyOrderDetailsActionName = @"ModifyOrderDetails";
 
 static NSString *const kSTIPoCSelfServiceLegoCustomerInstanceId = @"12284";
 
 static NSString *const kSTIPoCSelfServiceErrorGetOrdersDomain = @"GetOrders";
 static NSString *const kSTIPoCSelfServiceErrorGetOrderDomain = @"GetOrder";
-static NSString *const kSTIPoCSelfServiceErrorModifyOrderDetailDomain = @"ModifyOrderDetails";
+static NSString *const kSTIPoCSelfServiceErrorModifyOrderDetailsDomain = @"ModifyOrderDetails";
 static NSString *const kSTIPoCSelfServiceErrorUpdateOrderStatusDomain = @"UpdateOrderStatus";
 
-@interface SelfServiceManager ()
+@interface SelfServiceRequestOperationManager ()
 
 - (NSMutableURLRequest *)newSelfServiceURLRequestWithActionName:(NSString *)actionName;
 
 @end
 
-@implementation SelfServiceManager
+@implementation SelfServiceRequestOperationManager
 
 #pragma mark -
 #pragma mark Class Methods
 
-+ (instancetype)sharedInstance
++ (instancetype)sharedManager
 {
-    static SelfServiceManager *_sharedInstance = nil;
+    static SelfServiceRequestOperationManager *_sharedManager = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _sharedInstance = [SelfServiceManager new];
-        _sharedInstance.responseSerializer =  [AFXMLParserResponseSerializer serializer];
+        _sharedManager = [SelfServiceRequestOperationManager new];
+        _sharedManager.responseSerializer =  [AFXMLParserResponseSerializer serializer];
         AFSecurityPolicy *securityPolicy = [AFSecurityPolicy defaultPolicy];
         securityPolicy.SSLPinningMode = AFSSLPinningModeNone;
-        _sharedInstance.securityPolicy = securityPolicy;
+        _sharedManager.securityPolicy = securityPolicy;
     });
-    return _sharedInstance;
+    return _sharedManager;
 }
 
 #pragma mark -
@@ -81,7 +91,7 @@ static NSString *const kSTIPoCSelfServiceErrorUpdateOrderStatusDomain = @"Update
 #pragma Self Service Operations
 
 - (void)startGetOrdersRequestOperationWithCompletionBlock:(void(^)(NSArray *orders))completion
-                                          andFailureBlock:(void(^)(NSError *error))failure
+                                          andFailureBlock:(void(^)(NSError *internalError))failure
 {
     getOrdersRequest *request = [getOrdersRequest newRequestWithCustomerId:kSTIPoCSelfServiceLegoCustomerInstanceId customerIdType:CustomerIdTypeInstanceId pageSize:10 pageNumber:1];
     
@@ -94,7 +104,7 @@ static NSString *const kSTIPoCSelfServiceErrorUpdateOrderStatusDomain = @"Update
         GetOrdersResult *result = [GetOrdersXMLParser getOrdersResultFromXMLString:[[NSString alloc] initWithData:operation.responseData encoding:NSUTF8StringEncoding]];
         if ([result.ResponseCode isEqualToString:kSTIPoCSelfServiceResponseCodeError]) {
             DDLogWarn(@"Get Orders Succeeded with Error\n Response Code:%@\nResponse Message:%@", result.ResponseCode, result.ResponseMessage);
-            NSError *error = [NSError errorWithDomain:kSTIPoCSelfServiceErrorGetOrdersDomain code:[result.ResponseCode integerValue] userInfo:nil];
+            NSError *error = [[ErrorFactory sharedFactory] createErrorWithSelfServiceDomain:kSTIPoCSelfServiceErrorGetOrdersDomain andSelfServiceResult:result];
             failure(error);
             return;
         }
@@ -113,7 +123,7 @@ static NSString *const kSTIPoCSelfServiceErrorUpdateOrderStatusDomain = @"Update
 
 - (void)startGetOrderRequestOperationWithOrderSummary:(OrderSummary *)orderSummary
                                       completionBlock:(void(^)(OrderSummary *detailedOrderSummary))completion
-                                      andFailureBlock:(void(^)(NSError *error))failure
+                                      andFailureBlock:(void(^)(NSError *internalError))failure
 {
     getOrderRequest *request = [getOrderRequest newRequestWithOrderId:orderSummary.OrderId andOrderIdType:OrderIdTypeOrderId];
     
@@ -126,7 +136,7 @@ static NSString *const kSTIPoCSelfServiceErrorUpdateOrderStatusDomain = @"Update
         GetOrderResult *result = [GetOrderXMLParser getOrderResultFromXMLString:[[NSString alloc] initWithData:operation.responseData encoding:NSUTF8StringEncoding]];
         if ([result.ResponseCode isEqualToString:kSTIPoCSelfServiceResponseCodeError]) {
             DDLogWarn(@"Get Order Succeeded with Error\n Response Code:%@\nResponse Message:%@", result.ResponseCode, result.ResponseMessage);
-            NSError *error = [NSError errorWithDomain:kSTIPoCSelfServiceErrorGetOrderDomain code:[result.ResponseCode integerValue] userInfo:nil];
+            NSError *error = [[ErrorFactory sharedFactory] createErrorWithSelfServiceDomain:kSTIPoCSelfServiceErrorGetOrderDomain andSelfServiceResult:result];
             failure(error);
             return;
         }
@@ -137,65 +147,78 @@ static NSString *const kSTIPoCSelfServiceErrorUpdateOrderStatusDomain = @"Update
         completion(orderSummary);
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        DDLogWarn(@"URL: %@", getOrderURLRequest.URL.absoluteString);
-        DDLogError(@"HTTP METHOD: %@", operation.request.HTTPMethod);
-        DDLogVerbose(@"ALL HTTP HEADER KEYS: %@", operation.request.allHTTPHeaderFields.allKeys);
-        DDLogVerbose(@"ALL HTTP HEADER VALUES: %@", operation.request.allHTTPHeaderFields.allValues);
-        DDLogVerbose(@"ALL HTTP HEADER ALL: %@", operation.request.allHTTPHeaderFields);
-        DDLogInfo(@"BODY: %@", [[NSString alloc] initWithData:operation.request.HTTPBody encoding:NSUTF8StringEncoding]);
-        
-        DDLogError(@"STATUS CODE: %i", operation.response.statusCode);
+        DDLogError(@"Get Order FAILED:\n%@", error);
+        failure(error);
     }];
     
     
     [getOrdersHTTPRequestOperation start];
 }
 
-- (void)startUpdateOrderStatusOperationWithOrderSummary:(OrderSummary *)orderSummary
-                                        completionBlock:(void(^)())completion
-                                        andFailureBlock:(void(^)(NSError *error))failure
+- (void)startUpdateOrderStatusRequestOperationWithOrderSummary:(OrderSummary *)orderSummary
+                                                newOrderStatus:(OrderStatus)orderStatus
+                                                      comments:(NSString *)comments
+                                               completionBlock:(void(^)())completion
+                                               andFailureBlock:(void(^)(NSError *internalError))failure
 {
-    getOrderRequest *request = [getOrderRequest newRequestWithOrderId:orderSummary.OrderId andOrderIdType:OrderIdTypeOrderId];
+    quoteOrderRequest *request = [quoteOrderRequest newRequestWithOrderSummary:orderSummary newOrderStatus:orderStatus comments:comments];
     
-    NSString * getOrderBodyXMLString = [GetOrderXMLParser xmlStringFromGetOrderRequest:request];
+    NSString * updateOrderStatusBodyXMLString = [UpdateOrderStatusXMLParser xmlStringFromUpdateOrderStatusRequest:request];
     
-    NSMutableURLRequest *getOrderURLRequest = [self newSelfServiceURLRequestWithActionName:kSTIPoCSelfServiceGetOrderActionName];
-    getOrderURLRequest.HTTPBody = [getOrderBodyXMLString dataUsingEncoding:NSUTF8StringEncoding];
+    NSMutableURLRequest *updateOrderStatusURLRequest = [self newSelfServiceURLRequestWithActionName:kSTIPoCSelfServiceUpdateOrderStatusActionName];
+    updateOrderStatusURLRequest.HTTPBody = [updateOrderStatusBodyXMLString dataUsingEncoding:NSUTF8StringEncoding];
     
-    AFHTTPRequestOperation *getOrdersHTTPRequestOperation = [self HTTPRequestOperationWithRequest:getOrderURLRequest success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        GetOrderResult *result = [GetOrderXMLParser getOrderResultFromXMLString:[[NSString alloc] initWithData:operation.responseData encoding:NSUTF8StringEncoding]];
+    AFHTTPRequestOperation *updateOrderStatusHTTPRequestOperation = [self HTTPRequestOperationWithRequest:updateOrderStatusURLRequest success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        UpdateOrderStatusResult *result = [UpdateOrderStatusXMLParser updateOrderStatusResultFromXMLString:[[NSString alloc] initWithData:operation.responseData encoding:NSUTF8StringEncoding]];
         if ([result.ResponseCode isEqualToString:kSTIPoCSelfServiceResponseCodeError]) {
-            DDLogWarn(@"Get Order Succeeded with Error\n Response Code:%@\nResponse Message:%@", result.ResponseCode, result.ResponseMessage);
-            NSError *error = [NSError errorWithDomain:kSTIPoCSelfServiceErrorGetOrderDomain code:[result.ResponseCode integerValue] userInfo:nil];
+            DDLogWarn(@"Update Order Status Succeeded with Error\n Response Code:%@\nResponse Message:%@", result.ResponseCode, result.ResponseMessage);
+            NSError *error = [[ErrorFactory sharedFactory] createErrorWithSelfServiceDomain:kSTIPoCSelfServiceErrorUpdateOrderStatusDomain andSelfServiceResult:result];
             failure(error);
             return;
         }
         
-        [orderSummary setAttributesWithGetOrderResult:result];
-        
-        DDLogInfo(@"Get Order SUCCEEDED");
-        completion(orderSummary);
+        DDLogInfo(@"Update Order Status SUCCEEDED");
+        completion();
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        DDLogWarn(@"URL: %@", getOrderURLRequest.URL.absoluteString);
-        DDLogError(@"HTTP METHOD: %@", operation.request.HTTPMethod);
-        DDLogVerbose(@"ALL HTTP HEADER KEYS: %@", operation.request.allHTTPHeaderFields.allKeys);
-        DDLogVerbose(@"ALL HTTP HEADER VALUES: %@", operation.request.allHTTPHeaderFields.allValues);
-        DDLogVerbose(@"ALL HTTP HEADER ALL: %@", operation.request.allHTTPHeaderFields);
-        DDLogInfo(@"BODY: %@", [[NSString alloc] initWithData:operation.request.HTTPBody encoding:NSUTF8StringEncoding]);
-        
-        DDLogError(@"STATUS CODE: %i", operation.response.statusCode);
+        DDLogError(@"Update Order Status FAILED:\n%@", error);
+        failure(error);
     }];
     
     
-    [getOrdersHTTPRequestOperation start];
+    [updateOrderStatusHTTPRequestOperation start];
 }
 
-- (void)startModifyOrderDetailsOperationWithOrders:(NSArray *)orders
-                                   completionBlock:(void(^)())completion
-                                   andFailureBlock:(void(^)(NSError *error))failure
+- (void)startModifyOrderDetailsRequestOperationWithOrders:(OrderSummary *)orderSummary
+                                          completionBlock:(void(^)())completion
+                                          andFailureBlock:(void(^)(NSError *internalError))failure
 {
+    modifyOrderDetailsRequest *request = [modifyOrderDetailsRequest newRequestWithOrderSummary:orderSummary];
     
+    NSString * modifyOrderDetailsBodyXMLString = [ModifyOrderDetailsXMLParser xmlStringFromModifyOrderDetailsRequest:request];
+    
+    NSMutableURLRequest *modifyOrderDetailsURLRequest = [self newSelfServiceURLRequestWithActionName:kSTIPoCSelfServiceModifyOrderDetailsActionName];
+    modifyOrderDetailsURLRequest.HTTPBody = [modifyOrderDetailsBodyXMLString dataUsingEncoding:NSUTF8StringEncoding];
+    
+    AFHTTPRequestOperation *modifyOrderDetailsHTTPRequestOperation = [self HTTPRequestOperationWithRequest:modifyOrderDetailsURLRequest success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        ModifyOrderDetailsResult *result = [ModifyOrderDetailsXMLParser modifyOrderDetailsResultFromXMLString:[[NSString alloc] initWithData:operation.responseData encoding:NSUTF8StringEncoding]];
+        if ([result.ResponseCode isEqualToString:kSTIPoCSelfServiceResponseCodeError]) {
+            DDLogWarn(@"Modify Order Details Succeeded with Error\n Response Code:%@\nResponse Message:%@", result.ResponseCode, result.ResponseMessage);
+            NSError *error = [[ErrorFactory sharedFactory] createErrorWithSelfServiceDomain:kSTIPoCSelfServiceErrorModifyOrderDetailsDomain andSelfServiceResult:result];
+            failure(error);
+            return;
+        }
+        
+        DDLogInfo(@"Modify Order Details SUCCEEDED");
+        completion();
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        DDLogError(@"Modify Order Details FAILED:\n%@", error);
+        failure(error);
+    }];
+    
+    
+    [modifyOrderDetailsHTTPRequestOperation start];
 }
 
 @end

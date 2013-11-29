@@ -6,13 +6,13 @@
 //  Copyright (c) 2013 Administrator. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "GenericFactory.h"
 
-@interface AlertViewFactory : NSObject
+@interface AlertViewFactory : GenericFactory
 
-+ (instancetype)sharedInstance;
-
-- (UIAlertView *)createLoginDefaultAlertView;
+- (UIAlertView *)createDefaultAlertView;
 - (UIAlertView *)createAlertViewWithTitle:(NSString *)title andMessage:(NSString *)message;
+- (UIAlertView *)createAlertViewWithError:(NSError *)error;
+- (UIAlertView *)createOrderRejectionAlertViewWithDelegate:(id<UIAlertViewDelegate>)delegate;
 
 @end

@@ -10,6 +10,7 @@
 #import "SSKeychain.h"
 #import "User+CustomAccessors.h"
 #import "Customer.h"
+#import "ErrorFactory.h"
 
 NSString *const kSTIPoCServiceName = @"com.STIPoC.SelfService";
 
@@ -27,19 +28,6 @@ NSString *const kSTIPoCServiceName = @"com.STIPoC.SelfService";
 
 @synthesize currentUser = _currentUser;
 @synthesize lastUser = _lastUser;
-
-#pragma mark -
-#pragma mark Class Methods
-
-+ (instancetype)sharedInstance
-{
-    static SessionsService *_sharedInstance = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        _sharedInstance = [SessionsService new];
-    });
-    return _sharedInstance;
-}
 
 #pragma mark -
 #pragma mark Custom Accessors
@@ -86,7 +74,7 @@ NSString *const kSTIPoCServiceName = @"com.STIPoC.SelfService";
     BOOL emptyFieldExists = (!userID || [userID isEqualToString:@""] || !password || [password isEqualToString:@""] || !customerID || [customerID isEqualToString:@""]);
     
     if (emptyFieldExists) {
-        (*error) = [NSError errorWithDomain:@"Empty fields" code:123 userInfo:@{NSLocalizedDescriptionKey : NSLocalizedString(@"Please fill all the required fields.", nil)}];
+        (*error) = [[ErrorFactory sharedFactory] createErrorWithSelfServiceDomain:NSLocalizedString(@"Empty fields", nil) andDescription:NSLocalizedString(@"Please fill all the required fields.", nil)];
         return NO;
     }
     else {
@@ -108,7 +96,7 @@ NSString *const kSTIPoCServiceName = @"com.STIPoC.SelfService";
         return YES;
     }
     else {
-        (*error) = [NSError errorWithDomain:@"Wrong credentials" code:123 userInfo:@{NSLocalizedDescriptionKey : NSLocalizedString(@"Please verify your user ID, customer ID and password are correct.", nil)}];
+        (*error) = [[ErrorFactory sharedFactory] createErrorWithSelfServiceDomain:NSLocalizedString(@"Wrong credentials", nil) andDescription:NSLocalizedString(@"Please verify your user ID, customer ID and password are correct.", nil)];
         return NO;
     }
 }

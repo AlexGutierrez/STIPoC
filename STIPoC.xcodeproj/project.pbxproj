@@ -12,6 +12,9 @@
 		7AA569F41848F2630095C98A /* UpdateOrderStatusRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA569F31848F2630095C98A /* UpdateOrderStatusRequest.m */; };
 		7AA569F71848F2950095C98A /* UpdateOrderStatusResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA569F61848F2950095C98A /* UpdateOrderStatusResult.m */; };
 		7AA569FA1848F2B40095C98A /* UpdateOrderStatusXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA569F91848F2B40095C98A /* UpdateOrderStatusXMLParser.m */; };
+		7AA569FE18491F480095C98A /* SelfService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA569FD18491F480095C98A /* SelfService.m */; };
+		7AA56A01184928AE0095C98A /* GenericFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA56A00184928AE0095C98A /* GenericFactory.m */; };
+		7AA56A0418492C030095C98A /* ErrorFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA56A0318492C030095C98A /* ErrorFactory.m */; };
 		7C1168A118455EE300334AF9 /* XCDFormInputAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1168A018455EE300334AF9 /* XCDFormInputAccessoryView.m */; };
 		7C13C813183A633800C12C54 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7C2A35E11832A8E7004AE430 /* InfoPlist.strings */; };
 		7C13C814183A633D00C12C54 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C2A35C21832A7CE004AE430 /* Storyboard.storyboard */; };
@@ -118,7 +121,7 @@
 		7C363CAB183FAFD600003723 /* GetOrdersXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C363CAA183FAFD600003723 /* GetOrdersXMLParser.m */; };
 		7C363CAF183FB35000003723 /* NSObject+ObjectMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C363CAE183FB35000003723 /* NSObject+ObjectMap.m */; };
 		7C363CB2183FB9DA00003723 /* GenericXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C363CB1183FB9DA00003723 /* GenericXMLParser.m */; };
-		7C363CB9183FEE2C00003723 /* SelfServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C363CB8183FEE2C00003723 /* SelfServiceManager.m */; };
+		7C363CB9183FEE2C00003723 /* SelfServiceRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C363CB8183FEE2C00003723 /* SelfServiceRequestOperationManager.m */; };
 		7C363CBC1840082000003723 /* GenericSelfServiceRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C363CBB1840082000003723 /* GenericSelfServiceRequest.m */; };
 		7C78B0BF183E64330022922D /* GenericServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C78B0BD183E64330022922D /* GenericServiceTests.m */; };
 		7C78B0C0183E64330022922D /* SessionsServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C78B0BE183E64330022922D /* SessionsServiceTests.m */; };
@@ -169,6 +172,12 @@
 		7AA569F81848F2B40095C98A /* UpdateOrderStatusXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateOrderStatusXMLParser.h; sourceTree = "<group>"; };
 		7AA569F91848F2B40095C98A /* UpdateOrderStatusXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateOrderStatusXMLParser.m; sourceTree = "<group>"; };
 		7AA569FB1848F6E40095C98A /* OrderStatus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderStatus.h; sourceTree = "<group>"; };
+		7AA569FC18491F480095C98A /* SelfService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelfService.h; sourceTree = "<group>"; };
+		7AA569FD18491F480095C98A /* SelfService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelfService.m; sourceTree = "<group>"; };
+		7AA569FF184928AE0095C98A /* GenericFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenericFactory.h; sourceTree = "<group>"; };
+		7AA56A00184928AE0095C98A /* GenericFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenericFactory.m; sourceTree = "<group>"; };
+		7AA56A0218492C030095C98A /* ErrorFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorFactory.h; sourceTree = "<group>"; };
+		7AA56A0318492C030095C98A /* ErrorFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorFactory.m; sourceTree = "<group>"; };
 		7C11689F18455EE300334AF9 /* XCDFormInputAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCDFormInputAccessoryView.h; sourceTree = "<group>"; };
 		7C1168A018455EE300334AF9 /* XCDFormInputAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCDFormInputAccessoryView.m; sourceTree = "<group>"; };
 		7C1A985E1847990F0045ED8C /* ECPercentDrivenInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECPercentDrivenInteractiveTransition.h; sourceTree = "<group>"; };
@@ -370,8 +379,8 @@
 		7C363CAE183FB35000003723 /* NSObject+ObjectMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ObjectMap.m"; sourceTree = "<group>"; };
 		7C363CB0183FB9DA00003723 /* GenericXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenericXMLParser.h; sourceTree = "<group>"; };
 		7C363CB1183FB9DA00003723 /* GenericXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenericXMLParser.m; sourceTree = "<group>"; };
-		7C363CB7183FEE2C00003723 /* SelfServiceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelfServiceManager.h; sourceTree = "<group>"; };
-		7C363CB8183FEE2C00003723 /* SelfServiceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelfServiceManager.m; sourceTree = "<group>"; };
+		7C363CB7183FEE2C00003723 /* SelfServiceRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelfServiceRequestOperationManager.h; sourceTree = "<group>"; };
+		7C363CB8183FEE2C00003723 /* SelfServiceRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelfServiceRequestOperationManager.m; sourceTree = "<group>"; };
 		7C363CBA1840082000003723 /* GenericSelfServiceRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenericSelfServiceRequest.h; sourceTree = "<group>"; };
 		7C363CBB1840082000003723 /* GenericSelfServiceRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenericSelfServiceRequest.m; sourceTree = "<group>"; };
 		7C78B0BD183E64330022922D /* GenericServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenericServiceTests.m; sourceTree = "<group>"; };
@@ -922,6 +931,8 @@
 				7C2A35A41832A7CE004AE430 /* GenericService.m */,
 				7C958446183AC4580065C878 /* SessionsService.h */,
 				7C958447183AC4580065C878 /* SessionsService.m */,
+				7AA569FC18491F480095C98A /* SelfService.h */,
+				7AA569FD18491F480095C98A /* SelfService.m */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -941,6 +952,10 @@
 			children = (
 				7C2A35B11832A7CE004AE430 /* AlertViewFactory.h */,
 				7C2A35B21832A7CE004AE430 /* AlertViewFactory.m */,
+				7AA569FF184928AE0095C98A /* GenericFactory.h */,
+				7AA56A00184928AE0095C98A /* GenericFactory.m */,
+				7AA56A0218492C030095C98A /* ErrorFactory.h */,
+				7AA56A0318492C030095C98A /* ErrorFactory.m */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -1117,8 +1132,8 @@
 		7C363CB6183FEE2C00003723 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				7C363CB7183FEE2C00003723 /* SelfServiceManager.h */,
-				7C363CB8183FEE2C00003723 /* SelfServiceManager.m */,
+				7C363CB7183FEE2C00003723 /* SelfServiceRequestOperationManager.h */,
+				7C363CB8183FEE2C00003723 /* SelfServiceRequestOperationManager.m */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -1351,6 +1366,7 @@
 				7C1A986E1847990F0045ED8C /* ECSlidingSegue.m in Sources */,
 				7C1A989C1847E1DF0045ED8C /* MainViewController.m in Sources */,
 				7C1A986F1847990F0045ED8C /* ECSlidingViewController.m in Sources */,
+				7AA569FE18491F480095C98A /* SelfService.m in Sources */,
 				7C363C98183FA7CA00003723 /* GetOrderRequest.m in Sources */,
 				7C2A35941832A7AD004AE430 /* AFHTTPSessionManager.m in Sources */,
 				7C2A35581832A734004AE430 /* DDASLLogger.m in Sources */,
@@ -1363,6 +1379,7 @@
 				7C958454183ACF4E0065C878 /* SSKeychainQuery.m in Sources */,
 				7C2A35611832A734004AE430 /* NSNumber+MagicalDataImport.m in Sources */,
 				7C2A356B1832A734004AE430 /* NSManagedObjectContext+MagicalRecord.m in Sources */,
+				7AA56A0418492C030095C98A /* ErrorFactory.m in Sources */,
 				7C2A35981832A7AD004AE430 /* AFURLRequestSerialization.m in Sources */,
 				7C2A356D1832A734004AE430 /* NSManagedObjectContext+MagicalThreading.m in Sources */,
 				7C956A021843A5B5000A5595 /* ModifyOrderDetailsRequest.m in Sources */,
@@ -1375,6 +1392,7 @@
 				7C363CB2183FB9DA00003723 /* GenericXMLParser.m in Sources */,
 				7C2A35771832A734004AE430 /* MagicalRecord.m in Sources */,
 				7C1A989B1847E1DF0045ED8C /* GenericViewController.m in Sources */,
+				7AA56A01184928AE0095C98A /* GenericFactory.m in Sources */,
 				7C1A98A01847E1DF0045ED8C /* OrderDetailViewController.m in Sources */,
 				7C1A986B1847990F0045ED8C /* ECPercentDrivenInteractiveTransition.m in Sources */,
 				7C2A355D1832A734004AE430 /* DispatchQueueLogFormatter.m in Sources */,
@@ -1386,7 +1404,7 @@
 				7C2A355F1832A734004AE430 /* NSAttributeDescription+MagicalDataImport.m in Sources */,
 				7C2A355E1832A734004AE430 /* MagicalImportFunctions.m in Sources */,
 				7C2A35571832A734004AE430 /* DDAbstractDatabaseLogger.m in Sources */,
-				7C363CB9183FEE2C00003723 /* SelfServiceManager.m in Sources */,
+				7C363CB9183FEE2C00003723 /* SelfServiceRequestOperationManager.m in Sources */,
 				7C2A356A1832A734004AE430 /* NSManagedObjectContext+MagicalObserving.m in Sources */,
 				7C363CBC1840082000003723 /* GenericSelfServiceRequest.m in Sources */,
 				7C363CAF183FB35000003723 /* NSObject+ObjectMap.m in Sources */,

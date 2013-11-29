@@ -10,7 +10,7 @@
 #import "GenericService.h"
 #import "LoggingHelper.h"
 
-#import "SelfServiceManager.h"
+#import "SelfServiceRequestOperationManager.h"
 #import "OrderSummary.h"
 
 @implementation AppDelegate

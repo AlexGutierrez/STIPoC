@@ -8,35 +8,27 @@
 
 #import "AlertViewFactory.h"
 
-static NSString *const kSTIPoCDefaultCancelButtonTitle = @"Got it!";
-static NSString *const kSTIPoCDefaultLoginAlertViewTitle = @"Woops!";
-static NSString *const kSTIPoCDefaultLoginAlertViewMessage = @"Something unexpected happened. We'll fix it as soon as possible :D.";
+static NSString *const kSTIPoCAlertViewOKButtonTitle = @"OK";
+static NSString *const kSTIPoCAlertViewSubmitButtonTitle = @"Submit";
+static NSString *const kSTIPoCAlertViewCancelButtonTitle = @"Cancel";
+static NSString *const kSTIPoCAlertViewDismissButtonTitle = @"Dismiss";
+static NSString *const kSTIPoCAlertViewGotItButtonTitle = @"Got it!";
+static NSString *const kSTIPoCAlertViewOrderRejectionTitle = @"Got it!";
+static NSString *const kSTIPoCAlertViewOrderRejectionMessage = @"Please write a comment.";
+static NSString *const kSTIPoCAlertViewDefaultTitle = @"Woops!";
+static NSString *const kSTIPoCAlertViewDefaultMessage = @"Something unexpected happened. We'll fix it as soon as possible :D";
 
 @implementation AlertViewFactory
 
 #pragma mark -
-#pragma mark Class Methods
-
-+ (instancetype)sharedInstance
-{
-    static AlertViewFactory *_sharedInstance = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        _sharedInstance = [AlertViewFactory new];
-    });
-    return _sharedInstance;
-}
-
-
-#pragma mark -
 #pragma mark Factory Methods
 
-- (UIAlertView *)createLoginDefaultAlertView
+- (UIAlertView *)createDefaultAlertView
 {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:kSTIPoCDefaultLoginAlertViewTitle
-                                                        message:kSTIPoCDefaultLoginAlertViewMessage
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:kSTIPoCAlertViewDefaultTitle
+                                                        message:kSTIPoCAlertViewDefaultMessage
                                                        delegate:nil
-                                              cancelButtonTitle:kSTIPoCDefaultCancelButtonTitle
+                                              cancelButtonTitle:kSTIPoCAlertViewGotItButtonTitle
                                               otherButtonTitles: nil];
     
     return alertView;
@@ -47,8 +39,31 @@ static NSString *const kSTIPoCDefaultLoginAlertViewMessage = @"Something unexpec
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title
                                                         message:message
                                                        delegate:nil
-                                              cancelButtonTitle:kSTIPoCDefaultCancelButtonTitle
+                                              cancelButtonTitle:kSTIPoCAlertViewDismissButtonTitle
                                               otherButtonTitles: nil];
+    
+    return alertView;
+}
+
+- (UIAlertView *)createAlertViewWithError:(NSError *)error
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:error.domain
+                                                        message:error.localizedDescription
+                                                       delegate:nil
+                                              cancelButtonTitle:kSTIPoCAlertViewDismissButtonTitle
+                                              otherButtonTitles: nil];
+    
+    return alertView;
+}
+
+- (UIAlertView *)createOrderRejectionAlertViewWithDelegate:(id<UIAlertViewDelegate>)delegate
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:kSTIPoCAlertViewOrderRejectionTitle
+                                                        message:kSTIPoCAlertViewOrderRejectionMessage
+                                                       delegate:delegate
+                                              cancelButtonTitle:kSTIPoCAlertViewCancelButtonTitle
+                                              otherButtonTitles:kSTIPoCAlertViewSubmitButtonTitle, nil];
+    alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
     
     return alertView;
 }

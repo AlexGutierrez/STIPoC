@@ -8,6 +8,12 @@
 
 #import "GenericXMLParser.h"
 
+@class UpdateOrderStatusResult;
+@class quoteOrderRequest;
+
 @interface UpdateOrderStatusXMLParser : GenericXMLParser
+
++ (NSString *)xmlStringFromUpdateOrderStatusRequest:(quoteOrderRequest *)quoteOrderRequest;
++ (UpdateOrderStatusResult *)updateOrderStatusResultFromXMLString:(NSString *)xmlString;
 
 @end

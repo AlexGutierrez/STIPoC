@@ -27,10 +27,10 @@ static NSString *const kSTIPoCDefaultStoreName = @"com.STIPoC.DefaultStoreName";
 
 + (instancetype)sharedInstance
 {
-    static GenericService *_sharedInstance = nil;
+    static id _sharedInstance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _sharedInstance = [GenericService new];
+        _sharedInstance = [[self class] new];
     });
     return _sharedInstance;
 }
