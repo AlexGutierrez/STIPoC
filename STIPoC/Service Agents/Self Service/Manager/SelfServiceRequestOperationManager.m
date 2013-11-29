@@ -189,9 +189,9 @@ static NSString *const kSTIPoCSelfServiceErrorUpdateOrderStatusDomain = @"Update
     [updateOrderStatusHTTPRequestOperation start];
 }
 
-- (void)startModifyOrderDetailsRequestOperationWithOrders:(OrderSummary *)orderSummary
-                                          completionBlock:(void(^)())completion
-                                          andFailureBlock:(void(^)(NSError *internalError))failure
+- (void)startModifyOrderDetailsRequestOperationWithOrder:(OrderSummary *)orderSummary
+                                         completionBlock:(void(^)())completion
+                                         andFailureBlock:(void(^)(NSError *internalError))failure
 {
     modifyOrderDetailsRequest *request = [modifyOrderDetailsRequest newRequestWithOrderSummary:orderSummary];
     

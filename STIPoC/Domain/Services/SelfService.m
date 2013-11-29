@@ -36,7 +36,19 @@
                        completionBlock:(void(^)(OrderSummary *detailedOrderSummary))completion
                        andFailureBlock:(void(^)(NSError *error))failure
 {
-    
+    if ([[AFNetworkReachabilityManager sharedManager] isReachable]) {
+        [[SelfServiceRequestOperationManager sharedManager] startGetOrderRequestOperationWithOrderSummary:orderSummary
+                                                                                          completionBlock:^(OrderSummary *detailedOrderSummary) {
+                                                                                              completion(detailedOrderSummary);
+                                                                                          } andFailureBlock:^(NSError *internalError) {
+                                                                                              NSError *publicError = [[ErrorFactory sharedFactory] createDefaultServerError];
+                                                                                              failure(publicError);
+                                                                                          }];
+    }
+    else {
+        NSError *publicError = [[ErrorFactory sharedFactory] createDefaultNetworkReachabilityError];
+        failure(publicError);
+    }
 }
 
 - (void)rejectOrderWithOrderSummary:(OrderSummary *)orderSummary
@@ -44,14 +56,41 @@
                     completionBlock:(void(^)())completion
                     andFailureBlock:(void(^)(NSError *error))failure
 {
-    
+    if ([[AFNetworkReachabilityManager sharedManager] isReachable]) {
+        [[SelfServiceRequestOperationManager sharedManager] startUpdateOrderStatusRequestOperationWithOrderSummary:orderSummary
+                                                                                                    newOrderStatus:OrderStatusRejected
+                                                                                                          comments:comments
+                                                                                                   completionBlock:^{
+                                                                                                       completion();
+                                                                                                   } andFailureBlock:^(NSError *internalError) {
+                                                                                                       NSError *publicError = [[ErrorFactory sharedFactory] createDefaultServerError];
+                                                                                                       failure(publicError);
+                                                                                                       
+                                                                                                   }];
+    }
+    else {
+        NSError *publicError = [[ErrorFactory sharedFactory] createDefaultNetworkReachabilityError];
+        failure(publicError);
+    }
 }
 
 - (void)updateOrderDetailsOnServerWithOrders:(OrderSummary *)orderSummary
                              completionBlock:(void(^)())completion
                              andFailureBlock:(void(^)(NSError *error))failure
 {
-    
+    if ([[AFNetworkReachabilityManager sharedManager] isReachable]) {
+        [[SelfServiceRequestOperationManager sharedManager] startModifyOrderDetailsRequestOperationWithOrder:orderSummary
+                                                                                             completionBlock:^{
+                                                                                                 completion();
+                                                                                             } andFailureBlock:^(NSError *internalError) {
+                                                                                                 NSError *publicError = [[ErrorFactory sharedFactory] createDefaultServerError];
+                                                                                                 failure(publicError);
+                                                                                             }];
+    }
+    else {
+        NSError *publicError = [[ErrorFactory sharedFactory] createDefaultNetworkReachabilityError];
+        failure(publicError);
+    }
 }
 
 @end

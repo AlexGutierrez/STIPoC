@@ -26,8 +26,17 @@ NSString *const kSTIPoCSelfServiceSourceSystemCAP = @"1";
 NSString *const kSTIPoCSelfServiceResponseCodeSuccess = @"0";
 NSString *const kSTIPoCSelfServiceResponseCodeError = @"1";
 
-NSString *const kSTIPoCSelfServiceOrderStatusSubmitted = @"Submitted";
+NSString *const kSTIPoCSelfServiceOrderStatusApproved = @"Approved";
 NSString *const kSTIPoCSelfServiceOrderStatusRejected = @"Rejected";
+NSString *const kSTIPoCSelfServiceOrderStatusSubmitted = @"Submitted";
+NSString *const kSTIPoCSelfServiceOrderStatusAssigned = @"Assigned";
+NSString *const kSTIPoCSelfServiceOrderStatusInProgress = @"In Progress";
+NSString *const kSTIPoCSelfServiceOrderStatusPartiallyCompleted = @"Partially Completed";
+NSString *const kSTIPoCSelfServiceOrderStatusCompleted = @"Completed";
+NSString *const kSTIPoCSelfServiceOrderStatusUnderReview = @"Under Review";
+NSString *const kSTIPoCSelfServiceOrderStatusEditedByTerremark = @"Edited by Terremark";
+NSString *const kSTIPoCSelfServiceOrderStatusPendingApproval = @"Pending Approval";
+NSString *const kSTIPoCSelfServiceOrderStatusEditedByCustomer = @"Edited by Customer";
 
 @implementation SelfServiceEnumTranslator
 
@@ -190,11 +199,38 @@ NSString *const kSTIPoCSelfServiceOrderStatusRejected = @"Rejected";
 + (NSString *)stringFromOrderStatus:(OrderStatus)orderStatus
 {
     switch (orderStatus) {
+        case OrderStatusApproved:
+            return kSTIPoCSelfServiceOrderStatusApproved;
+            break;
         case OrderStatusSubmitted:
             return kSTIPoCSelfServiceOrderStatusSubmitted;
             break;
         case OrderStatusRejected:
             return kSTIPoCSelfServiceOrderStatusRejected;
+            break;
+        case OrderStatusAssigned:
+            return kSTIPoCSelfServiceOrderStatusAssigned;
+            break;
+        case OrderStatusInProgress:
+            return kSTIPoCSelfServiceOrderStatusInProgress;
+            break;
+        case OrderStatusCompleted:
+            return kSTIPoCSelfServiceOrderStatusCompleted;
+            break;
+        case OrderStatusEditedByCustomer:
+            return kSTIPoCSelfServiceOrderStatusEditedByCustomer;
+            break;
+        case OrderStatusEditedByTerremark:
+            return kSTIPoCSelfServiceOrderStatusEditedByTerremark;
+            break;
+        case OrderStatusPartiallyCompleted:
+            return kSTIPoCSelfServiceOrderStatusPartiallyCompleted;
+            break;
+        case OrderStatusPendingApproval:
+            return kSTIPoCSelfServiceOrderStatusPendingApproval;
+            break;
+        case OrderStatusUnderReview:
+            return kSTIPoCSelfServiceOrderStatusUnderReview;
             break;
         default:
             break;
@@ -205,6 +241,33 @@ NSString *const kSTIPoCSelfServiceOrderStatusRejected = @"Rejected";
 {
     if ([orderStatusString isEqualToString:kSTIPoCSelfServiceOrderStatusSubmitted]) {
         return OrderStatusSubmitted;
+    }
+    else if ([orderStatusString isEqualToString:kSTIPoCSelfServiceOrderStatusUnderReview]) {
+        return OrderStatusUnderReview;
+    }
+    else if ([orderStatusString isEqualToString:kSTIPoCSelfServiceOrderStatusPendingApproval]) {
+        return OrderStatusPendingApproval;
+    }
+    else if ([orderStatusString isEqualToString:kSTIPoCSelfServiceOrderStatusPartiallyCompleted]) {
+        return OrderStatusPartiallyCompleted;
+    }
+    else if ([orderStatusString isEqualToString:kSTIPoCSelfServiceOrderStatusInProgress]) {
+        return OrderStatusInProgress;
+    }
+    else if ([orderStatusString isEqualToString:kSTIPoCSelfServiceOrderStatusEditedByTerremark]) {
+        return OrderStatusEditedByTerremark;
+    }
+    else if ([orderStatusString isEqualToString:kSTIPoCSelfServiceOrderStatusEditedByCustomer]) {
+        return OrderStatusEditedByCustomer;
+    }
+    else if ([orderStatusString isEqualToString:kSTIPoCSelfServiceOrderStatusCompleted]) {
+        return OrderStatusCompleted;
+    }
+    else if ([orderStatusString isEqualToString:kSTIPoCSelfServiceOrderStatusAssigned]) {
+        return OrderStatusAssigned;
+    }
+    else if ([orderStatusString isEqualToString:kSTIPoCSelfServiceOrderStatusApproved]) {
+        return OrderStatusApproved;
     }
     else {
         return OrderStatusRejected;

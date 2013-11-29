@@ -7,6 +7,15 @@
 //
 
 typedef enum {
+    OrderStatusApproved,
+    OrderStatusRejected,
     OrderStatusSubmitted,
-    OrderStatusRejected
+    OrderStatusAssigned,
+    OrderStatusInProgress,
+    OrderStatusPartiallyCompleted,
+    OrderStatusCompleted,
+    OrderStatusUnderReview,
+    OrderStatusEditedByTerremark,
+    OrderStatusPendingApproval,
+    OrderStatusEditedByCustomer
 } OrderStatus;

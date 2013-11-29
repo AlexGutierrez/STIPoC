@@ -28,8 +28,8 @@
                                                completionBlock:(void(^)())completion
                                                andFailureBlock:(void(^)(NSError *internalError))failure;
 
-- (void)startModifyOrderDetailsRequestOperationWithOrders:(OrderSummary *)orderSummary
-                                          completionBlock:(void(^)())completion
-                                          andFailureBlock:(void(^)(NSError *internalError))failure;
+- (void)startModifyOrderDetailsRequestOperationWithOrder:(OrderSummary *)orderSummary
+                                         completionBlock:(void(^)())completion
+                                         andFailureBlock:(void(^)(NSError *internalError))failure;
 
 @end

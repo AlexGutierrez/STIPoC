@@ -32,8 +32,17 @@ extern NSString *const kSTIPoCSelfServiceSourceSystemCAP;
 extern NSString *const kSTIPoCSelfServiceResponseCodeSuccess;
 extern NSString *const kSTIPoCSelfServiceResponseCodeError;
 
-extern NSString *const kSTIPoCSelfServiceOrderStatusSubmitted;
+extern NSString *const kSTIPoCSelfServiceOrderStatusApproved;
 extern NSString *const kSTIPoCSelfServiceOrderStatusRejected;
+extern NSString *const kSTIPoCSelfServiceOrderStatusSubmitted;
+extern NSString *const kSTIPoCSelfServiceOrderStatusAssigned;
+extern NSString *const kSTIPoCSelfServiceOrderStatusInProgress;
+extern NSString *const kSTIPoCSelfServiceOrderStatusPartiallyCompleted;
+extern NSString *const kSTIPoCSelfServiceOrderStatusCompleted;
+extern NSString *const kSTIPoCSelfServiceOrderStatusUnderReview;
+extern NSString *const kSTIPoCSelfServiceOrderStatusEditedByTerremark;
+extern NSString *const kSTIPoCSelfServiceOrderStatusPendingApproval;
+extern NSString *const kSTIPoCSelfServiceOrderStatusEditedByCustomer;
 
 @interface SelfServiceEnumTranslator : NSObject
 

@@ -9,9 +9,9 @@
 #import "OrderSummary.h"
 #import "GetOrderResult.h"
 
-NSString *const kSTIPoCSelfServiceGenericUserId = @"SDP-Implementation Team";
-NSString *const kSTIPoCSelfServiceGenericUserName = @"Carlos Ponce";
-NSString *const kSTIPoCSelfServiceGenericModifiedBy = @"Carlos Ponce";
+NSString *const kSTIPoCSelfServiceGenericUserId = @"aandersen";
+NSString *const kSTIPoCSelfServiceGenericUserName = @"aandersen";
+NSString *const kSTIPoCSelfServiceGenericModifiedBy = @"1c1b355a-f127-43e0-9a1e-c7064a4acd5e";
 
 @implementation OrderSummary
 
