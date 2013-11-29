@@ -8,23 +8,23 @@
 
 #import "SelfServiceEnumTranslator.h"
 
-static NSString *const kSTIPoCSelfServiceOrderIdTypeOrderId = @"OrderId";
-static NSString *const kSTIPoCSelfServiceOrderIdTypeProjectId = @"ProjectId";
-static NSString *const kSTIPoCSelfServiceOrderIdTypeFriendlyOrderId = @"FriendlyOrderId";
+NSString *const kSTIPoCSelfServiceOrderIdTypeOrderId = @"OrderId";
+NSString *const kSTIPoCSelfServiceOrderIdTypeProjectId = @"ProjectId";
+NSString *const kSTIPoCSelfServiceOrderIdTypeFriendlyOrderId = @"FriendlyOrderId";
 
-static NSString *const kSTIPoCSelfServiceOrderingTypeAsc = @"Asc";
-static NSString *const kSTIPoCSelfServiceOrderingTypeDesc = @"Desc";
+NSString *const kSTIPoCSelfServiceOrderingTypeAsc = @"Asc";
+NSString *const kSTIPoCSelfServiceOrderingTypeDesc = @"Desc";
 
-static NSString *const kSTIPoCSelfServiceCustomerIdTypeAccountNumber = @"AccountNumber";
-static NSString *const kSTIPoCSelfServiceCustomerIdTypeBillingId = @"BillingId";
-static NSString *const kSTIPoCSelfServiceCustomerIdTypeInstanceId = @"InstanceId";
-static NSString *const kSTIPoCSelfServiceCustomerIdTypeNSAP = @"NSAP";
+NSString *const kSTIPoCSelfServiceCustomerIdTypeAccountNumber = @"AccountNumber";
+NSString *const kSTIPoCSelfServiceCustomerIdTypeBillingId = @"BillingId";
+NSString *const kSTIPoCSelfServiceCustomerIdTypeInstanceId = @"InstanceId";
+NSString *const kSTIPoCSelfServiceCustomerIdTypeNSAP = @"NSAP";
 
-static NSString *const kSTIPoCSelfServiceSourceSystemEcommerce = @"0";
-static NSString *const kSTIPoCSelfServiceSourceSystemCAP = @"1";
+NSString *const kSTIPoCSelfServiceSourceSystemEcommerce = @"0";
+NSString *const kSTIPoCSelfServiceSourceSystemCAP = @"1";
 
-static NSString *const kSTIPoCSelfServiceResponseCodeSuccess = @"0";
-static NSString *const kSTIPoCSelfServiceResponseCodeError = @"1";
+NSString *const kSTIPoCSelfServiceResponseCodeSuccess = @"0";
+NSString *const kSTIPoCSelfServiceResponseCodeError = @"1";
 
 @implementation SelfServiceEnumTranslator
 

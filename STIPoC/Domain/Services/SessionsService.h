@@ -11,6 +11,11 @@
 @class User;
 
 /**
+ * The service name for keychain storage
+ */
+extern NSString *const kSTIPoCServiceName;
+
+/**
  * The user defaults key for the current user
  */
 static NSString *const kSTIPoCDefaultsCurrentUserKey = @"com.STIPoC.DefaultsCurrentUserKey";

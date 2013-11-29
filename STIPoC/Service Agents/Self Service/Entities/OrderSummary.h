@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class GetOrderResult;
+
 @interface OrderSummary : NSObject
 
 @property (strong, nonatomic) NSString *OrderId;
@@ -18,5 +20,9 @@
 @property (strong, nonatomic) NSString *ProjectStatus;
 @property (strong, nonatomic) NSString *ProjectFriendlyId;
 @property (strong, nonatomic) NSString *CreatedBy;
+@property (strong, nonatomic) NSString *OrderExternalId;
+@property (strong, nonatomic) NSMutableArray *QuoteLineItems;
+
+- (void)setAttributesWithGetOrderResult:(GetOrderResult *)result;
 
 @end

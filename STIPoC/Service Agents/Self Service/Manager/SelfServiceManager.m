@@ -9,6 +9,7 @@
 #import "SelfServiceManager.h"
 #import "GetOrdersXMLParser.h"
 #import "GetOrdersRequest.h"
+#import "GetOrdersResult.h"
 
 #import "OrderSummary.h"
 #import "GetOrderXMLParser.h"
@@ -30,6 +31,11 @@ static NSString *const kSTIPoCSelfServiceGetOrderActionName = @"GetOrder";
 static NSString *const kSTIPoCSelfServiceModifyOrderDetailsActionName = @"ModifyOrderDetails";
 
 static NSString *const kSTIPoCSelfServiceLegoCustomerInstanceId = @"12284";
+
+static NSString *const kSTIPoCSelfServiceErrorGetOrdersDomain = @"GetOrders";
+static NSString *const kSTIPoCSelfServiceErrorGetOrderDomain = @"GetOrder";
+static NSString *const kSTIPoCSelfServiceErrorModifyOrderDetailDomain = @"ModifyOrderDetails";
+static NSString *const kSTIPoCSelfServiceErrorUpdateOrderStatusDomain = @"UpdateOrderStatus";
 
 @interface SelfServiceManager ()
 
@@ -74,7 +80,8 @@ static NSString *const kSTIPoCSelfServiceLegoCustomerInstanceId = @"12284";
 #pragma mark -
 #pragma Self Service Operations
 
-- (void)startGetOrdersRequestOperationWithCompletionBlock:(void(^)())completion andFailureBlock:(void(^)(NSError *error))failure
+- (void)startGetOrdersRequestOperationWithCompletionBlock:(void(^)(NSArray *orders))completion
+                                          andFailureBlock:(void(^)(NSError *error))failure
 {
     getOrdersRequest *request = [getOrdersRequest newRequestWithCustomerId:kSTIPoCSelfServiceLegoCustomerInstanceId customerIdType:CustomerIdTypeInstanceId pageSize:10 pageNumber:1];
     
@@ -85,11 +92,18 @@ static NSString *const kSTIPoCSelfServiceLegoCustomerInstanceId = @"12284";
                         
     AFHTTPRequestOperation *getOrdersHTTPRequestOperation = [self HTTPRequestOperationWithRequest:getOrdersURLRequest success:^(AFHTTPRequestOperation *operation, id responseObject) {
         GetOrdersResult *result = [GetOrdersXMLParser getOrdersResultFromXMLString:[[NSString alloc] initWithData:operation.responseData encoding:NSUTF8StringEncoding]];
-        [result.responseCode isEqualToString:]
+        if ([result.ResponseCode isEqualToString:kSTIPoCSelfServiceResponseCodeError]) {
+            DDLogWarn(@"Get Orders Succeeded with Error\n Response Code:%@\nResponse Message:%@", result.ResponseCode, result.ResponseMessage);
+            NSError *error = [NSError errorWithDomain:kSTIPoCSelfServiceErrorGetOrdersDomain code:[result.ResponseCode integerValue] userInfo:nil];
+            failure(error);
+            return;
+        }
         
-        completion();
+        DDLogInfo(@"Get Orders SUCCEEDED");
+        completion(result.Orders);
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        DDLogError(@"Get Orders FAILED:\n%@", error);
         failure(error);
     }];
     
@@ -98,6 +112,8 @@ static NSString *const kSTIPoCSelfServiceLegoCustomerInstanceId = @"12284";
 }
 
 - (void)startGetOrderRequestOperationWithOrderSummary:(OrderSummary *)orderSummary
+                                      completionBlock:(void(^)(OrderSummary *detailedOrderSummary))completion
+                                      andFailureBlock:(void(^)(NSError *error))failure
 {
     getOrderRequest *request = [getOrderRequest newRequestWithOrderId:orderSummary.OrderId andOrderIdType:OrderIdTypeOrderId];
     
@@ -107,9 +123,19 @@ static NSString *const kSTIPoCSelfServiceLegoCustomerInstanceId = @"12284";
     getOrderURLRequest.HTTPBody = [getOrderBodyXMLString dataUsingEncoding:NSUTF8StringEncoding];
     
     AFHTTPRequestOperation *getOrdersHTTPRequestOperation = [self HTTPRequestOperationWithRequest:getOrderURLRequest success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        DDLogWarn(@"SUCCESS");
-        DDLogWarn(@"Raw XML Data: %@", [[NSString alloc] initWithData:operation.responseData encoding:NSUTF8StringEncoding]);
-        [GetOrderXMLParser getOrderResultFromXMLString:[[NSString alloc] initWithData:operation.responseData encoding:NSUTF8StringEncoding]];
+        GetOrderResult *result = [GetOrderXMLParser getOrderResultFromXMLString:[[NSString alloc] initWithData:operation.responseData encoding:NSUTF8StringEncoding]];
+        if ([result.ResponseCode isEqualToString:kSTIPoCSelfServiceResponseCodeError]) {
+            DDLogWarn(@"Get Order Succeeded with Error\n Response Code:%@\nResponse Message:%@", result.ResponseCode, result.ResponseMessage);
+            NSError *error = [NSError errorWithDomain:kSTIPoCSelfServiceErrorGetOrderDomain code:[result.ResponseCode integerValue] userInfo:nil];
+            failure(error);
+            return;
+        }
+
+        [orderSummary setAttributesWithGetOrderResult:result];
+        
+        DDLogInfo(@"Get Order SUCCEEDED");
+        completion(orderSummary);
+        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         DDLogWarn(@"URL: %@", getOrderURLRequest.URL.absoluteString);
         DDLogError(@"HTTP METHOD: %@", operation.request.HTTPMethod);
@@ -123,6 +149,20 @@ static NSString *const kSTIPoCSelfServiceLegoCustomerInstanceId = @"12284";
     
     
     [getOrdersHTTPRequestOperation start];
+}
+
+- (void)startUpdateOrderStatusOperationWithOrderSummary:(OrderSummary *)orderSummary
+                                        completionBlock:(void(^)())completion
+                                        andFailureBlock:(void(^)(NSError *error))failure
+{
+    
+}
+
+- (void)startModifyOrderDetailsOperationWithOrders:(NSArray *)orders
+                                   completionBlock:(void(^)())completion
+                                   andFailureBlock:(void(^)(NSError *error))failure
+{
+    
 }
 
 @end
