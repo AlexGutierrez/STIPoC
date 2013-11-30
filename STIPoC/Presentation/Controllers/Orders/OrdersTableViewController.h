@@ -8,8 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol OrdersTableViewControllerDelegate <NSObject>
+
+- (void)ordersTableViewControllerStartedGetOrdersRequest;
+- (void)ordersTableViewControllerFinishedGetOrdersRequest;
+
+@end
+
 @interface OrdersTableViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@property (strong, nonatomic) NSMutableArray *orders;
+@property (weak, nonatomic) id<OrdersTableViewControllerDelegate> delegate;
 
 @end

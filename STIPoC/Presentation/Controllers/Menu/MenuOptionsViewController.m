@@ -17,6 +17,13 @@
 #pragma mark -
 #pragma mark Table View Protocols
 
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    cell.textLabel.textColor = [UIColor whiteColor];
+    cell.backgroundColor = [UIColor clearColor];
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if ([self.delegate respondsToSelector:@selector(menuOptionsViewControllerDidSelectOption:)]) {

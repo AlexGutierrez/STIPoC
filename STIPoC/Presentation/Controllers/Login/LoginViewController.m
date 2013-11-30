@@ -13,8 +13,7 @@
 #import "Customer.h"
 #import "XCDFormInputAccessoryView.h"
 
-#define LOGIN_FIELDS_DEFAULT_POSITION_Y 277
-#define LOGIN_FIELDS_KEYBOARD_Y_DIFF 120
+#define LOGIN_FIELDS_KEYBOARD_Y_DIFF 200
 
 NSString *const kSTIPoCSeguePushMainViewController = @"MainViewControllerPushSegue";
 
@@ -76,6 +75,7 @@ NSString *const kSTIPoCSeguePushMainViewController = @"MainViewControllerPushSeg
 	}];
 }
 
+/*
 - (UIView *) inputAccessoryView
 {
 	if (!_inputAccessoryView)
@@ -83,6 +83,21 @@ NSString *const kSTIPoCSeguePushMainViewController = @"MainViewControllerPushSeg
 		_inputAccessoryView = [[XCDFormInputAccessoryView alloc] initWithResponders:self.loginFields];
 	}
 	return _inputAccessoryView;
+}*/
+
+#pragma mark -
+#pragma mark Text Field Protocols
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    if (textField.tag >= 2) {
+        [self login:nil];
+    }
+    else {
+        UITextField *nextTextField = self.loginFields[textField.tag + 1];
+        [nextTextField becomeFirstResponder];
+    }
+    return YES;
 }
 
 #pragma mark -
@@ -117,9 +132,8 @@ NSString *const kSTIPoCSeguePushMainViewController = @"MainViewControllerPushSeg
 - (void)fixupFields:(NSNotification *)notification
 {
     [UIView animateWithDuration:0.3 animations:^{
-        CGRect frame = self.loginFieldsContainer.frame;
-        frame.origin.y = ([notification.name isEqualToString:UIKeyboardWillHideNotification])? LOGIN_FIELDS_DEFAULT_POSITION_Y : LOGIN_FIELDS_DEFAULT_POSITION_Y - LOGIN_FIELDS_KEYBOARD_Y_DIFF;
-        self.loginFieldsContainer.frame = frame;
+        CGFloat centerY = self.view.center.y;
+        self.loginFieldsContainer.center = CGPointMake(self.view.center.x, ([notification.name isEqualToString:UIKeyboardWillHideNotification] ||  UIInterfaceOrientationIsPortrait([[UIDevice currentDevice] orientation]))? centerY : centerY - LOGIN_FIELDS_KEYBOARD_Y_DIFF);;
     }];
 }
 

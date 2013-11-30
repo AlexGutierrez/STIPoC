@@ -10,7 +10,7 @@
 
 extern NSString *const kSTIPoCSeguePushMainViewController;
 
-@interface LoginViewController : GenericViewController
+@interface LoginViewController : GenericViewController<UITextFieldDelegate>
 
 /// The userID UITextField IBOutlet
 @property (weak, nonatomic) IBOutlet UITextField *userIDField;

@@ -10,7 +10,34 @@
 #import "SelfServiceRequestOperationManager.h"
 #import "ErrorFactory.h"
 
+@interface SelfService ()
+
+@property (strong, nonatomic, readonly) NSError *defaultPublicError;
+
+@end
+
 @implementation SelfService
+
+#pragma mark -
+#pragma mark Class Methods
+
++ (instancetype)sharedInstance
+{
+    static id _sharedInstance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _sharedInstance = [[self class] new];
+    });
+    return _sharedInstance;
+}
+
+#pragma mark -
+#pragma mark Custom Accessors
+
+- (NSError *)defaultPublicError
+{
+    return ([AFNetworkReachabilityManager sharedManager].reachable) ? [[ErrorFactory sharedFactory] createDefaultServerError] : [[ErrorFactory sharedFactory] createDefaultNetworkReachabilityError];
+}
 
 #pragma mark -
 #pragma mark Service Methods
@@ -18,37 +45,36 @@
 - (void)getOrdersWithCompletionBlock:(void(^)(NSArray *orders))completion
                      andFailureBlock:(void(^)(NSError *error))failure
 {
-    if ([[AFNetworkReachabilityManager sharedManager] isReachable]) {
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         [[SelfServiceRequestOperationManager sharedManager] startGetOrdersRequestOperationWithCompletionBlock:^(NSArray *orders) {
-            completion(orders);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completion(orders);
+            });
         } andFailureBlock:^(NSError *internalError) {
-            NSError *publicError = [[ErrorFactory sharedFactory] createDefaultServerError];
-            failure(publicError);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                failure(self.defaultPublicError);
+            });
         }];
-    }
-    else {
-        NSError *publicError = [[ErrorFactory sharedFactory] createDefaultNetworkReachabilityError];
-        failure(publicError);
-    }
+    });
+    
 }
 
 - (void)getOrderDetailWithOrderSummary:(OrderSummary *)orderSummary
                        completionBlock:(void(^)(OrderSummary *detailedOrderSummary))completion
                        andFailureBlock:(void(^)(NSError *error))failure
 {
-    if ([[AFNetworkReachabilityManager sharedManager] isReachable]) {
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         [[SelfServiceRequestOperationManager sharedManager] startGetOrderRequestOperationWithOrderSummary:orderSummary
                                                                                           completionBlock:^(OrderSummary *detailedOrderSummary) {
-                                                                                              completion(detailedOrderSummary);
+                                                                                              dispatch_async(dispatch_get_main_queue(), ^{
+                                                                                                  completion(detailedOrderSummary);
+                                                                                              });
                                                                                           } andFailureBlock:^(NSError *internalError) {
-                                                                                              NSError *publicError = [[ErrorFactory sharedFactory] createDefaultServerError];
-                                                                                              failure(publicError);
+                                                                                              dispatch_async(dispatch_get_main_queue(), ^{
+                                                                                                  failure(self.defaultPublicError);
+                                                                                              });
                                                                                           }];
-    }
-    else {
-        NSError *publicError = [[ErrorFactory sharedFactory] createDefaultNetworkReachabilityError];
-        failure(publicError);
-    }
+    });
 }
 
 - (void)rejectOrderWithOrderSummary:(OrderSummary *)orderSummary
@@ -56,41 +82,38 @@
                     completionBlock:(void(^)())completion
                     andFailureBlock:(void(^)(NSError *error))failure
 {
-    if ([[AFNetworkReachabilityManager sharedManager] isReachable]) {
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         [[SelfServiceRequestOperationManager sharedManager] startUpdateOrderStatusRequestOperationWithOrderSummary:orderSummary
                                                                                                     newOrderStatus:OrderStatusRejected
                                                                                                           comments:comments
                                                                                                    completionBlock:^{
-                                                                                                       completion();
+                                                                                                       dispatch_async(dispatch_get_main_queue(), ^{
+                                                                                                           completion();
+                                                                                                       });
                                                                                                    } andFailureBlock:^(NSError *internalError) {
-                                                                                                       NSError *publicError = [[ErrorFactory sharedFactory] createDefaultServerError];
-                                                                                                       failure(publicError);
-                                                                                                       
+                                                                                                       dispatch_async(dispatch_get_main_queue(), ^{
+                                                                                                           failure(self.defaultPublicError);
+                                                                                                       });
                                                                                                    }];
-    }
-    else {
-        NSError *publicError = [[ErrorFactory sharedFactory] createDefaultNetworkReachabilityError];
-        failure(publicError);
-    }
+    });
 }
 
 - (void)updateOrderDetailsOnServerWithOrders:(OrderSummary *)orderSummary
                              completionBlock:(void(^)())completion
                              andFailureBlock:(void(^)(NSError *error))failure
 {
-    if ([[AFNetworkReachabilityManager sharedManager] isReachable]) {
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         [[SelfServiceRequestOperationManager sharedManager] startModifyOrderDetailsRequestOperationWithOrder:orderSummary
                                                                                              completionBlock:^{
-                                                                                                 completion();
+                                                                                                 dispatch_async(dispatch_get_main_queue(), ^{
+                                                                                                     completion();
+                                                                                                 });
                                                                                              } andFailureBlock:^(NSError *internalError) {
-                                                                                                 NSError *publicError = [[ErrorFactory sharedFactory] createDefaultServerError];
-                                                                                                 failure(publicError);
+                                                                                                 dispatch_async(dispatch_get_main_queue(), ^{
+                                                                                                     failure(self.defaultPublicError);
+                                                                                                 });
                                                                                              }];
-    }
-    else {
-        NSError *publicError = [[ErrorFactory sharedFactory] createDefaultNetworkReachabilityError];
-        failure(publicError);
-    }
+    });
 }
 
 @end

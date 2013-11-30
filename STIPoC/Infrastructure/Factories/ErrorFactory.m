@@ -11,6 +11,22 @@
 
 @implementation ErrorFactory
 
+#pragma mark -
+#pragma mark Class Methods
+
++ (instancetype)sharedFactory
+{
+    static id _sharedFactory = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _sharedFactory = [[self class] new];
+    });
+    return _sharedFactory;
+}
+
+#pragma mark -
+#pragma mark Public Methods
+
 - (NSError *)createErrorWithSelfServiceDomain:(NSString *)domain
                          andSelfServiceResult:(GenericSelfServiceResult *)genericSelfServiceResult
 {

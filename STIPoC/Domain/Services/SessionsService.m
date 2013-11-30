@@ -30,6 +30,19 @@ NSString *const kSTIPoCServiceName = @"com.STIPoC.SelfService";
 @synthesize lastUser = _lastUser;
 
 #pragma mark -
+#pragma mark Class Methods
+
++ (instancetype)sharedInstance
+{
+    static id _sharedInstance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _sharedInstance = [[self class] new];
+    });
+    return _sharedInstance;
+}
+
+#pragma mark -
 #pragma mark Custom Accessors
 
 - (NSString *)currentServiceName

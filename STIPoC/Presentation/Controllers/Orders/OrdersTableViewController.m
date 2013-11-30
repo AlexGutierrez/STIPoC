@@ -7,6 +7,10 @@
 //
 
 #import "OrdersTableViewController.h"
+#import "OrderSummaryCell.h"
+#import "OrderSummary.h"
+#import "SelfService.h"
+#import "AlertViewFactory.h"
 
 @interface OrdersTableViewController ()
 
@@ -25,6 +29,37 @@ static NSString *const kSTIPoCOrderSummaryCellRejectText = @"Reject";
     [super viewDidLoad];
     
     self.tableView.editing = YES;
+    
+    if ([self.delegate respondsToSelector:@selector(ordersTableViewControllerStartedGetOrdersRequest)]) {
+        [self.delegate ordersTableViewControllerStartedGetOrdersRequest];
+    }
+    
+    [[SelfService sharedInstance] getOrdersWithCompletionBlock:^(NSArray *orders) {
+        if ([self.delegate respondsToSelector:@selector(ordersTableViewControllerFinishedGetOrdersRequest)]) {
+            [self.delegate ordersTableViewControllerFinishedGetOrdersRequest];
+        }
+        self.orders = [orders mutableCopy];
+        [self.tableView reloadData];
+        
+    } andFailureBlock:^(NSError *error) {
+        if ([self.delegate respondsToSelector:@selector(ordersTableViewControllerFinishedGetOrdersRequest)]) {
+            [self.delegate ordersTableViewControllerFinishedGetOrdersRequest];
+        }
+        UIAlertView *alertView = [[AlertViewFactory sharedFactory] createAlertViewWithError:error];
+        [alertView show];
+    }];
+}
+
+#pragma mark -
+#pragma mark Custom Accessors
+
+- (NSMutableArray *)orders
+{
+    if (!_orders) {
+        _orders = [NSMutableArray new];
+    }
+    
+    return _orders;
 }
 
 #pragma mark -
@@ -37,14 +72,20 @@ static NSString *const kSTIPoCOrderSummaryCellRejectText = @"Reject";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 30;
+    return self.orders.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kSTIPoCOrderSummaryCellIdentifier forIndexPath:indexPath];
-    
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    OrderSummary *orderSummary = self.orders[indexPath.row];
+    OrderSummaryCell *orderSummaryCell = (OrderSummaryCell *)cell;
+    [orderSummaryCell setupOrderSummaryCellWithOrderSummary:orderSummary];
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -65,12 +106,14 @@ static NSString *const kSTIPoCOrderSummaryCellRejectText = @"Reject";
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [self.orders removeObjectAtIndex:indexPath.row];
        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    //OrderSummary *orderSummary = self.orders[indexPath.row];
     
 }
 

@@ -21,12 +21,8 @@
     #import "CoreData+MagicalRecord.h"
     #import "AFNetworking.h"
     #import <libxml/tree.h>
-    #import "DDLog.h"
-
-    #ifdef DEBUG
-        static const int ddLogLevel = LOG_LEVEL_VERBOSE;
-    #else
-        static const int ddLogLevel = LOG_LEVEL_OFF;
-    #endif
+    #import "MRProgressOverlayView.h"
+    #import "LoggingHelper.h"
+    #import "ColorHelper.h"
 
 #endif

@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A3937F6184947D800D3CF52 /* GenericViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A3937E4184947D800D3CF52 /* GenericViewController.m */; };
+		7A3937F7184947D800D3CF52 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A3937E6184947D800D3CF52 /* MainViewController.m */; };
+		7A3937F8184947D800D3CF52 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A3937E9184947D800D3CF52 /* LoginViewController.m */; };
+		7A3937F9184947D800D3CF52 /* MenuOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A3937EC184947D800D3CF52 /* MenuOptionsViewController.m */; };
+		7A3937FA184947D800D3CF52 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A3937EE184947D800D3CF52 /* MenuViewController.m */; };
+		7A3937FB184947D800D3CF52 /* OrderDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A3937F1184947D800D3CF52 /* OrderDetailViewController.m */; };
+		7A3937FC184947D800D3CF52 /* OrdersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A3937F3184947D800D3CF52 /* OrdersTableViewController.m */; };
+		7A3937FD184947D800D3CF52 /* OrderStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A3937F5184947D800D3CF52 /* OrderStatusViewController.m */; };
+		7A3938021849541700D3CF52 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A3938011849541700D3CF52 /* QuartzCore.framework */; };
+		7A3938041849542700D3CF52 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A3938031849542700D3CF52 /* Accelerate.framework */; };
+		7A5342F2184A7B3900FE9C54 /* PaddingTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A5342F1184A7B3900FE9C54 /* PaddingTextField.m */; };
+		7A5342F5184A969100FE9C54 /* ColorHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A5342F4184A969100FE9C54 /* ColorHelper.m */; };
 		7A982327183552DE00CB0BA5 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A982326183552DE00CB0BA5 /* libOCMock.a */; };
 		7A9823281835533B00CB0BA5 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A982326183552DE00CB0BA5 /* libOCMock.a */; };
 		7AA569F41848F2630095C98A /* UpdateOrderStatusRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA569F31848F2630095C98A /* UpdateOrderStatusRequest.m */; };
@@ -15,6 +27,15 @@
 		7AA569FE18491F480095C98A /* SelfService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA569FD18491F480095C98A /* SelfService.m */; };
 		7AA56A01184928AE0095C98A /* GenericFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA56A00184928AE0095C98A /* GenericFactory.m */; };
 		7AA56A0418492C030095C98A /* ErrorFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA56A0318492C030095C98A /* ErrorFactory.m */; };
+		7AB07C57184972EA001265E0 /* MRBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB07C42184972E9001265E0 /* MRBlurView.m */; };
+		7AB07C58184972EA001265E0 /* UIImage+MRImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB07C44184972E9001265E0 /* UIImage+MRImageEffects.m */; };
+		7AB07C59184972EA001265E0 /* MRActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB07C47184972E9001265E0 /* MRActivityIndicatorView.m */; };
+		7AB07C5A184972EA001265E0 /* MRCircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB07C49184972E9001265E0 /* MRCircularProgressView.m */; };
+		7AB07C5B184972EA001265E0 /* MRIconView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB07C4B184972E9001265E0 /* MRIconView.m */; };
+		7AB07C5C184972EA001265E0 /* MRNavigationBarProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB07C4D184972E9001265E0 /* MRNavigationBarProgressView.m */; };
+		7AB07C5D184972EA001265E0 /* MRProgressOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB07C4F184972EA001265E0 /* MRProgressOverlayView.m */; };
+		7AB07C5E184972EA001265E0 /* MRMessageInterceptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB07C53184972EA001265E0 /* MRMessageInterceptor.m */; };
+		7AB07C5F184972EA001265E0 /* MRWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB07C56184972EA001265E0 /* MRWeakProxy.m */; };
 		7C1168A118455EE300334AF9 /* XCDFormInputAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1168A018455EE300334AF9 /* XCDFormInputAccessoryView.m */; };
 		7C13C813183A633800C12C54 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7C2A35E11832A8E7004AE430 /* InfoPlist.strings */; };
 		7C13C814183A633D00C12C54 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C2A35C21832A7CE004AE430 /* Storyboard.storyboard */; };
@@ -29,26 +50,9 @@
 		7C1A98791847A0CF0045ED8C /* ECFoldAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1A98751847A0CF0045ED8C /* ECFoldAnimationController.m */; };
 		7C1A987A1847A0CF0045ED8C /* ECZoomAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1A98771847A0CF0045ED8C /* ECZoomAnimationController.m */; };
 		7C1A98861847E1D10045ED8C /* OrderSummaryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1A98851847E1D10045ED8C /* OrderSummaryCell.m */; };
-		7C1A989B1847E1DF0045ED8C /* GenericViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1A98891847E1DF0045ED8C /* GenericViewController.m */; };
-		7C1A989C1847E1DF0045ED8C /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1A988B1847E1DF0045ED8C /* MainViewController.m */; };
-		7C1A989D1847E1DF0045ED8C /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1A988E1847E1DF0045ED8C /* LoginViewController.m */; };
-		7C1A989E1847E1DF0045ED8C /* MenuOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1A98911847E1DF0045ED8C /* MenuOptionsViewController.m */; };
-		7C1A989F1847E1DF0045ED8C /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1A98931847E1DF0045ED8C /* MenuViewController.m */; };
-		7C1A98A01847E1DF0045ED8C /* OrderDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1A98961847E1DF0045ED8C /* OrderDetailViewController.m */; };
-		7C1A98A11847E1DF0045ED8C /* OrdersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1A98981847E1DF0045ED8C /* OrdersTableViewController.m */; };
-		7C1A98A21847E1DF0045ED8C /* OrderStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1A989A1847E1DF0045ED8C /* OrderStatusViewController.m */; };
 		7C1F24111836D3F500E90145 /* MDRadialProgressLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1F23F41836D3F500E90145 /* MDRadialProgressLabel.m */; };
 		7C1F24121836D3F500E90145 /* MDRadialProgressTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1F23F61836D3F500E90145 /* MDRadialProgressTheme.m */; };
 		7C1F24131836D3F500E90145 /* MDRadialProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1F23F81836D3F500E90145 /* MDRadialProgressView.m */; };
-		7C1F24141836D3F500E90145 /* MRBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1F23FC1836D3F500E90145 /* MRBlurView.m */; };
-		7C1F24151836D3F500E90145 /* UIImage+MRImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1F23FE1836D3F500E90145 /* UIImage+MRImageEffects.m */; };
-		7C1F24161836D3F500E90145 /* MRActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1F24011836D3F500E90145 /* MRActivityIndicatorView.m */; };
-		7C1F24171836D3F500E90145 /* MRCircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1F24031836D3F500E90145 /* MRCircularProgressView.m */; };
-		7C1F24181836D3F500E90145 /* MRIconView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1F24051836D3F500E90145 /* MRIconView.m */; };
-		7C1F24191836D3F500E90145 /* MRNavigationBarProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1F24071836D3F500E90145 /* MRNavigationBarProgressView.m */; };
-		7C1F241A1836D3F500E90145 /* MRProgressOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1F24091836D3F500E90145 /* MRProgressOverlayView.m */; };
-		7C1F241B1836D3F500E90145 /* MRMessageInterceptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1F240D1836D3F500E90145 /* MRMessageInterceptor.m */; };
-		7C1F241C1836D3F500E90145 /* MRWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1F24101836D3F500E90145 /* MRWeakProxy.m */; };
 		7C1F24351836D58F00E90145 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C1F24341836D58F00E90145 /* libxml2.dylib */; };
 		7C1F24371836D7D400E90145 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C1F24361836D7D400E90145 /* CFNetwork.framework */; };
 		7C2A34851832A6EB004AE430 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C2A34841832A6EB004AE430 /* Foundation.framework */; };
@@ -158,6 +162,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7A3937E3184947D800D3CF52 /* GenericViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenericViewController.h; sourceTree = "<group>"; };
+		7A3937E4184947D800D3CF52 /* GenericViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenericViewController.m; sourceTree = "<group>"; };
+		7A3937E5184947D800D3CF52 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		7A3937E6184947D800D3CF52 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		7A3937E8184947D800D3CF52 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		7A3937E9184947D800D3CF52 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		7A3937EB184947D800D3CF52 /* MenuOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuOptionsViewController.h; sourceTree = "<group>"; };
+		7A3937EC184947D800D3CF52 /* MenuOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuOptionsViewController.m; sourceTree = "<group>"; };
+		7A3937ED184947D800D3CF52 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		7A3937EE184947D800D3CF52 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		7A3937F0184947D800D3CF52 /* OrderDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderDetailViewController.h; sourceTree = "<group>"; };
+		7A3937F1184947D800D3CF52 /* OrderDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderDetailViewController.m; sourceTree = "<group>"; };
+		7A3937F2184947D800D3CF52 /* OrdersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrdersTableViewController.h; sourceTree = "<group>"; };
+		7A3937F3184947D800D3CF52 /* OrdersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrdersTableViewController.m; sourceTree = "<group>"; };
+		7A3937F4184947D800D3CF52 /* OrderStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderStatusViewController.h; sourceTree = "<group>"; };
+		7A3937F5184947D800D3CF52 /* OrderStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderStatusViewController.m; sourceTree = "<group>"; };
+		7A3938011849541700D3CF52 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		7A3938031849542700D3CF52 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		7A5342F0184A7B3900FE9C54 /* PaddingTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaddingTextField.h; sourceTree = "<group>"; };
+		7A5342F1184A7B3900FE9C54 /* PaddingTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaddingTextField.m; sourceTree = "<group>"; };
+		7A5342F3184A969100FE9C54 /* ColorHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorHelper.h; sourceTree = "<group>"; };
+		7A5342F4184A969100FE9C54 /* ColorHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorHelper.m; sourceTree = "<group>"; };
 		7A982326183552DE00CB0BA5 /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libOCMock.a; sourceTree = "<group>"; };
 		7A982329183553DB00CB0BA5 /* NSNotificationCenter+OCMAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSNotificationCenter+OCMAdditions.h"; path = "External/OCMock/OCMock/NSNotificationCenter+OCMAdditions.h"; sourceTree = SOURCE_ROOT; };
 		7A98232A183553DB00CB0BA5 /* OCMArg.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OCMArg.h; path = External/OCMock/OCMock/OCMArg.h; sourceTree = SOURCE_ROOT; };
@@ -178,6 +204,26 @@
 		7AA56A00184928AE0095C98A /* GenericFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenericFactory.m; sourceTree = "<group>"; };
 		7AA56A0218492C030095C98A /* ErrorFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorFactory.h; sourceTree = "<group>"; };
 		7AA56A0318492C030095C98A /* ErrorFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorFactory.m; sourceTree = "<group>"; };
+		7AB07C41184972E9001265E0 /* MRBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRBlurView.h; sourceTree = "<group>"; };
+		7AB07C42184972E9001265E0 /* MRBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRBlurView.m; sourceTree = "<group>"; };
+		7AB07C43184972E9001265E0 /* UIImage+MRImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+MRImageEffects.h"; sourceTree = "<group>"; };
+		7AB07C44184972E9001265E0 /* UIImage+MRImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+MRImageEffects.m"; sourceTree = "<group>"; };
+		7AB07C46184972E9001265E0 /* MRActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRActivityIndicatorView.h; sourceTree = "<group>"; };
+		7AB07C47184972E9001265E0 /* MRActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRActivityIndicatorView.m; sourceTree = "<group>"; };
+		7AB07C48184972E9001265E0 /* MRCircularProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRCircularProgressView.h; sourceTree = "<group>"; };
+		7AB07C49184972E9001265E0 /* MRCircularProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRCircularProgressView.m; sourceTree = "<group>"; };
+		7AB07C4A184972E9001265E0 /* MRIconView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRIconView.h; sourceTree = "<group>"; };
+		7AB07C4B184972E9001265E0 /* MRIconView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRIconView.m; sourceTree = "<group>"; };
+		7AB07C4C184972E9001265E0 /* MRNavigationBarProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRNavigationBarProgressView.h; sourceTree = "<group>"; };
+		7AB07C4D184972E9001265E0 /* MRNavigationBarProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRNavigationBarProgressView.m; sourceTree = "<group>"; };
+		7AB07C4E184972E9001265E0 /* MRProgressOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRProgressOverlayView.h; sourceTree = "<group>"; };
+		7AB07C4F184972EA001265E0 /* MRProgressOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRProgressOverlayView.m; sourceTree = "<group>"; };
+		7AB07C50184972EA001265E0 /* MRProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRProgress.h; sourceTree = "<group>"; };
+		7AB07C52184972EA001265E0 /* MRMessageInterceptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRMessageInterceptor.h; sourceTree = "<group>"; };
+		7AB07C53184972EA001265E0 /* MRMessageInterceptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRMessageInterceptor.m; sourceTree = "<group>"; };
+		7AB07C54184972EA001265E0 /* MRProgressHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRProgressHelper.h; sourceTree = "<group>"; };
+		7AB07C55184972EA001265E0 /* MRWeakProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRWeakProxy.h; sourceTree = "<group>"; };
+		7AB07C56184972EA001265E0 /* MRWeakProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRWeakProxy.m; sourceTree = "<group>"; };
 		7C11689F18455EE300334AF9 /* XCDFormInputAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCDFormInputAccessoryView.h; sourceTree = "<group>"; };
 		7C1168A018455EE300334AF9 /* XCDFormInputAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCDFormInputAccessoryView.m; sourceTree = "<group>"; };
 		7C1A985E1847990F0045ED8C /* ECPercentDrivenInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECPercentDrivenInteractiveTransition.h; sourceTree = "<group>"; };
@@ -201,48 +247,12 @@
 		7C1A98771847A0CF0045ED8C /* ECZoomAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECZoomAnimationController.m; sourceTree = "<group>"; };
 		7C1A98841847E1D10045ED8C /* OrderSummaryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderSummaryCell.h; sourceTree = "<group>"; };
 		7C1A98851847E1D10045ED8C /* OrderSummaryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderSummaryCell.m; sourceTree = "<group>"; };
-		7C1A98881847E1DF0045ED8C /* GenericViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenericViewController.h; sourceTree = "<group>"; };
-		7C1A98891847E1DF0045ED8C /* GenericViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenericViewController.m; sourceTree = "<group>"; };
-		7C1A988A1847E1DF0045ED8C /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		7C1A988B1847E1DF0045ED8C /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		7C1A988D1847E1DF0045ED8C /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
-		7C1A988E1847E1DF0045ED8C /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		7C1A98901847E1DF0045ED8C /* MenuOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuOptionsViewController.h; sourceTree = "<group>"; };
-		7C1A98911847E1DF0045ED8C /* MenuOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuOptionsViewController.m; sourceTree = "<group>"; };
-		7C1A98921847E1DF0045ED8C /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
-		7C1A98931847E1DF0045ED8C /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
-		7C1A98951847E1DF0045ED8C /* OrderDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderDetailViewController.h; sourceTree = "<group>"; };
-		7C1A98961847E1DF0045ED8C /* OrderDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderDetailViewController.m; sourceTree = "<group>"; };
-		7C1A98971847E1DF0045ED8C /* OrdersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrdersTableViewController.h; sourceTree = "<group>"; };
-		7C1A98981847E1DF0045ED8C /* OrdersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrdersTableViewController.m; sourceTree = "<group>"; };
-		7C1A98991847E1DF0045ED8C /* OrderStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderStatusViewController.h; sourceTree = "<group>"; };
-		7C1A989A1847E1DF0045ED8C /* OrderStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderStatusViewController.m; sourceTree = "<group>"; };
 		7C1F23F31836D3F500E90145 /* MDRadialProgressLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDRadialProgressLabel.h; sourceTree = "<group>"; };
 		7C1F23F41836D3F500E90145 /* MDRadialProgressLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDRadialProgressLabel.m; sourceTree = "<group>"; };
 		7C1F23F51836D3F500E90145 /* MDRadialProgressTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDRadialProgressTheme.h; sourceTree = "<group>"; };
 		7C1F23F61836D3F500E90145 /* MDRadialProgressTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDRadialProgressTheme.m; sourceTree = "<group>"; };
 		7C1F23F71836D3F500E90145 /* MDRadialProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDRadialProgressView.h; sourceTree = "<group>"; };
 		7C1F23F81836D3F500E90145 /* MDRadialProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDRadialProgressView.m; sourceTree = "<group>"; };
-		7C1F23FB1836D3F500E90145 /* MRBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRBlurView.h; sourceTree = "<group>"; };
-		7C1F23FC1836D3F500E90145 /* MRBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRBlurView.m; sourceTree = "<group>"; };
-		7C1F23FD1836D3F500E90145 /* UIImage+MRImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+MRImageEffects.h"; sourceTree = "<group>"; };
-		7C1F23FE1836D3F500E90145 /* UIImage+MRImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+MRImageEffects.m"; sourceTree = "<group>"; };
-		7C1F24001836D3F500E90145 /* MRActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRActivityIndicatorView.h; sourceTree = "<group>"; };
-		7C1F24011836D3F500E90145 /* MRActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRActivityIndicatorView.m; sourceTree = "<group>"; };
-		7C1F24021836D3F500E90145 /* MRCircularProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRCircularProgressView.h; sourceTree = "<group>"; };
-		7C1F24031836D3F500E90145 /* MRCircularProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRCircularProgressView.m; sourceTree = "<group>"; };
-		7C1F24041836D3F500E90145 /* MRIconView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRIconView.h; sourceTree = "<group>"; };
-		7C1F24051836D3F500E90145 /* MRIconView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRIconView.m; sourceTree = "<group>"; };
-		7C1F24061836D3F500E90145 /* MRNavigationBarProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRNavigationBarProgressView.h; sourceTree = "<group>"; };
-		7C1F24071836D3F500E90145 /* MRNavigationBarProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRNavigationBarProgressView.m; sourceTree = "<group>"; };
-		7C1F24081836D3F500E90145 /* MRProgressOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRProgressOverlayView.h; sourceTree = "<group>"; };
-		7C1F24091836D3F500E90145 /* MRProgressOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRProgressOverlayView.m; sourceTree = "<group>"; };
-		7C1F240A1836D3F500E90145 /* MRProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRProgress.h; sourceTree = "<group>"; };
-		7C1F240C1836D3F500E90145 /* MRMessageInterceptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRMessageInterceptor.h; sourceTree = "<group>"; };
-		7C1F240D1836D3F500E90145 /* MRMessageInterceptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRMessageInterceptor.m; sourceTree = "<group>"; };
-		7C1F240E1836D3F500E90145 /* MRProgressHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRProgressHelper.h; sourceTree = "<group>"; };
-		7C1F240F1836D3F500E90145 /* MRWeakProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRWeakProxy.h; sourceTree = "<group>"; };
-		7C1F24101836D3F500E90145 /* MRWeakProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRWeakProxy.m; sourceTree = "<group>"; };
 		7C1F24341836D58F00E90145 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		7C1F24361836D7D400E90145 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		7C2A34811832A6EB004AE430 /* STIPoC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STIPoC.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -432,12 +442,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A3938041849542700D3CF52 /* Accelerate.framework in Frameworks */,
+				7C2A34871832A6EB004AE430 /* CoreGraphics.framework in Frameworks */,
+				7A3938021849541700D3CF52 /* QuartzCore.framework in Frameworks */,
 				7C1F24371836D7D400E90145 /* CFNetwork.framework in Frameworks */,
 				7C1F24351836D58F00E90145 /* libxml2.dylib in Frameworks */,
 				7C2A357D1832A785004AE430 /* MobileCoreServices.framework in Frameworks */,
 				7C2A357B1832A77E004AE430 /* SystemConfiguration.framework in Frameworks */,
 				7C2A35791832A776004AE430 /* CoreData.framework in Frameworks */,
-				7C2A34871832A6EB004AE430 /* CoreGraphics.framework in Frameworks */,
 				7C2A34891832A6EB004AE430 /* UIKit.framework in Frameworks */,
 				7C2A34851832A6EB004AE430 /* Foundation.framework in Frameworks */,
 				7A982327183552DE00CB0BA5 /* libOCMock.a in Frameworks */,
@@ -458,6 +470,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A3937E2184947D800D3CF52 /* Generic */ = {
+			isa = PBXGroup;
+			children = (
+				7A3937E3184947D800D3CF52 /* GenericViewController.h */,
+				7A3937E4184947D800D3CF52 /* GenericViewController.m */,
+				7A3937E5184947D800D3CF52 /* MainViewController.h */,
+				7A3937E6184947D800D3CF52 /* MainViewController.m */,
+			);
+			path = Generic;
+			sourceTree = "<group>";
+		};
+		7A3937E7184947D800D3CF52 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				7A3937E8184947D800D3CF52 /* LoginViewController.h */,
+				7A3937E9184947D800D3CF52 /* LoginViewController.m */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		7A3937EA184947D800D3CF52 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				7A3937EB184947D800D3CF52 /* MenuOptionsViewController.h */,
+				7A3937EC184947D800D3CF52 /* MenuOptionsViewController.m */,
+				7A3937ED184947D800D3CF52 /* MenuViewController.h */,
+				7A3937EE184947D800D3CF52 /* MenuViewController.m */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		7A3937EF184947D800D3CF52 /* Orders */ = {
+			isa = PBXGroup;
+			children = (
+				7A3937F0184947D800D3CF52 /* OrderDetailViewController.h */,
+				7A3937F1184947D800D3CF52 /* OrderDetailViewController.m */,
+				7A3937F2184947D800D3CF52 /* OrdersTableViewController.h */,
+				7A3937F3184947D800D3CF52 /* OrdersTableViewController.m */,
+				7A3937F4184947D800D3CF52 /* OrderStatusViewController.h */,
+				7A3937F5184947D800D3CF52 /* OrderStatusViewController.m */,
+			);
+			path = Orders;
+			sourceTree = "<group>";
+		};
 		7A98231D183552DE00CB0BA5 /* OCMock */ = {
 			isa = PBXGroup;
 			children = (
@@ -499,6 +555,65 @@
 				7AA569F91848F2B40095C98A /* UpdateOrderStatusXMLParser.m */,
 			);
 			path = "Update Order Status";
+			sourceTree = "<group>";
+		};
+		7AB07C3E184972E9001265E0 /* MRProgress */ = {
+			isa = PBXGroup;
+			children = (
+				7AB07C3F184972E9001265E0 /* src */,
+			);
+			path = MRProgress;
+			sourceTree = "<group>";
+		};
+		7AB07C3F184972E9001265E0 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				7AB07C40184972E9001265E0 /* Blur */,
+				7AB07C45184972E9001265E0 /* Components */,
+				7AB07C50184972EA001265E0 /* MRProgress.h */,
+				7AB07C51184972EA001265E0 /* Utils */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		7AB07C40184972E9001265E0 /* Blur */ = {
+			isa = PBXGroup;
+			children = (
+				7AB07C41184972E9001265E0 /* MRBlurView.h */,
+				7AB07C42184972E9001265E0 /* MRBlurView.m */,
+				7AB07C43184972E9001265E0 /* UIImage+MRImageEffects.h */,
+				7AB07C44184972E9001265E0 /* UIImage+MRImageEffects.m */,
+			);
+			path = Blur;
+			sourceTree = "<group>";
+		};
+		7AB07C45184972E9001265E0 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				7AB07C46184972E9001265E0 /* MRActivityIndicatorView.h */,
+				7AB07C47184972E9001265E0 /* MRActivityIndicatorView.m */,
+				7AB07C48184972E9001265E0 /* MRCircularProgressView.h */,
+				7AB07C49184972E9001265E0 /* MRCircularProgressView.m */,
+				7AB07C4A184972E9001265E0 /* MRIconView.h */,
+				7AB07C4B184972E9001265E0 /* MRIconView.m */,
+				7AB07C4C184972E9001265E0 /* MRNavigationBarProgressView.h */,
+				7AB07C4D184972E9001265E0 /* MRNavigationBarProgressView.m */,
+				7AB07C4E184972E9001265E0 /* MRProgressOverlayView.h */,
+				7AB07C4F184972EA001265E0 /* MRProgressOverlayView.m */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		7AB07C51184972EA001265E0 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				7AB07C52184972EA001265E0 /* MRMessageInterceptor.h */,
+				7AB07C53184972EA001265E0 /* MRMessageInterceptor.m */,
+				7AB07C54184972EA001265E0 /* MRProgressHelper.h */,
+				7AB07C55184972EA001265E0 /* MRWeakProxy.h */,
+				7AB07C56184972EA001265E0 /* MRWeakProxy.m */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		7C11689E18455EE300334AF9 /* XCDFormInputAccessoryView */ = {
@@ -544,54 +659,6 @@
 			path = Transitions;
 			sourceTree = "<group>";
 		};
-		7C1A98871847E1DF0045ED8C /* Generic */ = {
-			isa = PBXGroup;
-			children = (
-				7C1A98881847E1DF0045ED8C /* GenericViewController.h */,
-				7C1A98891847E1DF0045ED8C /* GenericViewController.m */,
-				7C1A988A1847E1DF0045ED8C /* MainViewController.h */,
-				7C1A988B1847E1DF0045ED8C /* MainViewController.m */,
-			);
-			name = Generic;
-			path = STIPoC/Presentation/Controllers/Generic;
-			sourceTree = SOURCE_ROOT;
-		};
-		7C1A988C1847E1DF0045ED8C /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				7C1A988D1847E1DF0045ED8C /* LoginViewController.h */,
-				7C1A988E1847E1DF0045ED8C /* LoginViewController.m */,
-			);
-			name = Login;
-			path = STIPoC/Presentation/Controllers/Login;
-			sourceTree = SOURCE_ROOT;
-		};
-		7C1A988F1847E1DF0045ED8C /* Menu */ = {
-			isa = PBXGroup;
-			children = (
-				7C1A98901847E1DF0045ED8C /* MenuOptionsViewController.h */,
-				7C1A98911847E1DF0045ED8C /* MenuOptionsViewController.m */,
-				7C1A98921847E1DF0045ED8C /* MenuViewController.h */,
-				7C1A98931847E1DF0045ED8C /* MenuViewController.m */,
-			);
-			name = Menu;
-			path = STIPoC/Presentation/Controllers/Menu;
-			sourceTree = SOURCE_ROOT;
-		};
-		7C1A98941847E1DF0045ED8C /* Orders */ = {
-			isa = PBXGroup;
-			children = (
-				7C1A98951847E1DF0045ED8C /* OrderDetailViewController.h */,
-				7C1A98961847E1DF0045ED8C /* OrderDetailViewController.m */,
-				7C1A98971847E1DF0045ED8C /* OrdersTableViewController.h */,
-				7C1A98981847E1DF0045ED8C /* OrdersTableViewController.m */,
-				7C1A98991847E1DF0045ED8C /* OrderStatusViewController.h */,
-				7C1A989A1847E1DF0045ED8C /* OrderStatusViewController.m */,
-			);
-			name = Orders;
-			path = STIPoC/Presentation/Controllers/Orders;
-			sourceTree = SOURCE_ROOT;
-		};
 		7C1F23E21836754C00E90145 /* Test Cases */ = {
 			isa = PBXGroup;
 			children = (
@@ -612,57 +679,6 @@
 				7C1F23F81836D3F500E90145 /* MDRadialProgressView.m */,
 			);
 			path = MDRadialProgress;
-			sourceTree = "<group>";
-		};
-		7C1F23F91836D3F500E90145 /* MRProgress */ = {
-			isa = PBXGroup;
-			children = (
-				7C1F23FA1836D3F500E90145 /* Blur */,
-				7C1F23FF1836D3F500E90145 /* Components */,
-				7C1F240A1836D3F500E90145 /* MRProgress.h */,
-				7C1F240B1836D3F500E90145 /* Utils */,
-			);
-			path = MRProgress;
-			sourceTree = "<group>";
-		};
-		7C1F23FA1836D3F500E90145 /* Blur */ = {
-			isa = PBXGroup;
-			children = (
-				7C1F23FB1836D3F500E90145 /* MRBlurView.h */,
-				7C1F23FC1836D3F500E90145 /* MRBlurView.m */,
-				7C1F23FD1836D3F500E90145 /* UIImage+MRImageEffects.h */,
-				7C1F23FE1836D3F500E90145 /* UIImage+MRImageEffects.m */,
-			);
-			path = Blur;
-			sourceTree = "<group>";
-		};
-		7C1F23FF1836D3F500E90145 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				7C1F24001836D3F500E90145 /* MRActivityIndicatorView.h */,
-				7C1F24011836D3F500E90145 /* MRActivityIndicatorView.m */,
-				7C1F24021836D3F500E90145 /* MRCircularProgressView.h */,
-				7C1F24031836D3F500E90145 /* MRCircularProgressView.m */,
-				7C1F24041836D3F500E90145 /* MRIconView.h */,
-				7C1F24051836D3F500E90145 /* MRIconView.m */,
-				7C1F24061836D3F500E90145 /* MRNavigationBarProgressView.h */,
-				7C1F24071836D3F500E90145 /* MRNavigationBarProgressView.m */,
-				7C1F24081836D3F500E90145 /* MRProgressOverlayView.h */,
-				7C1F24091836D3F500E90145 /* MRProgressOverlayView.m */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
-		7C1F240B1836D3F500E90145 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				7C1F240C1836D3F500E90145 /* MRMessageInterceptor.h */,
-				7C1F240D1836D3F500E90145 /* MRMessageInterceptor.m */,
-				7C1F240E1836D3F500E90145 /* MRProgressHelper.h */,
-				7C1F240F1836D3F500E90145 /* MRWeakProxy.h */,
-				7C1F24101836D3F500E90145 /* MRWeakProxy.m */,
-			);
-			path = Utils;
 			sourceTree = "<group>";
 		};
 		7C2A34781832A6EB004AE430 = {
@@ -688,6 +704,8 @@
 		7C2A34831832A6EB004AE430 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7A3938031849542700D3CF52 /* Accelerate.framework */,
+				7A3938011849541700D3CF52 /* QuartzCore.framework */,
 				7C1F24341836D58F00E90145 /* libxml2.dylib */,
 				7C1F24361836D7D400E90145 /* CFNetwork.framework */,
 				7C2A357C1832A785004AE430 /* MobileCoreServices.framework */,
@@ -735,13 +753,13 @@
 		7C2A350A1832A734004AE430 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				7AB07C3E184972E9001265E0 /* MRProgress */,
 				7C2A357E1832A7AD004AE430 /* AFNetworking */,
 				7C1A985D1847990F0045ED8C /* ECSlidingViewController */,
 				7C2A350B1832A734004AE430 /* Lumberjack */,
 				7C2A351B1832A734004AE430 /* Magical Record */,
 				7C1F23F21836D3F500E90145 /* MDRadialProgress */,
 				7C9D6BC21845008D0018E0E4 /* MNMBottomPullToRefresh */,
-				7C1F23F91836D3F500E90145 /* MRProgress */,
 				7C363CAC183FB35000003723 /* NSObject-ObjectMap */,
 				7A98231D183552DE00CB0BA5 /* OCMock */,
 				7C95844B183ACF4E0065C878 /* SSKeychain */,
@@ -965,6 +983,8 @@
 			children = (
 				7C2A35B41832A7CE004AE430 /* LoggingHelper.h */,
 				7C2A35B51832A7CE004AE430 /* LoggingHelper.m */,
+				7A5342F3184A969100FE9C54 /* ColorHelper.h */,
+				7A5342F4184A969100FE9C54 /* ColorHelper.m */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -982,6 +1002,10 @@
 		7C2A35B91832A7CE004AE430 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				7A3937E2184947D800D3CF52 /* Generic */,
+				7A3937E7184947D800D3CF52 /* Login */,
+				7A3937EA184947D800D3CF52 /* Menu */,
+				7A3937EF184947D800D3CF52 /* Orders */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1229,11 +1253,9 @@
 		7C9D6BCF184501B20018E0E4 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
-				7C1A98871847E1DF0045ED8C /* Generic */,
-				7C1A988C1847E1DF0045ED8C /* Login */,
-				7C1A988F1847E1DF0045ED8C /* Menu */,
-				7C1A98941847E1DF0045ED8C /* Orders */,
 				7C9D6BD0184503EA0018E0E4 /* Custom Table View Cells */,
+				7A5342F0184A7B3900FE9C54 /* PaddingTextField.h */,
+				7A5342F1184A7B3900FE9C54 /* PaddingTextField.m */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -1356,7 +1378,6 @@
 				7C2A35621832A734004AE430 /* NSObject+MagicalDataImport.m in Sources */,
 				7C363CAB183FAFD600003723 /* GetOrdersXMLParser.m in Sources */,
 				7C2A35701832A734004AE430 /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */,
-				7C1A989F1847E1DF0045ED8C /* MenuViewController.m in Sources */,
 				7C363C9C183FA96D00003723 /* GetOrdersResult.m in Sources */,
 				7C2A359A1832A7AD004AE430 /* AFURLSessionManager.m in Sources */,
 				7C363C95183FA7CA00003723 /* LineItemAttribute.m in Sources */,
@@ -1364,7 +1385,6 @@
 				7C958448183AC4580065C878 /* SessionsService.m in Sources */,
 				7C8A3510183D109400802B89 /* User+CustomAccessors.m in Sources */,
 				7C1A986E1847990F0045ED8C /* ECSlidingSegue.m in Sources */,
-				7C1A989C1847E1DF0045ED8C /* MainViewController.m in Sources */,
 				7C1A986F1847990F0045ED8C /* ECSlidingViewController.m in Sources */,
 				7AA569FE18491F480095C98A /* SelfService.m in Sources */,
 				7C363C98183FA7CA00003723 /* GetOrderRequest.m in Sources */,
@@ -1372,7 +1392,6 @@
 				7C2A35581832A734004AE430 /* DDASLLogger.m in Sources */,
 				7C1A986C1847990F0045ED8C /* ECSlidingAnimationController.m in Sources */,
 				7C1A98791847A0CF0045ED8C /* ECFoldAnimationController.m in Sources */,
-				7C1A98A11847E1DF0045ED8C /* OrdersTableViewController.m in Sources */,
 				7C9D6BCD1845008D0018E0E4 /* MNMBottomPullToRefreshManager.m in Sources */,
 				7C363CA5183FAB5900003723 /* GenericSelfServiceResult.m in Sources */,
 				7AA569F71848F2950095C98A /* UpdateOrderStatusResult.m in Sources */,
@@ -1383,32 +1402,35 @@
 				7C2A35981832A7AD004AE430 /* AFURLRequestSerialization.m in Sources */,
 				7C2A356D1832A734004AE430 /* NSManagedObjectContext+MagicalThreading.m in Sources */,
 				7C956A021843A5B5000A5595 /* ModifyOrderDetailsRequest.m in Sources */,
-				7C1A989E1847E1DF0045ED8C /* MenuOptionsViewController.m in Sources */,
 				7C2A35961832A7AD004AE430 /* AFSecurityPolicy.m in Sources */,
 				7C1A98701847990F0045ED8C /* UIViewController+ECSlidingViewController.m in Sources */,
+				7AB07C5D184972EA001265E0 /* MRProgressOverlayView.m in Sources */,
+				7A3937FB184947D800D3CF52 /* OrderDetailViewController.m in Sources */,
 				7C2A35631832A734004AE430 /* NSRelationshipDescription+MagicalDataImport.m in Sources */,
 				7C2A35691832A734004AE430 /* NSManagedObject+MagicalRequests.m in Sources */,
 				7C2A35DD1832A7CE004AE430 /* main.m in Sources */,
 				7C363CB2183FB9DA00003723 /* GenericXMLParser.m in Sources */,
+				7A3937F8184947D800D3CF52 /* LoginViewController.m in Sources */,
 				7C2A35771832A734004AE430 /* MagicalRecord.m in Sources */,
-				7C1A989B1847E1DF0045ED8C /* GenericViewController.m in Sources */,
 				7AA56A01184928AE0095C98A /* GenericFactory.m in Sources */,
-				7C1A98A01847E1DF0045ED8C /* OrderDetailViewController.m in Sources */,
 				7C1A986B1847990F0045ED8C /* ECPercentDrivenInteractiveTransition.m in Sources */,
 				7C2A355D1832A734004AE430 /* DispatchQueueLogFormatter.m in Sources */,
 				7C2A35971832A7AD004AE430 /* AFURLConnectionOperation.m in Sources */,
+				7AB07C58184972EA001265E0 /* UIImage+MRImageEffects.m in Sources */,
 				7C2A356F1832A734004AE430 /* NSPersistentStore+MagicalRecord.m in Sources */,
 				7C2A356E1832A734004AE430 /* NSManagedObjectModel+MagicalRecord.m in Sources */,
 				7C9569F6184394BC000A5595 /* GetOrderXMLParser.m in Sources */,
 				7C1A987A1847A0CF0045ED8C /* ECZoomAnimationController.m in Sources */,
 				7C2A355F1832A734004AE430 /* NSAttributeDescription+MagicalDataImport.m in Sources */,
 				7C2A355E1832A734004AE430 /* MagicalImportFunctions.m in Sources */,
+				7A3937FA184947D800D3CF52 /* MenuViewController.m in Sources */,
 				7C2A35571832A734004AE430 /* DDAbstractDatabaseLogger.m in Sources */,
 				7C363CB9183FEE2C00003723 /* SelfServiceRequestOperationManager.m in Sources */,
 				7C2A356A1832A734004AE430 /* NSManagedObjectContext+MagicalObserving.m in Sources */,
 				7C363CBC1840082000003723 /* GenericSelfServiceRequest.m in Sources */,
 				7C363CAF183FB35000003723 /* NSObject+ObjectMap.m in Sources */,
 				7C2A35751832A734004AE430 /* MagicalRecord+Setup.m in Sources */,
+				7AB07C5A184972EA001265E0 /* MRCircularProgressView.m in Sources */,
 				7C2A35651832A734004AE430 /* NSManagedObject+MagicalAggregation.m in Sources */,
 				7C2A35761832A734004AE430 /* MagicalRecord+ShorthandSupport.m in Sources */,
 				7C1A98861847E1D10045ED8C /* OrderSummaryCell.m in Sources */,
@@ -1416,21 +1438,26 @@
 				7C958453183ACF4E0065C878 /* SSKeychain.m in Sources */,
 				7C2A355B1832A734004AE430 /* DDTTYLogger.m in Sources */,
 				7C2A35591832A734004AE430 /* DDFileLogger.m in Sources */,
+				7AB07C5E184972EA001265E0 /* MRMessageInterceptor.m in Sources */,
 				7C363C97183FA7CA00003723 /* QuoteLineItem.m in Sources */,
+				7AB07C5C184972EA001265E0 /* MRNavigationBarProgressView.m in Sources */,
+				7A3937F7184947D800D3CF52 /* MainViewController.m in Sources */,
 				7C363C96183FA7CA00003723 /* OrderSummary.m in Sources */,
+				7A3937FC184947D800D3CF52 /* OrdersTableViewController.m in Sources */,
 				7C2A35641832A734004AE430 /* NSString+MagicalDataImport.m in Sources */,
+				7A5342F2184A7B3900FE9C54 /* PaddingTextField.m in Sources */,
 				7C2A35741832A734004AE430 /* MagicalRecord+Options.m in Sources */,
+				7A3937F6184947D800D3CF52 /* GenericViewController.m in Sources */,
 				7C8A3502183D0FC400802B89 /* User.m in Sources */,
-				7C1A98A21847E1DF0045ED8C /* OrderStatusViewController.m in Sources */,
 				7C2A35681832A734004AE430 /* NSManagedObject+MagicalRecord.m in Sources */,
 				7C2A35D51832A7CE004AE430 /* LoggingHelper.m in Sources */,
 				7C956A081843A5E6000A5595 /* ModifyOrderDetailsXMLParser.m in Sources */,
 				7C2A35711832A734004AE430 /* MagicalRecord+Actions.m in Sources */,
-				7C1A989D1847E1DF0045ED8C /* LoginViewController.m in Sources */,
 				7C9D6BCE1845008D0018E0E4 /* MNMBottomPullToRefreshView.m in Sources */,
 				7C2A35661832A734004AE430 /* NSManagedObject+MagicalDataImport.m in Sources */,
 				7C1A98781847A0CF0045ED8C /* ECDynamicTransition.m in Sources */,
 				7C2A35D21832A7CE004AE430 /* GenericService.m in Sources */,
+				7A3937FD184947D800D3CF52 /* OrderStatusViewController.m in Sources */,
 				7C2A35731832A734004AE430 /* MagicalRecord+iCloud.m in Sources */,
 				7C2A35601832A734004AE430 /* NSEntityDescription+MagicalDataImport.m in Sources */,
 				7C1168A118455EE300334AF9 /* XCDFormInputAccessoryView.m in Sources */,
@@ -1443,12 +1470,18 @@
 				7C2A35D11832A7CE004AE430 /* STIPoC.xcdatamodeld in Sources */,
 				7C2A35951832A7AD004AE430 /* AFNetworkReachabilityManager.m in Sources */,
 				7C2A355C1832A734004AE430 /* ContextFilterLogFormatter.m in Sources */,
+				7A3937F9184947D800D3CF52 /* MenuOptionsViewController.m in Sources */,
+				7A5342F5184A969100FE9C54 /* ColorHelper.m in Sources */,
 				7C363C99183FA7CA00003723 /* GetOrdersRequest.m in Sources */,
+				7AB07C5B184972EA001265E0 /* MRIconView.m in Sources */,
 				7AA569F41848F2630095C98A /* UpdateOrderStatusRequest.m in Sources */,
 				7C956A051843A5C6000A5595 /* ModifyOrderDetailsResult.m in Sources */,
 				7C2A35931832A7AD004AE430 /* AFHTTPRequestOperationManager.m in Sources */,
 				7C9569FA18439C43000A5595 /* SelfServiceEnumTranslator.m in Sources */,
+				7AB07C5F184972EA001265E0 /* MRWeakProxy.m in Sources */,
 				7C2A35991832A7AD004AE430 /* AFURLResponseSerialization.m in Sources */,
+				7AB07C57184972EA001265E0 /* MRBlurView.m in Sources */,
+				7AB07C59184972EA001265E0 /* MRActivityIndicatorView.m in Sources */,
 				7C1A986D1847990F0045ED8C /* ECSlidingInteractiveTransition.m in Sources */,
 				7C2A35921832A7AD004AE430 /* AFHTTPRequestOperation.m in Sources */,
 				7C2A35721832A734004AE430 /* MagicalRecord+ErrorHandling.m in Sources */,
@@ -1459,22 +1492,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C1F241A1836D3F500E90145 /* MRProgressOverlayView.m in Sources */,
-				7C1F24161836D3F500E90145 /* MRActivityIndicatorView.m in Sources */,
 				7C78B0BF183E64330022922D /* GenericServiceTests.m in Sources */,
 				7C1F24121836D3F500E90145 /* MDRadialProgressTheme.m in Sources */,
-				7C1F241B1836D3F500E90145 /* MRMessageInterceptor.m in Sources */,
-				7C1F241C1836D3F500E90145 /* MRWeakProxy.m in Sources */,
 				7C78B0C0183E64330022922D /* SessionsServiceTests.m in Sources */,
 				7C1F24111836D3F500E90145 /* MDRadialProgressLabel.m in Sources */,
 				7C1F24131836D3F500E90145 /* MDRadialProgressView.m in Sources */,
-				7C1F24141836D3F500E90145 /* MRBlurView.m in Sources */,
-				7C1F24151836D3F500E90145 /* UIImage+MRImageEffects.m in Sources */,
 				7C958443183AC0570065C878 /* InspectableLoginViewController.m in Sources */,
 				7C958445183AC35D0065C878 /* LoginViewControllerTests.m in Sources */,
-				7C1F24181836D3F500E90145 /* MRIconView.m in Sources */,
-				7C1F24191836D3F500E90145 /* MRNavigationBarProgressView.m in Sources */,
-				7C1F24171836D3F500E90145 /* MRCircularProgressView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1629,7 +1653,10 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/External/OCMock/Static\\ Library/\"",
 				);
-				OTHER_LDFLAGS = "-lxml2";
+				OTHER_LDFLAGS = (
+					"-lxml2",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "C365229D-24D2-40F3-8228-2981E32010D2";
 				WRAPPER_EXTENSION = app;
@@ -1655,7 +1682,10 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/External/OCMock/Static\\ Library/\"",
 				);
-				OTHER_LDFLAGS = "-lxml2";
+				OTHER_LDFLAGS = (
+					"-lxml2",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "C365229D-24D2-40F3-8228-2981E32010D2";
 				WRAPPER_EXTENSION = app;
@@ -1813,7 +1843,10 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/External/OCMock/Static\\ Library/\"",
 				);
-				OTHER_LDFLAGS = "-lxml2";
+				OTHER_LDFLAGS = (
+					"-lxml2",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "C365229D-24D2-40F3-8228-2981E32010D2";
 				WRAPPER_EXTENSION = app;

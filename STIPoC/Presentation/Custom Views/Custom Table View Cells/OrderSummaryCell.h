@@ -8,11 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@class OrderSummary;
+
 @interface OrderSummaryCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *orderNumberLabel;
 @property (weak, nonatomic) IBOutlet UILabel *projectNumberLabel;
 @property (weak, nonatomic) IBOutlet UILabel *totalsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
+
+- (void)setupOrderSummaryCellWithOrderSummary:(OrderSummary *)orderSummary;
 
 @end

@@ -17,7 +17,18 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    self.window.tintColor = [UIColor redColor];
+    [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0xAC0404)];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : UIColorFromRGB(0xFFFFFF)}];
+    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
     [[LoggingHelper sharedInstance] setupLogger];
+    
+    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
+    [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        DDLogInfo(@"Reachability: %@", AFStringFromNetworkReachabilityStatus(status));
+    }];
     
 #if (!defined(TEST))
     [[GenericService sharedInstance] setupCoreDataStack];
@@ -31,6 +42,7 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
+    [[AFNetworkReachabilityManager sharedManager] stopMonitoring];
     [[GenericService sharedInstance] cleanUpPersistenceChangesInMemory];
 }
 

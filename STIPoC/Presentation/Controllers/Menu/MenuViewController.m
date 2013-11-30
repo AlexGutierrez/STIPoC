@@ -9,6 +9,7 @@
 #import "MenuViewController.h"
 #import "UIViewController+ECSlidingViewController.h"
 #import "SessionsService.h"
+
 static NSString *const kSTIPoCSegueEmbedMenuTableViewController = @"MenuTableViewControllerEmbedSegue";
 
 @interface MenuViewController ()
