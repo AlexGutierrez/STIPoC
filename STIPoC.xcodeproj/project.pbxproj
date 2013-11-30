@@ -18,7 +18,7 @@
 		7A3938021849541700D3CF52 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A3938011849541700D3CF52 /* QuartzCore.framework */; };
 		7A3938041849542700D3CF52 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A3938031849542700D3CF52 /* Accelerate.framework */; };
 		7A5342F2184A7B3900FE9C54 /* PaddingTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A5342F1184A7B3900FE9C54 /* PaddingTextField.m */; };
-		7A5342F5184A969100FE9C54 /* ColorHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A5342F4184A969100FE9C54 /* ColorHelper.m */; };
+		7A5342F8184AA88500FE9C54 /* UIColor+VerizonColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A5342F7184AA88500FE9C54 /* UIColor+VerizonColors.m */; };
 		7A982327183552DE00CB0BA5 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A982326183552DE00CB0BA5 /* libOCMock.a */; };
 		7A9823281835533B00CB0BA5 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A982326183552DE00CB0BA5 /* libOCMock.a */; };
 		7AA569F41848F2630095C98A /* UpdateOrderStatusRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA569F31848F2630095C98A /* UpdateOrderStatusRequest.m */; };
@@ -182,8 +182,8 @@
 		7A3938031849542700D3CF52 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		7A5342F0184A7B3900FE9C54 /* PaddingTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaddingTextField.h; sourceTree = "<group>"; };
 		7A5342F1184A7B3900FE9C54 /* PaddingTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaddingTextField.m; sourceTree = "<group>"; };
-		7A5342F3184A969100FE9C54 /* ColorHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorHelper.h; sourceTree = "<group>"; };
-		7A5342F4184A969100FE9C54 /* ColorHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorHelper.m; sourceTree = "<group>"; };
+		7A5342F6184AA88500FE9C54 /* UIColor+VerizonColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+VerizonColors.h"; sourceTree = "<group>"; };
+		7A5342F7184AA88500FE9C54 /* UIColor+VerizonColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+VerizonColors.m"; sourceTree = "<group>"; };
 		7A982326183552DE00CB0BA5 /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libOCMock.a; sourceTree = "<group>"; };
 		7A982329183553DB00CB0BA5 /* NSNotificationCenter+OCMAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSNotificationCenter+OCMAdditions.h"; path = "External/OCMock/OCMock/NSNotificationCenter+OCMAdditions.h"; sourceTree = SOURCE_ROOT; };
 		7A98232A183553DB00CB0BA5 /* OCMArg.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OCMArg.h; path = External/OCMock/OCMock/OCMArg.h; sourceTree = SOURCE_ROOT; };
@@ -983,8 +983,6 @@
 			children = (
 				7C2A35B41832A7CE004AE430 /* LoggingHelper.h */,
 				7C2A35B51832A7CE004AE430 /* LoggingHelper.m */,
-				7A5342F3184A969100FE9C54 /* ColorHelper.h */,
-				7A5342F4184A969100FE9C54 /* ColorHelper.m */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1196,6 +1194,8 @@
 			isa = PBXGroup;
 			children = (
 				7C8A350D183D105D00802B89 /* Managed Objects */,
+				7A5342F6184AA88500FE9C54 /* UIColor+VerizonColors.h */,
+				7A5342F7184AA88500FE9C54 /* UIColor+VerizonColors.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -1415,6 +1415,7 @@
 				7AA56A01184928AE0095C98A /* GenericFactory.m in Sources */,
 				7C1A986B1847990F0045ED8C /* ECPercentDrivenInteractiveTransition.m in Sources */,
 				7C2A355D1832A734004AE430 /* DispatchQueueLogFormatter.m in Sources */,
+				7A5342F8184AA88500FE9C54 /* UIColor+VerizonColors.m in Sources */,
 				7C2A35971832A7AD004AE430 /* AFURLConnectionOperation.m in Sources */,
 				7AB07C58184972EA001265E0 /* UIImage+MRImageEffects.m in Sources */,
 				7C2A356F1832A734004AE430 /* NSPersistentStore+MagicalRecord.m in Sources */,
@@ -1471,7 +1472,6 @@
 				7C2A35951832A7AD004AE430 /* AFNetworkReachabilityManager.m in Sources */,
 				7C2A355C1832A734004AE430 /* ContextFilterLogFormatter.m in Sources */,
 				7A3937F9184947D800D3CF52 /* MenuOptionsViewController.m in Sources */,
-				7A5342F5184A969100FE9C54 /* ColorHelper.m in Sources */,
 				7C363C99183FA7CA00003723 /* GetOrdersRequest.m in Sources */,
 				7AB07C5B184972EA001265E0 /* MRIconView.m in Sources */,
 				7AA569F41848F2630095C98A /* UpdateOrderStatusRequest.m in Sources */,

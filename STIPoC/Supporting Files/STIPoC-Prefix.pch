@@ -23,6 +23,6 @@
     #import <libxml/tree.h>
     #import "MRProgressOverlayView.h"
     #import "LoggingHelper.h"
-    #import "ColorHelper.h"
+    #import "UIColor+VerizonColors.h"
 
 #endif

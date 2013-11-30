@@ -28,7 +28,6 @@ static NSString *const kSTIPoCSegueEmbedOrdersTableViewController = @"OrdersTabl
 {
     self.navigationItem.hidesBackButton = YES;
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-    self.navigationItem.leftBarButtonItem.title = NSLocalizedString(@"Menu", nil);
     self.slidingViewController.delegate = self.zoomTransitionController;
     [self.navigationController.view addGestureRecognizer:self.slidingViewController.panGesture];
 }

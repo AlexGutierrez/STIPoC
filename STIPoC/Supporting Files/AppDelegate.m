@@ -17,9 +17,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window.tintColor = [UIColor redColor];
-    [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0xAC0404)];
-    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : UIColorFromRGB(0xFFFFFF)}];
+    self.window.tintColor = [UIColor verizonRed];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor verizonDarkRed]];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     

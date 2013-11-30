@@ -9,22 +9,16 @@
 #import "OrderSummaryCell.h"
 #import "OrderSummary.h"
 #import "QuoteLineItem.h"
+#import "SelfServiceEnumTranslator.h"
 
 @implementation OrderSummaryCell
 
-/*
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    [super setSelected:selected animated:animated];
-
-    self.backgroundColor = selected? [UIColor redColor] : [UIColor whiteColor];
-}
-*/
 - (void)setupOrderSummaryCellWithOrderSummary:(OrderSummary *)orderSummary
 {
     self.orderNumberLabel.text = [NSString stringWithFormat:@"Order Number: %@", orderSummary.OrderFriendlyId];
     self.projectNumberLabel.text = [NSString stringWithFormat:@"Project Number: %@", (orderSummary.ProjectFriendlyId)? orderSummary.ProjectFriendlyId : @"-"];
-    self.statusLabel.text = [NSString stringWithFormat:@"Order Number: %@", orderSummary.Status];
+    self.statusLabel.text = orderSummary.Status;
+    self.statusLabel.textColor = ([orderSummary.Status isEqualToString:kSTIPoCSelfServiceOrderStatusApproved])? [UIColor verizonGreen] : ([orderSummary.Status isEqualToString:kSTIPoCSelfServiceOrderStatusRejected])? [UIColor verizonRed] : [UIColor verizonBlue];
     
     double mrcTotal = 0.0;
     double nrcTotal = 0.0;

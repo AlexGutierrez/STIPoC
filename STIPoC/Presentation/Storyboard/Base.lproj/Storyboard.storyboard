@@ -173,7 +173,7 @@
                                 </connections>
                             </containerView>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.92549019607843142" green="0.92941176470588238" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="IIj-CG-lLN" secondAttribute="trailing" constant="20" symbolic="YES" id="3D1-fx-N7y"/>
                             <constraint firstAttribute="bottom" secondItem="IIj-CG-lLN" secondAttribute="bottom" constant="20" symbolic="YES" id="43w-B8-WYB"/>
@@ -182,11 +182,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Your Order Status" id="hhm-5V-FBB">
-                        <barButtonItem key="leftBarButtonItem" title="Menu" id="TNN-Kc-EW3">
+                        <barButtonItem key="leftBarButtonItem" image="MenuIcon" id="TNN-Kc-EW3">
                             <connections>
                                 <action selector="menuButtonTapped:" destination="vDj-Fh-bo9" id="R69-rT-oW2"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="owl-dp-SzI"/>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                 </viewController>
@@ -229,12 +230,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoginBg" translatesAutoresizingMaskIntoConstraints="NO" id="Dn1-SW-n89">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MenuBg" translatesAutoresizingMaskIntoConstraints="NO" id="Dn1-SW-n89">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A03-hp-iah">
-                                <rect key="frame" x="0.0" y="91" width="280" height="202"/>
+                                <rect key="frame" x="0.0" y="96" width="280" height="202"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -245,27 +246,37 @@
                                     <segue destination="K1C-0G-PPZ" kind="embed" identifier="MenuTableViewControllerEmbedSegue" id="LXd-3q-Smm"/>
                                 </connections>
                             </containerView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LEGO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4yf-Gl-Ojl">
-                                <rect key="frame" x="0.0" y="32" width="250" height="22"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LEGO" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4yf-Gl-Ojl">
+                                <rect key="frame" x="17" y="43" width="230" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="e1U-Cq-EtH"/>
+                                    <constraint firstAttribute="width" constant="230" id="e1U-Cq-EtH"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MenuFooterTerremarkLogo" translatesAutoresizingMaskIntoConstraints="NO" id="iyQ-ge-972">
+                                <rect key="frame" x="20" y="948" width="260" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="IPi-ed-dxT"/>
+                                    <constraint firstAttribute="width" constant="260" id="eRF-u3-Pfv"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Dn1-SW-n89" secondAttribute="trailing" id="1n7-Bf-1z6"/>
-                            <constraint firstItem="A03-hp-iah" firstAttribute="top" secondItem="4yf-Gl-Ojl" secondAttribute="bottom" constant="37" id="2fT-ex-HcF"/>
+                            <constraint firstItem="A03-hp-iah" firstAttribute="top" secondItem="4yf-Gl-Ojl" secondAttribute="bottom" constant="26" id="2fT-ex-HcF"/>
                             <constraint firstItem="w2U-AU-1RF" firstAttribute="top" secondItem="Dn1-SW-n89" secondAttribute="bottom" id="D34-i6-Tyv"/>
                             <constraint firstItem="A03-hp-iah" firstAttribute="leading" secondItem="l3M-9E-YEG" secondAttribute="leading" id="PqT-Py-U4Q"/>
                             <constraint firstItem="Dn1-SW-n89" firstAttribute="top" secondItem="l3M-9E-YEG" secondAttribute="top" id="dL2-G9-8iq"/>
-                            <constraint firstItem="4yf-Gl-Ojl" firstAttribute="top" secondItem="5hG-zO-THl" secondAttribute="bottom" constant="12" id="dq5-NK-87u"/>
-                            <constraint firstItem="4yf-Gl-Ojl" firstAttribute="leading" secondItem="l3M-9E-YEG" secondAttribute="leading" id="hiU-uY-6Ow"/>
+                            <constraint firstItem="4yf-Gl-Ojl" firstAttribute="top" secondItem="5hG-zO-THl" secondAttribute="bottom" constant="23" id="dq5-NK-87u"/>
+                            <constraint firstItem="4yf-Gl-Ojl" firstAttribute="leading" secondItem="l3M-9E-YEG" secondAttribute="leading" constant="17" id="hiU-uY-6Ow"/>
+                            <constraint firstItem="w2U-AU-1RF" firstAttribute="top" secondItem="iyQ-ge-972" secondAttribute="bottom" constant="20" id="mn9-j4-cod"/>
                             <constraint firstItem="Dn1-SW-n89" firstAttribute="leading" secondItem="l3M-9E-YEG" secondAttribute="leading" id="qlO-5i-Zyw"/>
+                            <constraint firstItem="iyQ-ge-972" firstAttribute="leading" secondItem="l3M-9E-YEG" secondAttribute="leading" constant="20" id="yA9-di-nhd"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -545,6 +556,9 @@
         <image name="LoginButtonBg" width="50" height="50"/>
         <image name="LoginTerremarkLogo" width="260" height="60"/>
         <image name="LoginTextFieldBg" width="50" height="50"/>
+        <image name="MenuBg" width="1024" height="1024"/>
+        <image name="MenuFooterTerremarkLogo" width="155" height="49"/>
+        <image name="MenuIcon" width="24" height="24"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="lightContent"/>
