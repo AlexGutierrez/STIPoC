@@ -704,15 +704,15 @@
 		7C2A34831832A6EB004AE430 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7A3938031849542700D3CF52 /* Accelerate.framework */,
-				7A3938011849541700D3CF52 /* QuartzCore.framework */,
 				7C1F24341836D58F00E90145 /* libxml2.dylib */,
+				7A3938031849542700D3CF52 /* Accelerate.framework */,
 				7C1F24361836D7D400E90145 /* CFNetwork.framework */,
-				7C2A357C1832A785004AE430 /* MobileCoreServices.framework */,
-				7C2A357A1832A77E004AE430 /* SystemConfiguration.framework */,
 				7C2A35781832A776004AE430 /* CoreData.framework */,
-				7C2A34841832A6EB004AE430 /* Foundation.framework */,
 				7C2A34861832A6EB004AE430 /* CoreGraphics.framework */,
+				7C2A34841832A6EB004AE430 /* Foundation.framework */,
+				7C2A357C1832A785004AE430 /* MobileCoreServices.framework */,
+				7A3938011849541700D3CF52 /* QuartzCore.framework */,
+				7C2A357A1832A77E004AE430 /* SystemConfiguration.framework */,
 				7C2A34881832A6EB004AE430 /* UIKit.framework */,
 				7C2A349D1832A6EB004AE430 /* XCTest.framework */,
 			);
