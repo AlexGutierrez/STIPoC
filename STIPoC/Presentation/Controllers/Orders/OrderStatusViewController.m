@@ -10,10 +10,15 @@
 #import "SessionsService.h"
 #import "UIViewController+ECSlidingViewController.h"
 #import "ECZoomAnimationController.h"
+#import "OrderDetailViewController.h"
 
-static NSString *const kSTIPoCSegueEmbedOrdersTableViewController = @"OrdersTableViewControllerEmbedSegue";
+NSString *const kSTIPoCSegueEmbedOrdersTableViewController = @"OrdersTableViewControllerEmbedSegue";
+
+static NSString *const kSTIPoCSegueModalOrderDetailViewController = @"OrderDetailViewControllerModalSegue";
 
 @interface OrderStatusViewController ()
+
+@property (weak, nonatomic) OrdersTableViewController *ordersTableViewController;
 
 @property (strong, nonatomic) ECZoomAnimationController *zoomTransitionController;
 
@@ -38,8 +43,12 @@ static NSString *const kSTIPoCSegueEmbedOrdersTableViewController = @"OrdersTabl
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:kSTIPoCSegueEmbedOrdersTableViewController]) {
-        OrdersTableViewController *ordersTableViewController = (OrdersTableViewController *)segue.destinationViewController;
-        ordersTableViewController.delegate = self;
+        self.ordersTableViewController = (OrdersTableViewController *)segue.destinationViewController;
+        self.ordersTableViewController.delegate = self;
+    }
+    else if ([segue.identifier isEqualToString:kSTIPoCSegueModalOrderDetailViewController]) {
+        OrderDetailViewController *orderDetailViewController = (OrderDetailViewController *)segue.destinationViewController;
+        orderDetailViewController.delegate = self;
     }
 }
 
@@ -57,7 +66,7 @@ static NSString *const kSTIPoCSegueEmbedOrdersTableViewController = @"OrdersTabl
 #pragma mark -
 #pragma mark Orders Table View Controller Protocols
 
-- (void)ordersTableViewControllerStartedGetOrdersRequest
+- (void)ordersTableViewControllerStartedLoadingOrdersFromServer
 {
     [MRProgressOverlayView showOverlayAddedTo:self.navigationController.view
                                         title:NSLocalizedString(@"Loading...", nil)
@@ -65,15 +74,20 @@ static NSString *const kSTIPoCSegueEmbedOrdersTableViewController = @"OrdersTabl
                                      animated:YES];
 }
 
-- (void)ordersTableViewControllerFinishedGetOrdersRequest
+- (void)ordersTableViewControllerFinishedLoadingOrdersFromServer
 {
     [MRProgressOverlayView dismissAllOverlaysForView:self.navigationController.view animated:YES];
+}
+
+- (void)ordersTableViewControllerDidSelectOrder:(OrderSummary *)orderSummary
+{
+    [self performSegueWithIdentifier:kSTIPoCSegueModalOrderDetailViewController sender:self];
 }
 
 #pragma mark -
 #pragma mark IBActions
 
-- (IBAction)menuButtonTapped:(id)sender
+- (IBAction)menuButtonTapped:(UIBarButtonItem *)sender
 {
     if (self.slidingViewController.currentTopViewPosition == ECSlidingViewControllerTopViewPositionAnchoredRight) {
         [self.slidingViewController resetTopViewAnimated:YES];
@@ -81,6 +95,11 @@ static NSString *const kSTIPoCSegueEmbedOrdersTableViewController = @"OrdersTabl
     else {
         [self.slidingViewController anchorTopViewToRightAnimated:YES];
     }
+}
+
+- (IBAction)refreshButtonTapped:(UIBarButtonItem *)sender
+{
+    [self.ordersTableViewController refreshDataFromServer];
 }
 
 @end

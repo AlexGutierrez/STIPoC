@@ -16,7 +16,7 @@ static NSString *const kSTIPoCFontHelveticaNeueMedium = @"HelveticaNeue-Medium";
 
 @implementation OrderSummaryCell
 
-- (void)setupOrderSummaryCellWithOrderSummary:(OrderSummary *)orderSummary
+- (void)setupOrderSummaryCellWithOrderSummary:(OrderSummary *)orderSummary andPriceType:(PriceType)priceType
 {
     // Order number attributed text
     
@@ -59,40 +59,27 @@ static NSString *const kSTIPoCFontHelveticaNeueMedium = @"HelveticaNeue-Medium";
     
     // NRC/MRC totals attributed text
     
-    double mrcTotal = 0.0;
-    double nrcTotal = 0.0;
-    
+    double total = 0.0;
     for (QuoteLineItem *quoteLineItem in orderSummary.QuoteLineItems) {
-        nrcTotal += (quoteLineItem.UnitPriceNRC.doubleValue * quoteLineItem.Qty.doubleValue);
-        mrcTotal += (quoteLineItem.UnitPriceMRC.doubleValue * quoteLineItem.Qty.doubleValue);
+        total += ((priceType == PriceTypeNRC)? quoteLineItem.UnitPriceNRC.doubleValue : quoteLineItem.UnitPriceMRC.doubleValue) * quoteLineItem.Qty.doubleValue;
     }
     
-    NSMutableAttributedString *totalsString = [[NSMutableAttributedString alloc] initWithString:@""];
     
-    temp = [[NSAttributedString alloc] initWithString:@"NRC Total: "
+    
+    NSMutableAttributedString *totalString = [[NSMutableAttributedString alloc] initWithString:@""];
+    
+    temp = [[NSAttributedString alloc] initWithString:(priceType == PriceTypeNRC)? @"NRC Total: " : @"MRC Total: "
                                            attributes:@{NSFontAttributeName: [UIFont fontWithName:kSTIPoCFontHelveticaNeueLight
                                                                                              size:16.0]}];
-    [totalsString appendAttributedString:temp];
+    [totalString appendAttributedString:temp];
     
-    temp = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"$%.2lf", nrcTotal]
+    temp = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"$%.2lf", total]
                                            attributes:@{NSFontAttributeName: [UIFont fontWithName:kSTIPoCFontHelveticaNeueMedium
                                                                                              size:16.0]}];
     
-    [totalsString appendAttributedString:temp];
+    [totalString appendAttributedString:temp];
     
-    temp = [[NSAttributedString alloc] initWithString:@" / MRC Total: "
-                                           attributes:@{NSFontAttributeName: [UIFont fontWithName:kSTIPoCFontHelveticaNeueLight
-                                                                                             size:16.0]}];
-    
-    [totalsString appendAttributedString:temp];
-    
-    temp = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"$%.2lf", mrcTotal]
-                                           attributes:@{NSFontAttributeName: [UIFont fontWithName:kSTIPoCFontHelveticaNeueMedium
-                                                                                             size:16.0]}];
-    
-    [totalsString appendAttributedString:temp];
-    
-    self.totalsLabel.attributedText = totalsString;
+    self.totalsLabel.attributedText = totalString;
 }
 
 @end

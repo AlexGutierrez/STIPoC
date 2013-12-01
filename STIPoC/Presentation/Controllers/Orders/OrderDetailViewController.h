@@ -8,8 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol OrderDetailViewControllerDelegate <NSObject>
+
+@end
+
 extern NSString *const kSTIPoCSegueEmbedOrdersTableViewController;
 
 @interface OrderDetailViewController : UIViewController
+
+@property (weak, nonatomic) id<OrderDetailViewControllerDelegate> delegate;
 
 @end

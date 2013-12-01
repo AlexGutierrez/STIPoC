@@ -13,6 +13,7 @@
 #import "ResponseCode.h"
 #import "SourceSystem.h"
 #import "OrderStatus.h"
+#import "PriceType.h"
 
 extern NSString *const kSTIPoCSelfServiceOrderIdTypeOrderId;
 extern NSString *const kSTIPoCSelfServiceOrderIdTypeProjectId;
@@ -44,6 +45,9 @@ extern NSString *const kSTIPoCSelfServiceOrderStatusEditedByTerremark;
 extern NSString *const kSTIPoCSelfServiceOrderStatusPendingApproval;
 extern NSString *const kSTIPoCSelfServiceOrderStatusEditedByCustomer;
 
+extern NSString *const kSTIPoCSelfServicePriceTypeNRC;
+extern NSString *const kSTIPoCSelfServicePriceTypeMRC;
+
 @interface SelfServiceEnumTranslator : NSObject
 
 + (NSString *)stringFromOrderIdType:(OrderIdType)orderIdType;
@@ -63,5 +67,8 @@ extern NSString *const kSTIPoCSelfServiceOrderStatusEditedByCustomer;
 
 + (NSString *)stringFromOrderStatus:(OrderStatus)orderStatus;
 + (OrderStatus)orderStatusFromString:(NSString *)orderStatusString;
+
++ (NSString *)stringFromPriceType:(PriceType)priceType;
++ (PriceType)priceTypeFromString:(NSString *)priceTypeString;
 
 @end

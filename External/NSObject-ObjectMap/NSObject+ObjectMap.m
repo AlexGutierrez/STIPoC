@@ -144,7 +144,7 @@ static const short _base64DecodingTable[256] = {
 -(id)getNodeValue:(NSString *)node fromXML:(NSString *)xml {
     NSString *trash = @"";
     NSString *value = nil;
-    NSScanner *xmlScanner = [NSScanner scannerWithString:xml];
+    NSScanner *xmlScanner = [NSScanner scannerWithString:(xml)? xml : @""];
     xmlScanner.caseSensitive = YES;
     [xmlScanner scanUpToString:[NSString stringWithFormat:@"<%@", node] intoString:&trash];
     [xmlScanner scanUpToString:@">" intoString:&trash];
@@ -155,10 +155,10 @@ static const short _base64DecodingTable[256] = {
         // Set up a new scanner for xml substring
         [xmlScanner scanUpToString:[NSString stringWithFormat:@"</%@", node] intoString:&value];
         NSString *filteredArrayObj = @"";
-        NSScanner *checkTypeScanner = [NSScanner scannerWithString:value];
+        NSScanner *checkTypeScanner = [NSScanner scannerWithString:(value)? value : @""];
         [checkTypeScanner scanString:@"<" intoString:&trash];
         [checkTypeScanner scanUpToString:@">" intoString:&filteredArrayObj];
-        NSScanner *insideArrayScanner = [NSScanner scannerWithString:value];
+        NSScanner *insideArrayScanner = [NSScanner scannerWithString:(value)? value : @""];
         insideArrayScanner.caseSensitive = YES;
         NSString *newValue = @"";
         NSMutableArray *objArray = [@[] mutableCopy];

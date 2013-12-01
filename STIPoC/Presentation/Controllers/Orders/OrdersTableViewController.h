@@ -8,18 +8,27 @@
 
 #import <UIKit/UIKit.h>
 
+@class OrderSummary;
+
 @protocol OrdersTableViewControllerDelegate <NSObject>
 
-- (void)ordersTableViewControllerStartedGetOrdersRequest;
-- (void)ordersTableViewControllerFinishedGetOrdersRequest;
+- (void)ordersTableViewControllerStartedLoadingOrdersFromServer;
+- (void)ordersTableViewControllerFinishedLoadingOrdersFromServer;
+- (void)ordersTableViewControllerDidSelectOrder:(OrderSummary *)orderSummary;
 
 @end
 
 @interface OrdersTableViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *priceTypeSegmentedControl;
 
 @property (strong, nonatomic) NSMutableArray *orders;
 @property (weak, nonatomic) id<OrdersTableViewControllerDelegate> delegate;
+
+- (IBAction)priceTypeFilterChanged:(UISegmentedControl *)sender;
+
+- (void)reloadTableView;
+- (void)refreshDataFromServer;
 
 @end

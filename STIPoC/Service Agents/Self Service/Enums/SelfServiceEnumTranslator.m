@@ -23,6 +23,9 @@ NSString *const kSTIPoCSelfServiceCustomerIdTypeNSAP = @"NSAP";
 NSString *const kSTIPoCSelfServiceSourceSystemEcommerce = @"0";
 NSString *const kSTIPoCSelfServiceSourceSystemCAP = @"1";
 
+NSString *const kSTIPoCSelfServicePriceTypeNRC = @"NRC";
+NSString *const kSTIPoCSelfServicePriceTypeMRC = @"MRC";
+
 NSString *const kSTIPoCSelfServiceResponseCodeSuccess = @"0";
 NSString *const kSTIPoCSelfServiceResponseCodeError = @"1";
 
@@ -190,6 +193,33 @@ NSString *const kSTIPoCSelfServiceOrderStatusEditedByCustomer = @"Edited by Cust
     }
     else {
         return SourceSystemCAP;
+    }
+}
+
+#pragma mark -
+#pragma mark Price Type
+
++ (NSString *)stringFromPriceType:(PriceType)priceType
+{
+    switch (priceType) {
+        case PriceTypeNRC:
+            return kSTIPoCSelfServicePriceTypeNRC;
+            break;
+        case SourceSystemCAP:
+            return kSTIPoCSelfServicePriceTypeMRC;
+            break;
+        default:
+            break;
+    }
+}
+
++ (PriceType)priceTypeFromString:(NSString *)priceTypeString
+{
+    if ([priceTypeString isEqualToString:kSTIPoCSelfServicePriceTypeNRC]) {
+        return PriceTypeNRC;
+    }
+    else {
+        return PriceTypeMRC;
     }
 }
 

@@ -11,8 +11,15 @@
 #import "OrderSummary.h"
 #import "SelfService.h"
 #import "AlertViewFactory.h"
+#import "PriceType.h"
+#import "SelfServiceEnumTranslator.h"
 
 @interface OrdersTableViewController ()
+
+@property (nonatomic) NSInteger lastPageLoaded;
+@property (nonatomic) NSInteger requestCounter;
+
+- (void)requestOrderDetailsForOrders:(NSArray *)orders;
 
 @end
 
@@ -28,26 +35,29 @@ static NSString *const kSTIPoCOrderSummaryCellRejectText = @"Reject";
 {
     [super viewDidLoad];
     
+    self.requestCounter = 0;
     self.tableView.editing = YES;
     
-    if ([self.delegate respondsToSelector:@selector(ordersTableViewControllerStartedGetOrdersRequest)]) {
-        [self.delegate ordersTableViewControllerStartedGetOrdersRequest];
+    if ([self.delegate respondsToSelector:@selector(ordersTableViewControllerStartedLoadingOrdersFromServer)]) {
+        [self.delegate ordersTableViewControllerStartedLoadingOrdersFromServer];
     }
     
-    [[SelfService sharedInstance] getOrdersWithCompletionBlock:^(NSArray *orders) {
-        if ([self.delegate respondsToSelector:@selector(ordersTableViewControllerFinishedGetOrdersRequest)]) {
-            [self.delegate ordersTableViewControllerFinishedGetOrdersRequest];
-        }
-        self.orders = [orders mutableCopy];
-        [self.tableView reloadData];
-        
-    } andFailureBlock:^(NSError *error) {
-        if ([self.delegate respondsToSelector:@selector(ordersTableViewControllerFinishedGetOrdersRequest)]) {
-            [self.delegate ordersTableViewControllerFinishedGetOrdersRequest];
-        }
-        UIAlertView *alertView = [[AlertViewFactory sharedFactory] createAlertViewWithError:error];
-        [alertView show];
-    }];
+    self.lastPageLoaded = 0;
+    self.requestCounter++;
+    [[SelfService sharedInstance] getOrdersWithPageSize:30
+                                             pageNumber:self.lastPageLoaded + 1
+                                        completionBlock:^(NSArray *orders) {
+                                            self.requestCounter--;
+                                            [self requestOrderDetailsForOrders:orders];
+                                            
+                                        } andFailureBlock:^(NSError *error) {
+                                            self.requestCounter--;
+                                            if ([self.delegate respondsToSelector:@selector(ordersTableViewControllerFinishedLoadingOrdersFromServer)]) {
+                                                [self.delegate ordersTableViewControllerFinishedLoadingOrdersFromServer];
+                                            }
+                                            UIAlertView *alertView = [[AlertViewFactory sharedFactory] createAlertViewWithError:error];
+                                            [alertView show];
+                                        }];
 }
 
 #pragma mark -
@@ -85,7 +95,8 @@ static NSString *const kSTIPoCOrderSummaryCellRejectText = @"Reject";
 {
     OrderSummary *orderSummary = self.orders[indexPath.row];
     OrderSummaryCell *orderSummaryCell = (OrderSummaryCell *)cell;
-    [orderSummaryCell setupOrderSummaryCellWithOrderSummary:orderSummary];
+    PriceType priceType = (PriceType)self.priceTypeSegmentedControl.selectedSegmentIndex;
+    [orderSummaryCell setupOrderSummaryCellWithOrderSummary:orderSummary andPriceType:priceType];
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -113,8 +124,80 @@ static NSString *const kSTIPoCOrderSummaryCellRejectText = @"Reject";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //OrderSummary *orderSummary = self.orders[indexPath.row];
+    OrderSummary *orderSummary = self.orders[indexPath.row];
+    if ([self.delegate respondsToSelector:@selector(ordersTableViewControllerDidSelectOrder:)]) {
+        [self.delegate ordersTableViewControllerDidSelectOrder:orderSummary];
+    }
+}
+
+#pragma mark -
+#pragma mark Reload Methods
+
+- (void)reloadTableView
+{
+    [self.tableView reloadData];
+}
+
+- (void)refreshDataFromServer
+{
+    self.lastPageLoaded = 0;
     
+    if ([self.delegate respondsToSelector:@selector(ordersTableViewControllerStartedLoadingOrdersFromServer)]) {
+        [self.delegate ordersTableViewControllerStartedLoadingOrdersFromServer];
+    }
+    
+    [[SelfService sharedInstance] getOrdersWithPageSize:self.orders.count
+                                             pageNumber:self.lastPageLoaded + 1
+                                        completionBlock:^(NSArray *orders) {
+                                            self.requestCounter--;
+                                            [self requestOrderDetailsForOrders:orders];
+                                            
+                                        } andFailureBlock:^(NSError *error) {
+                                            self.requestCounter--;
+                                            if ([self.delegate respondsToSelector:@selector(ordersTableViewControllerFinishedLoadingOrdersFromServer)]) {
+                                                [self.delegate ordersTableViewControllerFinishedLoadingOrdersFromServer];
+                                            }
+                                            UIAlertView *alertView = [[AlertViewFactory sharedFactory] createAlertViewWithError:error];
+                                            [alertView show];
+                                        }];
+}
+
+- (void)requestOrderDetailsForOrders:(NSArray *)orders
+{
+    self.orders = [orders mutableCopy];
+    
+    for (OrderSummary *orderSummary in self.orders) {
+        self.requestCounter++;
+        [[SelfService sharedInstance] getOrderDetailWithOrderSummary:orderSummary
+                                                     completionBlock:^(OrderSummary *detailedOrderSummary) {
+                                                         self.requestCounter--;
+                                                         [orderSummary setAttributesWithOrderSummary:detailedOrderSummary];
+                                                         if (self.requestCounter <= 0) {
+                                                             if ([self.delegate respondsToSelector:@selector(ordersTableViewControllerFinishedLoadingOrdersFromServer)]) {
+                                                                 [self.delegate ordersTableViewControllerFinishedLoadingOrdersFromServer];
+                                                             }
+                                                             
+                                                             [self.tableView reloadData];
+                                                             self.lastPageLoaded++;
+                                                         }
+                                                     }
+                                                     andFailureBlock:^(NSError *error) {
+                                                         self.requestCounter--;
+                                                         if ([self.delegate respondsToSelector:@selector(ordersTableViewControllerFinishedLoadingOrdersFromServer)]) {
+                                                             [self.delegate ordersTableViewControllerFinishedLoadingOrdersFromServer];
+                                                         }
+                                                         UIAlertView *alertView = [[AlertViewFactory sharedFactory] createAlertViewWithError:error];
+                                                         [alertView show];
+                                                     }];
+    }
+}
+
+#pragma mark -
+#pragma mark IBActions
+
+- (IBAction)priceTypeFilterChanged:(UISegmentedControl *)sender
+{
+    [self.tableView reloadData];
 }
 
 @end

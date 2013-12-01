@@ -28,5 +28,6 @@ extern NSString *const kSTIPoCSelfServiceGenericModifiedBy;
 @property (strong, nonatomic) NSMutableArray *QuoteLineItems;
 
 - (void)setAttributesWithGetOrderResult:(GetOrderResult *)result;
+- (void)setAttributesWithOrderSummary:(OrderSummary *)orderSummary;
 
 @end

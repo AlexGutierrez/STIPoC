@@ -15,8 +15,10 @@
 
 + (instancetype)sharedManager;
 
-- (void)startGetOrdersRequestOperationWithCompletionBlock:(void(^)(NSArray *orders))completion
-                                          andFailureBlock:(void(^)(NSError *internalError))failure;
+- (void)startGetOrdersRequestOperationWithPageSize:(NSInteger)pageSize
+                                        pageNumber:(NSInteger)pageNumber
+                                   completionBlock:(void(^)(NSArray *orders))completion
+                                   andFailureBlock:(void(^)(NSError *internalError))failure;
 
 - (void)startGetOrderRequestOperationWithOrderSummary:(OrderSummary *)orderSummary
                                       completionBlock:(void(^)(OrderSummary *detailedOrderSummary))completion

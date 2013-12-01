@@ -42,21 +42,24 @@
 #pragma mark -
 #pragma mark Service Methods
 
-- (void)getOrdersWithCompletionBlock:(void(^)(NSArray *orders))completion
-                     andFailureBlock:(void(^)(NSError *error))failure
+- (void)getOrdersWithPageSize:(NSInteger)pageSize
+                   pageNumber:(NSInteger)pageNumber
+              completionBlock:(void(^)(NSArray *orders))completion
+              andFailureBlock:(void(^)(NSError *error))failure
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
-        [[SelfServiceRequestOperationManager sharedManager] startGetOrdersRequestOperationWithCompletionBlock:^(NSArray *orders) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                completion(orders);
-            });
-        } andFailureBlock:^(NSError *internalError) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                failure(self.defaultPublicError);
-            });
-        }];
+        [[SelfServiceRequestOperationManager sharedManager] startGetOrdersRequestOperationWithPageSize:pageSize
+                                                                                            pageNumber:pageNumber
+                                                                                       completionBlock:^(NSArray *orders) {
+                                                                                           dispatch_async(dispatch_get_main_queue(), ^{
+                                                                                               completion(orders);
+                                                                                           });
+                                                                                       } andFailureBlock:^(NSError *internalError) {
+                                                                                           dispatch_async(dispatch_get_main_queue(), ^{
+                                                                                               failure(self.defaultPublicError);
+                                                                                           });
+                                                                                       }];
     });
-    
 }
 
 - (void)getOrderDetailWithOrderSummary:(OrderSummary *)orderSummary

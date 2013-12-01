@@ -13,8 +13,10 @@
 
 @interface SelfService : GenericService
 
-- (void)getOrdersWithCompletionBlock:(void(^)(NSArray *orders))completion
-                     andFailureBlock:(void(^)(NSError *error))failure;
+- (void)getOrdersWithPageSize:(NSInteger)pageSize
+                   pageNumber:(NSInteger)pageNumber
+              completionBlock:(void(^)(NSArray *orders))completion
+              andFailureBlock:(void(^)(NSError *error))failure;
 
 - (void)getOrderDetailWithOrderSummary:(OrderSummary *)orderSummary
                        completionBlock:(void(^)(OrderSummary *detailedOrderSummary))completion

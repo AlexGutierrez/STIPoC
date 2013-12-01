@@ -25,4 +25,18 @@ NSString *const kSTIPoCSelfServiceGenericModifiedBy = @"1c1b355a-f127-43e0-9a1e-
     self.QuoteLineItems = result.QuoteLineItems;
 }
 
+- (void)setAttributesWithOrderSummary:(OrderSummary *)orderSummary
+{
+    self.OrderId = orderSummary.OrderId;
+    self.OrderNumber = orderSummary.OrderNumber;
+    self.Status = orderSummary.Status;
+    self.OrderFriendlyId = orderSummary.OrderFriendlyId;
+    self.ProjectId = orderSummary.ProjectId;
+    self.ProjectStatus = orderSummary.ProjectStatus;
+    self.ProjectFriendlyId = orderSummary.ProjectFriendlyId;
+    self.CreatedBy = orderSummary.CreatedBy;
+    self.OrderExternalId = orderSummary.OrderExternalId;
+    self.QuoteLineItems = orderSummary.QuoteLineItems;
+}
+
 @end

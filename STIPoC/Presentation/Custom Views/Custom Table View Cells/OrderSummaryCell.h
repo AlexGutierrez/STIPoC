@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PriceType.h"
 
 @class OrderSummary;
 
@@ -17,6 +18,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *totalsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 
-- (void)setupOrderSummaryCellWithOrderSummary:(OrderSummary *)orderSummary;
+- (void)setupOrderSummaryCellWithOrderSummary:(OrderSummary *)orderSummary andPriceType:(PriceType)priceType;
 
 @end
