@@ -16,7 +16,7 @@
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     if(self = [super initWithCoder:aDecoder]) {
-        [self setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
+        [self setValue:[UIColor verizonLightGrey] forKeyPath:@"_placeholderLabel.textColor"];
     }
     
     return self;
