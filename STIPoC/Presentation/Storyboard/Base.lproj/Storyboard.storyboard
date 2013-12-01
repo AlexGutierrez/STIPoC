@@ -172,6 +172,11 @@
                                     <segue destination="RGr-fL-tE6" kind="embed" identifier="OrdersTableViewControllerEmbedSegue" id="Rfq-Sg-65T"/>
                                 </connections>
                             </containerView>
+                            <containerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nIJ-df-qi4">
+                                <rect key="frame" x="202" y="303" width="540" height="620"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" red="0.92549019607843142" green="0.92941176470588238" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -223,7 +228,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ek2-dk-rk7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1948" y="-1"/>
+            <point key="canvasLocation" x="1940" y="-1"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="1yx-rm-yQ7">
@@ -431,7 +436,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="728" height="916"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="c62-I7-UJr">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="c62-I7-UJr">
                                 <rect key="frame" x="0.0" y="28" width="728" height="888"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -600,12 +605,12 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1968" y="2439"/>
+            <point key="canvasLocation" x="1940" y="2435"/>
         </scene>
-        <!--View Controller-->
+        <!--Order Detail View Controller-->
         <scene sceneID="V5D-Et-2Gv">
             <objects>
-                <viewController extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" id="Nd1-nQ-s0t" sceneMemberID="viewController">
+                <viewController extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="currentContext" id="Nd1-nQ-s0t" customClass="OrderDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="v8M-1C-ULy"/>
                         <viewControllerLayoutGuide type="bottom" id="v6M-RI-3TL"/>
@@ -625,15 +630,27 @@
                                     <constraint firstAttribute="height" constant="44" id="fFY-0f-pb0"/>
                                     <constraint firstAttribute="width" constant="540" id="uen-sC-196"/>
                                 </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </textAttributes>
                                 <items>
                                     <navigationItem title="Order Number" id="Dn5-f5-iHI">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="CKQ-Mx-4Re"/>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="IEh-yH-YoI"/>
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="CKQ-Mx-4Re">
+                                            <connections>
+                                                <action selector="dismissModal:" destination="Nd1-nQ-s0t" id="lmC-QJ-1cD"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="IEh-yH-YoI">
+                                            <connections>
+                                                <action selector="saveOrder:" destination="Nd1-nQ-s0t" id="nZD-d1-lmK"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
                             <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A2w-ox-aqs">
-                                <rect key="frame" x="20" y="129" width="500" height="377"/>
+                                <rect key="frame" x="20" y="157" width="500" height="349"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
@@ -653,6 +670,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="rejectOrder:" destination="Nd1-nQ-s0t" eventType="touchUpInside" id="oz4-Xg-1gN"/>
+                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OYD-fm-C0S">
                                 <rect key="frame" x="20" y="514" width="500" height="21"/>
@@ -721,6 +741,22 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="aR7-qc-ZNh">
+                                <rect key="frame" x="20" y="129" width="500" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="500" id="1T9-H6-158"/>
+                                    <constraint firstAttribute="height" constant="28" id="3JV-th-xYR"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="NRC"/>
+                                    <segment title="MRC"/>
+                                </segments>
+                                <color key="tintColor" red="0.76862752440000004" green="0.1176470667" blue="0.15294118230000001" alpha="1" colorSpace="deviceRGB"/>
+                                <connections>
+                                    <action selector="priceTypeFilterChanged:" destination="Nd1-nQ-s0t" eventType="valueChanged" id="DKY-VU-Rt6"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -729,52 +765,52 @@
                             <constraint firstItem="im1-ob-nDB" firstAttribute="top" secondItem="v8M-1C-ULy" secondAttribute="bottom" id="1Qy-6r-0w4"/>
                             <constraint firstItem="o8q-Nk-zw4" firstAttribute="top" secondItem="im1-ob-nDB" secondAttribute="bottom" constant="16" id="1ll-Yg-osO"/>
                             <constraint firstItem="gU5-0G-aYT" firstAttribute="top" secondItem="o8q-Nk-zw4" secondAttribute="bottom" constant="19" id="40I-3e-zAN"/>
-                            <constraint firstItem="A2w-ox-aqs" firstAttribute="top" secondItem="gU5-0G-aYT" secondAttribute="bottom" constant="8" symbolic="YES" id="4WU-E1-7XL"/>
-                            <constraint firstItem="OYD-fm-C0S" firstAttribute="trailing" secondItem="NAS-Ju-61O" secondAttribute="trailing" id="95e-ht-PR9"/>
-                            <constraint firstItem="A2w-ox-aqs" firstAttribute="trailing" secondItem="OYD-fm-C0S" secondAttribute="trailing" id="Ccs-Ac-GMS"/>
+                            <constraint firstItem="OYD-fm-C0S" firstAttribute="leading" secondItem="E5T-9U-E3x" secondAttribute="leading" constant="20" id="7Y8-YK-ANq"/>
+                            <constraint firstItem="aR7-qc-ZNh" firstAttribute="top" secondItem="gU5-0G-aYT" secondAttribute="bottom" constant="8" id="8UV-Et-ohm"/>
+                            <constraint firstItem="A2w-ox-aqs" firstAttribute="top" secondItem="aR7-qc-ZNh" secondAttribute="bottom" id="BYG-UY-huP"/>
                             <constraint firstItem="v6M-RI-3TL" firstAttribute="top" secondItem="llA-kt-050" secondAttribute="bottom" constant="20" id="Cwz-Qd-y7U"/>
                             <constraint firstItem="o8q-Nk-zw4" firstAttribute="leading" secondItem="E5T-9U-E3x" secondAttribute="leading" constant="20" id="J1i-gm-8do"/>
-                            <constraint firstItem="llA-kt-050" firstAttribute="top" secondItem="OYD-fm-C0S" secondAttribute="bottom" constant="22" id="NbP-Nd-NvW"/>
                             <constraint firstItem="im1-ob-nDB" firstAttribute="leading" secondItem="E5T-9U-E3x" secondAttribute="leading" id="XMC-Kt-6jP"/>
                             <constraint firstItem="G2w-Fk-8Gq" firstAttribute="top" secondItem="v8M-1C-ULy" secondAttribute="bottom" id="XN5-hp-aky"/>
                             <constraint firstItem="v6M-RI-3TL" firstAttribute="top" secondItem="G2w-Fk-8Gq" secondAttribute="bottom" id="XiW-HB-SFu"/>
                             <constraint firstAttribute="trailing" secondItem="G2w-Fk-8Gq" secondAttribute="trailing" id="aKm-nh-abG"/>
                             <constraint firstAttribute="trailing" secondItem="NAS-Ju-61O" secondAttribute="trailing" constant="20" id="fCr-eE-t9y"/>
                             <constraint firstAttribute="trailing" secondItem="im1-ob-nDB" secondAttribute="trailing" id="fNv-5u-uVk"/>
-                            <constraint firstItem="OYD-fm-C0S" firstAttribute="top" secondItem="A2w-ox-aqs" secondAttribute="bottom" constant="8" symbolic="YES" id="fyF-gR-grI"/>
-                            <constraint firstItem="A2w-ox-aqs" firstAttribute="leading" secondItem="gU5-0G-aYT" secondAttribute="leading" id="hfG-xg-A5Z"/>
+                            <constraint firstItem="A2w-ox-aqs" firstAttribute="leading" secondItem="E5T-9U-E3x" secondAttribute="leading" constant="20" id="fpj-9d-wga"/>
+                            <constraint firstItem="aR7-qc-ZNh" firstAttribute="leading" secondItem="E5T-9U-E3x" secondAttribute="leading" constant="20" id="kWj-1y-kIW"/>
+                            <constraint firstAttribute="trailing" secondItem="aR7-qc-ZNh" secondAttribute="trailing" constant="20" id="nwk-tr-Gd3"/>
+                            <constraint firstItem="OYD-fm-C0S" firstAttribute="top" secondItem="A2w-ox-aqs" secondAttribute="bottom" constant="8" id="pme-aZ-hVy"/>
                             <constraint firstAttribute="trailing" secondItem="llA-kt-050" secondAttribute="trailing" constant="98" id="ria-su-cVE"/>
-                            <constraint firstItem="OYD-fm-C0S" firstAttribute="leading" secondItem="gU5-0G-aYT" secondAttribute="leading" id="t5O-Ds-LE9"/>
+                            <constraint firstAttribute="trailing" secondItem="A2w-ox-aqs" secondAttribute="trailing" constant="20" id="uPL-0x-eDf"/>
                             <constraint firstItem="G2w-Fk-8Gq" firstAttribute="leading" secondItem="E5T-9U-E3x" secondAttribute="leading" id="uUO-xD-655"/>
+                            <constraint firstAttribute="trailing" secondItem="OYD-fm-C0S" secondAttribute="trailing" constant="20" id="v9f-Ss-pvT"/>
                             <constraint firstItem="NAS-Ju-61O" firstAttribute="leading" secondItem="o8q-Nk-zw4" secondAttribute="trailing" constant="8" id="vh8-Qa-JJv"/>
                             <constraint firstItem="llA-kt-050" firstAttribute="leading" secondItem="E5T-9U-E3x" secondAttribute="leading" constant="98" id="wHz-VT-tbI"/>
+                            <constraint firstItem="llA-kt-050" firstAttribute="top" secondItem="OYD-fm-C0S" secondAttribute="bottom" constant="22" id="wzp-Ar-fNV"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="orderStatusLabel" destination="NAS-Ju-61O" id="s6S-hI-XQ5"/>
+                        <outlet property="priceTypeSegmentedControl" destination="aR7-qc-ZNh" id="2hM-uv-SQs"/>
+                        <outlet property="projectNumberLabel" destination="o8q-Nk-zw4" id="iN9-UD-Yai"/>
+                        <outlet property="totalLabel" destination="OYD-fm-C0S" id="8tV-ZR-PQM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vi2-eI-Fv4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1968" y="3496"/>
+            <point key="canvasLocation" x="1940" y="3492"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Order Detail Table View Controller-->
         <scene sceneID="6AY-Ww-IOO">
             <objects>
-                <tableViewController id="gLe-Ve-tkM" sceneMemberID="viewController">
+                <tableViewController id="gLe-Ve-tkM" customClass="OrderDetailTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="105" sectionHeaderHeight="22" sectionFooterHeight="22" id="OmZ-AM-Rhq">
-                        <rect key="frame" x="0.0" y="0.0" width="500" height="377"/>
+                        <rect key="frame" x="0.0" y="0.0" width="500" height="349"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <segmentedControl key="tableHeaderView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="w47-Xc-Jd2">
-                            <rect key="frame" x="0.0" y="0.0" width="500" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <segments>
-                                <segment title="NRC"/>
-                                <segment title="MRC"/>
-                            </segments>
-                            <color key="tintColor" red="0.76862752440000004" green="0.1176470667" blue="0.15294118230000001" alpha="1" colorSpace="deviceRGB"/>
-                        </segmentedControl>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="105" id="i70-Aa-bBH">
-                                <rect key="frame" x="0.0" y="52" width="500" height="105"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="QuoteLineItemCell" rowHeight="105" id="i70-Aa-bBH">
+                                <rect key="frame" x="0.0" y="22" width="500" height="105"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="i70-Aa-bBH" id="WsS-YY-9zR">
                                     <rect key="frame" x="0.0" y="0.0" width="500" height="104"/>
@@ -865,7 +901,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="roT-mH-GcN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2709" y="3617"/>
+            <point key="canvasLocation" x="2683" y="3627"/>
         </scene>
     </scenes>
     <resources>

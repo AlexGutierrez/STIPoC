@@ -11,9 +11,6 @@
 #import "QuoteLineItem.h"
 #import "SelfServiceEnumTranslator.h"
 
-static NSString *const kSTIPoCFontHelveticaNeueLight = @"HelveticaNeue-Light";
-static NSString *const kSTIPoCFontHelveticaNeueMedium = @"HelveticaNeue-Medium";
-
 @implementation OrderSummaryCell
 
 - (void)setupOrderSummaryCellWithOrderSummary:(OrderSummary *)orderSummary andPriceType:(PriceType)priceType
@@ -59,12 +56,7 @@ static NSString *const kSTIPoCFontHelveticaNeueMedium = @"HelveticaNeue-Medium";
     
     // NRC/MRC totals attributed text
     
-    double total = 0.0;
-    for (QuoteLineItem *quoteLineItem in orderSummary.QuoteLineItems) {
-        total += ((priceType == PriceTypeNRC)? quoteLineItem.UnitPriceNRC.doubleValue : quoteLineItem.UnitPriceMRC.doubleValue) * quoteLineItem.Qty.doubleValue;
-    }
-    
-    
+    double total = [orderSummary totalForPriceType:priceType];
     
     NSMutableAttributedString *totalString = [[NSMutableAttributedString alloc] initWithString:@""];
     

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PriceType.h"
 
 @class GetOrderResult;
 
@@ -26,6 +27,8 @@ extern NSString *const kSTIPoCSelfServiceGenericModifiedBy;
 @property (strong, nonatomic) NSString *CreatedBy;
 @property (strong, nonatomic) NSString *OrderExternalId;
 @property (strong, nonatomic) NSMutableArray *QuoteLineItems;
+
+- (double)totalForPriceType:(PriceType)priceType;
 
 - (void)setAttributesWithGetOrderResult:(GetOrderResult *)result;
 - (void)setAttributesWithOrderSummary:(OrderSummary *)orderSummary;

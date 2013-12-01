@@ -24,7 +24,7 @@
     request.PageSize = @(pageSize);
     request.PageNumber = @(pageNumber);
     request.OrderingType = [SelfServiceEnumTranslator stringFromOrderingType:OrderingTypeDesc];
-    request.OrderingFieldName = @"";
+    request.OrderingFieldName = @"OrderFriendlyId";
     request.OrderNumber = @"";
     
     return request;

@@ -7,15 +7,29 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GenericViewController.h"
+#import "OrderDetailTableViewController.h"
+
+@class OrderSummary;
 
 @protocol OrderDetailViewControllerDelegate <NSObject>
 
 @end
 
-extern NSString *const kSTIPoCSegueEmbedOrdersTableViewController;
-
-@interface OrderDetailViewController : UIViewController
+@interface OrderDetailViewController : GenericViewController<OrderDetailTableViewControllerDelegate>
 
 @property (weak, nonatomic) id<OrderDetailViewControllerDelegate> delegate;
+
+@property (strong, nonatomic) OrderSummary *selectedOrderSummary;
+
+@property (weak, nonatomic) IBOutlet UISegmentedControl *priceTypeSegmentedControl;
+@property (weak, nonatomic) IBOutlet UILabel *projectNumberLabel;
+@property (weak, nonatomic) IBOutlet UILabel *orderStatusLabel;
+@property (weak, nonatomic) IBOutlet UILabel *totalLabel;
+
+- (IBAction)priceTypeFilterChanged:(UISegmentedControl *)sender;
+- (IBAction)dismissModal:(UIBarButtonItem *)sender;
+- (IBAction)saveOrder:(UIBarButtonItem *)sender;
+- (IBAction)rejectOrder:(UIButton *)sender;
 
 @end

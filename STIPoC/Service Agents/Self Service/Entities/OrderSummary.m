@@ -8,12 +8,16 @@
 
 #import "OrderSummary.h"
 #import "GetOrderResult.h"
+#import "QuoteLineItem.h"
 
 NSString *const kSTIPoCSelfServiceGenericUserId = @"aandersen";
 NSString *const kSTIPoCSelfServiceGenericUserName = @"aandersen";
 NSString *const kSTIPoCSelfServiceGenericModifiedBy = @"1c1b355a-f127-43e0-9a1e-c7064a4acd5e";
 
 @implementation OrderSummary
+
+#pragma mark -
+#pragma mark Custom Accessors
 
 - (void)setAttributesWithGetOrderResult:(GetOrderResult *)result
 {
@@ -37,6 +41,15 @@ NSString *const kSTIPoCSelfServiceGenericModifiedBy = @"1c1b355a-f127-43e0-9a1e-
     self.CreatedBy = orderSummary.CreatedBy;
     self.OrderExternalId = orderSummary.OrderExternalId;
     self.QuoteLineItems = orderSummary.QuoteLineItems;
+}
+
+- (double)totalForPriceType:(PriceType)priceType
+{
+    double total = 0.0;
+    for (QuoteLineItem *quoteLineItem in self.QuoteLineItems) {
+        total += ((priceType == PriceTypeNRC)? quoteLineItem.UnitPriceNRC.doubleValue : quoteLineItem.UnitPriceMRC.doubleValue) * quoteLineItem.Qty.doubleValue;
+    }
+    return total;
 }
 
 @end

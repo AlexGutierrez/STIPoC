@@ -8,6 +8,9 @@
 
 #import "UIColor+VerizonColors.h"
 
+NSString *const kSTIPoCFontHelveticaNeueLight = @"HelveticaNeue-Light";
+NSString *const kSTIPoCFontHelveticaNeueMedium = @"HelveticaNeue-Medium";
+
 @implementation UIColor (VerizonColors)
 
 + (UIColor *)verizonDarkRed

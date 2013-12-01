@@ -22,6 +22,8 @@ static NSString *const kSTIPoCSegueModalOrderDetailViewController = @"OrderDetai
 
 @property (strong, nonatomic) ECZoomAnimationController *zoomTransitionController;
 
+@property (strong, nonatomic) OrderSummary *selectedOrderSummary;
+
 @end
 
 @implementation OrderStatusViewController
@@ -49,6 +51,7 @@ static NSString *const kSTIPoCSegueModalOrderDetailViewController = @"OrderDetai
     else if ([segue.identifier isEqualToString:kSTIPoCSegueModalOrderDetailViewController]) {
         OrderDetailViewController *orderDetailViewController = (OrderDetailViewController *)segue.destinationViewController;
         orderDetailViewController.delegate = self;
+        orderDetailViewController.selectedOrderSummary = self.selectedOrderSummary;
     }
 }
 
@@ -81,6 +84,7 @@ static NSString *const kSTIPoCSegueModalOrderDetailViewController = @"OrderDetai
 
 - (void)ordersTableViewControllerDidSelectOrder:(OrderSummary *)orderSummary
 {
+    self.selectedOrderSummary = orderSummary;
     [self performSegueWithIdentifier:kSTIPoCSegueModalOrderDetailViewController sender:self];
 }
 

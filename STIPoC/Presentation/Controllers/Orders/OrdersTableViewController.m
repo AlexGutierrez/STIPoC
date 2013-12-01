@@ -11,7 +11,6 @@
 #import "OrderSummary.h"
 #import "SelfService.h"
 #import "AlertViewFactory.h"
-#import "PriceType.h"
 #import "SelfServiceEnumTranslator.h"
 
 @interface OrdersTableViewController ()
