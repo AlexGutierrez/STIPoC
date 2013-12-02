@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PriceType.h"
 
 @class OrderSummary;
 
@@ -24,16 +25,16 @@
 @property (nonatomic) NSInteger lastPageLoaded;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet UISegmentedControl *priceTypeSegmentedControl;
 
 @property (strong, nonatomic) NSMutableArray *orders;
 @property (weak, nonatomic) id<OrdersTableViewControllerDelegate> delegate;
 
-- (IBAction)priceTypeFilterChanged:(UISegmentedControl *)sender;
+- (void)changeFilterWithPriceType:(PriceType)priceType;
 
-- (void)reloadTableView;
+- (void)reloadTableViews;
 
 - (void)pulledToRefresh:(UIRefreshControl *)refreshControl;
 - (void)endRefreshing;
+- (void)hideSearchDisplayController;
 
 @end

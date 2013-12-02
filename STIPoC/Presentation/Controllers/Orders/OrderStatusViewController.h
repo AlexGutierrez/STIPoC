@@ -12,6 +12,9 @@
 
 @interface OrderStatusViewController : GenericViewController<OrdersTableViewControllerDelegate, OrderDetailViewControllerDelegate, UIAlertViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UISegmentedControl *priceTypeSegmentedControl;
+
 - (IBAction)menuButtonTapped:(UIBarButtonItem *)sender;
+- (IBAction)priceTypeFilterChanged:(UISegmentedControl *)sender;
 
 @end

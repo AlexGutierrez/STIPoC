@@ -32,6 +32,7 @@ static NSString *const kSTIPoCSegueModalOrderDetailViewController = @"OrderDetai
 @property (strong, nonatomic) ECZoomAnimationController *zoomTransitionController;
 
 @property (strong, nonatomic) OrderSummary *selectedOrderSummary;
+@property (strong, nonatomic) OrderSummary *rejectedOrderSummary;
 
 - (void)requestOrderDetailsForOrders:(NSArray *)orders;
 - (void)showOverlayWithMessage:(NSString *)message;
@@ -106,9 +107,10 @@ static NSString *const kSTIPoCSegueModalOrderDetailViewController = @"OrderDetai
 
 - (void)ordersTableViewControllerRequestedOrdersRefreshFromServer
 {
+    NSInteger pageSize = (self.ordersTableViewController.orders.count > 0)? self.ordersTableViewController.orders.count : 30;
     self.ordersTableViewController.lastPageLoaded = 0;
     self.requestCounter++;
-    [[SelfService sharedInstance] getOrdersWithPageSize:self.ordersTableViewController.orders.count
+    [[SelfService sharedInstance] getOrdersWithPageSize:pageSize
                                              pageNumber:self.ordersTableViewController.lastPageLoaded + 1
                                         completionBlock:^(NSArray *orders) {
                                             self.requestCounter--;
@@ -133,7 +135,7 @@ static NSString *const kSTIPoCSegueModalOrderDetailViewController = @"OrderDetai
 
 - (void)ordersTableViewControllerRequestedRejectionForOrder:(OrderSummary *)orderSummary
 {
-    self.selectedOrderSummary = orderSummary;
+    self.rejectedOrderSummary = orderSummary;
     UIAlertView *alertView = [[AlertViewFactory sharedFactory] createOrderRejectionAlertViewWithDelegate:self];
     alertView.tag = REJECTION_ALERT_VIEW_TAG;
     [alertView show];
@@ -154,7 +156,7 @@ static NSString *const kSTIPoCSegueModalOrderDetailViewController = @"OrderDetai
 
 - (void)orderDetailViewControllerRejectedOrder:(OrderSummary *)orderSummary
 {
-    self.selectedOrderSummary = nil;
+    self.rejectedOrderSummary = orderSummary;
     UIAlertView *alertView = [[AlertViewFactory sharedFactory] createOrderRejectionAlertViewWithDelegate:self];
     alertView.tag = REJECTION_ALERT_VIEW_TAG;
     [alertView show];
@@ -171,14 +173,15 @@ static NSString *const kSTIPoCSegueModalOrderDetailViewController = @"OrderDetai
         }
     }
     else {
+        self.requestCounter++;
+        [self.ordersTableViewController hideSearchDisplayController];
+        
         if (alertView.tag == REJECTION_ALERT_VIEW_TAG) {
             [self showOverlayWithMessage:NSLocalizedString(@"Rejecting...", nil)];
             
-            self.requestCounter++;
-            
             NSString *comments = [alertView textFieldAtIndex:0].text;
             
-            [[SelfService sharedInstance] rejectOrderWithOrderSummary:self.selectedOrderSummary
+            [[SelfService sharedInstance] rejectOrderWithOrderSummary:self.rejectedOrderSummary
                                                              comments:comments
                                                       completionBlock:^{
                                                           self.requestCounter--;
@@ -194,8 +197,6 @@ static NSString *const kSTIPoCSegueModalOrderDetailViewController = @"OrderDetai
         }
         else {
             [self showOverlayWithMessage:NSLocalizedString(@"Updating...", nil)];
-            
-            self.requestCounter++;
             
             [[SelfService sharedInstance] updateOrderDetailsOnServerWithOrders:self.selectedOrderSummary
                                                                completionBlock:^{
@@ -227,6 +228,11 @@ static NSString *const kSTIPoCSegueModalOrderDetailViewController = @"OrderDetai
     }
 }
 
+- (IBAction)priceTypeFilterChanged:(UISegmentedControl *)sender
+{
+    [self.ordersTableViewController changeFilterWithPriceType:(PriceType)[self.priceTypeSegmentedControl selectedSegmentIndex]];
+}
+
 #pragma mark -
 #pragma mark Private Methods
 
@@ -246,7 +252,7 @@ static NSString *const kSTIPoCSegueModalOrderDetailViewController = @"OrderDetai
                                                              self.ordersTableViewController.lastPageLoaded++;
                                                              
                                                              self.ordersTableViewController.orders = [orders mutableCopy];
-                                                             [self.ordersTableViewController.tableView reloadData];
+                                                             [self.ordersTableViewController reloadTableViews];
                                                          }
                                                      }
                                                      andFailureBlock:^(NSError *error) {

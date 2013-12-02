@@ -153,7 +153,7 @@
             </objects>
             <point key="canvasLocation" x="-37" y="2385"/>
         </scene>
-        <!--Order Status View Controller - Your Order Status-->
+        <!--Order Status View Controller - My Order Status-->
         <scene sceneID="tqi-RD-MVH">
             <objects>
                 <viewController extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" id="vDj-Fh-bo9" customClass="OrderStatusViewController" sceneMemberID="viewController">
@@ -166,24 +166,41 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IIj-CG-lLN">
-                                <rect key="frame" x="20" y="88" width="728" height="916"/>
+                                <rect key="frame" x="20" y="117" width="728" height="887"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <connections>
                                     <segue destination="RGr-fL-tE6" kind="embed" identifier="OrdersTableViewControllerEmbedSegue" id="Rfq-Sg-65T"/>
                                 </connections>
                             </containerView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="THZ-Ko-hxt">
+                                <rect key="frame" x="20" y="88" width="728" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <segments>
+                                    <segment title="NRC"/>
+                                    <segment title="MRC"/>
+                                </segments>
+                                <color key="tintColor" red="0.71372549019999998" green="0.10980392160000001" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="priceTypeFilterChanged:" destination="vDj-Fh-bo9" eventType="valueChanged" id="Oeo-mn-Ar3"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="0.92549019607843142" green="0.92941176470588238" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="IIj-CG-lLN" secondAttribute="trailing" constant="20" symbolic="YES" id="3D1-fx-N7y"/>
-                            <constraint firstAttribute="bottom" secondItem="IIj-CG-lLN" secondAttribute="bottom" constant="20" symbolic="YES" id="43w-B8-WYB"/>
-                            <constraint firstItem="IIj-CG-lLN" firstAttribute="top" secondItem="1BH-5i-2FO" secondAttribute="bottom" constant="24" id="HJM-LI-h16"/>
-                            <constraint firstItem="IIj-CG-lLN" firstAttribute="leading" secondItem="3wA-NJ-dtJ" secondAttribute="leading" constant="20" symbolic="YES" id="SVg-co-BAo"/>
+                            <constraint firstAttribute="trailing" secondItem="IIj-CG-lLN" secondAttribute="trailing" constant="20" id="IbN-BG-8hE"/>
+                            <constraint firstAttribute="trailing" secondItem="THZ-Ko-hxt" secondAttribute="trailing" constant="20" id="Jpy-om-G6e"/>
+                            <constraint firstItem="IIj-CG-lLN" firstAttribute="top" secondItem="THZ-Ko-hxt" secondAttribute="bottom" constant="1" id="QKk-5O-sW4"/>
+                            <constraint firstItem="dth-Zz-LNX" firstAttribute="top" secondItem="IIj-CG-lLN" secondAttribute="bottom" constant="20" id="QL7-Uo-tvI"/>
+                            <constraint firstItem="THZ-Ko-hxt" firstAttribute="top" secondItem="1BH-5i-2FO" secondAttribute="bottom" constant="24" id="S9F-Xk-l5E"/>
+                            <constraint firstItem="IIj-CG-lLN" firstAttribute="leading" secondItem="3wA-NJ-dtJ" secondAttribute="leading" constant="20" id="ZqH-Uf-hfA"/>
+                            <constraint firstItem="THZ-Ko-hxt" firstAttribute="leading" secondItem="3wA-NJ-dtJ" secondAttribute="leading" constant="20" id="qtF-sm-gRW"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Your Order Status" id="hhm-5V-FBB"/>
+                    <navigationItem key="navigationItem" title="My Order Status" id="hhm-5V-FBB"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
+                        <outlet property="priceTypeSegmentedControl" destination="THZ-Ko-hxt" id="to3-Ov-S6w"/>
                         <segue destination="Nd1-nQ-s0t" kind="modal" identifier="OrderDetailViewControllerModalSegue" modalPresentationStyle="formSheet" id="Kis-To-in6"/>
                     </connections>
                 </viewController>
@@ -417,17 +434,28 @@
                         <viewControllerLayoutGuide type="bottom" id="nAY-1n-00t"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="8Dq-Wx-YK8">
-                        <rect key="frame" x="0.0" y="0.0" width="728" height="916"/>
+                        <rect key="frame" x="0.0" y="0.0" width="728" height="887"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="c62-I7-UJr">
-                                <rect key="frame" x="0.0" y="28" width="728" height="888"/>
+                                <rect key="frame" x="0.0" y="0.0" width="728" height="887"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-22"/>
                                 <color key="sectionIndexTrackingBackgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" id="MeN-7g-dmf">
+                                    <rect key="frame" x="0.0" y="0.0" width="728" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="barTintColor" red="0.92549026012420654" green="0.92941182851791382" blue="0.93333339691162109" alpha="1" colorSpace="deviceRGB"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="RGr-fL-tE6" id="q1T-Im-3Br"/>
+                                    </connections>
+                                </searchBar>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="OrderSummaryCell" rowHeight="80" id="Qvj-lC-pm2" customClass="OrderSummaryCell">
-                                        <rect key="frame" x="0.0" y="22" width="728" height="80"/>
+                                        <rect key="frame" x="0.0" y="66" width="728" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Qvj-lC-pm2" id="dnF-1Z-CZH">
                                             <rect key="frame" x="0.0" y="0.0" width="728" height="79"/>
@@ -548,44 +576,29 @@
                                     <outlet property="delegate" destination="RGr-fL-tE6" id="97k-gw-rMI"/>
                                 </connections>
                             </tableView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="EUu-Bv-Mgz">
-                                <rect key="frame" x="0.0" y="0.0" width="728" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="NRC"/>
-                                    <segment title="MRC"/>
-                                </segments>
-                                <color key="tintColor" red="0.76862752440000004" green="0.1176470667" blue="0.15294118230000001" alpha="1" colorSpace="deviceRGB"/>
-                                <connections>
-                                    <action selector="priceTypeFilterChanged:" destination="RGr-fL-tE6" eventType="valueChanged" id="ShN-JX-YHc"/>
-                                </connections>
-                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="c62-I7-UJr" secondAttribute="trailing" id="JXo-ye-DsO"/>
-                            <constraint firstItem="EUu-Bv-Mgz" firstAttribute="leading" secondItem="8Dq-Wx-YK8" secondAttribute="leading" id="biM-Tq-pf4"/>
-                            <constraint firstItem="c62-I7-UJr" firstAttribute="leading" secondItem="8Dq-Wx-YK8" secondAttribute="leading" id="iZW-16-48H"/>
-                            <constraint firstItem="nAY-1n-00t" firstAttribute="top" secondItem="c62-I7-UJr" secondAttribute="bottom" id="pXE-GZ-Xz8"/>
-                            <constraint firstItem="EUu-Bv-Mgz" firstAttribute="top" secondItem="Egq-US-eF7" secondAttribute="bottom" id="qgR-Ar-Owo"/>
-                            <constraint firstItem="c62-I7-UJr" firstAttribute="top" secondItem="EUu-Bv-Mgz" secondAttribute="bottom" id="uNt-qC-L6D"/>
-                            <constraint firstAttribute="trailing" secondItem="EUu-Bv-Mgz" secondAttribute="trailing" id="zle-ar-JUN"/>
+                            <constraint firstAttribute="bottom" secondItem="c62-I7-UJr" secondAttribute="bottom" id="1Gq-02-TyT"/>
+                            <constraint firstItem="c62-I7-UJr" firstAttribute="leading" secondItem="8Dq-Wx-YK8" secondAttribute="leading" id="EtL-na-e5C"/>
+                            <constraint firstAttribute="trailing" secondItem="c62-I7-UJr" secondAttribute="trailing" id="XHd-fq-3ns"/>
+                            <constraint firstItem="c62-I7-UJr" firstAttribute="top" secondItem="8Dq-Wx-YK8" secondAttribute="top" id="aY1-yb-xNH"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
                     <connections>
-                        <outlet property="priceTypeSegmentedControl" destination="EUu-Bv-Mgz" id="XVu-fH-GPF"/>
-                        <outlet property="searchDisplayController" destination="QdN-mC-Vy8" id="o6g-qN-f2n"/>
+                        <outlet property="searchDisplayController" destination="ijC-iw-N3K" id="rwV-Sp-eN0"/>
                         <outlet property="tableView" destination="c62-I7-UJr" id="PoZ-zc-9lz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ppv-PF-6PD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="QdN-mC-Vy8">
+                <searchDisplayController id="ijC-iw-N3K">
                     <connections>
-                        <outlet property="delegate" destination="RGr-fL-tE6" id="axo-UG-CCY"/>
-                        <outlet property="searchContentsController" destination="RGr-fL-tE6" id="sFN-cw-9Gc"/>
-                        <outlet property="searchResultsDataSource" destination="RGr-fL-tE6" id="i2z-D3-ynR"/>
-                        <outlet property="searchResultsDelegate" destination="RGr-fL-tE6" id="LRD-F1-lEe"/>
+                        <outlet property="delegate" destination="RGr-fL-tE6" id="Dk6-wt-YEG"/>
+                        <outlet property="searchBar" destination="MeN-7g-dmf" id="H6s-zU-GJh"/>
+                        <outlet property="searchContentsController" destination="RGr-fL-tE6" id="0Gr-7F-GgI"/>
+                        <outlet property="searchResultsDataSource" destination="RGr-fL-tE6" id="4r3-Vc-wvO"/>
+                        <outlet property="searchResultsDelegate" destination="RGr-fL-tE6" id="u5p-kC-iCS"/>
                     </connections>
                 </searchDisplayController>
             </objects>

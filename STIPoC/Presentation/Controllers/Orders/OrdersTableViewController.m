@@ -18,6 +18,9 @@
 @property (nonatomic) NSInteger requestCounter;
 
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
+@property (strong, nonatomic) NSMutableArray *searchResults;
+
+@property (nonatomic) PriceType priceType;
 
 @end
 
@@ -38,9 +41,14 @@ static NSString *const kSTIPoCOrderSummaryCellRejectText = @"Reject";
     
     [self.tableView addSubview:self.refreshControl];
     
+    
     if ([self.delegate respondsToSelector:@selector(ordersTableViewControllerRequestedFirstOrdersLoadFromServer)]) {
         [self.delegate ordersTableViewControllerRequestedFirstOrdersLoadFromServer];
     }
+    
+    self.searchDisplayController.searchResultsTableView.editing = YES;
+    self.searchDisplayController.searchResultsTableView.rowHeight = 80;
+    self.searchDisplayController.searchResultsTableView.allowsSelectionDuringEditing = YES;
 }
 
 #pragma mark -
@@ -59,11 +67,22 @@ static NSString *const kSTIPoCOrderSummaryCellRejectText = @"Reject";
 {
     if (!_refreshControl) {
         _refreshControl = [[UIRefreshControl alloc] init];
+        [_refreshControl setBackgroundColor:[UIColor whiteColor]];
         [_refreshControl setTintColor:[UIColor verizonRed]];
         [_refreshControl addTarget:self action:@selector(pulledToRefresh:) forControlEvents:UIControlEventValueChanged];
     }
     
     return _refreshControl;
+}
+
+#pragma mark -
+#pragma mark Search Display Controller Protocols
+
+-(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
+{
+    [self filterContentForSearchText:searchString scope:[[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:[self.searchDisplayController.searchBar selectedScopeButtonIndex]]];
+    
+    return YES;
 }
 
 #pragma mark -
@@ -76,26 +95,26 @@ static NSString *const kSTIPoCOrderSummaryCellRejectText = @"Reject";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.orders.count;
+    return (tableView == self.searchDisplayController.searchResultsTableView)? [self.searchResults count] : [self.orders count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kSTIPoCOrderSummaryCellIdentifier forIndexPath:indexPath];
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:kSTIPoCOrderSummaryCellIdentifier forIndexPath:indexPath];
+
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    OrderSummary *orderSummary = self.orders[indexPath.row];
+    OrderSummary *orderSummary = (tableView == self.searchDisplayController.searchResultsTableView)? self.searchResults[indexPath.row] : self.orders[indexPath.row];
     OrderSummaryCell *orderSummaryCell = (OrderSummaryCell *)cell;
-    PriceType priceType = (PriceType)self.priceTypeSegmentedControl.selectedSegmentIndex;
-    [orderSummaryCell setupWithOrderSummary:orderSummary andPriceType:priceType];
+    [orderSummaryCell setupWithOrderSummary:orderSummary andPriceType:self.priceType];
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    OrderSummary *orderSummary = self.orders[indexPath.row];
+    OrderSummary *orderSummary = (tableView == self.searchDisplayController.searchResultsTableView)? self.searchResults[indexPath.row] : self.orders[indexPath.row];
     return ![orderSummary.Status isEqualToString:[SelfServiceEnumTranslator stringFromOrderStatus:OrderStatusRejected]];;
 }
 
@@ -112,7 +131,7 @@ static NSString *const kSTIPoCOrderSummaryCellRejectText = @"Reject";
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        OrderSummary *orderSummary = self.orders[indexPath.row];
+        OrderSummary *orderSummary = (tableView == self.searchDisplayController.searchResultsTableView)? self.searchResults[indexPath.row] : self.orders[indexPath.row];
         
         if ([self.delegate respondsToSelector:@selector(ordersTableViewControllerRequestedRejectionForOrder:)]) {
             [self.delegate ordersTableViewControllerRequestedRejectionForOrder:orderSummary];
@@ -122,7 +141,7 @@ static NSString *const kSTIPoCOrderSummaryCellRejectText = @"Reject";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    OrderSummary *orderSummary = self.orders[indexPath.row];
+    OrderSummary *orderSummary = (tableView == self.searchDisplayController.searchResultsTableView)? self.searchResults[indexPath.row] : self.orders[indexPath.row];
     if ([self.delegate respondsToSelector:@selector(ordersTableViewControllerDidSelectOrder:)]) {
         [self.delegate ordersTableViewControllerDidSelectOrder:orderSummary];
     }
@@ -131,9 +150,10 @@ static NSString *const kSTIPoCOrderSummaryCellRejectText = @"Reject";
 #pragma mark -
 #pragma mark Reload Methods
 
-- (void)reloadTableView
+- (void)reloadTableViews
 {
     [self.tableView reloadData];
+    [self.searchDisplayController.searchResultsTableView reloadData];
 }
 
 - (void)pulledToRefresh:(UIRefreshControl *)refreshControl
@@ -149,11 +169,30 @@ static NSString *const kSTIPoCOrderSummaryCellRejectText = @"Reject";
 }
 
 #pragma mark -
-#pragma mark IBActions
+#pragma mark Search Methods
 
-- (IBAction)priceTypeFilterChanged:(UISegmentedControl *)sender
+- (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
 {
-    [self.tableView reloadData];
+    NSPredicate *resultPredicate = [NSPredicate
+                                    predicateWithFormat:@"SELF.OrderFriendlyId contains[cd] %@",
+                                    searchText];
+    
+    self.searchResults = [[self.orders filteredArrayUsingPredicate:resultPredicate] mutableCopy];
+}
+
+#pragma mark -
+#pragma mark Private Methods
+
+- (void)changeFilterWithPriceType:(PriceType)priceType
+{
+    self.priceType = priceType;
+    
+    [self reloadTableViews];
+}
+
+- (void)hideSearchDisplayController
+{
+    [self.searchDisplayController setActive:NO animated:YES];
 }
 
 @end
