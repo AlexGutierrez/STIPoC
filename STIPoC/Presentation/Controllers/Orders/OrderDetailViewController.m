@@ -10,6 +10,9 @@
 #import "OrderSummary.h"
 #import "SelfServiceEnumTranslator.h"
 
+#define PURCHASE_ITEMS_VIEW_DEFAULT_HEIGHT 406
+#define PURCHASE_ITEMS_VIEW_EXPANDED_HEIGHT 471
+
 static NSString *const kSTIPoCSegueEmbedOrderDetailTableViewController = @"OrdersDetailTableViewControllerEmbedSegue";
 
 @interface OrderDetailViewController ()
@@ -32,6 +35,21 @@ static NSString *const kSTIPoCSegueEmbedOrderDetailTableViewController = @"Order
     [super viewDidLoad];
     
     self.customNavigationItem.title = self.selectedOrderSummary.OrderFriendlyId;
+    BOOL rejectableOrder = !([SelfServiceEnumTranslator orderStatusFromString:self.selectedOrderSummary.Status] == OrderStatusRejected);
+    
+    self.rejectOrderButton.hidden = !rejectableOrder;
+    
+    if (!rejectableOrder) {
+        [self.view removeConstraint:self.purchaseItemsVerticalSpaceConstraint];
+        [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.purchaseItemsView
+                                                              attribute:NSLayoutAttributeHeight
+                                                              relatedBy:NSLayoutRelationEqual
+                                                                 toItem:nil
+                                                              attribute:NSLayoutAttributeNotAnAttribute
+                                                             multiplier:0
+                                                               constant:PURCHASE_ITEMS_VIEW_EXPANDED_HEIGHT]];
+    }
+    
     
     [self setLabelsText];
 }

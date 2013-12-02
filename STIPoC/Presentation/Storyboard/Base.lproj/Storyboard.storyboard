@@ -607,6 +607,75 @@
                                 <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oi1-b7-y6e">
+                                <rect key="frame" x="20" y="129" width="500" height="406"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A2w-ox-aqs">
+                                        <rect key="frame" x="0.0" y="28" width="500" height="350"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <segue destination="gLe-Ve-tkM" kind="embed" identifier="OrdersDetailTableViewControllerEmbedSegue" id="2HK-Mu-och"/>
+                                        </connections>
+                                    </containerView>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="aR7-qc-ZNh">
+                                        <rect key="frame" x="0.0" y="0.0" width="500" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="28" id="IFT-Ny-4il"/>
+                                            <constraint firstAttribute="width" constant="500" id="KaD-cL-jl7"/>
+                                        </constraints>
+                                        <segments>
+                                            <segment title="NRC"/>
+                                            <segment title="MRC"/>
+                                        </segments>
+                                        <color key="tintColor" red="0.76862752440000004" green="0.1176470667" blue="0.15294118230000001" alpha="1" colorSpace="deviceRGB"/>
+                                        <connections>
+                                            <action selector="priceTypeFilterChanged:" destination="Nd1-nQ-s0t" eventType="valueChanged" id="DKY-VU-Rt6"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OYD-fm-C0S">
+                                        <rect key="frame" x="0.0" y="385" width="500" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="5rg-8i-E9c"/>
+                                            <constraint firstAttribute="width" constant="500" id="jpe-kC-HrF"/>
+                                        </constraints>
+                                        <attributedString key="attributedText">
+                                            <fragment content="MRC Total: ">
+                                                <attributes>
+                                                    <color key="NSColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="$184500000.00">
+                                                <attributes>
+                                                    <color key="NSColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Medium"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="A2w-ox-aqs" firstAttribute="leading" secondItem="oi1-b7-y6e" secondAttribute="leading" id="EKe-ld-VJF"/>
+                                    <constraint firstAttribute="trailing" secondItem="A2w-ox-aqs" secondAttribute="trailing" id="NSQ-IF-X5a"/>
+                                    <constraint firstAttribute="width" constant="500" id="Wdo-I6-nnT"/>
+                                    <constraint firstItem="OYD-fm-C0S" firstAttribute="top" secondItem="A2w-ox-aqs" secondAttribute="bottom" constant="7" id="aeX-4A-Ebi"/>
+                                    <constraint firstAttribute="trailing" secondItem="aR7-qc-ZNh" secondAttribute="trailing" id="bp1-m2-cOX"/>
+                                    <constraint firstItem="aR7-qc-ZNh" firstAttribute="leading" secondItem="oi1-b7-y6e" secondAttribute="leading" id="gcn-WI-P5u"/>
+                                    <constraint firstAttribute="bottom" secondItem="OYD-fm-C0S" secondAttribute="bottom" id="hFJ-do-ZZZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="OYD-fm-C0S" secondAttribute="trailing" id="hJ8-Al-Z3l"/>
+                                    <constraint firstItem="OYD-fm-C0S" firstAttribute="leading" secondItem="oi1-b7-y6e" secondAttribute="leading" id="lrV-zU-Pry"/>
+                                    <constraint firstItem="A2w-ox-aqs" firstAttribute="top" secondItem="aR7-qc-ZNh" secondAttribute="bottom" id="vLx-yQ-1p9"/>
+                                    <constraint firstItem="aR7-qc-ZNh" firstAttribute="top" secondItem="oi1-b7-y6e" secondAttribute="top" id="vSb-Wi-KQS"/>
+                                </constraints>
+                            </view>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="im1-ob-nDB">
                                 <rect key="frame" x="0.0" y="0.0" width="540" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -633,14 +702,6 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A2w-ox-aqs">
-                                <rect key="frame" x="20" y="157" width="500" height="349"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <connections>
-                                    <segue destination="gLe-Ve-tkM" kind="embed" identifier="OrdersDetailTableViewControllerEmbedSegue" id="2HK-Mu-och"/>
-                                </connections>
-                            </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="llA-kt-050">
                                 <rect key="frame" x="98" y="557" width="344" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -658,27 +719,6 @@
                                     <action selector="rejectOrder:" destination="Nd1-nQ-s0t" eventType="touchUpInside" id="oz4-Xg-1gN"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OYD-fm-C0S">
-                                <rect key="frame" x="20" y="514" width="500" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="MRC Total: ">
-                                        <attributes>
-                                            <color key="NSColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                            <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="$184500000.00">
-                                        <attributes>
-                                            <color key="NSColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                            <font key="NSFont" size="17" name="HelveticaNeue-Medium"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o8q-Nk-zw4">
                                 <rect key="frame" x="20" y="60" width="332" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -725,22 +765,6 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="aR7-qc-ZNh">
-                                <rect key="frame" x="20" y="129" width="500" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="500" id="1T9-H6-158"/>
-                                    <constraint firstAttribute="height" constant="28" id="3JV-th-xYR"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="NRC"/>
-                                    <segment title="MRC"/>
-                                </segments>
-                                <color key="tintColor" red="0.76862752440000004" green="0.1176470667" blue="0.15294118230000001" alpha="1" colorSpace="deviceRGB"/>
-                                <connections>
-                                    <action selector="priceTypeFilterChanged:" destination="Nd1-nQ-s0t" eventType="valueChanged" id="DKY-VU-Rt6"/>
-                                </connections>
-                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -749,28 +773,22 @@
                             <constraint firstItem="im1-ob-nDB" firstAttribute="top" secondItem="v8M-1C-ULy" secondAttribute="bottom" id="1Qy-6r-0w4"/>
                             <constraint firstItem="o8q-Nk-zw4" firstAttribute="top" secondItem="im1-ob-nDB" secondAttribute="bottom" constant="16" id="1ll-Yg-osO"/>
                             <constraint firstItem="gU5-0G-aYT" firstAttribute="top" secondItem="o8q-Nk-zw4" secondAttribute="bottom" constant="19" id="40I-3e-zAN"/>
-                            <constraint firstItem="OYD-fm-C0S" firstAttribute="leading" secondItem="E5T-9U-E3x" secondAttribute="leading" constant="20" id="7Y8-YK-ANq"/>
-                            <constraint firstItem="aR7-qc-ZNh" firstAttribute="top" secondItem="gU5-0G-aYT" secondAttribute="bottom" constant="8" id="8UV-Et-ohm"/>
-                            <constraint firstItem="A2w-ox-aqs" firstAttribute="top" secondItem="aR7-qc-ZNh" secondAttribute="bottom" id="BYG-UY-huP"/>
+                            <constraint firstAttribute="trailing" secondItem="oi1-b7-y6e" secondAttribute="trailing" constant="20" id="8jJ-rz-NrZ"/>
                             <constraint firstItem="v6M-RI-3TL" firstAttribute="top" secondItem="llA-kt-050" secondAttribute="bottom" constant="20" id="Cwz-Qd-y7U"/>
+                            <constraint firstItem="oi1-b7-y6e" firstAttribute="leading" secondItem="E5T-9U-E3x" secondAttribute="leading" constant="20" id="Gt5-Oh-ibG"/>
                             <constraint firstItem="o8q-Nk-zw4" firstAttribute="leading" secondItem="E5T-9U-E3x" secondAttribute="leading" constant="20" id="J1i-gm-8do"/>
                             <constraint firstItem="im1-ob-nDB" firstAttribute="leading" secondItem="E5T-9U-E3x" secondAttribute="leading" id="XMC-Kt-6jP"/>
                             <constraint firstItem="G2w-Fk-8Gq" firstAttribute="top" secondItem="v8M-1C-ULy" secondAttribute="bottom" id="XN5-hp-aky"/>
                             <constraint firstItem="v6M-RI-3TL" firstAttribute="top" secondItem="G2w-Fk-8Gq" secondAttribute="bottom" id="XiW-HB-SFu"/>
                             <constraint firstAttribute="trailing" secondItem="G2w-Fk-8Gq" secondAttribute="trailing" id="aKm-nh-abG"/>
+                            <constraint firstItem="llA-kt-050" firstAttribute="top" secondItem="oi1-b7-y6e" secondAttribute="bottom" constant="22" id="cQU-l9-Eld"/>
                             <constraint firstAttribute="trailing" secondItem="NAS-Ju-61O" secondAttribute="trailing" constant="20" id="fCr-eE-t9y"/>
                             <constraint firstAttribute="trailing" secondItem="im1-ob-nDB" secondAttribute="trailing" id="fNv-5u-uVk"/>
-                            <constraint firstItem="A2w-ox-aqs" firstAttribute="leading" secondItem="E5T-9U-E3x" secondAttribute="leading" constant="20" id="fpj-9d-wga"/>
-                            <constraint firstItem="aR7-qc-ZNh" firstAttribute="leading" secondItem="E5T-9U-E3x" secondAttribute="leading" constant="20" id="kWj-1y-kIW"/>
-                            <constraint firstAttribute="trailing" secondItem="aR7-qc-ZNh" secondAttribute="trailing" constant="20" id="nwk-tr-Gd3"/>
-                            <constraint firstItem="OYD-fm-C0S" firstAttribute="top" secondItem="A2w-ox-aqs" secondAttribute="bottom" constant="8" id="pme-aZ-hVy"/>
+                            <constraint firstItem="oi1-b7-y6e" firstAttribute="top" secondItem="gU5-0G-aYT" secondAttribute="bottom" constant="8" id="j6O-7M-Pv9"/>
                             <constraint firstAttribute="trailing" secondItem="llA-kt-050" secondAttribute="trailing" constant="98" id="ria-su-cVE"/>
-                            <constraint firstAttribute="trailing" secondItem="A2w-ox-aqs" secondAttribute="trailing" constant="20" id="uPL-0x-eDf"/>
                             <constraint firstItem="G2w-Fk-8Gq" firstAttribute="leading" secondItem="E5T-9U-E3x" secondAttribute="leading" id="uUO-xD-655"/>
-                            <constraint firstAttribute="trailing" secondItem="OYD-fm-C0S" secondAttribute="trailing" constant="20" id="v9f-Ss-pvT"/>
                             <constraint firstItem="NAS-Ju-61O" firstAttribute="leading" secondItem="o8q-Nk-zw4" secondAttribute="trailing" constant="8" id="vh8-Qa-JJv"/>
                             <constraint firstItem="llA-kt-050" firstAttribute="leading" secondItem="E5T-9U-E3x" secondAttribute="leading" constant="98" id="wHz-VT-tbI"/>
-                            <constraint firstItem="llA-kt-050" firstAttribute="top" secondItem="OYD-fm-C0S" secondAttribute="bottom" constant="22" id="wzp-Ar-fNV"/>
                         </constraints>
                     </view>
                     <connections>
@@ -778,6 +796,9 @@
                         <outlet property="orderStatusLabel" destination="NAS-Ju-61O" id="s6S-hI-XQ5"/>
                         <outlet property="priceTypeSegmentedControl" destination="aR7-qc-ZNh" id="2hM-uv-SQs"/>
                         <outlet property="projectNumberLabel" destination="o8q-Nk-zw4" id="iN9-UD-Yai"/>
+                        <outlet property="purchaseItemsVerticalSpaceConstraint" destination="cQU-l9-Eld" id="1BI-6e-n5J"/>
+                        <outlet property="purchaseItemsView" destination="oi1-b7-y6e" id="SdN-QH-mbH"/>
+                        <outlet property="rejectOrderButton" destination="llA-kt-050" id="IUD-Pi-BZh"/>
                         <outlet property="totalLabel" destination="OYD-fm-C0S" id="8tV-ZR-PQM"/>
                     </connections>
                 </viewController>
@@ -790,7 +811,7 @@
             <objects>
                 <tableViewController id="gLe-Ve-tkM" customClass="OrderDetailTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="105" sectionHeaderHeight="22" sectionFooterHeight="22" id="OmZ-AM-Rhq">
-                        <rect key="frame" x="0.0" y="0.0" width="500" height="349"/>
+                        <rect key="frame" x="0.0" y="0.0" width="500" height="350"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>

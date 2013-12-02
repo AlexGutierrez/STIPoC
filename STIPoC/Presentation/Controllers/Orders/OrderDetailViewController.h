@@ -30,6 +30,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *orderStatusLabel;
 @property (weak, nonatomic) IBOutlet UILabel *totalLabel;
 @property (weak, nonatomic) IBOutlet UINavigationItem *customNavigationItem;
+@property (weak, nonatomic) IBOutlet UIView *purchaseItemsView;
+@property (weak, nonatomic) IBOutlet UIButton *rejectOrderButton;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *purchaseItemsVerticalSpaceConstraint;
 
 - (IBAction)priceTypeFilterChanged:(UISegmentedControl *)sender;
 - (IBAction)dismissModal:(UIBarButtonItem *)sender;
