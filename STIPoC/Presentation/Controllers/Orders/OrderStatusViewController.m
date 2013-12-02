@@ -12,6 +12,7 @@
 #import "ECZoomAnimationController.h"
 #import "OrderDetailViewController.h"
 #import "AlertViewFactory.h"
+#import "SelfService.h"
 
 #define ALERT_VIEW_CANCEL_INDEX 0
 #define REJECTION_ALERT_VIEW_TAG 1
@@ -22,6 +23,8 @@ NSString *const kSTIPoCSegueEmbedOrdersTableViewController = @"OrdersTableViewCo
 static NSString *const kSTIPoCSegueModalOrderDetailViewController = @"OrderDetailViewControllerModalSegue";
 
 @interface OrderStatusViewController ()
+
+@property (nonatomic) NSInteger requestCounter;
 
 @property (weak, nonatomic) OrdersTableViewController *ordersTableViewController;
 
@@ -130,8 +133,23 @@ static NSString *const kSTIPoCSegueModalOrderDetailViewController = @"OrderDetai
     }
     else {
         if (alertView.tag == REJECTION_ALERT_VIEW_TAG) {
-            int a = 0;
-            a--;
+            [MRProgressOverlayView showOverlayAddedTo:self.navigationController.view
+                                                title:NSLocalizedString(@"Rejecting...", nil)
+                                                 mode:MRProgressOverlayViewModeIndeterminate
+                                             animated:YES];
+            
+            self.requestCounter++;
+            [[SelfService sharedInstance] rejectOrderWithOrderSummary:self.selectedOrderSummary
+                                                             comments:nil
+                                                      completionBlock:^{
+                                                          self.requestCounter--;
+                                                          
+                                                      } andFailureBlock:^(NSError *error) {
+                                                          self.requestCounter--;
+                                                          [MRProgressOverlayView dismissAllOverlaysForView:self.navigationController.view animated:YES];
+                                                          UIAlertView *alertView = [[AlertViewFactory sharedFactory] createAlertViewWithError:error];
+                                                          [alertView show];
+                                                      }];
         }
         else {
             int a = 0;
