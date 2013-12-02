@@ -15,12 +15,9 @@
 
 @interface OrdersTableViewController ()
 
-@property (nonatomic) NSInteger lastPageLoaded;
 @property (nonatomic) NSInteger requestCounter;
 
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
-
-- (void)requestOrderDetailsForOrders:(NSArray *)orders;
 
 @end
 
@@ -41,26 +38,9 @@ static NSString *const kSTIPoCOrderSummaryCellRejectText = @"Reject";
     
     [self.tableView addSubview:self.refreshControl];
     
-    if ([self.delegate respondsToSelector:@selector(ordersTableViewControllerStartedLoadingOrdersFromServer)]) {
-        [self.delegate ordersTableViewControllerStartedLoadingOrdersFromServer];
+    if ([self.delegate respondsToSelector:@selector(ordersTableViewControllerRequestedFirstOrdersLoadFromServer)]) {
+        [self.delegate ordersTableViewControllerRequestedFirstOrdersLoadFromServer];
     }
-    
-    self.lastPageLoaded = 0;
-    self.requestCounter++;
-    [[SelfService sharedInstance] getOrdersWithPageSize:30
-                                             pageNumber:self.lastPageLoaded + 1
-                                        completionBlock:^(NSArray *orders) {
-                                            self.requestCounter--;
-                                            [self requestOrderDetailsForOrders:orders];
-                                            
-                                        } andFailureBlock:^(NSError *error) {
-                                            self.requestCounter--;
-                                            if ([self.delegate respondsToSelector:@selector(ordersTableViewControllerFinishedLoadingOrdersFromServer)]) {
-                                                [self.delegate ordersTableViewControllerFinishedLoadingOrdersFromServer];
-                                            }
-                                            UIAlertView *alertView = [[AlertViewFactory sharedFactory] createAlertViewWithError:error];
-                                            [alertView show];
-                                        }];
 }
 
 #pragma mark -
@@ -115,7 +95,8 @@ static NSString *const kSTIPoCOrderSummaryCellRejectText = @"Reject";
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return YES;
+    OrderSummary *orderSummary = self.orders[indexPath.row];
+    return ![orderSummary.Status isEqualToString:[SelfServiceEnumTranslator stringFromOrderStatus:OrderStatusRejected]];;
 }
 
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -131,8 +112,11 @@ static NSString *const kSTIPoCOrderSummaryCellRejectText = @"Reject";
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [self.orders removeObjectAtIndex:indexPath.row];
-       [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        OrderSummary *orderSummary = self.orders[indexPath.row];
+        
+        if ([self.delegate respondsToSelector:@selector(ordersTableViewControllerRequestedRejectionForOrder:)]) {
+            [self.delegate ordersTableViewControllerRequestedRejectionForOrder:orderSummary];
+        }
     }
 }
 
@@ -150,60 +134,6 @@ static NSString *const kSTIPoCOrderSummaryCellRejectText = @"Reject";
 - (void)reloadTableView
 {
     [self.tableView reloadData];
-}
-
-- (void)refreshDataFromServer
-{
-    self.lastPageLoaded = 0;
-    
-    if ([self.delegate respondsToSelector:@selector(ordersTableViewControllerStartedLoadingOrdersFromServer)]) {
-        [self.delegate ordersTableViewControllerStartedLoadingOrdersFromServer];
-    }
-    
-    [[SelfService sharedInstance] getOrdersWithPageSize:self.orders.count
-                                             pageNumber:self.lastPageLoaded + 1
-                                        completionBlock:^(NSArray *orders) {
-                                            self.requestCounter--;
-                                            [self requestOrderDetailsForOrders:orders];
-                                            
-                                        } andFailureBlock:^(NSError *error) {
-                                            self.requestCounter--;
-                                            if ([self.delegate respondsToSelector:@selector(ordersTableViewControllerFinishedLoadingOrdersFromServer)]) {
-                                                [self.delegate ordersTableViewControllerFinishedLoadingOrdersFromServer];
-                                            }
-                                            UIAlertView *alertView = [[AlertViewFactory sharedFactory] createAlertViewWithError:error];
-                                            [alertView show];
-                                        }];
-}
-
-- (void)requestOrderDetailsForOrders:(NSArray *)orders
-{
-    self.orders = [orders mutableCopy];
-    
-    for (OrderSummary *orderSummary in self.orders) {
-        self.requestCounter++;
-        [[SelfService sharedInstance] getOrderDetailWithOrderSummary:orderSummary
-                                                     completionBlock:^(OrderSummary *detailedOrderSummary) {
-                                                         self.requestCounter--;
-                                                         [orderSummary setAttributesWithOrderSummary:detailedOrderSummary];
-                                                         if (self.requestCounter <= 0) {
-                                                             if ([self.delegate respondsToSelector:@selector(ordersTableViewControllerFinishedLoadingOrdersFromServer)]) {
-                                                                 [self.delegate ordersTableViewControllerFinishedLoadingOrdersFromServer];
-                                                             }
-                                                             
-                                                             [self.tableView reloadData];
-                                                             self.lastPageLoaded++;
-                                                         }
-                                                     }
-                                                     andFailureBlock:^(NSError *error) {
-                                                         self.requestCounter--;
-                                                         if ([self.delegate respondsToSelector:@selector(ordersTableViewControllerFinishedLoadingOrdersFromServer)]) {
-                                                             [self.delegate ordersTableViewControllerFinishedLoadingOrdersFromServer];
-                                                         }
-                                                         UIAlertView *alertView = [[AlertViewFactory sharedFactory] createAlertViewWithError:error];
-                                                         [alertView show];
-                                                     }];
-    }
 }
 
 - (void)pulledToRefresh:(UIRefreshControl *)refreshControl

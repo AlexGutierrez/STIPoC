@@ -13,6 +13,7 @@
 #import "OrderDetailViewController.h"
 #import "AlertViewFactory.h"
 #import "SelfService.h"
+#import "OrderSummary.h"
 
 #define ALERT_VIEW_CANCEL_INDEX 0
 #define REJECTION_ALERT_VIEW_TAG 1
@@ -31,6 +32,10 @@ static NSString *const kSTIPoCSegueModalOrderDetailViewController = @"OrderDetai
 @property (strong, nonatomic) ECZoomAnimationController *zoomTransitionController;
 
 @property (strong, nonatomic) OrderSummary *selectedOrderSummary;
+
+- (void)requestOrderDetailsForOrders:(NSArray *)orders;
+- (void)showOverlayWithMessage:(NSString *)message;
+- (void)dismissOverlay;
 
 @end
 
@@ -77,29 +82,61 @@ static NSString *const kSTIPoCSegueModalOrderDetailViewController = @"OrderDetai
 #pragma mark -
 #pragma mark Orders Table View Controller Protocols
 
-- (void)ordersTableViewControllerStartedLoadingOrdersFromServer
+- (void)ordersTableViewControllerRequestedFirstOrdersLoadFromServer
 {
-    [MRProgressOverlayView showOverlayAddedTo:self.navigationController.view
-                                        title:NSLocalizedString(@"Loading...", nil)
-                                         mode:MRProgressOverlayViewModeIndeterminate
-                                     animated:YES];
-}
-
-- (void)ordersTableViewControllerFinishedLoadingOrdersFromServer
-{
-    [MRProgressOverlayView dismissAllOverlaysForView:self.navigationController.view animated:YES];
-    [self.ordersTableViewController endRefreshing];
+    [self showOverlayWithMessage:NSLocalizedString(@"Loading...", nil)];
+    
+    self.ordersTableViewController.lastPageLoaded = 0;
+    self.requestCounter++;
+    [[SelfService sharedInstance] getOrdersWithPageSize:30
+                                             pageNumber:self.ordersTableViewController.lastPageLoaded + 1
+                                        completionBlock:^(NSArray *orders) {
+                                            self.requestCounter--;
+                                            [self requestOrderDetailsForOrders:orders];
+                                
+                                        } andFailureBlock:^(NSError *error) {
+                                            [self dismissOverlay];
+                                            [self.ordersTableViewController endRefreshing];
+                                            
+                                            self.requestCounter--;
+                                            UIAlertView *alertView = [[AlertViewFactory sharedFactory] createAlertViewWithError:error];
+                                            [alertView show];
+                                        }];
 }
 
 - (void)ordersTableViewControllerRequestedOrdersRefreshFromServer
 {
-    [self.ordersTableViewController refreshDataFromServer];
+    self.ordersTableViewController.lastPageLoaded = 0;
+    self.requestCounter++;
+    [[SelfService sharedInstance] getOrdersWithPageSize:self.ordersTableViewController.orders.count
+                                             pageNumber:self.ordersTableViewController.lastPageLoaded + 1
+                                        completionBlock:^(NSArray *orders) {
+                                            self.requestCounter--;
+                                            [self requestOrderDetailsForOrders:orders];
+                                            
+                                        } andFailureBlock:^(NSError *error) {
+                                            [self dismissOverlay];
+                                            
+                                            [self.ordersTableViewController endRefreshing];
+                                            
+                                            self.requestCounter--;
+                                            UIAlertView *alertView = [[AlertViewFactory sharedFactory] createAlertViewWithError:error];
+                                            [alertView show];
+                                        }];
 }
 
 - (void)ordersTableViewControllerDidSelectOrder:(OrderSummary *)orderSummary
 {
     self.selectedOrderSummary = orderSummary;
     [self performSegueWithIdentifier:kSTIPoCSegueModalOrderDetailViewController sender:self];
+}
+
+- (void)ordersTableViewControllerRequestedRejectionForOrder:(OrderSummary *)orderSummary
+{
+    self.selectedOrderSummary = orderSummary;
+    UIAlertView *alertView = [[AlertViewFactory sharedFactory] createOrderRejectionAlertViewWithDelegate:self];
+    alertView.tag = REJECTION_ALERT_VIEW_TAG;
+    [alertView show];
 }
 
 #pragma mark -
@@ -117,7 +154,7 @@ static NSString *const kSTIPoCSegueModalOrderDetailViewController = @"OrderDetai
 
 - (void)orderDetailViewControllerRejectedOrder:(OrderSummary *)orderSummary
 {
-    self.selectedOrderSummary = orderSummary;
+    self.selectedOrderSummary = nil;
     UIAlertView *alertView = [[AlertViewFactory sharedFactory] createOrderRejectionAlertViewWithDelegate:self];
     alertView.tag = REJECTION_ALERT_VIEW_TAG;
     [alertView show];
@@ -129,31 +166,50 @@ static NSString *const kSTIPoCSegueModalOrderDetailViewController = @"OrderDetai
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex == ALERT_VIEW_CANCEL_INDEX) {
-        [self performSegueWithIdentifier:kSTIPoCSegueModalOrderDetailViewController sender:self];
+        if (self.selectedOrderSummary) {
+            [self performSegueWithIdentifier:kSTIPoCSegueModalOrderDetailViewController sender:self];
+        }
     }
     else {
         if (alertView.tag == REJECTION_ALERT_VIEW_TAG) {
-            [MRProgressOverlayView showOverlayAddedTo:self.navigationController.view
-                                                title:NSLocalizedString(@"Rejecting...", nil)
-                                                 mode:MRProgressOverlayViewModeIndeterminate
-                                             animated:YES];
+            [self showOverlayWithMessage:NSLocalizedString(@"Rejecting...", nil)];
             
             self.requestCounter++;
+            
+            NSString *comments = [alertView textFieldAtIndex:0].text;
+            
             [[SelfService sharedInstance] rejectOrderWithOrderSummary:self.selectedOrderSummary
-                                                             comments:nil
+                                                             comments:comments
                                                       completionBlock:^{
                                                           self.requestCounter--;
-                                                          
+                                                          [self dismissOverlay];
+                                                          [self showOverlayWithMessage:NSLocalizedString(@"Refreshing...", nil)];
+                                                          [self ordersTableViewControllerRequestedOrdersRefreshFromServer];
                                                       } andFailureBlock:^(NSError *error) {
                                                           self.requestCounter--;
-                                                          [MRProgressOverlayView dismissAllOverlaysForView:self.navigationController.view animated:YES];
+                                                          [self dismissOverlay];
                                                           UIAlertView *alertView = [[AlertViewFactory sharedFactory] createAlertViewWithError:error];
                                                           [alertView show];
                                                       }];
         }
         else {
-            int a = 0;
-            a--;
+            [self showOverlayWithMessage:NSLocalizedString(@"Updating...", nil)];
+            
+            self.requestCounter++;
+            
+            [[SelfService sharedInstance] updateOrderDetailsOnServerWithOrders:self.selectedOrderSummary
+                                                               completionBlock:^{
+                                                                   self.requestCounter--;
+                                                                   [self dismissOverlay];
+                                                                   [self showOverlayWithMessage:NSLocalizedString(@"Refreshing...", nil)];
+                                                                   [self ordersTableViewControllerRequestedOrdersRefreshFromServer];
+                                                               }
+                                                               andFailureBlock:^(NSError *error) {
+                                                                   self.requestCounter--;
+                                                                   [self dismissOverlay];
+                                                                   UIAlertView *alertView = [[AlertViewFactory sharedFactory] createAlertViewWithError:error];
+                                                                   [alertView show];
+                                                               }];
         }
     }
 }
@@ -169,6 +225,55 @@ static NSString *const kSTIPoCSegueModalOrderDetailViewController = @"OrderDetai
     else {
         [self.slidingViewController anchorTopViewToRightAnimated:YES];
     }
+}
+
+#pragma mark -
+#pragma mark Private Methods
+
+- (void)requestOrderDetailsForOrders:(NSArray *)orders
+{
+    for (OrderSummary *orderSummary in orders) {
+        self.requestCounter++;
+        [[SelfService sharedInstance] getOrderDetailWithOrderSummary:orderSummary
+                                                     completionBlock:^(OrderSummary *detailedOrderSummary) {
+                                                         self.requestCounter--;
+                                                         [orderSummary setAttributesWithOrderSummary:detailedOrderSummary];
+                                                         if (self.requestCounter <= 0) {
+                                                             [self.ordersTableViewController endRefreshing];
+                                                             
+                                                             [self dismissOverlay];
+                                                             
+                                                             self.ordersTableViewController.lastPageLoaded++;
+                                                             
+                                                             self.ordersTableViewController.orders = [orders mutableCopy];
+                                                             [self.ordersTableViewController.tableView reloadData];
+                                                         }
+                                                     }
+                                                     andFailureBlock:^(NSError *error) {
+                                                         if (self.requestCounter > 0) {
+                                                             [self.ordersTableViewController endRefreshing];
+                                                             
+                                                             [[SelfService sharedInstance] stopAllOperations];
+                                                             self.requestCounter = 0;
+                                                             [self dismissOverlay];
+                                                             UIAlertView *alertView = [[AlertViewFactory sharedFactory] createAlertViewWithError:error];
+                                                             [alertView show];
+                                                         }
+                                                     }];
+    }
+}
+
+- (void)showOverlayWithMessage:(NSString *)message
+{
+    [MRProgressOverlayView showOverlayAddedTo:self.navigationController.view
+                                        title:message
+                                         mode:MRProgressOverlayViewModeIndeterminateSmall
+                                     animated:YES];
+}
+
+- (void)dismissOverlay
+{
+    [MRProgressOverlayView dismissAllOverlaysForView:self.navigationController.view animated:YES];
 }
 
 @end

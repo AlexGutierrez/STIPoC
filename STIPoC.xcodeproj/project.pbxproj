@@ -523,13 +523,6 @@
 			path = Orders;
 			sourceTree = "<group>";
 		};
-		7A5342FD184BCC9000FE9C54 /* Constants */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Constants;
-			sourceTree = "<group>";
-		};
 		7A98231D183552DE00CB0BA5 /* OCMock */ = {
 			isa = PBXGroup;
 			children = (
@@ -974,7 +967,6 @@
 		7C2A35A51832A7CE004AE430 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
-				7A5342FD184BCC9000FE9C54 /* Constants */,
 				7C8A350C183D105D00802B89 /* Categories */,
 				7C2A35B01832A7CE004AE430 /* Factories */,
 				7C2A35B31832A7CE004AE430 /* Helpers */,

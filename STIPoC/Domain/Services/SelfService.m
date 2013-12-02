@@ -119,4 +119,9 @@
     });
 }
 
+- (void)stopAllOperations
+{
+    [[SelfServiceRequestOperationManager sharedManager].operationQueue cancelAllOperations];
+}
+
 @end

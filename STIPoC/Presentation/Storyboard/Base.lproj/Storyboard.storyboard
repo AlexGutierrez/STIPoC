@@ -181,13 +181,7 @@
                             <constraint firstItem="IIj-CG-lLN" firstAttribute="leading" secondItem="3wA-NJ-dtJ" secondAttribute="leading" constant="20" symbolic="YES" id="SVg-co-BAo"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Your Order Status" id="hhm-5V-FBB">
-                        <barButtonItem key="leftBarButtonItem" image="MenuIcon" id="TNN-Kc-EW3">
-                            <connections>
-                                <action selector="menuButtonTapped:" destination="vDj-Fh-bo9" id="R69-rT-oW2"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Your Order Status" id="hhm-5V-FBB"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <segue destination="Nd1-nQ-s0t" kind="modal" identifier="OrderDetailViewControllerModalSegue" modalPresentationStyle="formSheet" id="Kis-To-in6"/>
@@ -432,15 +426,15 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexTrackingBackgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="OrderSummaryCell" rowHeight="80" id="Qvj-lC-pm2" customClass="OrderSummaryCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="OrderSummaryCell" rowHeight="80" id="Qvj-lC-pm2" customClass="OrderSummaryCell">
                                         <rect key="frame" x="0.0" y="22" width="728" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Qvj-lC-pm2" id="dnF-1Z-CZH">
-                                            <rect key="frame" x="0.0" y="0.0" width="695" height="79"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="728" height="79"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mhb-B9-xei">
-                                                    <rect key="frame" x="258" y="46" width="417" height="20"/>
+                                                    <rect key="frame" x="291" y="46" width="417" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <attributedString key="attributedText">
                                                         <fragment content="NRC Total: ">
@@ -475,7 +469,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edited by Terremark" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rlp-5n-AEN">
-                                                    <rect key="frame" x="521" y="13" width="154" height="20"/>
+                                                    <rect key="frame" x="554" y="13" width="154" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="154" id="EVl-YX-Yc8"/>
@@ -485,7 +479,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gd9-HN-W2a">
-                                                    <rect key="frame" x="20" y="11" width="493" height="22"/>
+                                                    <rect key="frame" x="20" y="11" width="526" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <attributedString key="attributedText">
                                                         <fragment content="Order Number: ">
@@ -506,7 +500,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2KE-2V-sXt">
-                                                    <rect key="frame" x="20" y="46" width="230" height="20"/>
+                                                    <rect key="frame" x="20" y="46" width="263" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <attributedString key="attributedText">
                                                         <fragment content="Project: ">
@@ -532,7 +526,7 @@
                                                 <constraint firstItem="rlp-5n-AEN" firstAttribute="leading" secondItem="gd9-HN-W2a" secondAttribute="trailing" constant="8" id="5Km-Kf-rpw"/>
                                                 <constraint firstItem="gd9-HN-W2a" firstAttribute="leading" secondItem="dnF-1Z-CZH" secondAttribute="leading" constant="20" id="7N4-Hm-0Tb"/>
                                                 <constraint firstAttribute="trailing" secondItem="Mhb-B9-xei" secondAttribute="trailing" constant="20" id="Fsp-zt-4a7"/>
-                                                <constraint firstItem="Mhb-B9-xei" firstAttribute="leading" secondItem="dnF-1Z-CZH" secondAttribute="leading" constant="258" id="K5R-0u-bMC"/>
+                                                <constraint firstItem="Mhb-B9-xei" firstAttribute="leading" secondItem="dnF-1Z-CZH" secondAttribute="leading" constant="291" id="K5R-0u-bMC"/>
                                                 <constraint firstItem="Mhb-B9-xei" firstAttribute="top" secondItem="2KE-2V-sXt" secondAttribute="bottom" constant="-20" id="MdJ-IX-6Kf"/>
                                                 <constraint firstAttribute="centerY" secondItem="2KE-2V-sXt" secondAttribute="centerY" constant="-16" id="P6q-eK-Wop"/>
                                                 <constraint firstAttribute="trailing" secondItem="2KE-2V-sXt" secondAttribute="trailing" constant="445" id="PFg-CU-wRs"/>
@@ -780,6 +774,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="customNavigationItem" destination="Dn5-f5-iHI" id="1rp-9Z-pD2"/>
                         <outlet property="orderStatusLabel" destination="NAS-Ju-61O" id="s6S-hI-XQ5"/>
                         <outlet property="priceTypeSegmentedControl" destination="aR7-qc-ZNh" id="2hM-uv-SQs"/>
                         <outlet property="projectNumberLabel" destination="o8q-Nk-zw4" id="iN9-UD-Yai"/>
@@ -911,7 +906,6 @@
         <image name="LoginTextFieldBg" width="50" height="50"/>
         <image name="MenuBg" width="1024" height="1024"/>
         <image name="MenuFooterTerremarkLogo" width="155" height="49"/>
-        <image name="MenuIcon" width="24" height="24"/>
         <image name="MenuOptionLogout" width="35" height="35"/>
         <image name="MenuOptionOrderStatus" width="35" height="35"/>
         <image name="MenuOptionProjectTracking" width="35" height="35"/>

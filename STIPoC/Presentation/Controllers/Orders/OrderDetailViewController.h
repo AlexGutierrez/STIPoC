@@ -29,6 +29,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *projectNumberLabel;
 @property (weak, nonatomic) IBOutlet UILabel *orderStatusLabel;
 @property (weak, nonatomic) IBOutlet UILabel *totalLabel;
+@property (weak, nonatomic) IBOutlet UINavigationItem *customNavigationItem;
 
 - (IBAction)priceTypeFilterChanged:(UISegmentedControl *)sender;
 - (IBAction)dismissModal:(UIBarButtonItem *)sender;

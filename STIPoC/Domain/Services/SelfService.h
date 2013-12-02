@@ -31,4 +31,6 @@
                              completionBlock:(void(^)())completion
                              andFailureBlock:(void(^)(NSError *error))failure;
 
+- (void)stopAllOperations;
+
 @end

@@ -31,7 +31,7 @@ static NSString *const kSTIPoCSegueEmbedOrderDetailTableViewController = @"Order
 {
     [super viewDidLoad];
     
-    self.navigationItem.title = self.selectedOrderSummary.OrderFriendlyId;
+    self.customNavigationItem.title = self.selectedOrderSummary.OrderFriendlyId;
     
     [self setLabelsText];
 }

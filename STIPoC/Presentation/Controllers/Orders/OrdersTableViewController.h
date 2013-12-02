@@ -12,14 +12,16 @@
 
 @protocol OrdersTableViewControllerDelegate <NSObject>
 
-- (void)ordersTableViewControllerStartedLoadingOrdersFromServer;
-- (void)ordersTableViewControllerFinishedLoadingOrdersFromServer;
+- (void)ordersTableViewControllerRequestedFirstOrdersLoadFromServer;
 - (void)ordersTableViewControllerRequestedOrdersRefreshFromServer;
 - (void)ordersTableViewControllerDidSelectOrder:(OrderSummary *)orderSummary;
+- (void)ordersTableViewControllerRequestedRejectionForOrder:(OrderSummary *)orderSummary;
 
 @end
 
 @interface OrdersTableViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
+
+@property (nonatomic) NSInteger lastPageLoaded;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *priceTypeSegmentedControl;
@@ -30,7 +32,6 @@
 - (IBAction)priceTypeFilterChanged:(UISegmentedControl *)sender;
 
 - (void)reloadTableView;
-- (void)refreshDataFromServer;
 
 - (void)pulledToRefresh:(UIRefreshControl *)refreshControl;
 - (void)endRefreshing;
