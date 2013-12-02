@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface QuoteLineItem : NSObject
+@interface QuoteLineItem : NSObject <NSCopying>
 
 @property (strong, nonatomic) NSNumber *Id;
 @property (strong, nonatomic) NSString *LineItemId;

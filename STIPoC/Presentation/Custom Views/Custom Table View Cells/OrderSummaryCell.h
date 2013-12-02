@@ -18,6 +18,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *totalsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 
-- (void)setupOrderSummaryCellWithOrderSummary:(OrderSummary *)orderSummary andPriceType:(PriceType)priceType;
+- (void)setupWithOrderSummary:(OrderSummary *)orderSummary andPriceType:(PriceType)priceType;
 
 @end

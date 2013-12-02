@@ -10,11 +10,12 @@
 
 static NSString *const kSTIPoCAlertViewOKButtonTitle = @"OK";
 static NSString *const kSTIPoCAlertViewSubmitButtonTitle = @"Submit";
+static NSString *const kSTIPoCAlertViewRejectButtonTitle = @"Reject";
 static NSString *const kSTIPoCAlertViewCancelButtonTitle = @"Cancel";
 static NSString *const kSTIPoCAlertViewDismissButtonTitle = @"Dismiss";
 static NSString *const kSTIPoCAlertViewGotItButtonTitle = @"Got it!";
-static NSString *const kSTIPoCAlertViewOrderRejectionTitle = @"Got it!";
-static NSString *const kSTIPoCAlertViewOrderRejectionMessage = @"Please write a comment.";
+static NSString *const kSTIPoCAlertViewOrderRejectionTitle = @"Order rejection";
+static NSString *const kSTIPoCAlertViewOrderRejectionMessage = @"Your order is about to be rejected. Please write a comment and press Reject to proceed.";
 static NSString *const kSTIPoCAlertViewDefaultTitle = @"Woops!";
 static NSString *const kSTIPoCAlertViewDefaultMessage = @"Something unexpected happened. We'll fix it as soon as possible :D";
 
@@ -58,6 +59,18 @@ static NSString *const kSTIPoCAlertViewDefaultMessage = @"Something unexpected h
     return alertView;
 }
 
+- (UIAlertView *)createConfirmationAlertViewWithTitle:(NSString *)title message:(NSString *)message andDelegate:(id<UIAlertViewDelegate>)delegate
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title
+                                                        message:message
+                                                       delegate:delegate
+                                              cancelButtonTitle:kSTIPoCAlertViewCancelButtonTitle
+                                              otherButtonTitles:kSTIPoCAlertViewOKButtonTitle, nil];
+    
+    return alertView;
+}
+
+
 - (UIAlertView *)createAlertViewWithError:(NSError *)error
 {
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:error.domain
@@ -75,7 +88,7 @@ static NSString *const kSTIPoCAlertViewDefaultMessage = @"Something unexpected h
                                                         message:kSTIPoCAlertViewOrderRejectionMessage
                                                        delegate:delegate
                                               cancelButtonTitle:kSTIPoCAlertViewCancelButtonTitle
-                                              otherButtonTitles:kSTIPoCAlertViewSubmitButtonTitle, nil];
+                                              otherButtonTitles:kSTIPoCAlertViewRejectButtonTitle, nil];
     alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
     
     return alertView;

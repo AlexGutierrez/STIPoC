@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface LineItemAttribute : NSObject
+@interface LineItemAttribute : NSObject <NSCopying>
 
 @property (strong, nonatomic) NSString *Name;
 @property (strong, nonatomic) NSString *Value;

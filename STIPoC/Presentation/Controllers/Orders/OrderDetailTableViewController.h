@@ -7,15 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "QuoteLineItemCell.h"
 
 #import "PriceType.h"
 @class OrderSummary;
 
 @protocol OrderDetailTableViewControllerDelegate <NSObject>
 
+- (void)quoteLineItemPricesUpdated;
+- (void)quoteLineItemRemoved;
+
 @end
 
-@interface OrderDetailTableViewController : UITableViewController
+@interface OrderDetailTableViewController : UITableViewController<QuoteLineItemCellDelegate>
 
 @property (weak, nonatomic) id<OrderDetailTableViewControllerDelegate> delegate;
 

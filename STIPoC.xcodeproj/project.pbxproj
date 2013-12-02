@@ -20,6 +20,7 @@
 		7A5342F2184A7B3900FE9C54 /* PaddingTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A5342F1184A7B3900FE9C54 /* PaddingTextField.m */; };
 		7A5342F8184AA88500FE9C54 /* UIColor+VerizonColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A5342F7184AA88500FE9C54 /* UIColor+VerizonColors.m */; };
 		7A5342FC184BC49C00FE9C54 /* OrderDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A5342FB184BC49C00FE9C54 /* OrderDetailTableViewController.m */; };
+		7A534304184BF82900FE9C54 /* QuoteLineItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A534303184BF82900FE9C54 /* QuoteLineItemCell.m */; };
 		7A982327183552DE00CB0BA5 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A982326183552DE00CB0BA5 /* libOCMock.a */; };
 		7A9823281835533B00CB0BA5 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A982326183552DE00CB0BA5 /* libOCMock.a */; };
 		7AA569F41848F2630095C98A /* UpdateOrderStatusRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA569F31848F2630095C98A /* UpdateOrderStatusRequest.m */; };
@@ -188,6 +189,8 @@
 		7A5342F9184AFAD900FE9C54 /* PriceType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PriceType.h; sourceTree = "<group>"; };
 		7A5342FA184BC49C00FE9C54 /* OrderDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderDetailTableViewController.h; sourceTree = "<group>"; };
 		7A5342FB184BC49C00FE9C54 /* OrderDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderDetailTableViewController.m; sourceTree = "<group>"; };
+		7A534302184BF82900FE9C54 /* QuoteLineItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteLineItemCell.h; sourceTree = "<group>"; };
+		7A534303184BF82900FE9C54 /* QuoteLineItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteLineItemCell.m; sourceTree = "<group>"; };
 		7A982326183552DE00CB0BA5 /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libOCMock.a; sourceTree = "<group>"; };
 		7A982329183553DB00CB0BA5 /* NSNotificationCenter+OCMAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSNotificationCenter+OCMAdditions.h"; path = "External/OCMock/OCMock/NSNotificationCenter+OCMAdditions.h"; sourceTree = SOURCE_ROOT; };
 		7A98232A183553DB00CB0BA5 /* OCMArg.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OCMArg.h; path = External/OCMock/OCMock/OCMArg.h; sourceTree = SOURCE_ROOT; };
@@ -508,14 +511,14 @@
 		7A3937EF184947D800D3CF52 /* Orders */ = {
 			isa = PBXGroup;
 			children = (
+				7A5342FA184BC49C00FE9C54 /* OrderDetailTableViewController.h */,
+				7A5342FB184BC49C00FE9C54 /* OrderDetailTableViewController.m */,
 				7A3937F0184947D800D3CF52 /* OrderDetailViewController.h */,
 				7A3937F1184947D800D3CF52 /* OrderDetailViewController.m */,
 				7A3937F2184947D800D3CF52 /* OrdersTableViewController.h */,
 				7A3937F3184947D800D3CF52 /* OrdersTableViewController.m */,
 				7A3937F4184947D800D3CF52 /* OrderStatusViewController.h */,
 				7A3937F5184947D800D3CF52 /* OrderStatusViewController.m */,
-				7A5342FA184BC49C00FE9C54 /* OrderDetailTableViewController.h */,
-				7A5342FB184BC49C00FE9C54 /* OrderDetailTableViewController.m */,
 			);
 			path = Orders;
 			sourceTree = "<group>";
@@ -1280,6 +1283,8 @@
 			children = (
 				7C1A98841847E1D10045ED8C /* OrderSummaryCell.h */,
 				7C1A98851847E1D10045ED8C /* OrderSummaryCell.m */,
+				7A534302184BF82900FE9C54 /* QuoteLineItemCell.h */,
+				7A534303184BF82900FE9C54 /* QuoteLineItemCell.m */,
 			);
 			path = "Custom Table View Cells";
 			sourceTree = "<group>";
@@ -1396,6 +1401,7 @@
 				7C363C9C183FA96D00003723 /* GetOrdersResult.m in Sources */,
 				7C2A359A1832A7AD004AE430 /* AFURLSessionManager.m in Sources */,
 				7C363C95183FA7CA00003723 /* LineItemAttribute.m in Sources */,
+				7A534304184BF82900FE9C54 /* QuoteLineItemCell.m in Sources */,
 				7C363C9F183FAA4600003723 /* GetOrderResult.m in Sources */,
 				7C958448183AC4580065C878 /* SessionsService.m in Sources */,
 				7C8A3510183D109400802B89 /* User+CustomAccessors.m in Sources */,

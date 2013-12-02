@@ -52,4 +52,24 @@ NSString *const kSTIPoCSelfServiceGenericModifiedBy = @"1c1b355a-f127-43e0-9a1e-
     return total;
 }
 
+#pragma mark -
+#pragma mark Copying Protocols
+
+- (id)copyWithZone:(NSZone *)zone
+{
+    OrderSummary *copy = [OrderSummary new];
+    copy.OrderId = [self.OrderId copy];
+    copy.OrderNumber = [self.OrderNumber copy];
+    copy.Status = [self.Status copy];
+    copy.OrderFriendlyId = [self.OrderFriendlyId copy];
+    copy.ProjectId = [self.ProjectId copy];
+    copy.ProjectStatus = [self.ProjectStatus copy];
+    copy.ProjectFriendlyId = [self.ProjectFriendlyId copy];
+    copy.CreatedBy = [self.CreatedBy copy];
+    copy.OrderExternalId = [self.OrderExternalId copy];
+    copy.QuoteLineItems = [[NSMutableArray alloc] initWithArray:self.QuoteLineItems copyItems:true];
+    
+    return copy;
+}
+
 @end

@@ -14,5 +14,6 @@
 - (UIAlertView *)createAlertViewWithTitle:(NSString *)title andMessage:(NSString *)message;
 - (UIAlertView *)createAlertViewWithError:(NSError *)error;
 - (UIAlertView *)createOrderRejectionAlertViewWithDelegate:(id<UIAlertViewDelegate>)delegate;
+- (UIAlertView *)createConfirmationAlertViewWithTitle:(NSString *)title message:(NSString *)message andDelegate:(id<UIAlertViewDelegate>)delegate;
 
 @end

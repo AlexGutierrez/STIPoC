@@ -15,8 +15,10 @@ static NSString *const kSTIPoCSegueEmbedOrderDetailTableViewController = @"Order
 @interface OrderDetailViewController ()
 
 @property (weak, nonatomic) OrderDetailTableViewController *orderDetailTableViewController;
+@property (strong, nonatomic) OrderSummary *backupOrderSummary;
 
 - (void)setLabelsText;
+- (void)updateTotalLabel;
 
 @end
 
@@ -42,7 +44,19 @@ static NSString *const kSTIPoCSegueEmbedOrderDetailTableViewController = @"Order
     if ([segue.identifier isEqualToString:kSTIPoCSegueEmbedOrderDetailTableViewController]) {
         self.orderDetailTableViewController = (OrderDetailTableViewController *)segue.destinationViewController;
         self.orderDetailTableViewController.delegate = self;
-        self.orderDetailTableViewController.selectedOrderSummary = self.selectedOrderSummary;
+        self.orderDetailTableViewController.selectedOrderSummary = self.backupOrderSummary;
+    }
+}
+
+#pragma mark -
+#pragma mark Custom Accessors
+
+- (void)setSelectedOrderSummary:(OrderSummary *)selectedOrderSummary
+{
+    if (_selectedOrderSummary != selectedOrderSummary) {
+        _selectedOrderSummary = selectedOrderSummary;
+        
+        self.backupOrderSummary = [_selectedOrderSummary copy];
     }
 }
 
@@ -51,7 +65,7 @@ static NSString *const kSTIPoCSegueEmbedOrderDetailTableViewController = @"Order
 
 - (void)setLabelsText
 {
-    if (self.selectedOrderSummary) {
+    if (self.backupOrderSummary) {
         
         // Project number attributed text
         
@@ -62,7 +76,7 @@ static NSString *const kSTIPoCSegueEmbedOrderDetailTableViewController = @"Order
                                                                                                     size:17.0]}];
         [projectNumberString appendAttributedString:temp];
         
-        temp = [[NSAttributedString alloc] initWithString:(self.selectedOrderSummary.ProjectFriendlyId)? self.selectedOrderSummary.ProjectFriendlyId : @""
+        temp = [[NSAttributedString alloc] initWithString:(self.backupOrderSummary.ProjectFriendlyId)? self.backupOrderSummary.ProjectFriendlyId : @"-"
                                                attributes:@{NSFontAttributeName: [UIFont fontWithName:kSTIPoCFontHelveticaNeueMedium
                                                                                                  size:17.0]}];
         
@@ -72,30 +86,48 @@ static NSString *const kSTIPoCSegueEmbedOrderDetailTableViewController = @"Order
         
         // Order status text
         
-        self.orderStatusLabel.text = self.selectedOrderSummary.Status;
-        self.orderStatusLabel.textColor = ([self.selectedOrderSummary.Status isEqualToString:kSTIPoCSelfServiceOrderStatusApproved])? [UIColor verizonGreen] : ([self.selectedOrderSummary.Status isEqualToString:kSTIPoCSelfServiceOrderStatusRejected])? [UIColor verizonRed] : [UIColor verizonBlue];
+        self.orderStatusLabel.text = self.backupOrderSummary.Status;
+        self.orderStatusLabel.textColor = ([self.backupOrderSummary.Status isEqualToString:kSTIPoCSelfServiceOrderStatusApproved])? [UIColor verizonGreen] : ([self.backupOrderSummary.Status isEqualToString:kSTIPoCSelfServiceOrderStatusRejected])? [UIColor verizonRed] : [UIColor verizonBlue];
         
         // Totals attributed text
         
-        NSMutableAttributedString *totalString = [[NSMutableAttributedString alloc] initWithString:@""];
-        
-        PriceType priceType = (PriceType)self.priceTypeSegmentedControl.selectedSegmentIndex;
-        NSString *priceTypeString = [SelfServiceEnumTranslator stringFromPriceType:priceType];
-        
-        temp = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@ Total: ", priceTypeString]
-                                               attributes:@{NSFontAttributeName: [UIFont fontWithName:kSTIPoCFontHelveticaNeueLight
-                                                                                                    size:17.0]}];
-        [totalString appendAttributedString:temp];
-        
-        
-        temp = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"%.2lf", [self.selectedOrderSummary totalForPriceType:priceType]]
-                                               attributes:@{NSFontAttributeName: [UIFont fontWithName:kSTIPoCFontHelveticaNeueMedium
-                                                                                                 size:17.0]}];
-        
-        [totalString appendAttributedString:temp];
-        
-        self.totalLabel.attributedText = totalString;
+        [self updateTotalLabel];
     }
+}
+
+- (void)updateTotalLabel
+{
+    NSMutableAttributedString *totalString = [[NSMutableAttributedString alloc] initWithString:@""];
+    
+    PriceType priceType = (PriceType)self.priceTypeSegmentedControl.selectedSegmentIndex;
+    NSString *priceTypeString = [SelfServiceEnumTranslator stringFromPriceType:priceType];
+    
+    id temp = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@ Total: ", priceTypeString]
+                                              attributes:@{NSFontAttributeName: [UIFont fontWithName:kSTIPoCFontHelveticaNeueLight
+                                                                                                size:17.0]}];
+    [totalString appendAttributedString:temp];
+    
+    
+    temp = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"%.2lf", [self.backupOrderSummary totalForPriceType:priceType]]
+                                           attributes:@{NSFontAttributeName: [UIFont fontWithName:kSTIPoCFontHelveticaNeueMedium
+                                                                                             size:17.0]}];
+    
+    [totalString appendAttributedString:temp];
+    
+    self.totalLabel.attributedText = totalString;
+}
+
+#pragma mark -
+#pragma mark Order Details Table View Controller Protocols
+
+- (void)quoteLineItemPricesUpdated
+{
+    [self updateTotalLabel];
+}
+
+- (void)quoteLineItemRemoved
+{
+    [self updateTotalLabel];
 }
 
 #pragma mark -
@@ -103,18 +135,32 @@ static NSString *const kSTIPoCSegueEmbedOrderDetailTableViewController = @"Order
 
 - (IBAction)priceTypeFilterChanged:(UISegmentedControl *)sender
 {
+    [self.orderDetailTableViewController changeFilterWithPriceType:(PriceType)self.priceTypeSegmentedControl.selectedSegmentIndex];
+    
+    [self updateTotalLabel];
 }
 
 - (IBAction)dismissModal:(UIBarButtonItem *)sender
 {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)saveOrder:(UIBarButtonItem *)sender
 {
+    [self dismissViewControllerAnimated:YES completion:^{
+        if ([self.delegate respondsToSelector:@selector(orderDetailViewControllerModifiedOrder:)]) {
+            [self.delegate orderDetailViewControllerModifiedOrder:self.backupOrderSummary];
+        }
+    }];
 }
 
 - (IBAction)rejectOrder:(UIButton *)sender
 {
+    [self dismissViewControllerAnimated:YES completion:^{
+        if ([self.delegate respondsToSelector:@selector(orderDetailViewControllerRejectedOrder:)]) {
+            [self.delegate orderDetailViewControllerRejectedOrder:self.backupOrderSummary];
+        }
+    }];
 }
 
 @end

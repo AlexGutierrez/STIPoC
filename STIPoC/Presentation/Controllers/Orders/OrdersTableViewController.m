@@ -18,6 +18,8 @@
 @property (nonatomic) NSInteger lastPageLoaded;
 @property (nonatomic) NSInteger requestCounter;
 
+@property (strong, nonatomic) UIRefreshControl *refreshControl;
+
 - (void)requestOrderDetailsForOrders:(NSArray *)orders;
 
 @end
@@ -36,6 +38,8 @@ static NSString *const kSTIPoCOrderSummaryCellRejectText = @"Reject";
     
     self.requestCounter = 0;
     self.tableView.editing = YES;
+    
+    [self.tableView addSubview:self.refreshControl];
     
     if ([self.delegate respondsToSelector:@selector(ordersTableViewControllerStartedLoadingOrdersFromServer)]) {
         [self.delegate ordersTableViewControllerStartedLoadingOrdersFromServer];
@@ -71,6 +75,17 @@ static NSString *const kSTIPoCOrderSummaryCellRejectText = @"Reject";
     return _orders;
 }
 
+- (UIRefreshControl *)refreshControl
+{
+    if (!_refreshControl) {
+        _refreshControl = [[UIRefreshControl alloc] init];
+        [_refreshControl setTintColor:[UIColor verizonRed]];
+        [_refreshControl addTarget:self action:@selector(pulledToRefresh:) forControlEvents:UIControlEventValueChanged];
+    }
+    
+    return _refreshControl;
+}
+
 #pragma mark -
 #pragma mark Table View Protocols
 
@@ -95,7 +110,7 @@ static NSString *const kSTIPoCOrderSummaryCellRejectText = @"Reject";
     OrderSummary *orderSummary = self.orders[indexPath.row];
     OrderSummaryCell *orderSummaryCell = (OrderSummaryCell *)cell;
     PriceType priceType = (PriceType)self.priceTypeSegmentedControl.selectedSegmentIndex;
-    [orderSummaryCell setupOrderSummaryCellWithOrderSummary:orderSummary andPriceType:priceType];
+    [orderSummaryCell setupWithOrderSummary:orderSummary andPriceType:priceType];
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -110,7 +125,7 @@ static NSString *const kSTIPoCOrderSummaryCellRejectText = @"Reject";
 
 - (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return kSTIPoCOrderSummaryCellRejectText;
+    return NSLocalizedString(kSTIPoCOrderSummaryCellRejectText, nil);
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
@@ -189,6 +204,18 @@ static NSString *const kSTIPoCOrderSummaryCellRejectText = @"Reject";
                                                          [alertView show];
                                                      }];
     }
+}
+
+- (void)pulledToRefresh:(UIRefreshControl *)refreshControl
+{
+    if ([self.delegate respondsToSelector:@selector(ordersTableViewControllerRequestedOrdersRefreshFromServer)]) {
+        [self.delegate ordersTableViewControllerRequestedOrdersRefreshFromServer];
+    }
+}
+
+- (void)endRefreshing
+{
+    [self.refreshControl endRefreshing];
 }
 
 #pragma mark -

@@ -11,6 +11,11 @@
 #import "UIViewController+ECSlidingViewController.h"
 #import "ECZoomAnimationController.h"
 #import "OrderDetailViewController.h"
+#import "AlertViewFactory.h"
+
+#define ALERT_VIEW_CANCEL_INDEX 0
+#define REJECTION_ALERT_VIEW_TAG 1
+#define MODIFICATION_ALERT_VIEW_TAG 2
 
 NSString *const kSTIPoCSegueEmbedOrdersTableViewController = @"OrdersTableViewControllerEmbedSegue";
 
@@ -80,12 +85,59 @@ static NSString *const kSTIPoCSegueModalOrderDetailViewController = @"OrderDetai
 - (void)ordersTableViewControllerFinishedLoadingOrdersFromServer
 {
     [MRProgressOverlayView dismissAllOverlaysForView:self.navigationController.view animated:YES];
+    [self.ordersTableViewController endRefreshing];
+}
+
+- (void)ordersTableViewControllerRequestedOrdersRefreshFromServer
+{
+    [self.ordersTableViewController refreshDataFromServer];
 }
 
 - (void)ordersTableViewControllerDidSelectOrder:(OrderSummary *)orderSummary
 {
     self.selectedOrderSummary = orderSummary;
     [self performSegueWithIdentifier:kSTIPoCSegueModalOrderDetailViewController sender:self];
+}
+
+#pragma mark -
+#pragma mark Order Detail View Controller Protocols
+
+- (void)orderDetailViewControllerModifiedOrder:(OrderSummary *)orderSummary
+{
+    self.selectedOrderSummary = orderSummary;
+    UIAlertView *alertView = [[AlertViewFactory sharedFactory] createConfirmationAlertViewWithTitle:NSLocalizedString(@"Orders update", nil)
+                                                                                            message:NSLocalizedString(@"Your order is about to be updated. Please tap OK to proceed.", nil)
+                                                                                        andDelegate:self];
+    alertView.tag = MODIFICATION_ALERT_VIEW_TAG;
+    [alertView show];
+}
+
+- (void)orderDetailViewControllerRejectedOrder:(OrderSummary *)orderSummary
+{
+    self.selectedOrderSummary = orderSummary;
+    UIAlertView *alertView = [[AlertViewFactory sharedFactory] createOrderRejectionAlertViewWithDelegate:self];
+    alertView.tag = REJECTION_ALERT_VIEW_TAG;
+    [alertView show];
+}
+
+#pragma mark -
+#pragma mark Alert View Protocols
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == ALERT_VIEW_CANCEL_INDEX) {
+        [self performSegueWithIdentifier:kSTIPoCSegueModalOrderDetailViewController sender:self];
+    }
+    else {
+        if (alertView.tag == REJECTION_ALERT_VIEW_TAG) {
+            int a = 0;
+            a--;
+        }
+        else {
+            int a = 0;
+            a--;
+        }
+    }
 }
 
 #pragma mark -
@@ -99,11 +151,6 @@ static NSString *const kSTIPoCSegueModalOrderDetailViewController = @"OrderDetai
     else {
         [self.slidingViewController anchorTopViewToRightAnimated:YES];
     }
-}
-
-- (IBAction)refreshButtonTapped:(UIBarButtonItem *)sender
-{
-    [self.ordersTableViewController refreshDataFromServer];
 }
 
 @end

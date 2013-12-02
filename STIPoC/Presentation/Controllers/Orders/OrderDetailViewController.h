@@ -14,6 +14,9 @@
 
 @protocol OrderDetailViewControllerDelegate <NSObject>
 
+- (void)orderDetailViewControllerModifiedOrder:(OrderSummary *)orderSummary;
+- (void)orderDetailViewControllerRejectedOrder:(OrderSummary *)orderSummary;
+
 @end
 
 @interface OrderDetailViewController : GenericViewController<OrderDetailTableViewControllerDelegate>

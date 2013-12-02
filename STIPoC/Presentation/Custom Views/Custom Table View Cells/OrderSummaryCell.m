@@ -13,7 +13,7 @@
 
 @implementation OrderSummaryCell
 
-- (void)setupOrderSummaryCellWithOrderSummary:(OrderSummary *)orderSummary andPriceType:(PriceType)priceType
+- (void)setupWithOrderSummary:(OrderSummary *)orderSummary andPriceType:(PriceType)priceType
 {
     // Order number attributed text
     

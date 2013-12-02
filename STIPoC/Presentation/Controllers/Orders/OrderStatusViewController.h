@@ -10,9 +10,8 @@
 #import "OrdersTableViewController.h"
 #import "OrderDetailViewController.h"
 
-@interface OrderStatusViewController : GenericViewController<OrdersTableViewControllerDelegate, OrderDetailViewControllerDelegate>
+@interface OrderStatusViewController : GenericViewController<OrdersTableViewControllerDelegate, OrderDetailViewControllerDelegate, UIAlertViewDelegate>
 
 - (IBAction)menuButtonTapped:(UIBarButtonItem *)sender;
-- (IBAction)refreshButtonTapped:(UIBarButtonItem *)sender;
 
 @end

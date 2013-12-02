@@ -15,7 +15,7 @@ extern NSString *const kSTIPoCSelfServiceGenericUserId;
 extern NSString *const kSTIPoCSelfServiceGenericUserName;
 extern NSString *const kSTIPoCSelfServiceGenericModifiedBy;
 
-@interface OrderSummary : NSObject
+@interface OrderSummary : NSObject <NSCopying>
 
 @property (strong, nonatomic) NSString *OrderId;
 @property (strong, nonatomic) NSString *OrderNumber;
@@ -32,5 +32,6 @@ extern NSString *const kSTIPoCSelfServiceGenericModifiedBy;
 
 - (void)setAttributesWithGetOrderResult:(GetOrderResult *)result;
 - (void)setAttributesWithOrderSummary:(OrderSummary *)orderSummary;
+
 
 @end

@@ -14,6 +14,7 @@
 
 - (void)ordersTableViewControllerStartedLoadingOrdersFromServer;
 - (void)ordersTableViewControllerFinishedLoadingOrdersFromServer;
+- (void)ordersTableViewControllerRequestedOrdersRefreshFromServer;
 - (void)ordersTableViewControllerDidSelectOrder:(OrderSummary *)orderSummary;
 
 @end
@@ -30,5 +31,8 @@
 
 - (void)reloadTableView;
 - (void)refreshDataFromServer;
+
+- (void)pulledToRefresh:(UIRefreshControl *)refreshControl;
+- (void)endRefreshing;
 
 @end
