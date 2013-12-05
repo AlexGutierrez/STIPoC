@@ -40,8 +40,7 @@ static NSString *const kSTIPoCOrderSummaryCellRejectText = @"Reject";
     self.tableView.editing = YES;
     
     [self.tableView addSubview:self.refreshControl];
-    
-    
+
     if ([self.delegate respondsToSelector:@selector(ordersTableViewControllerRequestedFirstOrdersLoadFromServer)]) {
         [self.delegate ordersTableViewControllerRequestedFirstOrdersLoadFromServer];
     }
@@ -158,6 +157,17 @@ static NSString *const kSTIPoCOrderSummaryCellRejectText = @"Reject";
 
 - (void)pulledToRefresh:(UIRefreshControl *)refreshControl
 {
+    /*
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+        long long a = 0;
+        for (long long i = 0; i < 100000000000; i++) {
+            a++;
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [refreshControl endRefreshing];
+        });
+    });*/
+    
     if ([self.delegate respondsToSelector:@selector(ordersTableViewControllerRequestedOrdersRefreshFromServer)]) {
         [self.delegate ordersTableViewControllerRequestedOrdersRefreshFromServer];
     }
