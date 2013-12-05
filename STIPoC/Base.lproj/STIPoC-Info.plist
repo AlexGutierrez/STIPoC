@@ -27,9 +27,7 @@
 	<key>UIMainStoryboardFile~ipad</key>
 	<string>Storyboard</string>
 	<key>UIRequiredDeviceCapabilities</key>
-	<array>
-		<string></string>
-	</array>
+	<array/>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
