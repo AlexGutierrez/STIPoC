@@ -35,10 +35,13 @@
 @property (weak, nonatomic) id<OrdersTableViewControllerDelegate> delegate;
 
 - (void)changeFilterWithPriceType:(PriceType)priceType;
-
 - (void)reloadTableViews;
-
-- (void)pulledToRefresh:(UIRefreshControl *)refreshControl;
 - (void)hideSearchDisplayController;
+
+- (void)addPullToRefreshView;
+- (void)removePullToRefreshView;
+
+- (void)addRefreshControl;
+- (void)removeRefreshControl;
 
 @end

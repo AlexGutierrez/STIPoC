@@ -111,17 +111,18 @@ static NSString *const kSTIPoCSegueModalOrderDetailViewController = @"OrderDetai
     NSInteger pageSize = (self.ordersTableViewController.orders.count > 0)? self.ordersTableViewController.orders.count : ORDERS_PAGE_SIZE;
 
     self.requestCounter++;
+    
+    [self.ordersTableViewController removePullToRefreshView];
+    
     [[SelfService sharedInstance] getOrdersWithPageSize:pageSize
                                              pageNumber:1
                                         completionBlock:^(NSArray *orders) {
                                             self.requestCounter--;
                                             [self requestOrderDetailsForOrders:orders replace:YES];
-                                            
                                         } andFailureBlock:^(NSError *error) {
                                             [self dismissOverlay];
-                                            
                                             [self.ordersTableViewController.refreshControl endRefreshing];
-                                            
+                                            [self.ordersTableViewController addPullToRefreshView];
                                             self.requestCounter--;
                                             UIAlertView *alertView = [[AlertViewFactory sharedFactory] createAlertViewWithError:error];
                                             [alertView show];
@@ -132,17 +133,17 @@ static NSString *const kSTIPoCSegueModalOrderDetailViewController = @"OrderDetai
 {
     NSInteger pageNumber = self.ordersTableViewController.lastPageLoaded + 1;
     self.requestCounter++;
+    [self.ordersTableViewController removeRefreshControl];
+    
     [[SelfService sharedInstance] getOrdersWithPageSize:ORDERS_PAGE_SIZE
                                              pageNumber:pageNumber
                                         completionBlock:^(NSArray *orders) {
                                             self.requestCounter--;
                                             [self requestOrderDetailsForOrders:orders replace:NO];
-                                            
                                         } andFailureBlock:^(NSError *error) {
                                             [self dismissOverlay];
-                                            
                                             [self.ordersTableViewController.refreshControl endRefreshing];
-                                            
+                                            [self.ordersTableViewController addRefreshControl];
                                             self.requestCounter--;
                                             UIAlertView *alertView = [[AlertViewFactory sharedFactory] createAlertViewWithError:error];
                                             [alertView show];
@@ -274,6 +275,7 @@ static NSString *const kSTIPoCSegueModalOrderDetailViewController = @"OrderDetai
                                                              if (replace) {
                                                                  self.ordersTableViewController.orders = [orders mutableCopy];
                                                                  [self.ordersTableViewController reloadTableViews];
+                                                                 [self.ordersTableViewController addPullToRefreshView];
                                                              }
                                                              else {
                                                                  NSMutableArray *currentOrders = self.ordersTableViewController.orders;
@@ -281,6 +283,8 @@ static NSString *const kSTIPoCSegueModalOrderDetailViewController = @"OrderDetai
                                                                  for (int row = currentOrders.count; row < currentOrders.count + orders.count; row++) {
                                                                      [indexPaths addObject:[NSIndexPath indexPathForRow:row inSection:0]];
                                                                  }
+                                                                 
+                                                                 [self.ordersTableViewController addRefreshControl];
                                                                  
                                                                  [currentOrders addObjectsFromArray:orders];
                                                                  [self.ordersTableViewController.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
@@ -295,9 +299,11 @@ static NSString *const kSTIPoCSegueModalOrderDetailViewController = @"OrderDetai
                                                              
                                                              if (replace) {
                                                                  [self.ordersTableViewController.refreshControl endRefreshing];
+                                                                 [self.ordersTableViewController addPullToRefreshView];
                                                              }
                                                              else {
                                                                  [self.ordersTableViewController.tableView.pullToRefreshView stopAnimating];
+                                                                 [self.ordersTableViewController addRefreshControl];
                                                              }
                                                              
                                                              [[SelfService sharedInstance] stopAllOperations];

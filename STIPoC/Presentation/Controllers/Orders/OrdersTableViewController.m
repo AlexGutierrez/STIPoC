@@ -22,6 +22,8 @@
 
 @property (nonatomic) PriceType priceType;
 
+- (void)pulledToRefresh:(UIRefreshControl *)refreshControl;
+
 @end
 
 static NSString *const kSTIPoCOrderSummaryCellIdentifier = @"OrderSummaryCell";
@@ -39,14 +41,15 @@ static NSString *const kSTIPoCOrderSummaryCellRejectText = @"Reject";
     self.requestCounter = 0;
     //self.tableView.editing = YES;
     
-    [self.tableView addSubview:self.refreshControl];
-
     [self.tableView addPullToRefreshWithActionHandler:^{
         if ([self.delegate respondsToSelector:@selector(ordersTableViewControllerRequestedMoreOrdersFromServer)]) {
             [self.delegate ordersTableViewControllerRequestedMoreOrdersFromServer];
         }
     } position:SVPullToRefreshPositionBottom];
     
+    [self addRefreshControl];
+    [self addPullToRefreshView];
+
     if ([self.delegate respondsToSelector:@selector(ordersTableViewControllerRequestedFirstOrdersLoadFromServer)]) {
         [self.delegate ordersTableViewControllerRequestedFirstOrdersLoadFromServer];
     }
@@ -209,6 +212,26 @@ static NSString *const kSTIPoCOrderSummaryCellRejectText = @"Reject";
 - (void)hideSearchDisplayController
 {
     [self.searchDisplayController setActive:NO animated:YES];
+}
+
+- (void)addPullToRefreshView
+{
+    self.tableView.showsPullToRefresh = YES;
+}
+
+- (void)removePullToRefreshView
+{
+    self.tableView.showsPullToRefresh = NO;
+}
+
+- (void)addRefreshControl
+{
+    [self.tableView addSubview:self.refreshControl];
+}
+
+- (void)removeRefreshControl
+{
+    [self.refreshControl removeFromSuperview];
 }
 
 @end

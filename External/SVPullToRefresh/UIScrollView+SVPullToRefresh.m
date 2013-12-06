@@ -122,7 +122,7 @@ static char UIScrollViewPullToRefreshView;
             [self removeObserver:self.pullToRefreshView forKeyPath:@"contentOffset"];
             [self removeObserver:self.pullToRefreshView forKeyPath:@"contentSize"];
             [self removeObserver:self.pullToRefreshView forKeyPath:@"frame"];
-            [self.pullToRefreshView resetScrollViewContentInset];
+            //[self.pullToRefreshView resetScrollViewContentInset];
             self.pullToRefreshView.isObserving = NO;
         }
     }
