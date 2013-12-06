@@ -193,6 +193,11 @@ static NSString *const kSTIPoCSegueModalOrderDetailViewController = @"OrderDetai
 #pragma mark -
 #pragma mark Order Detail View Controller Protocols
 
+- (void)orderDetailViewControllerWasDismissed
+{
+    self.selectedOrderSummary = nil;
+}
+
 - (void)orderDetailViewControllerModifiedOrder:(OrderSummary *)orderSummary
 {
     self.selectedOrderSummary = orderSummary;

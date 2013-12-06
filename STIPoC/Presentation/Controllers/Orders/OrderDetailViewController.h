@@ -14,6 +14,7 @@
 
 @protocol OrderDetailViewControllerDelegate <NSObject>
 
+- (void)orderDetailViewControllerWasDismissed;
 - (void)orderDetailViewControllerModifiedOrder:(OrderSummary *)orderSummary;
 - (void)orderDetailViewControllerRejectedOrder:(OrderSummary *)orderSummary;
 

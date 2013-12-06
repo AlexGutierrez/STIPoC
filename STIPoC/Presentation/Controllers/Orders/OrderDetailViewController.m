@@ -160,7 +160,11 @@ static NSString *const kSTIPoCSegueEmbedOrderDetailTableViewController = @"Order
 
 - (IBAction)dismissModal:(UIBarButtonItem *)sender
 {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:YES completion:^{
+        if ([self.delegate respondsToSelector:@selector(orderDetailViewControllerWasDismissed)]) {
+            [self.delegate orderDetailViewControllerWasDismissed];
+        }
+    }];
 }
 
 - (IBAction)saveOrder:(UIBarButtonItem *)sender
