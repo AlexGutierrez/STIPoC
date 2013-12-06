@@ -18,6 +18,7 @@
 #define ALERT_VIEW_CANCEL_INDEX 0
 #define REJECTION_ALERT_VIEW_TAG 1
 #define MODIFICATION_ALERT_VIEW_TAG 2
+#define ORDERS_PAGE_SIZE 15
 
 NSString *const kSTIPoCSegueEmbedOrdersTableViewController = @"OrdersTableViewControllerEmbedSegue";
 
@@ -34,7 +35,7 @@ static NSString *const kSTIPoCSegueModalOrderDetailViewController = @"OrderDetai
 @property (strong, nonatomic) OrderSummary *selectedOrderSummary;
 @property (strong, nonatomic) OrderSummary *rejectedOrderSummary;
 
-- (void)requestOrderDetailsForOrders:(NSArray *)orders;
+- (void)requestOrderDetailsForOrders:(NSArray *)orders replace:(BOOL)replace;
 - (void)showOverlayWithMessage:(NSString *)message;
 - (void)dismissOverlay;
 
@@ -51,6 +52,7 @@ static NSString *const kSTIPoCSegueModalOrderDetailViewController = @"OrderDetai
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.slidingViewController.delegate = self.zoomTransitionController;
     [self.navigationController.view addGestureRecognizer:self.slidingViewController.panGesture];
+    self.slidingViewController.topViewAnchoredGesture = ECSlidingViewControllerAnchoredGestureTapping | ECSlidingViewControllerAnchoredGesturePanning;
 }
 
 #pragma mark -
@@ -87,17 +89,16 @@ static NSString *const kSTIPoCSegueModalOrderDetailViewController = @"OrderDetai
 {
     [self showOverlayWithMessage:NSLocalizedString(@"Loading...", nil)];
     
-    self.ordersTableViewController.lastPageLoaded = 0;
     self.requestCounter++;
-    [[SelfService sharedInstance] getOrdersWithPageSize:30
-                                             pageNumber:self.ordersTableViewController.lastPageLoaded + 1
+    [[SelfService sharedInstance] getOrdersWithPageSize:ORDERS_PAGE_SIZE
+                                             pageNumber:1
                                         completionBlock:^(NSArray *orders) {
                                             self.requestCounter--;
-                                            [self requestOrderDetailsForOrders:orders];
+                                            [self requestOrderDetailsForOrders:orders replace:YES];
                                 
                                         } andFailureBlock:^(NSError *error) {
                                             [self dismissOverlay];
-                                            [self.ordersTableViewController endRefreshing];
+                                            [self.ordersTableViewController.refreshControl endRefreshing];
                                             
                                             self.requestCounter--;
                                             UIAlertView *alertView = [[AlertViewFactory sharedFactory] createAlertViewWithError:error];
@@ -107,19 +108,40 @@ static NSString *const kSTIPoCSegueModalOrderDetailViewController = @"OrderDetai
 
 - (void)ordersTableViewControllerRequestedOrdersRefreshFromServer
 {
-    NSInteger pageSize = (self.ordersTableViewController.orders.count > 0)? self.ordersTableViewController.orders.count : 30;
-    self.ordersTableViewController.lastPageLoaded = 0;
+    NSInteger pageSize = (self.ordersTableViewController.orders.count > 0)? self.ordersTableViewController.orders.count : ORDERS_PAGE_SIZE;
+
     self.requestCounter++;
     [[SelfService sharedInstance] getOrdersWithPageSize:pageSize
-                                             pageNumber:self.ordersTableViewController.lastPageLoaded + 1
+                                             pageNumber:1
                                         completionBlock:^(NSArray *orders) {
                                             self.requestCounter--;
-                                            [self requestOrderDetailsForOrders:orders];
+                                            [self requestOrderDetailsForOrders:orders replace:YES];
                                             
                                         } andFailureBlock:^(NSError *error) {
                                             [self dismissOverlay];
                                             
-                                            [self.ordersTableViewController endRefreshing];
+                                            [self.ordersTableViewController.refreshControl endRefreshing];
+                                            
+                                            self.requestCounter--;
+                                            UIAlertView *alertView = [[AlertViewFactory sharedFactory] createAlertViewWithError:error];
+                                            [alertView show];
+                                        }];
+}
+
+- (void)ordersTableViewControllerRequestedMoreOrdersFromServer
+{
+    NSInteger pageNumber = self.ordersTableViewController.lastPageLoaded + 1;
+    self.requestCounter++;
+    [[SelfService sharedInstance] getOrdersWithPageSize:ORDERS_PAGE_SIZE
+                                             pageNumber:pageNumber
+                                        completionBlock:^(NSArray *orders) {
+                                            self.requestCounter--;
+                                            [self requestOrderDetailsForOrders:orders replace:NO];
+                                            
+                                        } andFailureBlock:^(NSError *error) {
+                                            [self dismissOverlay];
+                                            
+                                            [self.ordersTableViewController.refreshControl endRefreshing];
                                             
                                             self.requestCounter--;
                                             UIAlertView *alertView = [[AlertViewFactory sharedFactory] createAlertViewWithError:error];
@@ -236,7 +258,7 @@ static NSString *const kSTIPoCSegueModalOrderDetailViewController = @"OrderDetai
 #pragma mark -
 #pragma mark Private Methods
 
-- (void)requestOrderDetailsForOrders:(NSArray *)orders
+- (void)requestOrderDetailsForOrders:(NSArray *)orders replace:(BOOL)replace
 {
     for (OrderSummary *orderSummary in orders) {
         self.requestCounter++;
@@ -245,19 +267,38 @@ static NSString *const kSTIPoCSegueModalOrderDetailViewController = @"OrderDetai
                                                          self.requestCounter--;
                                                          [orderSummary setAttributesWithOrderSummary:detailedOrderSummary];
                                                          if (self.requestCounter <= 0) {
-                                                             [self.ordersTableViewController endRefreshing];
                                                              
+                                                             [self.ordersTableViewController.refreshControl endRefreshing];
                                                              [self dismissOverlay];
                                                              
-                                                             self.ordersTableViewController.lastPageLoaded++;
+                                                             if (replace) {
+                                                                 self.ordersTableViewController.orders = [orders mutableCopy];
+                                                                 [self.ordersTableViewController reloadTableViews];
+                                                             }
+                                                             else {
+                                                                 NSMutableArray *currentOrders = self.ordersTableViewController.orders;
+                                                                 NSMutableArray *indexPaths = [NSMutableArray array];
+                                                                 for (int row = currentOrders.count; row < currentOrders.count + orders.count; row++) {
+                                                                     [indexPaths addObject:[NSIndexPath indexPathForRow:row inSection:0]];
+                                                                 }
+                                                                 
+                                                                 [currentOrders addObjectsFromArray:orders];
+                                                                 [self.ordersTableViewController.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
+                                                                 [self.ordersTableViewController.tableView.pullToRefreshView stopAnimating];
+                                                             }
                                                              
-                                                             self.ordersTableViewController.orders = [orders mutableCopy];
-                                                             [self.ordersTableViewController reloadTableViews];
+                                                             self.ordersTableViewController.lastPageLoaded = ((self.ordersTableViewController.orders.count * 1.0) / ORDERS_PAGE_SIZE);
                                                          }
                                                      }
                                                      andFailureBlock:^(NSError *error) {
                                                          if (self.requestCounter > 0) {
-                                                             [self.ordersTableViewController endRefreshing];
+                                                             
+                                                             if (replace) {
+                                                                 [self.ordersTableViewController.refreshControl endRefreshing];
+                                                             }
+                                                             else {
+                                                                 [self.ordersTableViewController.tableView.pullToRefreshView stopAnimating];
+                                                             }
                                                              
                                                              [[SelfService sharedInstance] stopAllOperations];
                                                              self.requestCounter = 0;

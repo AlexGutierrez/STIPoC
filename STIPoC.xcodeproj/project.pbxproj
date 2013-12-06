@@ -38,6 +38,8 @@
 		7AB07C5D184972EA001265E0 /* MRProgressOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB07C4F184972EA001265E0 /* MRProgressOverlayView.m */; };
 		7AB07C5E184972EA001265E0 /* MRMessageInterceptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB07C53184972EA001265E0 /* MRMessageInterceptor.m */; };
 		7AB07C5F184972EA001265E0 /* MRWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB07C56184972EA001265E0 /* MRWeakProxy.m */; };
+		7AC68BAB185219DE0019A5A8 /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC68BA8185219DE0019A5A8 /* UIScrollView+SVInfiniteScrolling.m */; };
+		7AC68BAC185219DE0019A5A8 /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC68BAA185219DE0019A5A8 /* UIScrollView+SVPullToRefresh.m */; };
 		7C1168A118455EE300334AF9 /* XCDFormInputAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1168A018455EE300334AF9 /* XCDFormInputAccessoryView.m */; };
 		7C13C813183A633800C12C54 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7C2A35E11832A8E7004AE430 /* InfoPlist.strings */; };
 		7C13C814183A633D00C12C54 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C2A35C21832A7CE004AE430 /* Storyboard.storyboard */; };
@@ -146,11 +148,6 @@
 		7C958452183ACF4E0065C878 /* SSKeychain.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7C95844C183ACF4E0065C878 /* SSKeychain.strings */; };
 		7C958453183ACF4E0065C878 /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C95844F183ACF4E0065C878 /* SSKeychain.m */; };
 		7C958454183ACF4E0065C878 /* SSKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C958451183ACF4E0065C878 /* SSKeychainQuery.m */; };
-		7C9D6BCA1845008D0018E0E4 /* MNMBottomPullToRefresh.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7C9D6BC31845008D0018E0E4 /* MNMBottomPullToRefresh.strings */; };
-		7C9D6BCB1845008D0018E0E4 /* MNMBottomPullToRefreshArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C9D6BC41845008D0018E0E4 /* MNMBottomPullToRefreshArrow.png */; };
-		7C9D6BCC1845008D0018E0E4 /* MNMBottomPullToRefreshArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C9D6BC51845008D0018E0E4 /* MNMBottomPullToRefreshArrow@2x.png */; };
-		7C9D6BCD1845008D0018E0E4 /* MNMBottomPullToRefreshManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C9D6BC71845008D0018E0E4 /* MNMBottomPullToRefreshManager.m */; };
-		7C9D6BCE1845008D0018E0E4 /* MNMBottomPullToRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C9D6BC91845008D0018E0E4 /* MNMBottomPullToRefreshView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -231,6 +228,11 @@
 		7AB07C54184972EA001265E0 /* MRProgressHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRProgressHelper.h; sourceTree = "<group>"; };
 		7AB07C55184972EA001265E0 /* MRWeakProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRWeakProxy.h; sourceTree = "<group>"; };
 		7AB07C56184972EA001265E0 /* MRWeakProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRWeakProxy.m; sourceTree = "<group>"; };
+		7AC68BA6185219DE0019A5A8 /* SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVPullToRefresh.h; sourceTree = "<group>"; };
+		7AC68BA7185219DE0019A5A8 /* UIScrollView+SVInfiniteScrolling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVInfiniteScrolling.h"; sourceTree = "<group>"; };
+		7AC68BA8185219DE0019A5A8 /* UIScrollView+SVInfiniteScrolling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVInfiniteScrolling.m"; sourceTree = "<group>"; };
+		7AC68BA9185219DE0019A5A8 /* UIScrollView+SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVPullToRefresh.h"; sourceTree = "<group>"; };
+		7AC68BAA185219DE0019A5A8 /* UIScrollView+SVPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVPullToRefresh.m"; sourceTree = "<group>"; };
 		7C11689F18455EE300334AF9 /* XCDFormInputAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCDFormInputAccessoryView.h; sourceTree = "<group>"; };
 		7C1168A018455EE300334AF9 /* XCDFormInputAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCDFormInputAccessoryView.m; sourceTree = "<group>"; };
 		7C1A985E1847990F0045ED8C /* ECPercentDrivenInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECPercentDrivenInteractiveTransition.h; sourceTree = "<group>"; };
@@ -435,13 +437,6 @@
 		7C95844F183ACF4E0065C878 /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
 		7C958450183ACF4E0065C878 /* SSKeychainQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychainQuery.h; sourceTree = "<group>"; };
 		7C958451183ACF4E0065C878 /* SSKeychainQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychainQuery.m; sourceTree = "<group>"; };
-		7C9D6BC31845008D0018E0E4 /* MNMBottomPullToRefresh.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = MNMBottomPullToRefresh.strings; sourceTree = "<group>"; };
-		7C9D6BC41845008D0018E0E4 /* MNMBottomPullToRefreshArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MNMBottomPullToRefreshArrow.png; sourceTree = "<group>"; };
-		7C9D6BC51845008D0018E0E4 /* MNMBottomPullToRefreshArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MNMBottomPullToRefreshArrow@2x.png"; sourceTree = "<group>"; };
-		7C9D6BC61845008D0018E0E4 /* MNMBottomPullToRefreshManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNMBottomPullToRefreshManager.h; sourceTree = "<group>"; };
-		7C9D6BC71845008D0018E0E4 /* MNMBottomPullToRefreshManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNMBottomPullToRefreshManager.m; sourceTree = "<group>"; };
-		7C9D6BC81845008D0018E0E4 /* MNMBottomPullToRefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNMBottomPullToRefreshView.h; sourceTree = "<group>"; };
-		7C9D6BC91845008D0018E0E4 /* MNMBottomPullToRefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNMBottomPullToRefreshView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -625,6 +620,18 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		7AC68BA5185219DE0019A5A8 /* SVPullToRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				7AC68BA6185219DE0019A5A8 /* SVPullToRefresh.h */,
+				7AC68BA7185219DE0019A5A8 /* UIScrollView+SVInfiniteScrolling.h */,
+				7AC68BA8185219DE0019A5A8 /* UIScrollView+SVInfiniteScrolling.m */,
+				7AC68BA9185219DE0019A5A8 /* UIScrollView+SVPullToRefresh.h */,
+				7AC68BAA185219DE0019A5A8 /* UIScrollView+SVPullToRefresh.m */,
+			);
+			path = SVPullToRefresh;
+			sourceTree = "<group>";
+		};
 		7C11689E18455EE300334AF9 /* XCDFormInputAccessoryView */ = {
 			isa = PBXGroup;
 			children = (
@@ -762,13 +769,13 @@
 		7C2A350A1832A734004AE430 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				7AC68BA5185219DE0019A5A8 /* SVPullToRefresh */,
 				7AB07C3E184972E9001265E0 /* MRProgress */,
 				7C2A357E1832A7AD004AE430 /* AFNetworking */,
 				7C1A985D1847990F0045ED8C /* ECSlidingViewController */,
 				7C2A350B1832A734004AE430 /* Lumberjack */,
 				7C2A351B1832A734004AE430 /* Magical Record */,
 				7C1F23F21836D3F500E90145 /* MDRadialProgress */,
-				7C9D6BC21845008D0018E0E4 /* MNMBottomPullToRefresh */,
 				7C363CAC183FB35000003723 /* NSObject-ObjectMap */,
 				7A98231D183552DE00CB0BA5 /* OCMock */,
 				7C95844B183ACF4E0065C878 /* SSKeychain */,
@@ -1246,20 +1253,6 @@
 			path = SSKeychain;
 			sourceTree = "<group>";
 		};
-		7C9D6BC21845008D0018E0E4 /* MNMBottomPullToRefresh */ = {
-			isa = PBXGroup;
-			children = (
-				7C9D6BC31845008D0018E0E4 /* MNMBottomPullToRefresh.strings */,
-				7C9D6BC41845008D0018E0E4 /* MNMBottomPullToRefreshArrow.png */,
-				7C9D6BC51845008D0018E0E4 /* MNMBottomPullToRefreshArrow@2x.png */,
-				7C9D6BC61845008D0018E0E4 /* MNMBottomPullToRefreshManager.h */,
-				7C9D6BC71845008D0018E0E4 /* MNMBottomPullToRefreshManager.m */,
-				7C9D6BC81845008D0018E0E4 /* MNMBottomPullToRefreshView.h */,
-				7C9D6BC91845008D0018E0E4 /* MNMBottomPullToRefreshView.m */,
-			);
-			path = MNMBottomPullToRefresh;
-			sourceTree = "<group>";
-		};
 		7C9D6BCF184501B20018E0E4 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -1361,12 +1354,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C958452183ACF4E0065C878 /* SSKeychain.strings in Resources */,
-				7C9D6BCB1845008D0018E0E4 /* MNMBottomPullToRefreshArrow.png in Resources */,
 				7C13C815183A634B00C12C54 /* Localizable.strings in Resources */,
-				7C9D6BCC1845008D0018E0E4 /* MNMBottomPullToRefreshArrow@2x.png in Resources */,
 				7C13C814183A633D00C12C54 /* Storyboard.storyboard in Resources */,
 				7C13C813183A633800C12C54 /* InfoPlist.strings in Resources */,
-				7C9D6BCA1845008D0018E0E4 /* MNMBottomPullToRefresh.strings in Resources */,
 				7C2A34971832A6EB004AE430 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1398,6 +1388,7 @@
 				7C958448183AC4580065C878 /* SessionsService.m in Sources */,
 				7C8A3510183D109400802B89 /* User+CustomAccessors.m in Sources */,
 				7C1A986E1847990F0045ED8C /* ECSlidingSegue.m in Sources */,
+				7AC68BAB185219DE0019A5A8 /* UIScrollView+SVInfiniteScrolling.m in Sources */,
 				7C1A986F1847990F0045ED8C /* ECSlidingViewController.m in Sources */,
 				7AA569FE18491F480095C98A /* SelfService.m in Sources */,
 				7C363C98183FA7CA00003723 /* GetOrderRequest.m in Sources */,
@@ -1406,7 +1397,6 @@
 				7C1A986C1847990F0045ED8C /* ECSlidingAnimationController.m in Sources */,
 				7C1A98791847A0CF0045ED8C /* ECFoldAnimationController.m in Sources */,
 				7A5342FC184BC49C00FE9C54 /* OrderDetailTableViewController.m in Sources */,
-				7C9D6BCD1845008D0018E0E4 /* MNMBottomPullToRefreshManager.m in Sources */,
 				7C363CA5183FAB5900003723 /* GenericSelfServiceResult.m in Sources */,
 				7AA569F71848F2950095C98A /* UpdateOrderStatusResult.m in Sources */,
 				7C958454183ACF4E0065C878 /* SSKeychainQuery.m in Sources */,
@@ -1468,9 +1458,9 @@
 				7C2A35D51832A7CE004AE430 /* LoggingHelper.m in Sources */,
 				7C956A081843A5E6000A5595 /* ModifyOrderDetailsXMLParser.m in Sources */,
 				7C2A35711832A734004AE430 /* MagicalRecord+Actions.m in Sources */,
-				7C9D6BCE1845008D0018E0E4 /* MNMBottomPullToRefreshView.m in Sources */,
 				7C2A35661832A734004AE430 /* NSManagedObject+MagicalDataImport.m in Sources */,
 				7C1A98781847A0CF0045ED8C /* ECDynamicTransition.m in Sources */,
+				7AC68BAC185219DE0019A5A8 /* UIScrollView+SVPullToRefresh.m in Sources */,
 				7C2A35D21832A7CE004AE430 /* GenericService.m in Sources */,
 				7A3937FD184947D800D3CF52 /* OrderStatusViewController.m in Sources */,
 				7C2A35731832A734004AE430 /* MagicalRecord+iCloud.m in Sources */,
@@ -1667,6 +1657,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/External/OCMock/Static\\ Library/\"",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"-lxml2",
 					"-ObjC",

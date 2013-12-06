@@ -13,11 +13,11 @@
 #import "AlertViewFactory.h"
 #import "SelfServiceEnumTranslator.h"
 
+
 @interface OrdersTableViewController ()
 
 @property (nonatomic) NSInteger requestCounter;
 
-@property (strong, nonatomic) UIRefreshControl *refreshControl;
 @property (strong, nonatomic) NSMutableArray *searchResults;
 
 @property (nonatomic) PriceType priceType;
@@ -37,10 +37,16 @@ static NSString *const kSTIPoCOrderSummaryCellRejectText = @"Reject";
     [super viewDidLoad];
     
     self.requestCounter = 0;
-    self.tableView.editing = YES;
+    //self.tableView.editing = YES;
     
     [self.tableView addSubview:self.refreshControl];
 
+    [self.tableView addPullToRefreshWithActionHandler:^{
+        if ([self.delegate respondsToSelector:@selector(ordersTableViewControllerRequestedMoreOrdersFromServer)]) {
+            [self.delegate ordersTableViewControllerRequestedMoreOrdersFromServer];
+        }
+    } position:SVPullToRefreshPositionBottom];
+    
     if ([self.delegate respondsToSelector:@selector(ordersTableViewControllerRequestedFirstOrdersLoadFromServer)]) {
         [self.delegate ordersTableViewControllerRequestedFirstOrdersLoadFromServer];
     }

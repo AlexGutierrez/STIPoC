@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "PriceType.h"
+#import "SVPullToRefresh.h"
 
 @class OrderSummary;
 
@@ -15,6 +16,8 @@
 
 - (void)ordersTableViewControllerRequestedFirstOrdersLoadFromServer;
 - (void)ordersTableViewControllerRequestedOrdersRefreshFromServer;
+- (void)ordersTableViewControllerRequestedMoreOrdersFromServer;
+
 - (void)ordersTableViewControllerDidSelectOrder:(OrderSummary *)orderSummary;
 - (void)ordersTableViewControllerRequestedRejectionForOrder:(OrderSummary *)orderSummary;
 
@@ -23,6 +26,8 @@
 @interface OrdersTableViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic) NSInteger lastPageLoaded;
+
+@property (strong, nonatomic) UIRefreshControl *refreshControl;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -34,7 +39,6 @@
 - (void)reloadTableViews;
 
 - (void)pulledToRefresh:(UIRefreshControl *)refreshControl;
-- (void)endRefreshing;
 - (void)hideSearchDisplayController;
 
 @end
