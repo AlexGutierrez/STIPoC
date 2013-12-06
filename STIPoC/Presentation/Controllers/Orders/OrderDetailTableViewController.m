@@ -29,7 +29,7 @@ static NSString *const kSTIPoCOrderSummaryCellRejectText = @"Remove";
 {
     [super viewDidLoad];
     
-    //self.tableView.editing = YES;
+    self.tableView.editing = YES;
 }
 
 #pragma mark - 

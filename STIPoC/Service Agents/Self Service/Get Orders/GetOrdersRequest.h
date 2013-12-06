@@ -22,6 +22,7 @@
 + (instancetype)newRequestWithCustomerId:(NSString *)customerId
                           customerIdType:(CustomerIdType)customerIdType
                                 pageSize:(NSInteger)pageSize
-                              pageNumber:(NSInteger)pageNumber;
+                              pageNumber:(NSInteger)pageNumber
+                             orderNumber:(NSString *)orderNumber;
 
 @end

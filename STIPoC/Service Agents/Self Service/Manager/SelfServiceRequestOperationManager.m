@@ -92,10 +92,11 @@ static NSString *const kSTIPoCSelfServiceErrorUpdateOrderStatusDomain = @"Update
 
 - (void)startGetOrdersRequestOperationWithPageSize:(NSInteger)pageSize
                                         pageNumber:(NSInteger)pageNumber
+                                       orderNumber:(NSString *)orderNumber
                                    completionBlock:(void(^)(NSArray *orders))completion
                                    andFailureBlock:(void(^)(NSError *internalError))failure
 {
-    getOrdersRequest *request = [getOrdersRequest newRequestWithCustomerId:kSTIPoCSelfServiceLegoCustomerInstanceId customerIdType:CustomerIdTypeInstanceId pageSize:pageSize pageNumber:pageNumber];
+    getOrdersRequest *request = [getOrdersRequest newRequestWithCustomerId:kSTIPoCSelfServiceLegoCustomerInstanceId customerIdType:CustomerIdTypeInstanceId pageSize:pageSize pageNumber:pageNumber orderNumber:orderNumber];
     
     NSString * getOrdersBodyXMLString = [GetOrdersXMLParser xmlStringFromGetOrdersRequest:request];
     

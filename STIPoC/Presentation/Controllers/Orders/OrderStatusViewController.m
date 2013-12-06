@@ -35,7 +35,8 @@ static NSString *const kSTIPoCSegueModalOrderDetailViewController = @"OrderDetai
 @property (strong, nonatomic) OrderSummary *selectedOrderSummary;
 @property (strong, nonatomic) OrderSummary *rejectedOrderSummary;
 
-- (void)requestOrderDetailsForOrders:(NSArray *)orders replace:(BOOL)replace;
+- (void)finishOrderDetails:(NSArray *)orders forRefresh:(BOOL)forRefresh withSearchText:(NSString *)searchText;
+- (void)requestOrderDetailsForOrders:(NSArray *)orders forRefresh:(BOOL)forRefresh withSearchText:(NSString *)searchText;
 - (void)showOverlayWithMessage:(NSString *)message;
 - (void)dismissOverlay;
 
@@ -92,9 +93,10 @@ static NSString *const kSTIPoCSegueModalOrderDetailViewController = @"OrderDetai
     self.requestCounter++;
     [[SelfService sharedInstance] getOrdersWithPageSize:ORDERS_PAGE_SIZE
                                              pageNumber:1
+                                            orderNumber:@""
                                         completionBlock:^(NSArray *orders) {
                                             self.requestCounter--;
-                                            [self requestOrderDetailsForOrders:orders replace:YES];
+                                            [self requestOrderDetailsForOrders:orders forRefresh:YES withSearchText:@""];
                                 
                                         } andFailureBlock:^(NSError *error) {
                                             [self dismissOverlay];
@@ -106,7 +108,7 @@ static NSString *const kSTIPoCSegueModalOrderDetailViewController = @"OrderDetai
                                         }];
 }
 
-- (void)ordersTableViewControllerRequestedOrdersRefreshFromServer
+- (void)ordersTableViewControllerRequestedOrdersRefreshFromServerWithSearchText:(NSString *)searchText
 {
     NSInteger pageSize = (self.ordersTableViewController.orders.count > 0)? self.ordersTableViewController.orders.count : ORDERS_PAGE_SIZE;
 
@@ -116,9 +118,10 @@ static NSString *const kSTIPoCSegueModalOrderDetailViewController = @"OrderDetai
     
     [[SelfService sharedInstance] getOrdersWithPageSize:pageSize
                                              pageNumber:1
+                                            orderNumber:searchText
                                         completionBlock:^(NSArray *orders) {
                                             self.requestCounter--;
-                                            [self requestOrderDetailsForOrders:orders replace:YES];
+                                            [self requestOrderDetailsForOrders:orders forRefresh:YES withSearchText:searchText];
                                         } andFailureBlock:^(NSError *error) {
                                             [self dismissOverlay];
                                             [self.ordersTableViewController.refreshControl endRefreshing];
@@ -129,7 +132,7 @@ static NSString *const kSTIPoCSegueModalOrderDetailViewController = @"OrderDetai
                                         }];
 }
 
-- (void)ordersTableViewControllerRequestedMoreOrdersFromServer
+- (void)ordersTableViewControllerRequestedMoreOrdersFromServerWithSearchText:(NSString *)searchText
 {
     NSInteger pageNumber = self.ordersTableViewController.lastPageLoaded + 1;
     self.requestCounter++;
@@ -137,13 +140,36 @@ static NSString *const kSTIPoCSegueModalOrderDetailViewController = @"OrderDetai
     
     [[SelfService sharedInstance] getOrdersWithPageSize:ORDERS_PAGE_SIZE
                                              pageNumber:pageNumber
+                                            orderNumber:searchText
                                         completionBlock:^(NSArray *orders) {
                                             self.requestCounter--;
-                                            [self requestOrderDetailsForOrders:orders replace:NO];
+                                            [self requestOrderDetailsForOrders:orders forRefresh:NO withSearchText:searchText];
                                         } andFailureBlock:^(NSError *error) {
                                             [self dismissOverlay];
                                             [self.ordersTableViewController.refreshControl endRefreshing];
                                             [self.ordersTableViewController addRefreshControl];
+                                            self.requestCounter--;
+                                            UIAlertView *alertView = [[AlertViewFactory sharedFactory] createAlertViewWithError:error];
+                                            [alertView show];
+                                        }];
+}
+
+- (void)ordersTableViewControllerRequestedOrdersSearchFromServerWithSearchText:(NSString *)searchText
+{
+    [self showOverlayWithMessage:NSLocalizedString(@"Searching...", nil)];
+    
+    self.requestCounter++;
+    [[SelfService sharedInstance] getOrdersWithPageSize:ORDERS_PAGE_SIZE
+                                             pageNumber:1
+                                            orderNumber:searchText
+                                        completionBlock:^(NSArray *orders) {
+                                            self.requestCounter--;
+                                            [self requestOrderDetailsForOrders:orders forRefresh:YES withSearchText:searchText];
+                                            
+                                        } andFailureBlock:^(NSError *error) {
+                                            [self dismissOverlay];
+                                            [self.ordersTableViewController.refreshControl endRefreshing];
+                                            
                                             self.requestCounter--;
                                             UIAlertView *alertView = [[AlertViewFactory sharedFactory] createAlertViewWithError:error];
                                             [alertView show];
@@ -210,7 +236,7 @@ static NSString *const kSTIPoCSegueModalOrderDetailViewController = @"OrderDetai
                                                           self.requestCounter--;
                                                           [self dismissOverlay];
                                                           [self showOverlayWithMessage:NSLocalizedString(@"Refreshing...", nil)];
-                                                          [self ordersTableViewControllerRequestedOrdersRefreshFromServer];
+                                                          [self ordersTableViewControllerRequestedOrdersRefreshFromServerWithSearchText:self.ordersTableViewController.lastSearchText];
                                                       } andFailureBlock:^(NSError *error) {
                                                           self.requestCounter--;
                                                           [self dismissOverlay];
@@ -226,7 +252,7 @@ static NSString *const kSTIPoCSegueModalOrderDetailViewController = @"OrderDetai
                                                                    self.requestCounter--;
                                                                    [self dismissOverlay];
                                                                    [self showOverlayWithMessage:NSLocalizedString(@"Refreshing...", nil)];
-                                                                   [self ordersTableViewControllerRequestedOrdersRefreshFromServer];
+                                                                   [self ordersTableViewControllerRequestedOrdersRefreshFromServerWithSearchText:self.ordersTableViewController.lastSearchText];
                                                                }
                                                                andFailureBlock:^(NSError *error) {
                                                                    self.requestCounter--;
@@ -259,8 +285,14 @@ static NSString *const kSTIPoCSegueModalOrderDetailViewController = @"OrderDetai
 #pragma mark -
 #pragma mark Private Methods
 
-- (void)requestOrderDetailsForOrders:(NSArray *)orders replace:(BOOL)replace
+- (void)requestOrderDetailsForOrders:(NSArray *)orders forRefresh:(BOOL)forRefresh withSearchText:(NSString *)searchText
 {
+    if (!orders || orders.count <= 0) {
+        
+        [self finishOrderDetails:orders forRefresh:forRefresh withSearchText:searchText];
+        return;
+    }
+    
     for (OrderSummary *orderSummary in orders) {
         self.requestCounter++;
         [[SelfService sharedInstance] getOrderDetailWithOrderSummary:orderSummary
@@ -268,36 +300,13 @@ static NSString *const kSTIPoCSegueModalOrderDetailViewController = @"OrderDetai
                                                          self.requestCounter--;
                                                          [orderSummary setAttributesWithOrderSummary:detailedOrderSummary];
                                                          if (self.requestCounter <= 0) {
-                                                             
-                                                             [self.ordersTableViewController.refreshControl endRefreshing];
-                                                             [self dismissOverlay];
-                                                             
-                                                             if (replace) {
-                                                                 self.ordersTableViewController.orders = [orders mutableCopy];
-                                                                 [self.ordersTableViewController reloadTableViews];
-                                                                 [self.ordersTableViewController addPullToRefreshView];
-                                                             }
-                                                             else {
-                                                                 NSMutableArray *currentOrders = self.ordersTableViewController.orders;
-                                                                 NSMutableArray *indexPaths = [NSMutableArray array];
-                                                                 for (int row = currentOrders.count; row < currentOrders.count + orders.count; row++) {
-                                                                     [indexPaths addObject:[NSIndexPath indexPathForRow:row inSection:0]];
-                                                                 }
-                                                                 
-                                                                 [self.ordersTableViewController addRefreshControl];
-                                                                 
-                                                                 [currentOrders addObjectsFromArray:orders];
-                                                                 [self.ordersTableViewController.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
-                                                                 [self.ordersTableViewController.tableView.pullToRefreshView stopAnimating];
-                                                             }
-                                                             
-                                                             self.ordersTableViewController.lastPageLoaded = ((self.ordersTableViewController.orders.count * 1.0) / ORDERS_PAGE_SIZE);
+                                                             [self finishOrderDetails:orders forRefresh:forRefresh withSearchText:searchText];
                                                          }
                                                      }
                                                      andFailureBlock:^(NSError *error) {
                                                          if (self.requestCounter > 0) {
                                                              
-                                                             if (replace) {
+                                                             if (forRefresh) {
                                                                  [self.ordersTableViewController.refreshControl endRefreshing];
                                                                  [self.ordersTableViewController addPullToRefreshView];
                                                              }
@@ -313,6 +322,37 @@ static NSString *const kSTIPoCSegueModalOrderDetailViewController = @"OrderDetai
                                                              [alertView show];
                                                          }
                                                      }];
+    }
+}
+
+- (void)finishOrderDetails:(NSArray *)orders forRefresh:(BOOL)forRefresh withSearchText:(NSString *)searchText
+{
+    [self.ordersTableViewController.refreshControl endRefreshing];
+    [self dismissOverlay];
+    
+    if (forRefresh) {
+        self.ordersTableViewController.orders = [orders mutableCopy];
+        [self.ordersTableViewController.tableView reloadData];
+        [self.ordersTableViewController addPullToRefreshView];
+    }
+    else {
+        NSMutableArray *currentOrders = self.ordersTableViewController.orders;
+        NSMutableArray *indexPaths = [NSMutableArray array];
+        for (int row = currentOrders.count; row < currentOrders.count + orders.count; row++) {
+            [indexPaths addObject:[NSIndexPath indexPathForRow:row inSection:0]];
+        }
+        
+        [self.ordersTableViewController addRefreshControl];
+        
+        [currentOrders addObjectsFromArray:orders];
+        [self.ordersTableViewController.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
+        [self.ordersTableViewController.tableView.pullToRefreshView stopAnimating];
+    }
+    
+    self.ordersTableViewController.lastSearchText = searchText;
+    self.ordersTableViewController.lastPageLoaded = ((self.ordersTableViewController.orders.count * 1.0) / ORDERS_PAGE_SIZE);
+    if (self.ordersTableViewController.orders.count % ORDERS_PAGE_SIZE != 0) {
+        [self.ordersTableViewController removePullToRefreshView];
     }
 }
 

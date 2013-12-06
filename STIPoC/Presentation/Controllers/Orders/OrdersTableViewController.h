@@ -15,17 +15,19 @@
 @protocol OrdersTableViewControllerDelegate <NSObject>
 
 - (void)ordersTableViewControllerRequestedFirstOrdersLoadFromServer;
-- (void)ordersTableViewControllerRequestedOrdersRefreshFromServer;
-- (void)ordersTableViewControllerRequestedMoreOrdersFromServer;
+- (void)ordersTableViewControllerRequestedOrdersRefreshFromServerWithSearchText:(NSString *)searchText;
+- (void)ordersTableViewControllerRequestedMoreOrdersFromServerWithSearchText:(NSString *)searchText;
+- (void)ordersTableViewControllerRequestedOrdersSearchFromServerWithSearchText:(NSString *)searchText;
 
 - (void)ordersTableViewControllerDidSelectOrder:(OrderSummary *)orderSummary;
 - (void)ordersTableViewControllerRequestedRejectionForOrder:(OrderSummary *)orderSummary;
 
 @end
 
-@interface OrdersTableViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
+@interface OrdersTableViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
 
 @property (nonatomic) NSInteger lastPageLoaded;
+@property (strong, nonatomic) NSString *lastSearchText;
 
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
 
@@ -35,7 +37,6 @@
 @property (weak, nonatomic) id<OrdersTableViewControllerDelegate> delegate;
 
 - (void)changeFilterWithPriceType:(PriceType)priceType;
-- (void)reloadTableViews;
 - (void)hideSearchDisplayController;
 
 - (void)addPullToRefreshView;

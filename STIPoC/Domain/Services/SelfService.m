@@ -44,12 +44,14 @@
 
 - (void)getOrdersWithPageSize:(NSInteger)pageSize
                    pageNumber:(NSInteger)pageNumber
+                  orderNumber:(NSString *)orderNumber
               completionBlock:(void(^)(NSArray *orders))completion
               andFailureBlock:(void(^)(NSError *error))failure
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         [[SelfServiceRequestOperationManager sharedManager] startGetOrdersRequestOperationWithPageSize:pageSize
                                                                                             pageNumber:pageNumber
+                                                                                           orderNumber:orderNumber
                                                                                        completionBlock:^(NSArray *orders) {
                                                                                            dispatch_async(dispatch_get_main_queue(), ^{
                                                                                                completion(orders);

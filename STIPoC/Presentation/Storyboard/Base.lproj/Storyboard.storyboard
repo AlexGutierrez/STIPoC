@@ -443,7 +443,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-22"/>
                                 <color key="sectionIndexTrackingBackgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <searchBar key="tableHeaderView" contentMode="redraw" id="MeN-7g-dmf">
+                                <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Order Number" showsCancelButton="YES" translucent="NO" id="MeN-7g-dmf">
                                     <rect key="frame" x="0.0" y="0.0" width="728" height="44"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -587,22 +587,12 @@
                     </view>
                     <toolbarItems/>
                     <connections>
-                        <outlet property="searchDisplayController" destination="ijC-iw-N3K" id="rwV-Sp-eN0"/>
                         <outlet property="tableView" destination="c62-I7-UJr" id="PoZ-zc-9lz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ppv-PF-6PD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="ijC-iw-N3K">
-                    <connections>
-                        <outlet property="delegate" destination="RGr-fL-tE6" id="Dk6-wt-YEG"/>
-                        <outlet property="searchBar" destination="MeN-7g-dmf" id="H6s-zU-GJh"/>
-                        <outlet property="searchContentsController" destination="RGr-fL-tE6" id="0Gr-7F-GgI"/>
-                        <outlet property="searchResultsDataSource" destination="RGr-fL-tE6" id="4r3-Vc-wvO"/>
-                        <outlet property="searchResultsDelegate" destination="RGr-fL-tE6" id="u5p-kC-iCS"/>
-                    </connections>
-                </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1940" y="2435"/>
+            <point key="canvasLocation" x="1940" y="2453"/>
         </scene>
         <!--Order Detail View Controller-->
         <scene sceneID="V5D-Et-2Gv">

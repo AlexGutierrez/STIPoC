@@ -17,6 +17,7 @@
                           customerIdType:(CustomerIdType)customerIdType
                                 pageSize:(NSInteger)pageSize
                               pageNumber:(NSInteger)pageNumber
+                             orderNumber:(NSString *)orderNumber
 {
     getOrdersRequest *request = [getOrdersRequest new];
     request.CustomerId = customerId;
@@ -25,7 +26,7 @@
     request.PageNumber = @(pageNumber);
     request.OrderingType = [SelfServiceEnumTranslator stringFromOrderingType:OrderingTypeDesc];
     request.OrderingFieldName = @"OrderFriendlyId";
-    request.OrderNumber = @"";
+    request.OrderNumber = orderNumber;
     
     return request;
 }

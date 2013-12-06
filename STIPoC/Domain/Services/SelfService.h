@@ -15,6 +15,7 @@
 
 - (void)getOrdersWithPageSize:(NSInteger)pageSize
                    pageNumber:(NSInteger)pageNumber
+                  orderNumber:(NSString *)orderNumber
               completionBlock:(void(^)(NSArray *orders))completion
               andFailureBlock:(void(^)(NSError *error))failure;
 
