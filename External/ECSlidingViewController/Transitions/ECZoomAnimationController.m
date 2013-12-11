@@ -74,6 +74,7 @@ static CGFloat const MEZoomAnimationScaleFactor = 0.75;
     UIView *containerView = [transitionContext containerView];
     
     UIView *topView = topViewController.view;
+    topView.frame = containerView.bounds;
     
     underLeftViewController.view.layer.transform = CATransform3DIdentity;
     
@@ -89,7 +90,7 @@ static CGFloat const MEZoomAnimationScaleFactor = 0.75;
             [self topViewAnchorRightEndState:topView anchoredFrame:[transitionContext finalFrameForViewController:topViewController]];
         } completion:^(BOOL finished) {
             if ([transitionContext transitionWasCancelled]) {
-                underLeftViewController.view.frame = [transitionContext initialFrameForViewController:underLeftViewController];
+                underLeftViewController.view.frame = [transitionContext finalFrameForViewController:underLeftViewController];
                 underLeftViewController.view.alpha = 1;
                 [self topViewStartingState:topView containerFrame:containerView.bounds];
             }

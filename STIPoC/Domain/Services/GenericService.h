@@ -24,7 +24,7 @@ static NSString *const kSTIPoCDummyCustomerName = @"Lego";
 /**
  * The dummy customer ID
  */
-static NSString *const kSTIPoCDummyCustomerID = @"30246";
+static NSString *const kSTIPoCDummyCustomerID = @"AM";
 
 /**
  * The dummy user 1 first name

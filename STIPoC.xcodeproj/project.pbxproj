@@ -40,19 +40,19 @@
 		7AB07C5F184972EA001265E0 /* MRWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB07C56184972EA001265E0 /* MRWeakProxy.m */; };
 		7AC68BAB185219DE0019A5A8 /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC68BA8185219DE0019A5A8 /* UIScrollView+SVInfiniteScrolling.m */; };
 		7AC68BAC185219DE0019A5A8 /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC68BAA185219DE0019A5A8 /* UIScrollView+SVPullToRefresh.m */; };
+		7AC68BC218528A190019A5A8 /* ECPercentDrivenInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC68BAF18528A190019A5A8 /* ECPercentDrivenInteractiveTransition.m */; };
+		7AC68BC318528A190019A5A8 /* ECSlidingAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC68BB118528A190019A5A8 /* ECSlidingAnimationController.m */; };
+		7AC68BC418528A190019A5A8 /* ECSlidingInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC68BB418528A190019A5A8 /* ECSlidingInteractiveTransition.m */; };
+		7AC68BC518528A190019A5A8 /* ECSlidingSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC68BB618528A190019A5A8 /* ECSlidingSegue.m */; };
+		7AC68BC618528A190019A5A8 /* ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC68BB818528A190019A5A8 /* ECSlidingViewController.m */; };
+		7AC68BC718528A190019A5A8 /* ECDynamicTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC68BBB18528A190019A5A8 /* ECDynamicTransition.m */; };
+		7AC68BC818528A190019A5A8 /* ECFoldAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC68BBD18528A190019A5A8 /* ECFoldAnimationController.m */; };
+		7AC68BC918528A190019A5A8 /* ECZoomAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC68BBF18528A190019A5A8 /* ECZoomAnimationController.m */; };
+		7AC68BCA18528A190019A5A8 /* UIViewController+ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC68BC118528A190019A5A8 /* UIViewController+ECSlidingViewController.m */; };
 		7C1168A118455EE300334AF9 /* XCDFormInputAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1168A018455EE300334AF9 /* XCDFormInputAccessoryView.m */; };
 		7C13C813183A633800C12C54 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7C2A35E11832A8E7004AE430 /* InfoPlist.strings */; };
 		7C13C814183A633D00C12C54 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C2A35C21832A7CE004AE430 /* Storyboard.storyboard */; };
 		7C13C815183A634B00C12C54 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7C2A35DE1832A8DE004AE430 /* Localizable.strings */; };
-		7C1A986B1847990F0045ED8C /* ECPercentDrivenInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1A985F1847990F0045ED8C /* ECPercentDrivenInteractiveTransition.m */; };
-		7C1A986C1847990F0045ED8C /* ECSlidingAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1A98611847990F0045ED8C /* ECSlidingAnimationController.m */; };
-		7C1A986D1847990F0045ED8C /* ECSlidingInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1A98641847990F0045ED8C /* ECSlidingInteractiveTransition.m */; };
-		7C1A986E1847990F0045ED8C /* ECSlidingSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1A98661847990F0045ED8C /* ECSlidingSegue.m */; };
-		7C1A986F1847990F0045ED8C /* ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1A98681847990F0045ED8C /* ECSlidingViewController.m */; };
-		7C1A98701847990F0045ED8C /* UIViewController+ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1A986A1847990F0045ED8C /* UIViewController+ECSlidingViewController.m */; };
-		7C1A98781847A0CF0045ED8C /* ECDynamicTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1A98731847A0CF0045ED8C /* ECDynamicTransition.m */; };
-		7C1A98791847A0CF0045ED8C /* ECFoldAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1A98751847A0CF0045ED8C /* ECFoldAnimationController.m */; };
-		7C1A987A1847A0CF0045ED8C /* ECZoomAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1A98771847A0CF0045ED8C /* ECZoomAnimationController.m */; };
 		7C1A98861847E1D10045ED8C /* OrderSummaryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1A98851847E1D10045ED8C /* OrderSummaryCell.m */; };
 		7C1F24111836D3F500E90145 /* MDRadialProgressLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1F23F41836D3F500E90145 /* MDRadialProgressLabel.m */; };
 		7C1F24121836D3F500E90145 /* MDRadialProgressTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1F23F61836D3F500E90145 /* MDRadialProgressTheme.m */; };
@@ -233,27 +233,27 @@
 		7AC68BA8185219DE0019A5A8 /* UIScrollView+SVInfiniteScrolling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVInfiniteScrolling.m"; sourceTree = "<group>"; };
 		7AC68BA9185219DE0019A5A8 /* UIScrollView+SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVPullToRefresh.h"; sourceTree = "<group>"; };
 		7AC68BAA185219DE0019A5A8 /* UIScrollView+SVPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVPullToRefresh.m"; sourceTree = "<group>"; };
+		7AC68BAE18528A190019A5A8 /* ECPercentDrivenInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECPercentDrivenInteractiveTransition.h; sourceTree = "<group>"; };
+		7AC68BAF18528A190019A5A8 /* ECPercentDrivenInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECPercentDrivenInteractiveTransition.m; sourceTree = "<group>"; };
+		7AC68BB018528A190019A5A8 /* ECSlidingAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSlidingAnimationController.h; sourceTree = "<group>"; };
+		7AC68BB118528A190019A5A8 /* ECSlidingAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSlidingAnimationController.m; sourceTree = "<group>"; };
+		7AC68BB218528A190019A5A8 /* ECSlidingConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSlidingConstants.h; sourceTree = "<group>"; };
+		7AC68BB318528A190019A5A8 /* ECSlidingInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSlidingInteractiveTransition.h; sourceTree = "<group>"; };
+		7AC68BB418528A190019A5A8 /* ECSlidingInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSlidingInteractiveTransition.m; sourceTree = "<group>"; };
+		7AC68BB518528A190019A5A8 /* ECSlidingSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSlidingSegue.h; sourceTree = "<group>"; };
+		7AC68BB618528A190019A5A8 /* ECSlidingSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSlidingSegue.m; sourceTree = "<group>"; };
+		7AC68BB718528A190019A5A8 /* ECSlidingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSlidingViewController.h; sourceTree = "<group>"; };
+		7AC68BB818528A190019A5A8 /* ECSlidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSlidingViewController.m; sourceTree = "<group>"; };
+		7AC68BBA18528A190019A5A8 /* ECDynamicTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECDynamicTransition.h; sourceTree = "<group>"; };
+		7AC68BBB18528A190019A5A8 /* ECDynamicTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDynamicTransition.m; sourceTree = "<group>"; };
+		7AC68BBC18528A190019A5A8 /* ECFoldAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECFoldAnimationController.h; sourceTree = "<group>"; };
+		7AC68BBD18528A190019A5A8 /* ECFoldAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECFoldAnimationController.m; sourceTree = "<group>"; };
+		7AC68BBE18528A190019A5A8 /* ECZoomAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECZoomAnimationController.h; sourceTree = "<group>"; };
+		7AC68BBF18528A190019A5A8 /* ECZoomAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECZoomAnimationController.m; sourceTree = "<group>"; };
+		7AC68BC018528A190019A5A8 /* UIViewController+ECSlidingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ECSlidingViewController.h"; sourceTree = "<group>"; };
+		7AC68BC118528A190019A5A8 /* UIViewController+ECSlidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ECSlidingViewController.m"; sourceTree = "<group>"; };
 		7C11689F18455EE300334AF9 /* XCDFormInputAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCDFormInputAccessoryView.h; sourceTree = "<group>"; };
 		7C1168A018455EE300334AF9 /* XCDFormInputAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCDFormInputAccessoryView.m; sourceTree = "<group>"; };
-		7C1A985E1847990F0045ED8C /* ECPercentDrivenInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECPercentDrivenInteractiveTransition.h; sourceTree = "<group>"; };
-		7C1A985F1847990F0045ED8C /* ECPercentDrivenInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECPercentDrivenInteractiveTransition.m; sourceTree = "<group>"; };
-		7C1A98601847990F0045ED8C /* ECSlidingAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSlidingAnimationController.h; sourceTree = "<group>"; };
-		7C1A98611847990F0045ED8C /* ECSlidingAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSlidingAnimationController.m; sourceTree = "<group>"; };
-		7C1A98621847990F0045ED8C /* ECSlidingConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSlidingConstants.h; sourceTree = "<group>"; };
-		7C1A98631847990F0045ED8C /* ECSlidingInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSlidingInteractiveTransition.h; sourceTree = "<group>"; };
-		7C1A98641847990F0045ED8C /* ECSlidingInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSlidingInteractiveTransition.m; sourceTree = "<group>"; };
-		7C1A98651847990F0045ED8C /* ECSlidingSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSlidingSegue.h; sourceTree = "<group>"; };
-		7C1A98661847990F0045ED8C /* ECSlidingSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSlidingSegue.m; sourceTree = "<group>"; };
-		7C1A98671847990F0045ED8C /* ECSlidingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSlidingViewController.h; sourceTree = "<group>"; };
-		7C1A98681847990F0045ED8C /* ECSlidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSlidingViewController.m; sourceTree = "<group>"; };
-		7C1A98691847990F0045ED8C /* UIViewController+ECSlidingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ECSlidingViewController.h"; sourceTree = "<group>"; };
-		7C1A986A1847990F0045ED8C /* UIViewController+ECSlidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ECSlidingViewController.m"; sourceTree = "<group>"; };
-		7C1A98721847A0CF0045ED8C /* ECDynamicTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECDynamicTransition.h; sourceTree = "<group>"; };
-		7C1A98731847A0CF0045ED8C /* ECDynamicTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECDynamicTransition.m; sourceTree = "<group>"; };
-		7C1A98741847A0CF0045ED8C /* ECFoldAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECFoldAnimationController.h; sourceTree = "<group>"; };
-		7C1A98751847A0CF0045ED8C /* ECFoldAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECFoldAnimationController.m; sourceTree = "<group>"; };
-		7C1A98761847A0CF0045ED8C /* ECZoomAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECZoomAnimationController.h; sourceTree = "<group>"; };
-		7C1A98771847A0CF0045ED8C /* ECZoomAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECZoomAnimationController.m; sourceTree = "<group>"; };
 		7C1A98841847E1D10045ED8C /* OrderSummaryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderSummaryCell.h; sourceTree = "<group>"; };
 		7C1A98851847E1D10045ED8C /* OrderSummaryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderSummaryCell.m; sourceTree = "<group>"; };
 		7C1F23F31836D3F500E90145 /* MDRadialProgressLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDRadialProgressLabel.h; sourceTree = "<group>"; };
@@ -632,6 +632,40 @@
 			path = SVPullToRefresh;
 			sourceTree = "<group>";
 		};
+		7AC68BAD18528A190019A5A8 /* ECSlidingViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7AC68BB918528A190019A5A8 /* Transitions */,
+				7AC68BAE18528A190019A5A8 /* ECPercentDrivenInteractiveTransition.h */,
+				7AC68BAF18528A190019A5A8 /* ECPercentDrivenInteractiveTransition.m */,
+				7AC68BB018528A190019A5A8 /* ECSlidingAnimationController.h */,
+				7AC68BB118528A190019A5A8 /* ECSlidingAnimationController.m */,
+				7AC68BB218528A190019A5A8 /* ECSlidingConstants.h */,
+				7AC68BB318528A190019A5A8 /* ECSlidingInteractiveTransition.h */,
+				7AC68BB418528A190019A5A8 /* ECSlidingInteractiveTransition.m */,
+				7AC68BB518528A190019A5A8 /* ECSlidingSegue.h */,
+				7AC68BB618528A190019A5A8 /* ECSlidingSegue.m */,
+				7AC68BB718528A190019A5A8 /* ECSlidingViewController.h */,
+				7AC68BB818528A190019A5A8 /* ECSlidingViewController.m */,
+				7AC68BC018528A190019A5A8 /* UIViewController+ECSlidingViewController.h */,
+				7AC68BC118528A190019A5A8 /* UIViewController+ECSlidingViewController.m */,
+			);
+			path = ECSlidingViewController;
+			sourceTree = "<group>";
+		};
+		7AC68BB918528A190019A5A8 /* Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				7AC68BBA18528A190019A5A8 /* ECDynamicTransition.h */,
+				7AC68BBB18528A190019A5A8 /* ECDynamicTransition.m */,
+				7AC68BBC18528A190019A5A8 /* ECFoldAnimationController.h */,
+				7AC68BBD18528A190019A5A8 /* ECFoldAnimationController.m */,
+				7AC68BBE18528A190019A5A8 /* ECZoomAnimationController.h */,
+				7AC68BBF18528A190019A5A8 /* ECZoomAnimationController.m */,
+			);
+			path = Transitions;
+			sourceTree = "<group>";
+		};
 		7C11689E18455EE300334AF9 /* XCDFormInputAccessoryView */ = {
 			isa = PBXGroup;
 			children = (
@@ -639,40 +673,6 @@
 				7C1168A018455EE300334AF9 /* XCDFormInputAccessoryView.m */,
 			);
 			path = XCDFormInputAccessoryView;
-			sourceTree = "<group>";
-		};
-		7C1A985D1847990F0045ED8C /* ECSlidingViewController */ = {
-			isa = PBXGroup;
-			children = (
-				7C1A98711847A0CF0045ED8C /* Transitions */,
-				7C1A985E1847990F0045ED8C /* ECPercentDrivenInteractiveTransition.h */,
-				7C1A985F1847990F0045ED8C /* ECPercentDrivenInteractiveTransition.m */,
-				7C1A98601847990F0045ED8C /* ECSlidingAnimationController.h */,
-				7C1A98611847990F0045ED8C /* ECSlidingAnimationController.m */,
-				7C1A98621847990F0045ED8C /* ECSlidingConstants.h */,
-				7C1A98631847990F0045ED8C /* ECSlidingInteractiveTransition.h */,
-				7C1A98641847990F0045ED8C /* ECSlidingInteractiveTransition.m */,
-				7C1A98651847990F0045ED8C /* ECSlidingSegue.h */,
-				7C1A98661847990F0045ED8C /* ECSlidingSegue.m */,
-				7C1A98671847990F0045ED8C /* ECSlidingViewController.h */,
-				7C1A98681847990F0045ED8C /* ECSlidingViewController.m */,
-				7C1A98691847990F0045ED8C /* UIViewController+ECSlidingViewController.h */,
-				7C1A986A1847990F0045ED8C /* UIViewController+ECSlidingViewController.m */,
-			);
-			path = ECSlidingViewController;
-			sourceTree = "<group>";
-		};
-		7C1A98711847A0CF0045ED8C /* Transitions */ = {
-			isa = PBXGroup;
-			children = (
-				7C1A98721847A0CF0045ED8C /* ECDynamicTransition.h */,
-				7C1A98731847A0CF0045ED8C /* ECDynamicTransition.m */,
-				7C1A98741847A0CF0045ED8C /* ECFoldAnimationController.h */,
-				7C1A98751847A0CF0045ED8C /* ECFoldAnimationController.m */,
-				7C1A98761847A0CF0045ED8C /* ECZoomAnimationController.h */,
-				7C1A98771847A0CF0045ED8C /* ECZoomAnimationController.m */,
-			);
-			path = Transitions;
 			sourceTree = "<group>";
 		};
 		7C1F23E21836754C00E90145 /* Test Cases */ = {
@@ -769,10 +769,10 @@
 		7C2A350A1832A734004AE430 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				7AC68BAD18528A190019A5A8 /* ECSlidingViewController */,
 				7AC68BA5185219DE0019A5A8 /* SVPullToRefresh */,
 				7AB07C3E184972E9001265E0 /* MRProgress */,
 				7C2A357E1832A7AD004AE430 /* AFNetworking */,
-				7C1A985D1847990F0045ED8C /* ECSlidingViewController */,
 				7C2A350B1832A734004AE430 /* Lumberjack */,
 				7C2A351B1832A734004AE430 /* Magical Record */,
 				7C1F23F21836D3F500E90145 /* MDRadialProgress */,
@@ -1383,33 +1383,32 @@
 				7C363C9C183FA96D00003723 /* GetOrdersResult.m in Sources */,
 				7C2A359A1832A7AD004AE430 /* AFURLSessionManager.m in Sources */,
 				7C363C95183FA7CA00003723 /* LineItemAttribute.m in Sources */,
+				7AC68BC318528A190019A5A8 /* ECSlidingAnimationController.m in Sources */,
 				7A534304184BF82900FE9C54 /* QuoteLineItemCell.m in Sources */,
 				7C363C9F183FAA4600003723 /* GetOrderResult.m in Sources */,
 				7C958448183AC4580065C878 /* SessionsService.m in Sources */,
 				7C8A3510183D109400802B89 /* User+CustomAccessors.m in Sources */,
-				7C1A986E1847990F0045ED8C /* ECSlidingSegue.m in Sources */,
 				7AC68BAB185219DE0019A5A8 /* UIScrollView+SVInfiniteScrolling.m in Sources */,
-				7C1A986F1847990F0045ED8C /* ECSlidingViewController.m in Sources */,
 				7AA569FE18491F480095C98A /* SelfService.m in Sources */,
 				7C363C98183FA7CA00003723 /* GetOrderRequest.m in Sources */,
 				7C2A35941832A7AD004AE430 /* AFHTTPSessionManager.m in Sources */,
 				7C2A35581832A734004AE430 /* DDASLLogger.m in Sources */,
-				7C1A986C1847990F0045ED8C /* ECSlidingAnimationController.m in Sources */,
-				7C1A98791847A0CF0045ED8C /* ECFoldAnimationController.m in Sources */,
+				7AC68BC918528A190019A5A8 /* ECZoomAnimationController.m in Sources */,
 				7A5342FC184BC49C00FE9C54 /* OrderDetailTableViewController.m in Sources */,
 				7C363CA5183FAB5900003723 /* GenericSelfServiceResult.m in Sources */,
 				7AA569F71848F2950095C98A /* UpdateOrderStatusResult.m in Sources */,
 				7C958454183ACF4E0065C878 /* SSKeychainQuery.m in Sources */,
 				7C2A35611832A734004AE430 /* NSNumber+MagicalDataImport.m in Sources */,
+				7AC68BC718528A190019A5A8 /* ECDynamicTransition.m in Sources */,
 				7C2A356B1832A734004AE430 /* NSManagedObjectContext+MagicalRecord.m in Sources */,
 				7AA56A0418492C030095C98A /* ErrorFactory.m in Sources */,
 				7C2A35981832A7AD004AE430 /* AFURLRequestSerialization.m in Sources */,
 				7C2A356D1832A734004AE430 /* NSManagedObjectContext+MagicalThreading.m in Sources */,
 				7C956A021843A5B5000A5595 /* ModifyOrderDetailsRequest.m in Sources */,
 				7C2A35961832A7AD004AE430 /* AFSecurityPolicy.m in Sources */,
-				7C1A98701847990F0045ED8C /* UIViewController+ECSlidingViewController.m in Sources */,
 				7AB07C5D184972EA001265E0 /* MRProgressOverlayView.m in Sources */,
 				7A3937FB184947D800D3CF52 /* OrderDetailViewController.m in Sources */,
+				7AC68BCA18528A190019A5A8 /* UIViewController+ECSlidingViewController.m in Sources */,
 				7C2A35631832A734004AE430 /* NSRelationshipDescription+MagicalDataImport.m in Sources */,
 				7C2A35691832A734004AE430 /* NSManagedObject+MagicalRequests.m in Sources */,
 				7C2A35DD1832A7CE004AE430 /* main.m in Sources */,
@@ -1417,15 +1416,14 @@
 				7A3937F8184947D800D3CF52 /* LoginViewController.m in Sources */,
 				7C2A35771832A734004AE430 /* MagicalRecord.m in Sources */,
 				7AA56A01184928AE0095C98A /* GenericFactory.m in Sources */,
-				7C1A986B1847990F0045ED8C /* ECPercentDrivenInteractiveTransition.m in Sources */,
 				7C2A355D1832A734004AE430 /* DispatchQueueLogFormatter.m in Sources */,
+				7AC68BC518528A190019A5A8 /* ECSlidingSegue.m in Sources */,
 				7A5342F8184AA88500FE9C54 /* UIColor+VerizonColors.m in Sources */,
 				7C2A35971832A7AD004AE430 /* AFURLConnectionOperation.m in Sources */,
 				7AB07C58184972EA001265E0 /* UIImage+MRImageEffects.m in Sources */,
 				7C2A356F1832A734004AE430 /* NSPersistentStore+MagicalRecord.m in Sources */,
 				7C2A356E1832A734004AE430 /* NSManagedObjectModel+MagicalRecord.m in Sources */,
 				7C9569F6184394BC000A5595 /* GetOrderXMLParser.m in Sources */,
-				7C1A987A1847A0CF0045ED8C /* ECZoomAnimationController.m in Sources */,
 				7C2A355F1832A734004AE430 /* NSAttributeDescription+MagicalDataImport.m in Sources */,
 				7C2A355E1832A734004AE430 /* MagicalImportFunctions.m in Sources */,
 				7A3937FA184947D800D3CF52 /* MenuViewController.m in Sources */,
@@ -1442,6 +1440,7 @@
 				7C2A35D41832A7CE004AE430 /* AlertViewFactory.m in Sources */,
 				7C958453183ACF4E0065C878 /* SSKeychain.m in Sources */,
 				7C2A355B1832A734004AE430 /* DDTTYLogger.m in Sources */,
+				7AC68BC618528A190019A5A8 /* ECSlidingViewController.m in Sources */,
 				7C2A35591832A734004AE430 /* DDFileLogger.m in Sources */,
 				7AB07C5E184972EA001265E0 /* MRMessageInterceptor.m in Sources */,
 				7C363C97183FA7CA00003723 /* QuoteLineItem.m in Sources */,
@@ -1451,6 +1450,7 @@
 				7A3937FC184947D800D3CF52 /* OrdersTableViewController.m in Sources */,
 				7C2A35641832A734004AE430 /* NSString+MagicalDataImport.m in Sources */,
 				7A5342F2184A7B3900FE9C54 /* PaddingTextField.m in Sources */,
+				7AC68BC218528A190019A5A8 /* ECPercentDrivenInteractiveTransition.m in Sources */,
 				7C2A35741832A734004AE430 /* MagicalRecord+Options.m in Sources */,
 				7A3937F6184947D800D3CF52 /* GenericViewController.m in Sources */,
 				7C8A3502183D0FC400802B89 /* User.m in Sources */,
@@ -1459,7 +1459,6 @@
 				7C956A081843A5E6000A5595 /* ModifyOrderDetailsXMLParser.m in Sources */,
 				7C2A35711832A734004AE430 /* MagicalRecord+Actions.m in Sources */,
 				7C2A35661832A734004AE430 /* NSManagedObject+MagicalDataImport.m in Sources */,
-				7C1A98781847A0CF0045ED8C /* ECDynamicTransition.m in Sources */,
 				7AC68BAC185219DE0019A5A8 /* UIScrollView+SVPullToRefresh.m in Sources */,
 				7C2A35D21832A7CE004AE430 /* GenericService.m in Sources */,
 				7A3937FD184947D800D3CF52 /* OrderStatusViewController.m in Sources */,
@@ -1485,10 +1484,11 @@
 				7AB07C5F184972EA001265E0 /* MRWeakProxy.m in Sources */,
 				7C2A35991832A7AD004AE430 /* AFURLResponseSerialization.m in Sources */,
 				7AB07C57184972EA001265E0 /* MRBlurView.m in Sources */,
+				7AC68BC818528A190019A5A8 /* ECFoldAnimationController.m in Sources */,
 				7AB07C59184972EA001265E0 /* MRActivityIndicatorView.m in Sources */,
-				7C1A986D1847990F0045ED8C /* ECSlidingInteractiveTransition.m in Sources */,
 				7C2A35921832A7AD004AE430 /* AFHTTPRequestOperation.m in Sources */,
 				7C2A35721832A734004AE430 /* MagicalRecord+ErrorHandling.m in Sources */,
+				7AC68BC418528A190019A5A8 /* ECSlidingInteractiveTransition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

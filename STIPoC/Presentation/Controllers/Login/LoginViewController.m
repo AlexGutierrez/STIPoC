@@ -133,7 +133,13 @@ NSString *const kSTIPoCSeguePushMainViewController = @"MainViewControllerPushSeg
 {
     [UIView animateWithDuration:0.3 animations:^{
         CGFloat centerY = self.view.center.y;
-        self.loginFieldsContainer.center = CGPointMake(self.view.center.x, ([notification.name isEqualToString:UIKeyboardWillHideNotification] ||  UIInterfaceOrientationIsPortrait([[UIDevice currentDevice] orientation]))? centerY : centerY - LOGIN_FIELDS_KEYBOARD_Y_DIFF);;
+        if ([notification.name isEqualToString:UIKeyboardWillHideNotification] ||  UIInterfaceOrientationIsPortrait([[UIApplication sharedApplication] statusBarOrientation])) {
+            self.loginFieldsContainer.center = CGPointMake(self.view.center.x, centerY);
+        }
+        else {
+            self.loginFieldsContainer.center = CGPointMake(self.view.center.x, centerY - LOGIN_FIELDS_KEYBOARD_Y_DIFF);
+        }
+        
     }];
 }
 

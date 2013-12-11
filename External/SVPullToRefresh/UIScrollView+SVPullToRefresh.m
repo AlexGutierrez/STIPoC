@@ -287,7 +287,7 @@ static char UIScrollViewPullToRefreshView;
                                                            attributes:@{NSFontAttributeName : self.titleLabel.font }
                                                               context:nil].size;
         
-        CGSize subtitleSize = [self.titleLabel.text boundingRectWithSize:CGSizeMake(labelMaxWidth,self.subtitleLabel.font.lineHeight)
+        CGSize subtitleSize = [self.subtitleLabel.text boundingRectWithSize:CGSizeMake(labelMaxWidth,self.subtitleLabel.font.lineHeight)
                                                                  options:NSStringDrawingUsesLineFragmentOrigin
                                                               attributes:@{NSFontAttributeName : self.subtitleLabel.font }
                                                                  context:nil].size;

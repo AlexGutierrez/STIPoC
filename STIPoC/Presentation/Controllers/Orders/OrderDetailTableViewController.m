@@ -40,6 +40,24 @@ static NSString *const kSTIPoCOrderSummaryCellRejectText = @"Remove";
     return 1;
 }
 
+/*
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    QuoteLineItem *quoteLineItem = self.selectedOrderSummary.QuoteLineItems[indexPath.row];
+    
+    NSString *string = quoteLineItem.LineItemDescription;
+    
+    CGSize descriptionSize = [string boundingRectWithSize:CGSizeMake(454.0f, 120.0f)
+                                                  options:NSStringDrawingUsesLineFragmentOrigin
+                                               attributes:@{ NSFontAttributeName : [UIFont fontWithName:kSTIPoCFontHelveticaNeueLight size:17.0f]}
+                                                  context:nil].size;
+    
+    NSLog(@"SIZE: %.2lf, %.2lf", descriptionSize.width, descriptionSize.height);
+    
+    return 105;
+}
+*/
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.selectedOrderSummary.QuoteLineItems.count;
