@@ -8,11 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
-#import "Domain.h"
+#import "Entity.h"
 
 @class User;
 
-@interface Customer : Domain
+@interface Customer : Entity
 
 /// The customer name
 @property (strong, nonatomic) NSString *name;

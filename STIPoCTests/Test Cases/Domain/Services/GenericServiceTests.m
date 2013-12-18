@@ -8,7 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "GenericService.h"
-#import "Domain.h"
+#import "Entity.h"
 #import "User.h"
 #import "Customer.h"
 
@@ -112,11 +112,11 @@ static id isFirstTimeKeyValue;
 
 - (void)testGenericServiceTruncatesAllData
 {
-    XCTAssertTrue([Domain countOfEntities] > 0, @"Data before truncation test should be more than 0!");
+    XCTAssertTrue([Entity countOfEntities] > 0, @"Data before truncation test should be more than 0!");
     
     [genericService truncateAll];
     
-    XCTAssertTrue([Domain countOfEntities] == 0, @"All data should be truncated");
+    XCTAssertTrue([Entity countOfEntities] == 0, @"All data should be truncated");
 }
 
 #pragma mark -
@@ -124,9 +124,9 @@ static id isFirstTimeKeyValue;
 
 - (void)testDummyDataWasCreatedForTesting
 {
-    Customer *aDummyCustomer = [Customer findFirstByAttribute:kSTIPoCDomainIDAttributeKey withValue:kSTIPoCDummyCustomerID];
-    User *aDummyUser1 = [User findFirstByAttribute:kSTIPoCDomainIDAttributeKey withValue:kSTIPoCDummyUser1UserID];
-    User *aDummyUser2 = [User findFirstByAttribute:kSTIPoCDomainIDAttributeKey withValue:kSTIPoCDummyUser2UserID];
+    Customer *aDummyCustomer = [Customer findFirstByAttribute:kSTIPoCEntityIDAttributeKey withValue:kSTIPoCDummyCustomerID];
+    User *aDummyUser1 = [User findFirstByAttribute:kSTIPoCEntityIDAttributeKey withValue:kSTIPoCDummyUser1UserID];
+    User *aDummyUser2 = [User findFirstByAttribute:kSTIPoCEntityIDAttributeKey withValue:kSTIPoCDummyUser2UserID];
     
     XCTAssertTrue((aDummyCustomer && aDummyUser1 && aDummyUser2), @"Dummy data should have been created.");
 }
@@ -135,7 +135,7 @@ static id isFirstTimeKeyValue;
 {
     XCTAssertTrue([[genericService dummyUser1].firstName isEqualToString:kSTIPoCDummyUser1FirstName], @"Dummy user 1 first name is incorrect.");
     XCTAssertTrue([[genericService dummyUser1].lastName isEqualToString:kSTIPoCDummyUser1LastName], @"Dummy user 1 last name is incorrect.");
-    XCTAssertTrue([[genericService dummyUser1].domainID isEqualToString:kSTIPoCDummyUser1UserID], @"Dummy user 1 userID is incorrect.");
+    XCTAssertTrue([[genericService dummyUser1].entityID isEqualToString:kSTIPoCDummyUser1UserID], @"Dummy user 1 userID is incorrect.");
     XCTAssertTrue([[genericService dummyUser1].password isEqualToString:kSTIPoCDummyUser1Password], @"Dummy user 1 password is incorrect.");
     XCTAssertEqualObjects([genericService dummyUser1].customer, [genericService dummyCustomer], @"Dummy user 1 customer is incorrect.");
 }
@@ -144,30 +144,30 @@ static id isFirstTimeKeyValue;
 {
     XCTAssertTrue([[genericService dummyUser2].firstName isEqualToString:kSTIPoCDummyUser2FirstName], @"Dummy user 2 first name is incorrect.");
     XCTAssertTrue([[genericService dummyUser2].lastName isEqualToString:kSTIPoCDummyUser2LastName], @"Dummy user 2 last name is incorrect.");
-    XCTAssertTrue([[genericService dummyUser2].domainID isEqualToString:kSTIPoCDummyUser2UserID], @"Dummy user 2 userID is incorrect.");
+    XCTAssertTrue([[genericService dummyUser2].entityID isEqualToString:kSTIPoCDummyUser2UserID], @"Dummy user 2 userID is incorrect.");
     XCTAssertTrue([[genericService dummyUser2].password isEqualToString:kSTIPoCDummyUser2Password], @"Dummy user 2 password is incorrect.");
     XCTAssertEqualObjects([genericService dummyUser2].customer, [genericService dummyCustomer], @"Dummy user 2 customer is incorrect.");
 }
 
 - (void)testDummyCustomerIsRetrievedCorrectly
 {
-    Customer *dummyCustomer = [Customer findFirstByAttribute:kSTIPoCDomainIDAttributeKey withValue:kSTIPoCDummyCustomerID];
+    Customer *dummyCustomer = [Customer findFirstByAttribute:kSTIPoCEntityIDAttributeKey withValue:kSTIPoCDummyCustomerID];
     XCTAssertNotNil([genericService dummyCustomer], @"Dummy customer should not be nil.");
-    XCTAssertEqualObjects([genericService dummyCustomer].domainID, dummyCustomer.domainID, @"Dummy customer should be the same as the one in the store.");
+    XCTAssertEqualObjects([genericService dummyCustomer].entityID, dummyCustomer.entityID, @"Dummy customer should be the same as the one in the store.");
 }
 
 - (void)testDummyUser1IsRetrievedCorrectly
 {
-    User *dummyUser1 = [User findFirstByAttribute:kSTIPoCDomainIDAttributeKey withValue:kSTIPoCDummyUser1UserID];
+    User *dummyUser1 = [User findFirstByAttribute:kSTIPoCEntityIDAttributeKey withValue:kSTIPoCDummyUser1UserID];
     XCTAssertNotNil([genericService dummyCustomer], @"Dummy user 2 should not be nil.");
-    XCTAssertEqualObjects([genericService dummyUser1].domainID, dummyUser1.domainID, @"Dummy user 1 should be the same as the one in the store.");
+    XCTAssertEqualObjects([genericService dummyUser1].entityID, dummyUser1.entityID, @"Dummy user 1 should be the same as the one in the store.");
 }
 
 - (void)testDummyUser2IsRetrievedCorrectly
 {
-    User *dummyUser2 = [User findFirstByAttribute:kSTIPoCDomainIDAttributeKey withValue:kSTIPoCDummyUser2UserID];
+    User *dummyUser2 = [User findFirstByAttribute:kSTIPoCEntityIDAttributeKey withValue:kSTIPoCDummyUser2UserID];
     XCTAssertNotNil([genericService dummyUser2], @"Dummy user 2 should not be nil.");
-    XCTAssertEqualObjects([genericService dummyUser2].domainID, dummyUser2.domainID, @"Dummy user 2 should be the same as the one in the store.");
+    XCTAssertEqualObjects([genericService dummyUser2].entityID, dummyUser2.entityID, @"Dummy user 2 should be the same as the one in the store.");
 }
 
 
@@ -188,7 +188,7 @@ static id isFirstTimeKeyValue;
     [genericService truncateAll];
     [genericService createDummyDataForProd];
     
-    XCTAssertTrue([Domain countOfEntities] == 0,  @"Dummy data creation for prod should be executed only the first time.");
+    XCTAssertTrue([Entity countOfEntities] == 0,  @"Dummy data creation for prod should be executed only the first time.");
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:kSTIPoCDefaultsIsFirstTimeKey];
 }
 

@@ -77,6 +77,9 @@ static NSString *const kSTIPoCDummyUser2Password = @"1234";
 /// Gets the dummy customer for testing
 @property (strong, nonatomic, readonly) Customer *dummyCustomer;
 
+/// Gets an user-end error
+@property (strong, nonatomic, readonly) NSError *defaultPublicError;
+
 + (instancetype)sharedInstance;
 
 /**
@@ -112,5 +115,7 @@ static NSString *const kSTIPoCDummyUser2Password = @"1234";
  *
  */
 - (void)createDummyData;
+
+
 
 @end

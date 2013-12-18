@@ -9,6 +9,7 @@
 #import "GenericService.h"
 #import "User.h"
 #import "Customer.h"
+#import "ErrorFactory.h"
 
 static NSString *const kSTIPoCDefaultStoreName = @"com.STIPoC.DefaultStoreName";
 
@@ -41,7 +42,7 @@ static NSString *const kSTIPoCDefaultStoreName = @"com.STIPoC.DefaultStoreName";
 - (Customer *)dummyCustomer
 {
     if (!_dummyCustomer || [_dummyCustomer isFault]) {
-        _dummyCustomer = [Customer findFirstByAttribute:kSTIPoCDomainIDAttributeKey withValue:kSTIPoCDummyCustomerID];
+        _dummyCustomer = [Customer findFirstByAttribute:kSTIPoCEntityIDAttributeKey withValue:kSTIPoCDummyCustomerID];
     }
     return _dummyCustomer;
 }
@@ -49,7 +50,7 @@ static NSString *const kSTIPoCDefaultStoreName = @"com.STIPoC.DefaultStoreName";
 - (User *)dummyUser1
 {
     if (!_dummyUser1 || [_dummyUser1 isFault]) {
-        _dummyUser1 = [User findFirstByAttribute:kSTIPoCDomainIDAttributeKey withValue:kSTIPoCDummyUser1UserID];
+        _dummyUser1 = [User findFirstByAttribute:kSTIPoCEntityIDAttributeKey withValue:kSTIPoCDummyUser1UserID];
     }
     return _dummyUser1;
 }
@@ -57,9 +58,14 @@ static NSString *const kSTIPoCDefaultStoreName = @"com.STIPoC.DefaultStoreName";
 - (User *)dummyUser2
 {
     if (!_dummyUser2 || [_dummyUser2 isFault]) {
-        _dummyUser2 = [User findFirstByAttribute:kSTIPoCDomainIDAttributeKey withValue:kSTIPoCDummyUser2UserID];
+        _dummyUser2 = [User findFirstByAttribute:kSTIPoCEntityIDAttributeKey withValue:kSTIPoCDummyUser2UserID];
     }
     return _dummyUser2;
+}
+
+- (NSError *)defaultPublicError
+{
+    return ([AFNetworkReachabilityManager sharedManager].reachable) ? [[ErrorFactory sharedFactory] createDefaultServerError] : [[ErrorFactory sharedFactory] createDefaultNetworkReachabilityError];
 }
 
 #pragma mark -
@@ -86,7 +92,7 @@ static NSString *const kSTIPoCDefaultStoreName = @"com.STIPoC.DefaultStoreName";
 
 - (void)truncateAll
 {
-    [Domain truncateAll];
+    [Entity truncateAll];
     [[NSManagedObjectContext contextForCurrentThread] saveOnlySelfAndWait];
 }
 
@@ -108,18 +114,18 @@ static NSString *const kSTIPoCDefaultStoreName = @"com.STIPoC.DefaultStoreName";
 - (void)createDummyData
 {
     Customer *dummyCustomer = [Customer createEntity];
-    dummyCustomer.domainID = kSTIPoCDummyCustomerID;
+    dummyCustomer.entityID = kSTIPoCDummyCustomerID;
     dummyCustomer.name = kSTIPoCDummyCustomerName;
     
     User *dummyUser1 = [User createEntity];
-    dummyUser1.domainID = kSTIPoCDummyUser1UserID;
+    dummyUser1.entityID = kSTIPoCDummyUser1UserID;
     dummyUser1.firstName = kSTIPoCDummyUser1FirstName;
     dummyUser1.lastName = kSTIPoCDummyUser1LastName;
     dummyUser1.password = kSTIPoCDummyUser1Password;
     dummyUser1.customer = dummyCustomer;
     
     User *dummyUser2 = [User createEntity];
-    dummyUser2.domainID = kSTIPoCDummyUser2UserID;
+    dummyUser2.entityID = kSTIPoCDummyUser2UserID;
     dummyUser2.firstName = kSTIPoCDummyUser2FirstName;
     dummyUser2.lastName = kSTIPoCDummyUser2LastName;
     dummyUser2.password = kSTIPoCDummyUser2Password;

@@ -21,7 +21,7 @@
 
 - (NSString *)fullAccount
 {
-    return [NSString stringWithFormat:@"%@/%@", self.customer.domainID, self.domainID];
+    return [NSString stringWithFormat:@"%@/%@", self.customer.entityID, self.entityID];
 }
 
 @end

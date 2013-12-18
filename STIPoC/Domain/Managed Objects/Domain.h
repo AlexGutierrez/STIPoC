@@ -2,18 +2,17 @@
 //  Domain.h
 //  STIPoC
 //
-//  Created by Administrator on 11/20/13.
+//  Created by Alex Gutierrez on 12/18/13.
 //  Copyright (c) 2013 Administrator. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import "Entity.h"
 
-extern NSString *const kSTIPoCDomainIDAttributeKey;
+@interface Domain : Entity
 
-@interface Domain : NSManagedObject
-
-/// The domain ID for this object
-@property (nonatomic, retain) NSString * domainID;
+@property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSNumber * maxCount;
 
 @end

@@ -41,8 +41,8 @@ static SessionsService *sessionsService;
     [sessionsService cleanUpPersistenceChangesInMemory];
     sessionsService = nil;
     
-    [SSKeychain deletePasswordForService:kSTIPoCServiceName account:[NSString stringWithFormat:@"%@/%@", [sessionsService dummyUser1].customer.domainID, [sessionsService dummyUser1].domainID]];
-    [SSKeychain deletePasswordForService:kSTIPoCServiceName account:[NSString stringWithFormat:@"%@/%@", [sessionsService dummyUser2].customer.domainID, [sessionsService dummyUser2].domainID]];
+    [SSKeychain deletePasswordForService:kSTIPoCServiceName account:[NSString stringWithFormat:@"%@/%@", [sessionsService dummyUser1].customer.entityID, [sessionsService dummyUser1].entityID]];
+    [SSKeychain deletePasswordForService:kSTIPoCServiceName account:[NSString stringWithFormat:@"%@/%@", [sessionsService dummyUser2].customer.entityID, [sessionsService dummyUser2].entityID]];
     
     [super tearDown];
 }
@@ -79,10 +79,10 @@ static SessionsService *sessionsService;
 {
     NSError *error = nil;
     
-    [sessionsService loginWithUserID:[sessionsService dummyUser1].domainID customerID:[sessionsService dummyUser1].customer.domainID password:kSTIPoCDummyUser1Password remember:YES error:&error];
+    [sessionsService loginWithUserID:[sessionsService dummyUser1].entityID customerID:[sessionsService dummyUser1].customer.entityID password:kSTIPoCDummyUser1Password remember:YES error:&error];
     
     User *currentUser = [sessionsService currentUser];
-    User *currentUser2 = [User findFirstByAttribute:kSTIPoCDomainIDAttributeKey withValue:[[NSUserDefaults standardUserDefaults] objectForKey:kSTIPoCDefaultsCurrentUserKey]];
+    User *currentUser2 = [User findFirstByAttribute:kSTIPoCEntityIDAttributeKey withValue:[[NSUserDefaults standardUserDefaults] objectForKey:kSTIPoCDefaultsCurrentUserKey]];
     XCTAssertEqualObjects(currentUser, currentUser2, @"User retrieved from the service must be equal to the one retrieved from the defaults");
 }
 
@@ -90,10 +90,10 @@ static SessionsService *sessionsService;
 {
     NSError *error = nil;
     
-    [sessionsService loginWithUserID:[sessionsService dummyUser1].domainID customerID:[sessionsService dummyUser1].customer.domainID password:kSTIPoCDummyUser1Password remember:YES error:&error];
+    [sessionsService loginWithUserID:[sessionsService dummyUser1].entityID customerID:[sessionsService dummyUser1].customer.entityID password:kSTIPoCDummyUser1Password remember:YES error:&error];
     
     User *lastUser = [sessionsService lastUser];
-    User *lastUser2 = [User findFirstByAttribute:kSTIPoCDomainIDAttributeKey withValue:[[NSUserDefaults standardUserDefaults] objectForKey:kSTIPoCDefaultsLastUserKey]];
+    User *lastUser2 = [User findFirstByAttribute:kSTIPoCEntityIDAttributeKey withValue:[[NSUserDefaults standardUserDefaults] objectForKey:kSTIPoCDefaultsLastUserKey]];
     XCTAssertEqualObjects(lastUser, lastUser2, @"User retrieved from the service must be equal to the one retrieved from the defaults");
 }
 
@@ -109,7 +109,7 @@ static SessionsService *sessionsService;
     
     XCTAssertTrue([kSTIPoCDummyUser1Password isEqualToString:retrievedPassword], @"Retrieved password should be the same as the one stored.");
     
-    [SSKeychain deletePasswordForService:kSTIPoCServiceName account:[NSString stringWithFormat:@"%@/%@", user.customer.domainID, user.domainID]];
+    [SSKeychain deletePasswordForService:kSTIPoCServiceName account:[NSString stringWithFormat:@"%@/%@", user.customer.entityID, user.entityID]];
 }
 
 - (void)testSessionsServiceDeletesFromKeychainAllPasswordsForService
@@ -136,7 +136,7 @@ static SessionsService *sessionsService;
     NSString *userID = nil;
     NSError *error = nil;
     
-    BOOL credentialsAreValid = [sessionsService loginWithUserID:userID customerID:[sessionsService dummyUser1].customer.domainID password:kSTIPoCDummyUser1Password remember:NO error:&error];
+    BOOL credentialsAreValid = [sessionsService loginWithUserID:userID customerID:[sessionsService dummyUser1].customer.entityID password:kSTIPoCDummyUser1Password remember:NO error:&error];
     
     XCTAssertFalse(credentialsAreValid, @"Nil user ID validation failed.");
 }
@@ -147,7 +147,7 @@ static SessionsService *sessionsService;
     NSString *userID = kSTIPoCTestsEmptyText;
     NSError *error = nil;
     
-    BOOL credentialsAreValid = [sessionsService loginWithUserID:userID customerID:[sessionsService dummyUser1].customer.domainID password:kSTIPoCDummyUser1Password remember:NO error:&error];
+    BOOL credentialsAreValid = [sessionsService loginWithUserID:userID customerID:[sessionsService dummyUser1].customer.entityID password:kSTIPoCDummyUser1Password remember:NO error:&error];
     
     XCTAssertFalse(credentialsAreValid, @"Empty user ID validation failed.");
 }
@@ -157,7 +157,7 @@ static SessionsService *sessionsService;
     NSString *userID = kSTIPoCTestsWrongUserID;
     NSError *error = nil;
     
-    BOOL credentialsAreValid = [sessionsService loginWithUserID:userID customerID:[sessionsService dummyUser1].customer.domainID password:kSTIPoCDummyUser1Password remember:NO error:&error];
+    BOOL credentialsAreValid = [sessionsService loginWithUserID:userID customerID:[sessionsService dummyUser1].customer.entityID password:kSTIPoCDummyUser1Password remember:NO error:&error];
     
     XCTAssertFalse(credentialsAreValid, @"Wrong user ID validation failed.");
 }
@@ -167,7 +167,7 @@ static SessionsService *sessionsService;
     NSString *password = nil;
     NSError *error = nil;
     
-    BOOL credentialsAreValid = [sessionsService loginWithUserID:[sessionsService dummyUser1].domainID customerID:[sessionsService dummyUser1].customer.domainID password:password remember:NO error:&error];
+    BOOL credentialsAreValid = [sessionsService loginWithUserID:[sessionsService dummyUser1].entityID customerID:[sessionsService dummyUser1].customer.entityID password:password remember:NO error:&error];
     
     XCTAssertFalse(credentialsAreValid, @"Nil password validation failed.");
 }
@@ -177,7 +177,7 @@ static SessionsService *sessionsService;
     NSString *password = kSTIPoCTestsEmptyText;
     NSError *error = nil;
     
-    BOOL credentialsAreValid = [sessionsService loginWithUserID:[sessionsService dummyUser1].domainID customerID:[sessionsService dummyUser1].customer.domainID password:password remember:NO error:&error];
+    BOOL credentialsAreValid = [sessionsService loginWithUserID:[sessionsService dummyUser1].entityID customerID:[sessionsService dummyUser1].customer.entityID password:password remember:NO error:&error];
     
     XCTAssertFalse(credentialsAreValid, @"Empty password validation failed.");
 }
@@ -187,7 +187,7 @@ static SessionsService *sessionsService;
     NSString *password = kSTIPoCTestsWrongPassword;
     NSError *error = nil;
     
-    BOOL credentialsAreValid = [sessionsService loginWithUserID:[sessionsService dummyUser1].domainID customerID:[sessionsService dummyUser1].customer.domainID password:password remember:NO error:&error];
+    BOOL credentialsAreValid = [sessionsService loginWithUserID:[sessionsService dummyUser1].entityID customerID:[sessionsService dummyUser1].customer.entityID password:password remember:NO error:&error];
     
     XCTAssertFalse(credentialsAreValid, @"Wrong password validation failed.");
 }
@@ -197,7 +197,7 @@ static SessionsService *sessionsService;
     NSString *accountNumber = nil;
     NSError *error = nil;
     
-    BOOL credentialsAreValid = [sessionsService loginWithUserID:[sessionsService dummyUser1].domainID customerID:accountNumber password:kSTIPoCDummyUser1Password remember:NO error:&error];
+    BOOL credentialsAreValid = [sessionsService loginWithUserID:[sessionsService dummyUser1].entityID customerID:accountNumber password:kSTIPoCDummyUser1Password remember:NO error:&error];
     
     XCTAssertFalse(credentialsAreValid, @"Nil domain validation failed.");
 }
@@ -207,7 +207,7 @@ static SessionsService *sessionsService;
     NSString *accountNumber = kSTIPoCTestsEmptyText;
     NSError *error = nil;
     
-    BOOL credentialsAreValid = [sessionsService loginWithUserID:[sessionsService dummyUser1].domainID customerID:accountNumber password:kSTIPoCDummyUser1Password remember:NO error:&error];
+    BOOL credentialsAreValid = [sessionsService loginWithUserID:[sessionsService dummyUser1].entityID customerID:accountNumber password:kSTIPoCDummyUser1Password remember:NO error:&error];
     
     XCTAssertFalse(credentialsAreValid, @"Empty domain validation failed.");
 }
@@ -217,7 +217,7 @@ static SessionsService *sessionsService;
     NSString *accountNumber = kSTIPoCTestsWrongAccountNumber;
     NSError *error = nil;
     
-    BOOL credentialsAreValid = [sessionsService loginWithUserID:[sessionsService dummyUser1].domainID customerID:accountNumber password:kSTIPoCDummyUser1Password remember:NO error:&error];
+    BOOL credentialsAreValid = [sessionsService loginWithUserID:[sessionsService dummyUser1].entityID customerID:accountNumber password:kSTIPoCDummyUser1Password remember:NO error:&error];
     
     XCTAssertFalse(credentialsAreValid, @"Wrong domain validation failed.");
 }
@@ -226,7 +226,7 @@ static SessionsService *sessionsService;
 {
     NSError *error = nil;
     
-    BOOL credentialsAreValid = [sessionsService loginWithUserID:[sessionsService dummyUser1].domainID customerID:[sessionsService dummyUser1].customer.domainID password:kSTIPoCDummyUser1Password remember:NO error:&error];
+    BOOL credentialsAreValid = [sessionsService loginWithUserID:[sessionsService dummyUser1].entityID customerID:[sessionsService dummyUser1].customer.entityID password:kSTIPoCDummyUser1Password remember:NO error:&error];
     
     XCTAssertTrue(credentialsAreValid, @"Credentials validation failed.");
 }
@@ -235,7 +235,7 @@ static SessionsService *sessionsService;
 {
     NSError *error = nil;
     
-    [sessionsService loginWithUserID:[sessionsService dummyUser1].domainID customerID:[sessionsService dummyUser1].customer.domainID password:kSTIPoCDummyUser1Password remember:YES error:&error];
+    [sessionsService loginWithUserID:[sessionsService dummyUser1].entityID customerID:[sessionsService dummyUser1].customer.entityID password:kSTIPoCDummyUser1Password remember:YES error:&error];
     
     NSString *retrievedPassword = [sessionsService retrieveFromKeychainPasswordForUser:[sessionsService dummyUser1]];
     
@@ -246,19 +246,19 @@ static SessionsService *sessionsService;
 {
     NSError *error = nil;
     
-    [sessionsService loginWithUserID:[sessionsService dummyUser1].domainID customerID:[sessionsService dummyUser1].customer.domainID password:kSTIPoCDummyUser1Password remember:YES error:&error];
+    [sessionsService loginWithUserID:[sessionsService dummyUser1].entityID customerID:[sessionsService dummyUser1].customer.entityID password:kSTIPoCDummyUser1Password remember:YES error:&error];
     
-    XCTAssertTrue([[sessionsService dummyUser1].domainID isEqualToString:[sessionsService lastUser].domainID], @"Last users' ID should match.");
+    XCTAssertTrue([[sessionsService dummyUser1].entityID isEqualToString:[sessionsService lastUser].entityID], @"Last users' ID should match.");
 }
 
 - (void)testSessionsServiceRemembersOnlyLastLoggedUser
 {
     NSError *error = nil;
     
-    [sessionsService loginWithUserID:[sessionsService dummyUser1].domainID customerID:[sessionsService dummyUser1].customer.domainID password:kSTIPoCDummyUser1Password remember:YES error:&error];
-    [sessionsService loginWithUserID:[sessionsService dummyUser2].domainID customerID:[sessionsService dummyUser2].customer.domainID password:kSTIPoCDummyUser2Password remember:YES error:&error];
+    [sessionsService loginWithUserID:[sessionsService dummyUser1].entityID customerID:[sessionsService dummyUser1].customer.entityID password:kSTIPoCDummyUser1Password remember:YES error:&error];
+    [sessionsService loginWithUserID:[sessionsService dummyUser2].entityID customerID:[sessionsService dummyUser2].customer.entityID password:kSTIPoCDummyUser2Password remember:YES error:&error];
     
-    XCTAssertTrue([[sessionsService dummyUser2].domainID isEqualToString:[sessionsService lastUser].domainID], @"Only last user should have been remembered.");
+    XCTAssertTrue([[sessionsService dummyUser2].entityID isEqualToString:[sessionsService lastUser].entityID], @"Only last user should have been remembered.");
 }
 
 - (void)testSessionsServiceRemembersUserOnlyWhenRememberFlagIsOn
@@ -267,7 +267,7 @@ static SessionsService *sessionsService;
     
     [sessionsService setValue:[sessionsService dummyUser1] forKey:@"lastUser"];
     
-    [sessionsService loginWithUserID:[sessionsService dummyUser1].domainID customerID:[sessionsService dummyUser1].customer.domainID password:kSTIPoCDummyUser1Password remember:NO error:&error];
+    [sessionsService loginWithUserID:[sessionsService dummyUser1].entityID customerID:[sessionsService dummyUser1].customer.entityID password:kSTIPoCDummyUser1Password remember:NO error:&error];
     
     XCTAssertNil([sessionsService lastUser], @"Last user should not be remembered.");
 }
@@ -276,9 +276,9 @@ static SessionsService *sessionsService;
 {
     NSError *error = nil;
     
-    [sessionsService loginWithUserID:[sessionsService dummyUser1].domainID customerID:[sessionsService dummyUser1].customer.domainID password:kSTIPoCDummyUser1Password remember:NO error:&error];
+    [sessionsService loginWithUserID:[sessionsService dummyUser1].entityID customerID:[sessionsService dummyUser1].customer.entityID password:kSTIPoCDummyUser1Password remember:NO error:&error];
     
-    XCTAssertTrue([[sessionsService dummyUser1].domainID isEqualToString:[sessionsService currentUser].domainID], @"Current users'ID should match.");
+    XCTAssertTrue([[sessionsService dummyUser1].entityID isEqualToString:[sessionsService currentUser].entityID], @"Current users'ID should match.");
 }
 
 #pragma mark -
@@ -288,7 +288,7 @@ static SessionsService *sessionsService;
 {
     NSError *error = nil;
     
-    [sessionsService loginWithUserID:[sessionsService dummyUser1].domainID customerID:[sessionsService dummyUser1].customer.domainID password:kSTIPoCDummyUser1Password remember:NO error:&error];
+    [sessionsService loginWithUserID:[sessionsService dummyUser1].entityID customerID:[sessionsService dummyUser1].customer.entityID password:kSTIPoCDummyUser1Password remember:NO error:&error];
     
     [sessionsService logout];
     
@@ -299,7 +299,7 @@ static SessionsService *sessionsService;
 {
     NSError *error = nil;
     
-    [sessionsService loginWithUserID:[sessionsService dummyUser1].domainID customerID:[sessionsService dummyUser1].customer.domainID password:kSTIPoCDummyUser1Password remember:YES error:&error];
+    [sessionsService loginWithUserID:[sessionsService dummyUser1].entityID customerID:[sessionsService dummyUser1].customer.entityID password:kSTIPoCDummyUser1Password remember:YES error:&error];
     
     [sessionsService logout];
     

@@ -13,6 +13,8 @@
 #import "SelfServiceRequestOperationManager.h"
 #import "OrderSummary.h"
 
+#import "DomainsService.h"
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions

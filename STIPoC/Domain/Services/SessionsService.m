@@ -52,23 +52,23 @@ NSString *const kSTIPoCServiceName = @"com.STIPoC.SelfService";
 
 - (User *)currentUser
 {
-    return [User findFirstByAttribute:kSTIPoCDomainIDAttributeKey withValue:[[NSUserDefaults standardUserDefaults] objectForKey:kSTIPoCDefaultsCurrentUserKey]];
+    return [User findFirstByAttribute:kSTIPoCEntityIDAttributeKey withValue:[[NSUserDefaults standardUserDefaults] objectForKey:kSTIPoCDefaultsCurrentUserKey]];
 }
 
 - (User *)lastUser
 {
-    return [User findFirstByAttribute:kSTIPoCDomainIDAttributeKey withValue:[[NSUserDefaults standardUserDefaults] objectForKey:kSTIPoCDefaultsLastUserKey]];
+    return [User findFirstByAttribute:kSTIPoCEntityIDAttributeKey withValue:[[NSUserDefaults standardUserDefaults] objectForKey:kSTIPoCDefaultsLastUserKey]];
 }
 
 - (void)setCurrentUser:(User *)currentUser
 {
-    [[NSUserDefaults standardUserDefaults] setObject:currentUser.domainID forKey:kSTIPoCDefaultsCurrentUserKey];
+    [[NSUserDefaults standardUserDefaults] setObject:currentUser.entityID forKey:kSTIPoCDefaultsCurrentUserKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 - (void)setLastUser:(User *)lastUser
 {
-    [[NSUserDefaults standardUserDefaults] setObject:lastUser.domainID forKey:kSTIPoCDefaultsLastUserKey];
+    [[NSUserDefaults standardUserDefaults] setObject:lastUser.entityID forKey:kSTIPoCDefaultsLastUserKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
@@ -91,7 +91,7 @@ NSString *const kSTIPoCServiceName = @"com.STIPoC.SelfService";
         return NO;
     }
     else {
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"domainID = %@ AND password = %@ AND customer.domainID = %@", userID, password, customerID];
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"entityID = %@ AND password = %@ AND customer.entityID = %@", userID, password, customerID];
         user = [User findFirstWithPredicate:predicate];
     }
     

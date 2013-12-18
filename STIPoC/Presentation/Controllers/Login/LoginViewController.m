@@ -47,8 +47,8 @@ NSString *const kSTIPoCSeguePushMainViewController = @"MainViewControllerPushSeg
             [self performSegueWithIdentifier:kSTIPoCSeguePushMainViewController sender:self];
         }
         else {
-            self.userIDField.text = lastUser.domainID;
-            self.customerIDField.text = lastUser.customer.domainID;
+            self.userIDField.text = lastUser.entityID;
+            self.customerIDField.text = lastUser.customer.entityID;
         }
     }
     

@@ -8,11 +8,8 @@
 
 #import "SelfService.h"
 #import "SelfServiceRequestOperationManager.h"
-#import "ErrorFactory.h"
 
 @interface SelfService ()
-
-@property (strong, nonatomic, readonly) NSError *defaultPublicError;
 
 @end
 
@@ -29,14 +26,6 @@
         _sharedInstance = [[self class] new];
     });
     return _sharedInstance;
-}
-
-#pragma mark -
-#pragma mark Custom Accessors
-
-- (NSError *)defaultPublicError
-{
-    return ([AFNetworkReachabilityManager sharedManager].reachable) ? [[ErrorFactory sharedFactory] createDefaultServerError] : [[ErrorFactory sharedFactory] createDefaultNetworkReachabilityError];
 }
 
 #pragma mark -
