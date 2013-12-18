@@ -178,10 +178,10 @@
             </objects>
             <point key="canvasLocation" x="-37" y="4400"/>
         </scene>
-        <!--View Controller - Select a Domain-->
+        <!--Attributes Main View Controller - Select a Domain-->
         <scene sceneID="uaj-Sz-1MU">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="hsx-Te-IKu" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="hsx-Te-IKu" customClass="AttributesMainViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wqo-2m-EEW"/>
                         <viewControllerLayoutGuide type="bottom" id="D5F-Hd-VyS"/>
@@ -209,7 +209,18 @@
                             <constraint firstItem="D5F-Hd-VyS" firstAttribute="top" secondItem="6XW-PY-DNM" secondAttribute="bottom" id="trE-RD-OTY"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Select a Domain" id="1vv-Lj-GkG"/>
+                    <navigationItem key="navigationItem" title="Select a Domain" id="1vv-Lj-GkG">
+                        <barButtonItem key="leftBarButtonItem" image="DomainsButtonBg" id="xdF-AE-rft">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="toggleDomainsContainer:" destination="hsx-Te-IKu" id="pZe-qa-pQd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="domainsBarButtonItem" destination="xdF-AE-rft" id="5l3-Wf-UWy"/>
+                        <outlet property="domainsContainer" destination="6XW-PY-DNM" id="srA-bD-J82"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tdf-JX-nWA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1068,6 +1079,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="DomainsButtonBg" width="20" height="20"/>
         <image name="LoginBg" width="1004" height="1024"/>
         <image name="LoginButtonBg" width="50" height="50"/>
         <image name="LoginSDPLogo" width="70" height="28"/>

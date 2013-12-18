@@ -41,10 +41,10 @@
 		7AB1011E1861F6A2008AD5FA /* DomainsService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB1011D1861F6A2008AD5FA /* DomainsService.m */; };
 		7AB101211861F78C008AD5FA /* Domain.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB101201861F78C008AD5FA /* Domain.m */; };
 		7AB1012418622255008AD5FA /* DomainCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB1012318622255008AD5FA /* DomainCell.m */; };
-		7AB1012E1862280B008AD5FA /* Untitled.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 7AB101271862280B008AD5FA /* Untitled.rtf */; };
-		7AB101301862280B008AD5FA /* Untitled.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 7AB1012B1862280B008AD5FA /* Untitled.rtf */; };
-		7AB101311862280B008AD5FA /* Untitled.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 7AB1012D1862280B008AD5FA /* Untitled.rtf */; };
 		7AB101341862286D008AD5FA /* DomainsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB101331862286D008AD5FA /* DomainsViewController.m */; };
+		7AB10137186247BF008AD5FA /* AttributesMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB10136186247BF008AD5FA /* AttributesMainViewController.m */; };
+		7AB1013A186247CF008AD5FA /* FilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB10139186247CF008AD5FA /* FilterViewController.m */; };
+		7AB1013E18624875008AD5FA /* ResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB1013D18624875008AD5FA /* ResultsViewController.m */; };
 		7AC68BAB185219DE0019A5A8 /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC68BA8185219DE0019A5A8 /* UIScrollView+SVInfiniteScrolling.m */; };
 		7AC68BAC185219DE0019A5A8 /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC68BAA185219DE0019A5A8 /* UIScrollView+SVPullToRefresh.m */; };
 		7AC68BC218528A190019A5A8 /* ECPercentDrivenInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC68BAF18528A190019A5A8 /* ECPercentDrivenInteractiveTransition.m */; };
@@ -241,11 +241,14 @@
 		7AB101201861F78C008AD5FA /* Domain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Domain.m; sourceTree = "<group>"; };
 		7AB1012218622255008AD5FA /* DomainCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DomainCell.h; sourceTree = "<group>"; };
 		7AB1012318622255008AD5FA /* DomainCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DomainCell.m; sourceTree = "<group>"; };
-		7AB101271862280B008AD5FA /* Untitled.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Untitled.rtf; sourceTree = "<group>"; };
-		7AB1012B1862280B008AD5FA /* Untitled.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Untitled.rtf; sourceTree = "<group>"; };
-		7AB1012D1862280B008AD5FA /* Untitled.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Untitled.rtf; sourceTree = "<group>"; };
 		7AB101321862286D008AD5FA /* DomainsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DomainsViewController.h; sourceTree = "<group>"; };
 		7AB101331862286D008AD5FA /* DomainsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DomainsViewController.m; sourceTree = "<group>"; };
+		7AB10135186247BF008AD5FA /* AttributesMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttributesMainViewController.h; sourceTree = "<group>"; };
+		7AB10136186247BF008AD5FA /* AttributesMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttributesMainViewController.m; sourceTree = "<group>"; };
+		7AB10138186247CF008AD5FA /* FilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterViewController.h; sourceTree = "<group>"; };
+		7AB10139186247CF008AD5FA /* FilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterViewController.m; sourceTree = "<group>"; };
+		7AB1013C18624875008AD5FA /* ResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsViewController.h; sourceTree = "<group>"; };
+		7AB1013D18624875008AD5FA /* ResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsViewController.m; sourceTree = "<group>"; };
 		7AC68BA6185219DE0019A5A8 /* SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVPullToRefresh.h; sourceTree = "<group>"; };
 		7AC68BA7185219DE0019A5A8 /* UIScrollView+SVInfiniteScrolling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVInfiniteScrolling.h"; sourceTree = "<group>"; };
 		7AC68BA8185219DE0019A5A8 /* UIScrollView+SVInfiniteScrolling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVInfiniteScrolling.m"; sourceTree = "<group>"; };
@@ -644,7 +647,7 @@
 				7AB101261862280B008AD5FA /* Attributes */,
 				7AB101281862280B008AD5FA /* Domains */,
 				7AB1012A1862280B008AD5FA /* Filter */,
-				7AB1012C1862280B008AD5FA /* Results */,
+				7AB1013B18624865008AD5FA /* Results */,
 			);
 			path = CMDB;
 			sourceTree = "<group>";
@@ -652,7 +655,8 @@
 		7AB101261862280B008AD5FA /* Attributes */ = {
 			isa = PBXGroup;
 			children = (
-				7AB101271862280B008AD5FA /* Untitled.rtf */,
+				7AB10135186247BF008AD5FA /* AttributesMainViewController.h */,
+				7AB10136186247BF008AD5FA /* AttributesMainViewController.m */,
 			);
 			path = Attributes;
 			sourceTree = "<group>";
@@ -669,15 +673,17 @@
 		7AB1012A1862280B008AD5FA /* Filter */ = {
 			isa = PBXGroup;
 			children = (
-				7AB1012B1862280B008AD5FA /* Untitled.rtf */,
+				7AB10138186247CF008AD5FA /* FilterViewController.h */,
+				7AB10139186247CF008AD5FA /* FilterViewController.m */,
 			);
 			path = Filter;
 			sourceTree = "<group>";
 		};
-		7AB1012C1862280B008AD5FA /* Results */ = {
+		7AB1013B18624865008AD5FA /* Results */ = {
 			isa = PBXGroup;
 			children = (
-				7AB1012D1862280B008AD5FA /* Untitled.rtf */,
+				7AB1013C18624875008AD5FA /* ResultsViewController.h */,
+				7AB1013D18624875008AD5FA /* ResultsViewController.m */,
 			);
 			path = Results;
 			sourceTree = "<group>";
@@ -1424,13 +1430,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C958452183ACF4E0065C878 /* SSKeychain.strings in Resources */,
-				7AB1012E1862280B008AD5FA /* Untitled.rtf in Resources */,
 				7C13C815183A634B00C12C54 /* Localizable.strings in Resources */,
-				7AB101311862280B008AD5FA /* Untitled.rtf in Resources */,
 				7C13C814183A633D00C12C54 /* Storyboard.storyboard in Resources */,
 				7C13C813183A633800C12C54 /* InfoPlist.strings in Resources */,
 				7C2A34971832A6EB004AE430 /* Images.xcassets in Resources */,
-				7AB101301862280B008AD5FA /* Untitled.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1509,6 +1512,7 @@
 				7C363CBC1840082000003723 /* GenericSelfServiceRequest.m in Sources */,
 				7C363CAF183FB35000003723 /* NSObject+ObjectMap.m in Sources */,
 				7C2A35751832A734004AE430 /* MagicalRecord+Setup.m in Sources */,
+				7AB1013A186247CF008AD5FA /* FilterViewController.m in Sources */,
 				7AB07C5A184972EA001265E0 /* MRCircularProgressView.m in Sources */,
 				7C2A35651832A734004AE430 /* NSManagedObject+MagicalAggregation.m in Sources */,
 				7C2A35761832A734004AE430 /* MagicalRecord+ShorthandSupport.m in Sources */,
@@ -1545,7 +1549,9 @@
 				7C2A35DC1832A7CE004AE430 /* AppDelegate.m in Sources */,
 				7C2A356C1832A734004AE430 /* NSManagedObjectContext+MagicalSaves.m in Sources */,
 				7C2A35671832A734004AE430 /* NSManagedObject+MagicalFinders.m in Sources */,
+				7AB10137186247BF008AD5FA /* AttributesMainViewController.m in Sources */,
 				7C8A3505183D0FC400802B89 /* Entity.m in Sources */,
+				7AB1013E18624875008AD5FA /* ResultsViewController.m in Sources */,
 				7C8A350B183D100500802B89 /* Customer.m in Sources */,
 				7C2A35D11832A7CE004AE430 /* STIPoC.xcdatamodeld in Sources */,
 				7C2A35951832A7AD004AE430 /* AFNetworkReachabilityManager.m in Sources */,
