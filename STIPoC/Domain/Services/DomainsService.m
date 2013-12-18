@@ -108,37 +108,37 @@ static NSString *const kSTIPoCNameAttributeKey = @"name";
         
         Domain *domain8 = [Domain createInContext:localContext];
         domain8.entityID = @"8";
-        domain8.name = @"Domain ABC";
+        domain8.name = @"Domain DEF";
         domain8.maxCount = @(20);
         
         Domain *domain9 = [Domain createInContext:localContext];
         domain9.entityID = @"9";
-        domain9.name = @"Domain ABC";
+        domain9.name = @"Domain GHI";
         domain9.maxCount = @(20);
         
         Domain *domain10 = [Domain createInContext:localContext];
         domain10.entityID = @"10";
-        domain10.name = @"Domain ABC";
+        domain10.name = @"Domain JKL";
         domain10.maxCount = @(20);
         
         Domain *domain11 = [Domain createInContext:localContext];
         domain11.entityID = @"11";
-        domain11.name = @"Domain ABC";
+        domain11.name = @"Domain MNO";
         domain11.maxCount = @(20);
         
         Domain *domain12 = [Domain createInContext:localContext];
         domain12.entityID = @"12";
-        domain12.name = @"Domain ABC";
+        domain12.name = @"Domain PQR";
         domain12.maxCount = @(20);
         
         Domain *domain13 = [Domain createInContext:localContext];
         domain13.entityID = @"13";
-        domain13.name = @"Domain ABC";
+        domain13.name = @"Domain STU";
         domain13.maxCount = @(20);
         
         Domain *domain14 = [Domain createInContext:localContext];
         domain14.entityID = @"14";
-        domain14.name = @"Domain ABC";
+        domain14.name = @"Domain VWX";
         domain14.maxCount = @(20);
         
         Domain *domain15 = [Domain createInContext:localContext];
@@ -148,22 +148,22 @@ static NSString *const kSTIPoCNameAttributeKey = @"name";
         
         Domain *domain16 = [Domain createInContext:localContext];
         domain16.entityID = @"16";
-        domain16.name = @"Domain ABC";
+        domain16.name = @"Domain YZ";
         domain16.maxCount = @(20);
         
         Domain *domain17 = [Domain createInContext:localContext];
         domain17.entityID = @"17";
-        domain17.name = @"Domain ABC";
+        domain17.name = @"Domain 123";
         domain17.maxCount = @(20);
         
         Domain *domain18 = [Domain createInContext:localContext];
         domain18.entityID = @"18";
-        domain18.name = @"Domain ABC";
+        domain18.name = @"Domain 456";
         domain18.maxCount = @(20);
         
         Domain *domain19 = [Domain createInContext:localContext];
         domain19.entityID = @"19";
-        domain19.name = @"Domain ABC";
+        domain19.name = @"Domain 789";
         domain19.maxCount = @(20);
     }];
 }
