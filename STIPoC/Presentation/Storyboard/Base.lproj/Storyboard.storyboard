@@ -195,7 +195,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="w64-rJ-1IF"/>
+                                    <constraint firstAttribute="width" constant="320" id="KKx-j3-yO4"/>
                                 </constraints>
                                 <connections>
                                     <segue destination="iyD-ZC-qoO" kind="embed" id="M8N-di-V68"/>
@@ -204,9 +204,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="6XW-PY-DNM" firstAttribute="top" secondItem="wqo-2m-EEW" secondAttribute="bottom" id="FVA-fD-ZgU"/>
-                            <constraint firstItem="6XW-PY-DNM" firstAttribute="leading" secondItem="DBY-mQ-XcW" secondAttribute="leading" id="MF6-M9-tDu"/>
-                            <constraint firstItem="D5F-Hd-VyS" firstAttribute="top" secondItem="6XW-PY-DNM" secondAttribute="bottom" id="trE-RD-OTY"/>
+                            <constraint firstItem="6XW-PY-DNM" firstAttribute="top" secondItem="wqo-2m-EEW" secondAttribute="bottom" id="bml-YI-ISY"/>
+                            <constraint firstItem="6XW-PY-DNM" firstAttribute="leading" secondItem="DBY-mQ-XcW" secondAttribute="leading" id="u3v-Rr-thu"/>
+                            <constraint firstItem="D5F-Hd-VyS" firstAttribute="top" secondItem="6XW-PY-DNM" secondAttribute="bottom" id="vQs-Ni-AaN"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Select a Domain" id="1vv-Lj-GkG">
@@ -218,7 +218,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="domainsBarButtonItem" destination="xdF-AE-rft" id="5l3-Wf-UWy"/>
                         <outlet property="domainsContainer" destination="6XW-PY-DNM" id="srA-bD-J82"/>
                     </connections>
                 </viewController>

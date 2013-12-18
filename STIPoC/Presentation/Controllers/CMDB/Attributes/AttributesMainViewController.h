@@ -11,6 +11,7 @@
 @interface AttributesMainViewController : GenericViewController
 
 @property (weak, nonatomic) IBOutlet UIView *domainsContainer;
+
 - (IBAction)toggleDomainsContainer:(id)sender;
 
 @end

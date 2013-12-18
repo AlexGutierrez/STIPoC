@@ -8,33 +8,68 @@
 
 #import "AttributesMainViewController.h"
 
+#define DOMAINS_CONTAINER_OFFSET_X_HIDDEN -320.0f
+#define DOMAINS_CONTAINER_OFFSET_X_DISPLAYED 0.0f
+
 @interface AttributesMainViewController ()
+
+@property (nonatomic) BOOL domainsContainerIsHidden;
+
+- (void)setDomainsContainerIsHidden:(BOOL)domainsContainerIsHidden animated:(BOOL)animated;
 
 @end
 
 @implementation AttributesMainViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+#pragma mark -
+#pragma mark View Lifecycle
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    
+    [self setDomainsContainerIsHidden:YES animated:NO];
 }
 
-- (void)didReceiveMemoryWarning
+#pragma mark -
+#pragma mark Custom Accessors
+
+- (void)setDomainsContainerIsHidden:(BOOL)domainsContainerIsHidden animated:(BOOL)animated
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    if (_domainsContainerIsHidden != domainsContainerIsHidden) {
+        
+        CGRect startFrame = self.domainsContainer.frame;
+        startFrame.origin.x = (_domainsContainerIsHidden)? DOMAINS_CONTAINER_OFFSET_X_HIDDEN : DOMAINS_CONTAINER_OFFSET_X_DISPLAYED;
+        self.domainsContainer.frame = startFrame;
+        self.domainsContainer.hidden = NO;
+        
+        CGRect endFrame = self.domainsContainer.frame;
+        endFrame.origin.x = (_domainsContainerIsHidden)? DOMAINS_CONTAINER_OFFSET_X_DISPLAYED : DOMAINS_CONTAINER_OFFSET_X_HIDDEN;
+        
+        if (animated) {
+            [UIView animateWithDuration:0.3 animations:^{
+                self.domainsContainer.frame = endFrame;
+            } completion:^(BOOL finished) {
+                if (finished) {
+                    self.domainsContainer.hidden = !_domainsContainerIsHidden;
+                    _domainsContainerIsHidden = domainsContainerIsHidden;
+                }
+            }];
+        }
+        else {
+            self.domainsContainer.frame = endFrame;
+            self.domainsContainer.hidden = !_domainsContainerIsHidden;
+            _domainsContainerIsHidden = domainsContainerIsHidden;
+        }
+    }
 }
 
-- (IBAction)toggleDomainsContainer:(id)sender {
+#pragma mark -
+#pragma mark IBOutlet
+
+- (IBAction)toggleDomainsContainer:(id)sender
+{
+    [self setDomainsContainerIsHidden:!self.domainsContainerIsHidden animated:YES];
 }
+
 @end
