@@ -143,7 +143,7 @@ static NSString *const kSTIPoCNameAttributeKey = @"name";
         
         Domain *domain15 = [Domain createInContext:localContext];
         domain15.entityID = @"15";
-        domain15.name = @"Domain ABC";
+        domain15.name = @"Domain Ñ";
         domain15.maxCount = @(20);
         
         Domain *domain16 = [Domain createInContext:localContext];
