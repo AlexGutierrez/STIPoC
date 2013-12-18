@@ -11,7 +11,9 @@
 @interface AttributesMainViewController : GenericViewController
 
 @property (weak, nonatomic) IBOutlet UIView *domainsContainer;
+@property (weak, nonatomic) IBOutlet UIButton *sideMenuCollapserButton;
 
-- (IBAction)toggleDomainsContainer:(id)sender;
+- (IBAction)collapseSideMenus:(UIButton *)sender;
+- (IBAction)toggleDomainsContainer:(UIBarButtonItem *)sender;
 
 @end

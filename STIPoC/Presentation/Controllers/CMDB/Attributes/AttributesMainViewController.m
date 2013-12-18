@@ -11,9 +11,14 @@
 #define DOMAINS_CONTAINER_OFFSET_X_HIDDEN -320.0f
 #define DOMAINS_CONTAINER_OFFSET_X_DISPLAYED 0.0f
 
+#define SIDE_MENU_COLLAPSER_BUTTON_ALPHA_HIDDEN 0.0f
+#define SIDE_MENU_COLLAPSER_BUTTON_ALPHA_DISPLAYED 0.3f
+
 @interface AttributesMainViewController ()
 
 @property (nonatomic) BOOL domainsContainerIsHidden;
+
+@property (strong, nonatomic) UIView *currentDisplayedMenu;
 
 - (void)setDomainsContainerIsHidden:(BOOL)domainsContainerIsHidden animated:(BOOL)animated;
 
@@ -29,6 +34,7 @@
     [super viewDidLoad];
     
     [self setDomainsContainerIsHidden:YES animated:NO];
+    self.sideMenuCollapserButton.alpha = 0.0f;
 }
 
 #pragma mark -
@@ -49,16 +55,21 @@
         if (animated) {
             [UIView animateWithDuration:0.3 animations:^{
                 self.domainsContainer.frame = endFrame;
+                self.sideMenuCollapserButton.alpha = (_domainsContainerIsHidden)? SIDE_MENU_COLLAPSER_BUTTON_ALPHA_DISPLAYED : SIDE_MENU_COLLAPSER_BUTTON_ALPHA_HIDDEN;
             } completion:^(BOOL finished) {
                 if (finished) {
                     self.domainsContainer.hidden = !_domainsContainerIsHidden;
+                    self.currentDisplayedMenu = (_domainsContainerIsHidden)? self.domainsContainer : nil;
                     _domainsContainerIsHidden = domainsContainerIsHidden;
+                    
                 }
             }];
         }
         else {
             self.domainsContainer.frame = endFrame;
+            self.sideMenuCollapserButton.alpha = (_domainsContainerIsHidden)? SIDE_MENU_COLLAPSER_BUTTON_ALPHA_DISPLAYED : SIDE_MENU_COLLAPSER_BUTTON_ALPHA_HIDDEN;
             self.domainsContainer.hidden = !_domainsContainerIsHidden;
+            self.currentDisplayedMenu = (_domainsContainerIsHidden)? self.domainsContainer : nil;
             _domainsContainerIsHidden = domainsContainerIsHidden;
         }
     }
@@ -67,7 +78,14 @@
 #pragma mark -
 #pragma mark IBOutlet
 
-- (IBAction)toggleDomainsContainer:(id)sender
+- (IBAction)collapseSideMenus:(UIButton *)sender
+{
+    if ([self.currentDisplayedMenu isEqual:self.domainsContainer]) {
+        [self toggleDomainsContainer:nil];
+    }
+}
+
+- (IBAction)toggleDomainsContainer:(UIBarButtonItem *)sender
 {
     [self setDomainsContainerIsHidden:!self.domainsContainerIsHidden animated:YES];
 }

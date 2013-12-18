@@ -190,6 +190,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <button opaque="NO" alpha="0.29999999999999999" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4U-l8-Ugc">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="collapseSideMenus:" destination="hsx-Te-IKu" eventType="touchUpInside" id="oPT-yz-LJY"/>
+                                </connections>
+                            </button>
                             <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6XW-PY-DNM">
                                 <rect key="frame" x="0.0" y="64" width="320" height="960"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -204,7 +215,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="D5F-Hd-VyS" firstAttribute="top" secondItem="a4U-l8-Ugc" secondAttribute="bottom" id="BpU-Pj-Wqe"/>
                             <constraint firstItem="6XW-PY-DNM" firstAttribute="top" secondItem="wqo-2m-EEW" secondAttribute="bottom" id="bml-YI-ISY"/>
+                            <constraint firstAttribute="trailing" secondItem="a4U-l8-Ugc" secondAttribute="trailing" id="f3r-fp-epE"/>
+                            <constraint firstItem="a4U-l8-Ugc" firstAttribute="leading" secondItem="DBY-mQ-XcW" secondAttribute="leading" id="m3L-O8-BZR"/>
+                            <constraint firstItem="a4U-l8-Ugc" firstAttribute="top" secondItem="DBY-mQ-XcW" secondAttribute="top" id="sju-7I-cm4"/>
                             <constraint firstItem="6XW-PY-DNM" firstAttribute="leading" secondItem="DBY-mQ-XcW" secondAttribute="leading" id="u3v-Rr-thu"/>
                             <constraint firstItem="D5F-Hd-VyS" firstAttribute="top" secondItem="6XW-PY-DNM" secondAttribute="bottom" id="vQs-Ni-AaN"/>
                         </constraints>
@@ -219,11 +234,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="domainsContainer" destination="6XW-PY-DNM" id="srA-bD-J82"/>
+                        <outlet property="sideMenuCollapserButton" destination="a4U-l8-Ugc" id="RrV-rg-H9K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tdf-JX-nWA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="952" y="4400"/>
+            <point key="canvasLocation" x="952" y="4394"/>
         </scene>
         <!--Order Status View Controller - My Order Status-->
         <scene sceneID="tqi-RD-MVH">
