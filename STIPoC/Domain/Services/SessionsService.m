@@ -32,14 +32,14 @@ NSString *const kSTIPoCServiceName = @"com.STIPoC.SelfService";
 #pragma mark -
 #pragma mark Class Methods
 
-+ (instancetype)sharedInstance
++ (instancetype)sharedService
 {
-    static id _sharedInstance = nil;
+    static id _sharedService = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _sharedInstance = [[self class] new];
+        _sharedService = [[self class] new];
     });
-    return _sharedInstance;
+    return _sharedService;
 }
 
 #pragma mark -

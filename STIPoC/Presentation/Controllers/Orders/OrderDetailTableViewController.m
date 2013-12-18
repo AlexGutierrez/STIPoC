@@ -17,7 +17,6 @@
 
 @end
 
-static NSString *const kSTIPoCQuoteLineItemCellIdentifier = @"QuoteLineItemCell";
 static NSString *const kSTIPoCOrderSummaryCellRejectText = @"Remove";
 
 @implementation OrderDetailTableViewController

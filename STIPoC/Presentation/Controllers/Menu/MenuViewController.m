@@ -47,7 +47,7 @@ static NSString *const kSTIPoCSegueEmbedMenuTableViewController = @"MenuTableVie
 - (void)menuOptionsViewControllerDidSelectOption:(MenuOption)menuOption
 {
     if (menuOption == MenuOptionLogout) {
-        [[SessionsService sharedInstance] logout];
+        [[SessionsService sharedService] logout];
         [self.navigationController popToRootViewControllerAnimated:YES];
     }
     else {

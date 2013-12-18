@@ -10,6 +10,8 @@
 #import "QuoteLineItem.h"
 #import "SelfServiceEnumTranslator.h"
 
+NSString *const kSTIPoCQuoteLineItemCellIdentifier = @"QuoteLineItemCell";
+
 @interface QuoteLineItemCell ()
 
 @property (nonatomic) PriceType priceType;

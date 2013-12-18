@@ -8,7 +8,6 @@
 
 #import "LoginViewController.h"
 #import "SessionsService.h"
-#import "AlertViewFactory.h"
 #import "User.h"
 #import "Customer.h"
 #import "XCDFormInputAccessoryView.h"
@@ -41,9 +40,9 @@ NSString *const kSTIPoCSeguePushMainViewController = @"MainViewControllerPushSeg
     self.customerIDField.text = nil;
     self.passwordField.text = nil;
     
-    User *lastUser = [[SessionsService sharedInstance] lastUser];
+    User *lastUser = [[SessionsService sharedService] lastUser];
     if (lastUser) {
-        if ([[SessionsService sharedInstance] retrieveFromKeychainPasswordForUser:lastUser]) {
+        if ([[SessionsService sharedService] retrieveFromKeychainPasswordForUser:lastUser]) {
             [self performSegueWithIdentifier:kSTIPoCSeguePushMainViewController sender:self];
         }
         else {
@@ -111,7 +110,7 @@ NSString *const kSTIPoCSeguePushMainViewController = @"MainViewControllerPushSeg
     BOOL remember = self.rememberSwitch.on;
     
     NSError *error = nil;
-    BOOL loginSucceeded = [[SessionsService sharedInstance] loginWithUserID:userID
+    BOOL loginSucceeded = [[SessionsService sharedService] loginWithUserID:userID
                                                                  customerID:customerID
                                                                    password:password
                                                                    remember:remember

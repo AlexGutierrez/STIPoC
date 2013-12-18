@@ -11,6 +11,8 @@
 #import "QuoteLineItem.h"
 #import "SelfServiceEnumTranslator.h"
 
+NSString *const kSTIPoCOrderSummaryCellIdentifier = @"OrderSummaryCell";
+
 @implementation OrderSummaryCell
 
 - (void)setupWithOrderSummary:(OrderSummary *)orderSummary andPriceType:(PriceType)priceType

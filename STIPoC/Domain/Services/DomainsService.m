@@ -23,14 +23,14 @@ static NSString *const kSTIPoCNameAttributeKey = @"name";
 #pragma mark -
 #pragma mark Class Methods
 
-+ (instancetype)sharedInstance
++ (instancetype)sharedService
 {
-    static id _sharedInstance = nil;
+    static id _sharedService = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _sharedInstance = [[self class] new];
+        _sharedService = [[self class] new];
     });
-    return _sharedInstance;
+    return _sharedService;
 }
 
 #pragma mark -
@@ -106,6 +106,65 @@ static NSString *const kSTIPoCNameAttributeKey = @"name";
         domain7.name = @"Domain ABC";
         domain7.maxCount = @(20);
         
+        Domain *domain8 = [Domain createInContext:localContext];
+        domain8.entityID = @"8";
+        domain8.name = @"Domain ABC";
+        domain8.maxCount = @(20);
+        
+        Domain *domain9 = [Domain createInContext:localContext];
+        domain9.entityID = @"9";
+        domain9.name = @"Domain ABC";
+        domain9.maxCount = @(20);
+        
+        Domain *domain10 = [Domain createInContext:localContext];
+        domain10.entityID = @"10";
+        domain10.name = @"Domain ABC";
+        domain10.maxCount = @(20);
+        
+        Domain *domain11 = [Domain createInContext:localContext];
+        domain11.entityID = @"11";
+        domain11.name = @"Domain ABC";
+        domain11.maxCount = @(20);
+        
+        Domain *domain12 = [Domain createInContext:localContext];
+        domain12.entityID = @"12";
+        domain12.name = @"Domain ABC";
+        domain12.maxCount = @(20);
+        
+        Domain *domain13 = [Domain createInContext:localContext];
+        domain13.entityID = @"13";
+        domain13.name = @"Domain ABC";
+        domain13.maxCount = @(20);
+        
+        Domain *domain14 = [Domain createInContext:localContext];
+        domain14.entityID = @"14";
+        domain14.name = @"Domain ABC";
+        domain14.maxCount = @(20);
+        
+        Domain *domain15 = [Domain createInContext:localContext];
+        domain15.entityID = @"15";
+        domain15.name = @"Domain ABC";
+        domain15.maxCount = @(20);
+        
+        Domain *domain16 = [Domain createInContext:localContext];
+        domain16.entityID = @"16";
+        domain16.name = @"Domain ABC";
+        domain16.maxCount = @(20);
+        
+        Domain *domain17 = [Domain createInContext:localContext];
+        domain17.entityID = @"17";
+        domain17.name = @"Domain ABC";
+        domain17.maxCount = @(20);
+        
+        Domain *domain18 = [Domain createInContext:localContext];
+        domain18.entityID = @"18";
+        domain18.name = @"Domain ABC";
+        domain18.maxCount = @(20);
+        
+        Domain *domain19 = [Domain createInContext:localContext];
+        domain19.entityID = @"19";
+        domain19.name = @"Domain ABC";
+        domain19.maxCount = @(20);
     }];
 }
 

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AlertViewFactory.h"
 
 @interface GenericViewController : UIViewController
 

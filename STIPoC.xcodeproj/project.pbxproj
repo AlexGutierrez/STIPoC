@@ -40,6 +40,11 @@
 		7AB07C5F184972EA001265E0 /* MRWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB07C56184972EA001265E0 /* MRWeakProxy.m */; };
 		7AB1011E1861F6A2008AD5FA /* DomainsService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB1011D1861F6A2008AD5FA /* DomainsService.m */; };
 		7AB101211861F78C008AD5FA /* Domain.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB101201861F78C008AD5FA /* Domain.m */; };
+		7AB1012418622255008AD5FA /* DomainCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB1012318622255008AD5FA /* DomainCell.m */; };
+		7AB1012E1862280B008AD5FA /* Untitled.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 7AB101271862280B008AD5FA /* Untitled.rtf */; };
+		7AB101301862280B008AD5FA /* Untitled.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 7AB1012B1862280B008AD5FA /* Untitled.rtf */; };
+		7AB101311862280B008AD5FA /* Untitled.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 7AB1012D1862280B008AD5FA /* Untitled.rtf */; };
+		7AB101341862286D008AD5FA /* DomainsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB101331862286D008AD5FA /* DomainsViewController.m */; };
 		7AC68BAB185219DE0019A5A8 /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC68BA8185219DE0019A5A8 /* UIScrollView+SVInfiniteScrolling.m */; };
 		7AC68BAC185219DE0019A5A8 /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC68BAA185219DE0019A5A8 /* UIScrollView+SVPullToRefresh.m */; };
 		7AC68BC218528A190019A5A8 /* ECPercentDrivenInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC68BAF18528A190019A5A8 /* ECPercentDrivenInteractiveTransition.m */; };
@@ -234,6 +239,13 @@
 		7AB1011D1861F6A2008AD5FA /* DomainsService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DomainsService.m; sourceTree = "<group>"; };
 		7AB1011F1861F78C008AD5FA /* Domain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Domain.h; sourceTree = "<group>"; };
 		7AB101201861F78C008AD5FA /* Domain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Domain.m; sourceTree = "<group>"; };
+		7AB1012218622255008AD5FA /* DomainCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DomainCell.h; sourceTree = "<group>"; };
+		7AB1012318622255008AD5FA /* DomainCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DomainCell.m; sourceTree = "<group>"; };
+		7AB101271862280B008AD5FA /* Untitled.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Untitled.rtf; sourceTree = "<group>"; };
+		7AB1012B1862280B008AD5FA /* Untitled.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Untitled.rtf; sourceTree = "<group>"; };
+		7AB1012D1862280B008AD5FA /* Untitled.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Untitled.rtf; sourceTree = "<group>"; };
+		7AB101321862286D008AD5FA /* DomainsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DomainsViewController.h; sourceTree = "<group>"; };
+		7AB101331862286D008AD5FA /* DomainsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DomainsViewController.m; sourceTree = "<group>"; };
 		7AC68BA6185219DE0019A5A8 /* SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVPullToRefresh.h; sourceTree = "<group>"; };
 		7AC68BA7185219DE0019A5A8 /* UIScrollView+SVInfiniteScrolling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVInfiniteScrolling.h"; sourceTree = "<group>"; };
 		7AC68BA8185219DE0019A5A8 /* UIScrollView+SVInfiniteScrolling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVInfiniteScrolling.m"; sourceTree = "<group>"; };
@@ -624,6 +636,50 @@
 				7AB07C56184972EA001265E0 /* MRWeakProxy.m */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		7AB101251862280B008AD5FA /* CMDB */ = {
+			isa = PBXGroup;
+			children = (
+				7AB101261862280B008AD5FA /* Attributes */,
+				7AB101281862280B008AD5FA /* Domains */,
+				7AB1012A1862280B008AD5FA /* Filter */,
+				7AB1012C1862280B008AD5FA /* Results */,
+			);
+			path = CMDB;
+			sourceTree = "<group>";
+		};
+		7AB101261862280B008AD5FA /* Attributes */ = {
+			isa = PBXGroup;
+			children = (
+				7AB101271862280B008AD5FA /* Untitled.rtf */,
+			);
+			path = Attributes;
+			sourceTree = "<group>";
+		};
+		7AB101281862280B008AD5FA /* Domains */ = {
+			isa = PBXGroup;
+			children = (
+				7AB101321862286D008AD5FA /* DomainsViewController.h */,
+				7AB101331862286D008AD5FA /* DomainsViewController.m */,
+			);
+			path = Domains;
+			sourceTree = "<group>";
+		};
+		7AB1012A1862280B008AD5FA /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				7AB1012B1862280B008AD5FA /* Untitled.rtf */,
+			);
+			path = Filter;
+			sourceTree = "<group>";
+		};
+		7AB1012C1862280B008AD5FA /* Results */ = {
+			isa = PBXGroup;
+			children = (
+				7AB1012D1862280B008AD5FA /* Untitled.rtf */,
+			);
+			path = Results;
 			sourceTree = "<group>";
 		};
 		7AC68BA5185219DE0019A5A8 /* SVPullToRefresh */ = {
@@ -1028,6 +1084,7 @@
 				7A3937E7184947D800D3CF52 /* Login */,
 				7A3937EA184947D800D3CF52 /* Menu */,
 				7A3937EF184947D800D3CF52 /* Orders */,
+				7AB101251862280B008AD5FA /* CMDB */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1281,6 +1338,8 @@
 				7C1A98851847E1D10045ED8C /* OrderSummaryCell.m */,
 				7A534302184BF82900FE9C54 /* QuoteLineItemCell.h */,
 				7A534303184BF82900FE9C54 /* QuoteLineItemCell.m */,
+				7AB1012218622255008AD5FA /* DomainCell.h */,
+				7AB1012318622255008AD5FA /* DomainCell.m */,
 			);
 			path = "Custom Table View Cells";
 			sourceTree = "<group>";
@@ -1365,10 +1424,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C958452183ACF4E0065C878 /* SSKeychain.strings in Resources */,
+				7AB1012E1862280B008AD5FA /* Untitled.rtf in Resources */,
 				7C13C815183A634B00C12C54 /* Localizable.strings in Resources */,
+				7AB101311862280B008AD5FA /* Untitled.rtf in Resources */,
 				7C13C814183A633D00C12C54 /* Storyboard.storyboard in Resources */,
 				7C13C813183A633800C12C54 /* InfoPlist.strings in Resources */,
 				7C2A34971832A6EB004AE430 /* Images.xcassets in Resources */,
+				7AB101301862280B008AD5FA /* Untitled.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1406,6 +1468,7 @@
 				7C2A35941832A7AD004AE430 /* AFHTTPSessionManager.m in Sources */,
 				7C2A35581832A734004AE430 /* DDASLLogger.m in Sources */,
 				7AC68BC918528A190019A5A8 /* ECZoomAnimationController.m in Sources */,
+				7AB1012418622255008AD5FA /* DomainCell.m in Sources */,
 				7A5342FC184BC49C00FE9C54 /* OrderDetailTableViewController.m in Sources */,
 				7C363CA5183FAB5900003723 /* GenericSelfServiceResult.m in Sources */,
 				7AA569F71848F2950095C98A /* UpdateOrderStatusResult.m in Sources */,
@@ -1489,6 +1552,7 @@
 				7C2A355C1832A734004AE430 /* ContextFilterLogFormatter.m in Sources */,
 				7A3937F9184947D800D3CF52 /* MenuOptionsViewController.m in Sources */,
 				7C363C99183FA7CA00003723 /* GetOrdersRequest.m in Sources */,
+				7AB101341862286D008AD5FA /* DomainsViewController.m in Sources */,
 				7AB07C5B184972EA001265E0 /* MRIconView.m in Sources */,
 				7AA569F41848F2630095C98A /* UpdateOrderStatusRequest.m in Sources */,
 				7C956A051843A5C6000A5595 /* ModifyOrderDetailsResult.m in Sources */,

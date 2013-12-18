@@ -33,8 +33,8 @@
     }];
     
 #if (!defined(TEST))
-    [[GenericService sharedInstance] setupCoreDataStack];
-    [[GenericService sharedInstance] createDummyDataForProd];
+    [[GenericService sharedService] setupCoreDataStack];
+    [[GenericService sharedService] createDummyDataForProd];
     
     return YES;
 #else
@@ -45,7 +45,7 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     [[AFNetworkReachabilityManager sharedManager] stopMonitoring];
-    [[GenericService sharedInstance] cleanUpPersistenceChangesInMemory];
+    [[GenericService sharedService] cleanUpPersistenceChangesInMemory];
 }
 
 @end

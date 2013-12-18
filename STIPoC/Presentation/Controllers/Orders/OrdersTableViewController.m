@@ -13,7 +13,6 @@
 #import "AlertViewFactory.h"
 #import "SelfServiceEnumTranslator.h"
 
-
 @interface OrdersTableViewController ()
 
 @property (nonatomic) NSInteger requestCounter;
@@ -24,7 +23,6 @@
 
 @end
 
-static NSString *const kSTIPoCOrderSummaryCellIdentifier = @"OrderSummaryCell";
 static NSString *const kSTIPoCOrderSummaryCellRejectText = @"Reject";
 
 @implementation OrdersTableViewController

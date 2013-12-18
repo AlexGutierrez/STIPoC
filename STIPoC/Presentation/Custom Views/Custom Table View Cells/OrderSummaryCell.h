@@ -11,6 +11,8 @@
 
 @class OrderSummary;
 
+extern NSString *const kSTIPoCOrderSummaryCellIdentifier;
+
 @interface OrderSummaryCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *orderNumberLabel;

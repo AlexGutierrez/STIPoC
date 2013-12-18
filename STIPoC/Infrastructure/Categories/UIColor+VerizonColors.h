@@ -15,6 +15,7 @@ extern NSString *const kSTIPoCFontHelveticaNeueMedium;
 
 @interface UIColor (VerizonColors)
 
++ (UIColor *)colorWithColor:(UIColor *)color andAlpha:(CGFloat)alpha;
 + (UIColor *)verizonDarkRed;
 + (UIColor *)verizonRed;
 + (UIColor *)verizonBlack;

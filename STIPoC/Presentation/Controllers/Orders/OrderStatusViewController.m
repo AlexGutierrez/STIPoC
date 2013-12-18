@@ -11,7 +11,6 @@
 #import "UIViewController+ECSlidingViewController.h"
 #import "ECZoomAnimationController.h"
 #import "OrderDetailViewController.h"
-#import "AlertViewFactory.h"
 #import "SelfService.h"
 #import "OrderSummary.h"
 
@@ -91,7 +90,7 @@ static NSString *const kSTIPoCSegueModalOrderDetailViewController = @"OrderDetai
     [self showOverlayWithMessage:NSLocalizedString(@"Loading...", nil)];
     
     self.requestCounter++;
-    [[SelfService sharedInstance] getOrdersWithPageSize:ORDERS_PAGE_SIZE
+    [[SelfService sharedService] getOrdersWithPageSize:ORDERS_PAGE_SIZE
                                              pageNumber:1
                                             orderNumber:@""
                                         completionBlock:^(NSArray *orders) {
@@ -116,7 +115,7 @@ static NSString *const kSTIPoCSegueModalOrderDetailViewController = @"OrderDetai
     
     [self.ordersTableViewController removePullToRefreshView];
     
-    [[SelfService sharedInstance] getOrdersWithPageSize:pageSize
+    [[SelfService sharedService] getOrdersWithPageSize:pageSize
                                              pageNumber:1
                                             orderNumber:searchText
                                         completionBlock:^(NSArray *orders) {
@@ -138,7 +137,7 @@ static NSString *const kSTIPoCSegueModalOrderDetailViewController = @"OrderDetai
     self.requestCounter++;
     [self.ordersTableViewController removeRefreshControl];
     
-    [[SelfService sharedInstance] getOrdersWithPageSize:ORDERS_PAGE_SIZE
+    [[SelfService sharedService] getOrdersWithPageSize:ORDERS_PAGE_SIZE
                                              pageNumber:pageNumber
                                             orderNumber:searchText
                                         completionBlock:^(NSArray *orders) {
@@ -159,7 +158,7 @@ static NSString *const kSTIPoCSegueModalOrderDetailViewController = @"OrderDetai
     [self showOverlayWithMessage:NSLocalizedString(@"Searching...", nil)];
     
     self.requestCounter++;
-    [[SelfService sharedInstance] getOrdersWithPageSize:ORDERS_PAGE_SIZE
+    [[SelfService sharedService] getOrdersWithPageSize:ORDERS_PAGE_SIZE
                                              pageNumber:1
                                             orderNumber:searchText
                                         completionBlock:^(NSArray *orders) {
@@ -235,7 +234,7 @@ static NSString *const kSTIPoCSegueModalOrderDetailViewController = @"OrderDetai
             
             NSString *comments = [alertView textFieldAtIndex:0].text;
             
-            [[SelfService sharedInstance] rejectOrderWithOrderSummary:self.rejectedOrderSummary
+            [[SelfService sharedService] rejectOrderWithOrderSummary:self.rejectedOrderSummary
                                                              comments:comments
                                                       completionBlock:^{
                                                           self.requestCounter--;
@@ -252,7 +251,7 @@ static NSString *const kSTIPoCSegueModalOrderDetailViewController = @"OrderDetai
         else {
             [self showOverlayWithMessage:NSLocalizedString(@"Updating...", nil)];
             
-            [[SelfService sharedInstance] updateOrderDetailsOnServerWithOrders:self.selectedOrderSummary
+            [[SelfService sharedService] updateOrderDetailsOnServerWithOrders:self.selectedOrderSummary
                                                                completionBlock:^{
                                                                    self.requestCounter--;
                                                                    [self dismissOverlay];
@@ -300,7 +299,7 @@ static NSString *const kSTIPoCSegueModalOrderDetailViewController = @"OrderDetai
     
     for (OrderSummary *orderSummary in orders) {
         self.requestCounter++;
-        [[SelfService sharedInstance] getOrderDetailWithOrderSummary:orderSummary
+        [[SelfService sharedService] getOrderDetailWithOrderSummary:orderSummary
                                                      completionBlock:^(OrderSummary *detailedOrderSummary) {
                                                          self.requestCounter--;
                                                          [orderSummary setAttributesWithOrderSummary:detailedOrderSummary];
@@ -320,7 +319,7 @@ static NSString *const kSTIPoCSegueModalOrderDetailViewController = @"OrderDetai
                                                                  [self.ordersTableViewController addRefreshControl];
                                                              }
                                                              
-                                                             [[SelfService sharedInstance] stopAllOperations];
+                                                             [[SelfService sharedService] stopAllOperations];
                                                              self.requestCounter = 0;
                                                              [self dismissOverlay];
                                                              UIAlertView *alertView = [[AlertViewFactory sharedFactory] createAlertViewWithError:error];

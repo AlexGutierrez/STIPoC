@@ -31,7 +31,7 @@ static SessionsService *sessionsService;
 {
     [super setUp];
     
-    sessionsService = [SessionsService sharedInstance];
+    sessionsService = [SessionsService sharedService];
     [sessionsService setupCoreDataStackForTesting];
     [sessionsService createDummyData];
 }
@@ -62,7 +62,7 @@ static SessionsService *sessionsService;
 
 - (void)testSessionsServiceSharedInstanceIsAlwaysTheSame
 {
-    SessionsService *sessionsService2 = [SessionsService sharedInstance];
+    SessionsService *sessionsService2 = [SessionsService sharedService];
     XCTAssertEqualObjects(sessionsService2, sessionsService, @"Sessions Service shared instance must be always the same.");
 }
 
@@ -105,7 +105,7 @@ static SessionsService *sessionsService;
     User *user = [sessionsService dummyUser1];
     
     [sessionsService storeInKeychainPassword:kSTIPoCDummyUser1Password forUser:user];
-    NSString *retrievedPassword = [[SessionsService sharedInstance] retrieveFromKeychainPasswordForUser:user];
+    NSString *retrievedPassword = [[SessionsService sharedService] retrieveFromKeychainPasswordForUser:user];
     
     XCTAssertTrue([kSTIPoCDummyUser1Password isEqualToString:retrievedPassword], @"Retrieved password should be the same as the one stored.");
     
@@ -117,13 +117,13 @@ static SessionsService *sessionsService;
     User *user1 = [sessionsService dummyUser1];
     User *user2 = [sessionsService dummyUser2];
     
-    [[SessionsService sharedInstance] storeInKeychainPassword:kSTIPoCDummyUser1Password forUser:user1];
-    [[SessionsService sharedInstance] storeInKeychainPassword:kSTIPoCDummyUser2Password forUser:user2];
+    [[SessionsService sharedService] storeInKeychainPassword:kSTIPoCDummyUser1Password forUser:user1];
+    [[SessionsService sharedService] storeInKeychainPassword:kSTIPoCDummyUser2Password forUser:user2];
     
-    [[SessionsService sharedInstance] deleteAllPasswords];
+    [[SessionsService sharedService] deleteAllPasswords];
     
-    NSString *retrievedPassword = [[SessionsService sharedInstance] retrieveFromKeychainPasswordForUser:user1];
-    NSString *retrievedPassword2 = [[SessionsService sharedInstance] retrieveFromKeychainPasswordForUser:user2];
+    NSString *retrievedPassword = [[SessionsService sharedService] retrieveFromKeychainPasswordForUser:user1];
+    NSString *retrievedPassword2 = [[SessionsService sharedService] retrieveFromKeychainPasswordForUser:user2];
     
     XCTAssertFalse((retrievedPassword || retrievedPassword2), @"All passwords retrieved for service must be nil after deletion.");
 }

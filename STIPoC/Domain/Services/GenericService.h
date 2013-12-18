@@ -80,7 +80,7 @@ static NSString *const kSTIPoCDummyUser2Password = @"1234";
 /// Gets an user-end error
 @property (strong, nonatomic, readonly) NSError *defaultPublicError;
 
-+ (instancetype)sharedInstance;
++ (instancetype)sharedService;
 
 /**
  *  Cleans up any pending persistence change in memory.

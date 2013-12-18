@@ -11,6 +11,8 @@
 
 @class QuoteLineItem;
 
+extern NSString *const kSTIPoCQuoteLineItemCellIdentifier;
+
 @protocol QuoteLineItemCellDelegate <NSObject>
 
 - (void)quoteLineItemQuantityChanged;

@@ -13,6 +13,13 @@ NSString *const kSTIPoCFontHelveticaNeueMedium = @"HelveticaNeue-Medium";
 
 @implementation UIColor (VerizonColors)
 
++ (UIColor *)colorWithColor:(UIColor *)color andAlpha:(CGFloat)alpha
+{
+    const CGFloat* components = CGColorGetComponents(color.CGColor);
+    
+    return [UIColor colorWithRed:components[0] green:components[1] blue:components[2] alpha:alpha];
+}
+
 + (UIColor *)verizonDarkRed
 {
     return UIColorFromRGB(0xAC0404);
@@ -30,12 +37,12 @@ NSString *const kSTIPoCFontHelveticaNeueMedium = @"HelveticaNeue-Medium";
 
 + (UIColor *)verizonGrey
 {
-    return UIColorFromRGB(0x595a5d);
+    return UIColorFromRGB(0xd2d3d4);
 }
 
 + (UIColor *)verizonDarkGrey
 {
-    return UIColorFromRGB(0xd2d3d4);
+    return UIColorFromRGB(0x595a5d);
 }
 
 + (UIColor *)verizonLightGrey

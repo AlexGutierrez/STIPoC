@@ -42,7 +42,7 @@ static id isFirstTimeKeyValue;
 {
     [super setUp];
     
-    genericService = [GenericService sharedInstance];
+    genericService = [GenericService sharedService];
     [genericService setupCoreDataStackForTesting];
     [genericService createDummyData];
     
@@ -69,7 +69,7 @@ static id isFirstTimeKeyValue;
 
 - (void)testGenericServiceSharedInstanceIsAlwaysTheSame
 {
-    GenericService *genericService2 = [GenericService sharedInstance];
+    GenericService *genericService2 = [GenericService sharedService];
     XCTAssertEqualObjects(genericService2, genericService, @"Generic Service shared instance must be always the same.");
 }
 
