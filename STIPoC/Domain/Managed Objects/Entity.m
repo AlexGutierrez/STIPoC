@@ -8,6 +8,7 @@
 
 #import "Entity.h"
 
+NSString *const kSTIPoCEntityIDAttributeKey = @"entityID";
 
 @implementation Entity
 
