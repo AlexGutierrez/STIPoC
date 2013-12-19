@@ -31,6 +31,7 @@
 		7A8DE25318634D6000A91B75 /* Filter+Copy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8DE25218634D6000A91B75 /* Filter+Copy.m */; };
 		7A8DE25618634EFF00A91B75 /* Attribute+Copy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8DE25518634EFF00A91B75 /* Attribute+Copy.m */; };
 		7A8DE2591863515900A91B75 /* Domain+Copy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8DE2581863515900A91B75 /* Domain+Copy.m */; };
+		7A8DE25C18635EAE00A91B75 /* UnselectedAttributeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8DE25B18635EAE00A91B75 /* UnselectedAttributeCell.m */; };
 		7A982327183552DE00CB0BA5 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A982326183552DE00CB0BA5 /* libOCMock.a */; };
 		7A9823281835533B00CB0BA5 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A982326183552DE00CB0BA5 /* libOCMock.a */; };
 		7AA569F41848F2630095C98A /* UpdateOrderStatusRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA569F31848F2630095C98A /* UpdateOrderStatusRequest.m */; };
@@ -221,6 +222,8 @@
 		7A8DE25518634EFF00A91B75 /* Attribute+Copy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Attribute+Copy.m"; sourceTree = "<group>"; };
 		7A8DE2571863515900A91B75 /* Domain+Copy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Domain+Copy.h"; sourceTree = "<group>"; };
 		7A8DE2581863515900A91B75 /* Domain+Copy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Domain+Copy.m"; sourceTree = "<group>"; };
+		7A8DE25A18635EAE00A91B75 /* UnselectedAttributeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnselectedAttributeCell.h; sourceTree = "<group>"; };
+		7A8DE25B18635EAE00A91B75 /* UnselectedAttributeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnselectedAttributeCell.m; sourceTree = "<group>"; };
 		7A982326183552DE00CB0BA5 /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libOCMock.a; sourceTree = "<group>"; };
 		7A982329183553DB00CB0BA5 /* NSNotificationCenter+OCMAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSNotificationCenter+OCMAdditions.h"; path = "External/OCMock/OCMock/NSNotificationCenter+OCMAdditions.h"; sourceTree = SOURCE_ROOT; };
 		7A98232A183553DB00CB0BA5 /* OCMArg.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OCMArg.h; path = External/OCMock/OCMock/OCMArg.h; sourceTree = SOURCE_ROOT; };
@@ -1376,6 +1379,8 @@
 				7A534303184BF82900FE9C54 /* QuoteLineItemCell.m */,
 				7AB1012218622255008AD5FA /* DomainCell.h */,
 				7AB1012318622255008AD5FA /* DomainCell.m */,
+				7A8DE25A18635EAE00A91B75 /* UnselectedAttributeCell.h */,
+				7A8DE25B18635EAE00A91B75 /* UnselectedAttributeCell.m */,
 			);
 			path = "Custom Table View Cells";
 			sourceTree = "<group>";
@@ -1567,6 +1572,7 @@
 				7A8DE246186349B400A91B75 /* Customer.m in Sources */,
 				7A5342F2184A7B3900FE9C54 /* PaddingTextField.m in Sources */,
 				7AC68BC218528A190019A5A8 /* ECPercentDrivenInteractiveTransition.m in Sources */,
+				7A8DE25C18635EAE00A91B75 /* UnselectedAttributeCell.m in Sources */,
 				7C2A35741832A734004AE430 /* MagicalRecord+Options.m in Sources */,
 				7A3937F6184947D800D3CF52 /* GenericViewController.m in Sources */,
 				7C2A35681832A734004AE430 /* NSManagedObject+MagicalRecord.m in Sources */,
