@@ -8,6 +8,20 @@
 
 #import "Entity+Copy.h"
 
+static NSManagedObjectContext *_currentLocalContext;
+
 @implementation Entity (Copy)
+
+- (void)setCurrentLocalContext:(NSManagedObjectContext *)currentLocalContext
+{
+    if (_currentLocalContext != currentLocalContext) {
+        _currentLocalContext = currentLocalContext;
+    }
+}
+
+- (NSManagedObjectContext *)currentLocalContext
+{
+    return _currentLocalContext;
+}
 
 @end
