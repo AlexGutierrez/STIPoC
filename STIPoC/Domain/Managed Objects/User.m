@@ -2,7 +2,7 @@
 //  User.m
 //  STIPoC
 //
-//  Created by Administrator on 11/20/13.
+//  Created by Alex Gutierrez on 12/19/13.
 //  Copyright (c) 2013 Administrator. All rights reserved.
 //
 
@@ -12,9 +12,9 @@
 
 @implementation User
 
-@dynamic password;
 @dynamic firstName;
 @dynamic lastName;
+@dynamic password;
 @dynamic customer;
 
 @end

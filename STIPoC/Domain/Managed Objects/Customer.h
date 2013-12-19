@@ -2,7 +2,7 @@
 //  Customer.h
 //  STIPoC
 //
-//  Created by Administrator on 11/20/13.
+//  Created by Alex Gutierrez on 12/19/13.
 //  Copyright (c) 2013 Administrator. All rights reserved.
 //
 
@@ -14,12 +14,8 @@
 
 @interface Customer : Entity
 
-/// The customer name
-@property (strong, nonatomic) NSString *name;
-
-/// The users associated to this customer
+@property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSSet *users;
-
 @end
 
 @interface Customer (CoreDataGeneratedAccessors)

@@ -1,18 +1,19 @@
 //
-//  Customer.m
+//  Filter.m
 //  STIPoC
 //
 //  Created by Alex Gutierrez on 12/19/13.
 //  Copyright (c) 2013 Administrator. All rights reserved.
 //
 
-#import "Customer.h"
-#import "User.h"
+#import "Filter.h"
+#import "Attribute.h"
 
 
-@implementation Customer
+@implementation Filter
 
-@dynamic name;
-@dynamic users;
+@dynamic type;
+@dynamic value;
+@dynamic attribute;
 
 @end

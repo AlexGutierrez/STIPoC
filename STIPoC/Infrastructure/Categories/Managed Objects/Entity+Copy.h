@@ -1,5 +1,5 @@
 //
-//  Entity.m
+//  Entity+Copy.h
 //  STIPoC
 //
 //  Created by Alex Gutierrez on 12/19/13.
@@ -8,9 +8,8 @@
 
 #import "Entity.h"
 
+@interface Entity (Copy)
 
-@implementation Entity
-
-@dynamic entityID;
+@property (strong, nonatomic) NSManagedObjectContext *currentLocalContext;
 
 @end

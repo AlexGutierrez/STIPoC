@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13B42" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Attribute" representedClassName="Attribute" parentEntity="Entity" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="orderPriority" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="orderType" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="selected" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="selectOrder" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="domain" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Domain" inverseName="attributes" inverseEntity="Domain" syncable="YES"/>
+        <relationship name="filters" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Filter" inverseName="attribute" inverseEntity="Filter" syncable="YES"/>
+    </entity>
     <entity name="Customer" representedClassName="Customer" parentEntity="Entity" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="users" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="User" inverseName="customer" inverseEntity="User" syncable="YES"/>
@@ -7,9 +17,15 @@
     <entity name="Domain" representedClassName="Domain" parentEntity="Entity" syncable="YES">
         <attribute name="maxCount" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="attributes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Attribute" inverseName="domain" inverseEntity="Attribute" syncable="YES"/>
     </entity>
-    <entity name="Entity" representedClassName="Domain" syncable="YES">
+    <entity name="Entity" representedClassName="Entity" isAbstract="YES" syncable="YES">
         <attribute name="entityID" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Filter" representedClassName="Filter" parentEntity="Entity" syncable="YES">
+        <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="value" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="attribute" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Attribute" inverseName="filters" inverseEntity="Attribute" syncable="YES"/>
     </entity>
     <entity name="User" representedClassName="User" parentEntity="Entity" syncable="YES">
         <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
@@ -18,9 +34,11 @@
         <relationship name="customer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Customer" inverseName="users" inverseEntity="Customer" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Customer" positionX="376" positionY="342" width="128" height="73"/>
-        <element name="Entity" positionX="160" positionY="192" width="128" height="58"/>
-        <element name="User" positionX="160" positionY="345" width="128" height="105"/>
-        <element name="Domain" positionX="-0" positionY="351" width="128" height="73"/>
+        <element name="Customer" positionX="430" positionY="252" width="128" height="73"/>
+        <element name="Domain" positionX="0" positionY="260" width="128" height="88"/>
+        <element name="Entity" positionX="-0" positionY="122" width="128" height="58"/>
+        <element name="User" positionX="198" positionY="255" width="128" height="105"/>
+        <element name="Attribute" positionX="7" positionY="399" width="128" height="163"/>
+        <element name="Filter" positionX="9" positionY="603" width="128" height="90"/>
     </elements>
 </model>

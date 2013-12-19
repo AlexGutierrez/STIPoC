@@ -21,6 +21,16 @@
 		7A5342F8184AA88500FE9C54 /* UIColor+VerizonColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A5342F7184AA88500FE9C54 /* UIColor+VerizonColors.m */; };
 		7A5342FC184BC49C00FE9C54 /* OrderDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A5342FB184BC49C00FE9C54 /* OrderDetailTableViewController.m */; };
 		7A534304184BF82900FE9C54 /* QuoteLineItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A534303184BF82900FE9C54 /* QuoteLineItemCell.m */; };
+		7A8DE23D186349B300A91B75 /* Domain.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8DE23C186349B300A91B75 /* Domain.m */; };
+		7A8DE240186349B400A91B75 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8DE23F186349B400A91B75 /* User.m */; };
+		7A8DE243186349B400A91B75 /* Filter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8DE242186349B400A91B75 /* Filter.m */; };
+		7A8DE246186349B400A91B75 /* Customer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8DE245186349B400A91B75 /* Customer.m */; };
+		7A8DE249186349B400A91B75 /* Entity.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8DE248186349B400A91B75 /* Entity.m */; };
+		7A8DE24C186349B400A91B75 /* Attribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8DE24B186349B400A91B75 /* Attribute.m */; };
+		7A8DE25018634A2900A91B75 /* Entity+Copy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8DE24F18634A2900A91B75 /* Entity+Copy.m */; };
+		7A8DE25318634D6000A91B75 /* Filter+Copy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8DE25218634D6000A91B75 /* Filter+Copy.m */; };
+		7A8DE25618634EFF00A91B75 /* Attribute+Copy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8DE25518634EFF00A91B75 /* Attribute+Copy.m */; };
+		7A8DE2591863515900A91B75 /* Domain+Copy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8DE2581863515900A91B75 /* Domain+Copy.m */; };
 		7A982327183552DE00CB0BA5 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A982326183552DE00CB0BA5 /* libOCMock.a */; };
 		7A9823281835533B00CB0BA5 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A982326183552DE00CB0BA5 /* libOCMock.a */; };
 		7AA569F41848F2630095C98A /* UpdateOrderStatusRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA569F31848F2630095C98A /* UpdateOrderStatusRequest.m */; };
@@ -39,7 +49,6 @@
 		7AB07C5E184972EA001265E0 /* MRMessageInterceptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB07C53184972EA001265E0 /* MRMessageInterceptor.m */; };
 		7AB07C5F184972EA001265E0 /* MRWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB07C56184972EA001265E0 /* MRWeakProxy.m */; };
 		7AB1011E1861F6A2008AD5FA /* DomainsService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB1011D1861F6A2008AD5FA /* DomainsService.m */; };
-		7AB101211861F78C008AD5FA /* Domain.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB101201861F78C008AD5FA /* Domain.m */; };
 		7AB1012418622255008AD5FA /* DomainCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB1012318622255008AD5FA /* DomainCell.m */; };
 		7AB101341862286D008AD5FA /* DomainsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB101331862286D008AD5FA /* DomainsViewController.m */; };
 		7AB10137186247BF008AD5FA /* AttributesMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB10136186247BF008AD5FA /* AttributesMainViewController.m */; };
@@ -140,9 +149,6 @@
 		7C363CBC1840082000003723 /* GenericSelfServiceRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C363CBB1840082000003723 /* GenericSelfServiceRequest.m */; };
 		7C78B0BF183E64330022922D /* GenericServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C78B0BD183E64330022922D /* GenericServiceTests.m */; };
 		7C78B0C0183E64330022922D /* SessionsServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C78B0BE183E64330022922D /* SessionsServiceTests.m */; };
-		7C8A3502183D0FC400802B89 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8A3501183D0FC400802B89 /* User.m */; };
-		7C8A3505183D0FC400802B89 /* Entity.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8A3504183D0FC400802B89 /* Entity.m */; };
-		7C8A350B183D100500802B89 /* Customer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8A350A183D100500802B89 /* Customer.m */; };
 		7C8A3510183D109400802B89 /* User+CustomAccessors.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8A350F183D109400802B89 /* User+CustomAccessors.m */; };
 		7C9569F6184394BC000A5595 /* GetOrderXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C9569F5184394BC000A5595 /* GetOrderXMLParser.m */; };
 		7C9569FA18439C43000A5595 /* SelfServiceEnumTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C9569F918439C43000A5595 /* SelfServiceEnumTranslator.m */; };
@@ -195,6 +201,26 @@
 		7A5342FB184BC49C00FE9C54 /* OrderDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderDetailTableViewController.m; sourceTree = "<group>"; };
 		7A534302184BF82900FE9C54 /* QuoteLineItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteLineItemCell.h; sourceTree = "<group>"; };
 		7A534303184BF82900FE9C54 /* QuoteLineItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteLineItemCell.m; sourceTree = "<group>"; };
+		7A8DE23B186349B300A91B75 /* Domain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Domain.h; sourceTree = "<group>"; };
+		7A8DE23C186349B300A91B75 /* Domain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Domain.m; sourceTree = "<group>"; };
+		7A8DE23E186349B400A91B75 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		7A8DE23F186349B400A91B75 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		7A8DE241186349B400A91B75 /* Filter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Filter.h; sourceTree = "<group>"; };
+		7A8DE242186349B400A91B75 /* Filter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Filter.m; sourceTree = "<group>"; };
+		7A8DE244186349B400A91B75 /* Customer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Customer.h; sourceTree = "<group>"; };
+		7A8DE245186349B400A91B75 /* Customer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Customer.m; sourceTree = "<group>"; };
+		7A8DE247186349B400A91B75 /* Entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entity.h; sourceTree = "<group>"; };
+		7A8DE248186349B400A91B75 /* Entity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Entity.m; sourceTree = "<group>"; };
+		7A8DE24A186349B400A91B75 /* Attribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Attribute.h; sourceTree = "<group>"; };
+		7A8DE24B186349B400A91B75 /* Attribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Attribute.m; sourceTree = "<group>"; };
+		7A8DE24E18634A2900A91B75 /* Entity+Copy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Entity+Copy.h"; sourceTree = "<group>"; };
+		7A8DE24F18634A2900A91B75 /* Entity+Copy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Entity+Copy.m"; sourceTree = "<group>"; };
+		7A8DE25118634D6000A91B75 /* Filter+Copy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Filter+Copy.h"; sourceTree = "<group>"; };
+		7A8DE25218634D6000A91B75 /* Filter+Copy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Filter+Copy.m"; sourceTree = "<group>"; };
+		7A8DE25418634EFF00A91B75 /* Attribute+Copy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Attribute+Copy.h"; sourceTree = "<group>"; };
+		7A8DE25518634EFF00A91B75 /* Attribute+Copy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Attribute+Copy.m"; sourceTree = "<group>"; };
+		7A8DE2571863515900A91B75 /* Domain+Copy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Domain+Copy.h"; sourceTree = "<group>"; };
+		7A8DE2581863515900A91B75 /* Domain+Copy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Domain+Copy.m"; sourceTree = "<group>"; };
 		7A982326183552DE00CB0BA5 /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libOCMock.a; sourceTree = "<group>"; };
 		7A982329183553DB00CB0BA5 /* NSNotificationCenter+OCMAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSNotificationCenter+OCMAdditions.h"; path = "External/OCMock/OCMock/NSNotificationCenter+OCMAdditions.h"; sourceTree = SOURCE_ROOT; };
 		7A98232A183553DB00CB0BA5 /* OCMArg.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OCMArg.h; path = External/OCMock/OCMock/OCMArg.h; sourceTree = SOURCE_ROOT; };
@@ -237,8 +263,6 @@
 		7AB07C56184972EA001265E0 /* MRWeakProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRWeakProxy.m; sourceTree = "<group>"; };
 		7AB1011C1861F6A2008AD5FA /* DomainsService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DomainsService.h; sourceTree = "<group>"; };
 		7AB1011D1861F6A2008AD5FA /* DomainsService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DomainsService.m; sourceTree = "<group>"; };
-		7AB1011F1861F78C008AD5FA /* Domain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Domain.h; sourceTree = "<group>"; };
-		7AB101201861F78C008AD5FA /* Domain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Domain.m; sourceTree = "<group>"; };
 		7AB1012218622255008AD5FA /* DomainCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DomainCell.h; sourceTree = "<group>"; };
 		7AB1012318622255008AD5FA /* DomainCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DomainCell.m; sourceTree = "<group>"; };
 		7AB101321862286D008AD5FA /* DomainsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DomainsViewController.h; sourceTree = "<group>"; };
@@ -425,12 +449,6 @@
 		7C363CBB1840082000003723 /* GenericSelfServiceRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenericSelfServiceRequest.m; sourceTree = "<group>"; };
 		7C78B0BD183E64330022922D /* GenericServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenericServiceTests.m; sourceTree = "<group>"; };
 		7C78B0BE183E64330022922D /* SessionsServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionsServiceTests.m; sourceTree = "<group>"; };
-		7C8A3500183D0FC400802B89 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		7C8A3501183D0FC400802B89 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
-		7C8A3503183D0FC400802B89 /* Entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entity.h; sourceTree = "<group>"; };
-		7C8A3504183D0FC400802B89 /* Entity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Entity.m; sourceTree = "<group>"; };
-		7C8A3509183D100500802B89 /* Customer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Customer.h; sourceTree = "<group>"; };
-		7C8A350A183D100500802B89 /* Customer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Customer.m; sourceTree = "<group>"; };
 		7C8A350E183D109400802B89 /* User+CustomAccessors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "User+CustomAccessors.h"; sourceTree = "<group>"; };
 		7C8A350F183D109400802B89 /* User+CustomAccessors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+CustomAccessors.m"; sourceTree = "<group>"; };
 		7C9569F4184394BC000A5595 /* GetOrderXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetOrderXMLParser.h; sourceTree = "<group>"; };
@@ -537,6 +555,25 @@
 				7A3937F5184947D800D3CF52 /* OrderStatusViewController.m */,
 			);
 			path = Orders;
+			sourceTree = "<group>";
+		};
+		7A8DE23A1863499E00A91B75 /* Managed Objects */ = {
+			isa = PBXGroup;
+			children = (
+				7A8DE24A186349B400A91B75 /* Attribute.h */,
+				7A8DE24B186349B400A91B75 /* Attribute.m */,
+				7A8DE247186349B400A91B75 /* Entity.h */,
+				7A8DE248186349B400A91B75 /* Entity.m */,
+				7A8DE244186349B400A91B75 /* Customer.h */,
+				7A8DE245186349B400A91B75 /* Customer.m */,
+				7A8DE241186349B400A91B75 /* Filter.h */,
+				7A8DE242186349B400A91B75 /* Filter.m */,
+				7A8DE23E186349B400A91B75 /* User.h */,
+				7A8DE23F186349B400A91B75 /* User.m */,
+				7A8DE23B186349B300A91B75 /* Domain.h */,
+				7A8DE23C186349B300A91B75 /* Domain.m */,
+			);
+			path = "Managed Objects";
 			sourceTree = "<group>";
 		};
 		7A98231D183552DE00CB0BA5 /* OCMock */ = {
@@ -1011,7 +1048,7 @@
 		7C2A359B1832A7CE004AE430 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				7C8A34FF183D0FA600802B89 /* Managed Objects */,
+				7A8DE23A1863499E00A91B75 /* Managed Objects */,
 				7C2A359F1832A7CE004AE430 /* Model */,
 				7C2A35A21832A7CE004AE430 /* Services */,
 			);
@@ -1265,21 +1302,6 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		7C8A34FF183D0FA600802B89 /* Managed Objects */ = {
-			isa = PBXGroup;
-			children = (
-				7C8A3509183D100500802B89 /* Customer.h */,
-				7C8A350A183D100500802B89 /* Customer.m */,
-				7C8A3503183D0FC400802B89 /* Entity.h */,
-				7C8A3504183D0FC400802B89 /* Entity.m */,
-				7C8A3500183D0FC400802B89 /* User.h */,
-				7C8A3501183D0FC400802B89 /* User.m */,
-				7AB1011F1861F78C008AD5FA /* Domain.h */,
-				7AB101201861F78C008AD5FA /* Domain.m */,
-			);
-			path = "Managed Objects";
-			sourceTree = "<group>";
-		};
 		7C8A350C183D105D00802B89 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -1295,6 +1317,14 @@
 			children = (
 				7C8A350E183D109400802B89 /* User+CustomAccessors.h */,
 				7C8A350F183D109400802B89 /* User+CustomAccessors.m */,
+				7A8DE24E18634A2900A91B75 /* Entity+Copy.h */,
+				7A8DE24F18634A2900A91B75 /* Entity+Copy.m */,
+				7A8DE25118634D6000A91B75 /* Filter+Copy.h */,
+				7A8DE25218634D6000A91B75 /* Filter+Copy.m */,
+				7A8DE25418634EFF00A91B75 /* Attribute+Copy.h */,
+				7A8DE25518634EFF00A91B75 /* Attribute+Copy.m */,
+				7A8DE2571863515900A91B75 /* Domain+Copy.h */,
+				7A8DE2581863515900A91B75 /* Domain+Copy.m */,
 			);
 			path = "Managed Objects";
 			sourceTree = "<group>";
@@ -1458,7 +1488,6 @@
 				7C2A35701832A734004AE430 /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */,
 				7C363C9C183FA96D00003723 /* GetOrdersResult.m in Sources */,
 				7C2A359A1832A7AD004AE430 /* AFURLSessionManager.m in Sources */,
-				7AB101211861F78C008AD5FA /* Domain.m in Sources */,
 				7C363C95183FA7CA00003723 /* LineItemAttribute.m in Sources */,
 				7AC68BC318528A190019A5A8 /* ECSlidingAnimationController.m in Sources */,
 				7A534304184BF82900FE9C54 /* QuoteLineItemCell.m in Sources */,
@@ -1471,6 +1500,7 @@
 				7C2A35941832A7AD004AE430 /* AFHTTPSessionManager.m in Sources */,
 				7C2A35581832A734004AE430 /* DDASLLogger.m in Sources */,
 				7AC68BC918528A190019A5A8 /* ECZoomAnimationController.m in Sources */,
+				7A8DE23D186349B300A91B75 /* Domain.m in Sources */,
 				7AB1012418622255008AD5FA /* DomainCell.m in Sources */,
 				7A5342FC184BC49C00FE9C54 /* OrderDetailTableViewController.m in Sources */,
 				7C363CA5183FAB5900003723 /* GenericSelfServiceResult.m in Sources */,
@@ -1488,6 +1518,8 @@
 				7AB1011E1861F6A2008AD5FA /* DomainsService.m in Sources */,
 				7A3937FB184947D800D3CF52 /* OrderDetailViewController.m in Sources */,
 				7AC68BCA18528A190019A5A8 /* UIViewController+ECSlidingViewController.m in Sources */,
+				7A8DE25318634D6000A91B75 /* Filter+Copy.m in Sources */,
+				7A8DE24C186349B400A91B75 /* Attribute.m in Sources */,
 				7C2A35631832A734004AE430 /* NSRelationshipDescription+MagicalDataImport.m in Sources */,
 				7C2A35691832A734004AE430 /* NSManagedObject+MagicalRequests.m in Sources */,
 				7C2A35DD1832A7CE004AE430 /* main.m in Sources */,
@@ -1509,6 +1541,7 @@
 				7C2A35571832A734004AE430 /* DDAbstractDatabaseLogger.m in Sources */,
 				7C363CB9183FEE2C00003723 /* SelfServiceRequestOperationManager.m in Sources */,
 				7C2A356A1832A734004AE430 /* NSManagedObjectContext+MagicalObserving.m in Sources */,
+				7A8DE243186349B400A91B75 /* Filter.m in Sources */,
 				7C363CBC1840082000003723 /* GenericSelfServiceRequest.m in Sources */,
 				7C363CAF183FB35000003723 /* NSObject+ObjectMap.m in Sources */,
 				7C2A35751832A734004AE430 /* MagicalRecord+Setup.m in Sources */,
@@ -1517,6 +1550,7 @@
 				7C2A35651832A734004AE430 /* NSManagedObject+MagicalAggregation.m in Sources */,
 				7C2A35761832A734004AE430 /* MagicalRecord+ShorthandSupport.m in Sources */,
 				7C1A98861847E1D10045ED8C /* OrderSummaryCell.m in Sources */,
+				7A8DE25618634EFF00A91B75 /* Attribute+Copy.m in Sources */,
 				7C2A35D41832A7CE004AE430 /* AlertViewFactory.m in Sources */,
 				7C958453183ACF4E0065C878 /* SSKeychain.m in Sources */,
 				7C2A355B1832A734004AE430 /* DDTTYLogger.m in Sources */,
@@ -1526,22 +1560,25 @@
 				7C363C97183FA7CA00003723 /* QuoteLineItem.m in Sources */,
 				7AB07C5C184972EA001265E0 /* MRNavigationBarProgressView.m in Sources */,
 				7A3937F7184947D800D3CF52 /* MainViewController.m in Sources */,
+				7A8DE240186349B400A91B75 /* User.m in Sources */,
 				7C363C96183FA7CA00003723 /* OrderSummary.m in Sources */,
 				7A3937FC184947D800D3CF52 /* OrdersTableViewController.m in Sources */,
 				7C2A35641832A734004AE430 /* NSString+MagicalDataImport.m in Sources */,
+				7A8DE246186349B400A91B75 /* Customer.m in Sources */,
 				7A5342F2184A7B3900FE9C54 /* PaddingTextField.m in Sources */,
 				7AC68BC218528A190019A5A8 /* ECPercentDrivenInteractiveTransition.m in Sources */,
 				7C2A35741832A734004AE430 /* MagicalRecord+Options.m in Sources */,
 				7A3937F6184947D800D3CF52 /* GenericViewController.m in Sources */,
-				7C8A3502183D0FC400802B89 /* User.m in Sources */,
 				7C2A35681832A734004AE430 /* NSManagedObject+MagicalRecord.m in Sources */,
 				7C2A35D51832A7CE004AE430 /* LoggingHelper.m in Sources */,
 				7C956A081843A5E6000A5595 /* ModifyOrderDetailsXMLParser.m in Sources */,
+				7A8DE249186349B400A91B75 /* Entity.m in Sources */,
 				7C2A35711832A734004AE430 /* MagicalRecord+Actions.m in Sources */,
 				7C2A35661832A734004AE430 /* NSManagedObject+MagicalDataImport.m in Sources */,
 				7AC68BAC185219DE0019A5A8 /* UIScrollView+SVPullToRefresh.m in Sources */,
 				7C2A35D21832A7CE004AE430 /* GenericService.m in Sources */,
 				7A3937FD184947D800D3CF52 /* OrderStatusViewController.m in Sources */,
+				7A8DE2591863515900A91B75 /* Domain+Copy.m in Sources */,
 				7C2A35731832A734004AE430 /* MagicalRecord+iCloud.m in Sources */,
 				7C2A35601832A734004AE430 /* NSEntityDescription+MagicalDataImport.m in Sources */,
 				7C1168A118455EE300334AF9 /* XCDFormInputAccessoryView.m in Sources */,
@@ -1550,9 +1587,7 @@
 				7C2A356C1832A734004AE430 /* NSManagedObjectContext+MagicalSaves.m in Sources */,
 				7C2A35671832A734004AE430 /* NSManagedObject+MagicalFinders.m in Sources */,
 				7AB10137186247BF008AD5FA /* AttributesMainViewController.m in Sources */,
-				7C8A3505183D0FC400802B89 /* Entity.m in Sources */,
 				7AB1013E18624875008AD5FA /* ResultsViewController.m in Sources */,
-				7C8A350B183D100500802B89 /* Customer.m in Sources */,
 				7C2A35D11832A7CE004AE430 /* STIPoC.xcdatamodeld in Sources */,
 				7C2A35951832A7AD004AE430 /* AFNetworkReachabilityManager.m in Sources */,
 				7C2A355C1832A734004AE430 /* ContextFilterLogFormatter.m in Sources */,
@@ -1562,6 +1597,7 @@
 				7AB07C5B184972EA001265E0 /* MRIconView.m in Sources */,
 				7AA569F41848F2630095C98A /* UpdateOrderStatusRequest.m in Sources */,
 				7C956A051843A5C6000A5595 /* ModifyOrderDetailsResult.m in Sources */,
+				7A8DE25018634A2900A91B75 /* Entity+Copy.m in Sources */,
 				7C2A35931832A7AD004AE430 /* AFHTTPRequestOperationManager.m in Sources */,
 				7C9569FA18439C43000A5595 /* SelfServiceEnumTranslator.m in Sources */,
 				7AB07C5F184972EA001265E0 /* MRWeakProxy.m in Sources */,

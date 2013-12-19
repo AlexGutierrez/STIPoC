@@ -1,18 +1,13 @@
 //
-//  Customer.m
+//  Domain+Copy.h
 //  STIPoC
 //
 //  Created by Alex Gutierrez on 12/19/13.
 //  Copyright (c) 2013 Administrator. All rights reserved.
 //
 
-#import "Customer.h"
-#import "User.h"
+#import "Domain.h"
 
-
-@implementation Customer
-
-@dynamic name;
-@dynamic users;
+@interface Domain (Copy) <NSCopying>
 
 @end

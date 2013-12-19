@@ -2,7 +2,7 @@
 //  User.h
 //  STIPoC
 //
-//  Created by Administrator on 11/20/13.
+//  Created by Alex Gutierrez on 12/19/13.
 //  Copyright (c) 2013 Administrator. All rights reserved.
 //
 
@@ -14,17 +14,9 @@
 
 @interface User : Entity
 
-/// The first name of the user.
-@property (retain, nonatomic) NSString *firstName;
-
-/// The last name of the user.
-@property (retain, nonatomic) NSString *lastName;
-
-/// The password of the user.
-@property (retain, nonatomic) NSString *password;
-
-/// The customer associated to the user.
-@property (retain, nonatomic) Customer *customer;
-
+@property (nonatomic, retain) NSString * firstName;
+@property (nonatomic, retain) NSString * lastName;
+@property (nonatomic, retain) NSString * password;
+@property (nonatomic, retain) Customer *customer;
 
 @end
