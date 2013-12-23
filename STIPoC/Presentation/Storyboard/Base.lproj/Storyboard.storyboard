@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="s8c-72-Dyf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="s8c-72-Dyf">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
@@ -195,7 +195,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
-                                    <segue destination="06m-5g-YCl" kind="embed" id="b8t-Q1-0zx"/>
+                                    <segue destination="06m-5g-YCl" kind="embed" identifier="AttributesTableViewControllerEmbedSegue" id="b8t-Q1-0zx"/>
                                 </connections>
                             </containerView>
                             <button opaque="NO" alpha="0.29999999999999999" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4U-l8-Ugc">
@@ -217,7 +217,7 @@
                                     <constraint firstAttribute="width" constant="320" id="ZSe-Gv-Ahu"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="iyD-ZC-qoO" kind="embed" id="M8N-di-V68"/>
+                                    <segue destination="iyD-ZC-qoO" kind="embed" identifier="DomainsViewControllerEmbedSegue" id="M8N-di-V68"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -1050,6 +1050,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="960"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.92549019607843142" green="0.92941176470588238" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <color key="sectionIndexTrackingBackgroundColor" red="0.92549019610000005" green="0.92941176469999998" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DomainCell" id="tI6-6T-5uB" customClass="DomainCell">
@@ -1104,10 +1105,10 @@
             </objects>
             <point key="canvasLocation" x="1940" y="5650"/>
         </scene>
-        <!--View Controller-->
+        <!--Attributes Table View Controller-->
         <scene sceneID="sh9-1Y-nZq">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="06m-5g-YCl" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="06m-5g-YCl" customClass="AttributesTableViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="j4B-eh-pzd"/>
                         <viewControllerLayoutGuide type="bottom" id="mwH-cT-6Lw"/>
@@ -1119,9 +1120,11 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Ukp-gI-eCY">
                                 <rect key="frame" x="0.0" y="0.0" width="724" height="916"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.82352942230000004" green="0.82745099070000006" blue="0.83137255909999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <color key="sectionIndexTrackingBackgroundColor" red="0.82352942230000004" green="0.82745099070000006" blue="0.83137255909999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Ih7-IR-KcV" customClass="UnselectedAttributeCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UnselectedAttributeCell" id="Ih7-IR-KcV" customClass="UnselectedAttributeCell">
                                         <rect key="frame" x="0.0" y="22" width="724" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ih7-IR-KcV" id="fgF-dS-WUN">
@@ -1136,6 +1139,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <color key="backgroundColor" red="0.82352942230000004" green="0.82745099070000006" blue="0.83137255909999996" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="MI1-uM-do1" secondAttribute="trailing" constant="20" id="0Op-tQ-p8p"/>
                                                 <constraint firstItem="MI1-uM-do1" firstAttribute="top" secondItem="fgF-dS-WUN" secondAttribute="top" constant="11" id="BWd-2M-Fie"/>
@@ -1143,12 +1147,16 @@
                                                 <constraint firstAttribute="bottom" secondItem="MI1-uM-do1" secondAttribute="bottom" constant="11" id="xfU-Je-Uk5"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.82352942228317261" green="0.82745099067687988" blue="0.83137255907058716" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.82352942230000004" green="0.82745099070000006" blue="0.83137255909999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="nameLabel" destination="MI1-uM-do1" id="ffg-pD-BiD"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="06m-5g-YCl" id="sXB-m8-pLC"/>
+                                    <outlet property="delegate" destination="06m-5g-YCl" id="wAn-0g-6i2"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1160,6 +1168,9 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
+                    <connections>
+                        <outlet property="tableView" destination="Ukp-gI-eCY" id="USk-aB-GLt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ofF-Cr-ILs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

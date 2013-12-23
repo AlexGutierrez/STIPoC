@@ -7,8 +7,9 @@
 //
 
 #import "GenericViewController.h"
+#import "DomainsViewController.h"
 
-@interface AttributesMainViewController : GenericViewController
+@interface AttributesMainViewController : GenericViewController<DomainsViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *domainsContainer;
 @property (weak, nonatomic) IBOutlet UIButton *sideMenuCollapserButton;

@@ -7,6 +7,7 @@
 //
 
 #import "AttributesMainViewController.h"
+#import "AttributesTableViewController.h"
 
 #define DOMAINS_CONTAINER_OFFSET_X_HIDDEN -320.0f
 #define DOMAINS_CONTAINER_OFFSET_X_DISPLAYED 0.0f
@@ -14,10 +15,13 @@
 #define SIDE_MENU_COLLAPSER_BUTTON_ALPHA_HIDDEN 0.0f
 #define SIDE_MENU_COLLAPSER_BUTTON_ALPHA_DISPLAYED 0.3f
 
+static NSString *const kSTIPoCSegueEmbedAttributesTableViewController = @"AttributesTableViewControllerEmbedSegue";
+static NSString *const kSTIPoCSegueEmbedDomainsViewController = @"DomainsViewControllerEmbedSegue";
+
 @interface AttributesMainViewController ()
 
 @property (nonatomic) BOOL domainsContainerIsHidden;
-
+@property (strong, nonatomic) AttributesTableViewController *attributesTableViewController;
 @property (strong, nonatomic) UIView *currentDisplayedMenu;
 
 - (void)setDomainsContainerIsHidden:(BOOL)domainsContainerIsHidden animated:(BOOL)animated;
@@ -35,6 +39,20 @@
     
     [self setDomainsContainerIsHidden:YES animated:NO];
     self.sideMenuCollapserButton.alpha = 0.0f;
+}
+
+#pragma mark -
+#pragma mark Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:kSTIPoCSegueEmbedAttributesTableViewController]) {
+        self.attributesTableViewController =(AttributesTableViewController *)segue.destinationViewController;
+    }
+    else if ([segue.identifier isEqualToString:kSTIPoCSegueEmbedDomainsViewController]) {
+        DomainsViewController *domainsViewController = (DomainsViewController *)segue.destinationViewController;
+        domainsViewController.delegate = self;
+    }
 }
 
 #pragma mark -
@@ -73,6 +91,15 @@
             _domainsContainerIsHidden = domainsContainerIsHidden;
         }
     }
+}
+
+#pragma mark -
+#pragma mark Domains View Controller Protocols
+
+- (void)domainsViewControllerDidSelectDomain:(Domain *)selectedDomain
+{
+    self.attributesTableViewController.selectedDomain = selectedDomain;
+    [self setDomainsContainerIsHidden:YES animated:YES];
 }
 
 #pragma mark -

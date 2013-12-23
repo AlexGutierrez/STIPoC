@@ -8,6 +8,8 @@
 
 #import "DomainsService.h"
 #import "Domain.h"
+#import "Attribute.h"
+#import "AttributeTypeValue.h"
 
 static NSString *const kSTIPoCNameAttributeKey = @"name";
 
@@ -70,7 +72,7 @@ static NSString *const kSTIPoCNameAttributeKey = @"name";
 - (void)createDummyDomains
 {
     [MagicalRecord saveUsingCurrentThreadContextWithBlockAndWait:^(NSManagedObjectContext *localContext) {
-       
+        
         Domain *domain1 = [Domain createInContext:localContext];
         domain1.entityID = @"1";
         domain1.name = @"ACBreaker";
@@ -98,8 +100,90 @@ static NSString *const kSTIPoCNameAttributeKey = @"name";
         
         Domain *domain6 = [Domain createInContext:localContext];
         domain6.entityID = @"6";
-        domain6.name = @"Company";
+        domain6.name = @"Server";
         domain6.maxCount = @(40);
+        
+        Attribute *attribute1 = [Attribute createInContext:localContext];
+        attribute1.entityID = @"1";
+        attribute1.name = @"AssetText";
+        attribute1.type = @"String";
+        attribute1.orderType = nil;
+        attribute1.orderPriority = nil;
+        attribute1.selected = @NO;
+        attribute1.selectOrder = nil;
+        attribute1.domain = domain6;
+        
+        Attribute *attribute2 = [Attribute createInContext:localContext];
+        attribute2.entityID = @"2";
+        attribute2.name = @"IP Address";
+        attribute2.type = @"String";
+        attribute2.orderType = nil;
+        attribute2.orderPriority = nil;
+        attribute2.selected = @NO;
+        attribute2.selectOrder = nil;
+        attribute2.domain = domain6;
+        
+        Attribute *attribute3 = [Attribute createInContext:localContext];
+        attribute3.entityID = @"3";
+        attribute3.name = @"OSSStatus";
+        attribute3.type = @"String";
+        attribute3.orderType = nil;
+        attribute3.orderPriority = nil;
+        attribute3.selected = @NO;
+        attribute3.selectOrder = nil;
+        attribute3.domain = domain6;
+        
+        Attribute *attribute4 = [Attribute createInContext:localContext];
+        attribute4.entityID = @"4";
+        attribute4.name = @"PublicPrivate";
+        attribute4.type = @"Enum";
+        attribute4.orderType = nil;
+        attribute4.orderPriority = nil;
+        attribute4.selected = @NO;
+        attribute4.selectOrder = nil;
+        attribute4.domain = domain6;
+        
+        AttributeTypeValue *attributeTypeValue1 = [AttributeTypeValue createInContext:localContext];
+        attributeTypeValue1.entityID = @"1";
+        attributeTypeValue1.name = @"Private";
+        attributeTypeValue1.sequence = @1;
+        attributeTypeValue1.attribute = attribute4;
+        
+        AttributeTypeValue *attributeTypeValue2 = [AttributeTypeValue createInContext:localContext];
+        attributeTypeValue2.entityID = @"2";
+        attributeTypeValue2.name = @"Public";
+        attributeTypeValue2.sequence = @2;
+        attributeTypeValue2.attribute = attribute4;
+        
+        Attribute *attribute5 = [Attribute createInContext:localContext];
+        attribute5.entityID = @"5";
+        attribute5.name = @"SinglePointOfFailure";
+        attribute5.type = @"Bit";
+        attribute5.orderType = nil;
+        attribute5.orderPriority = nil;
+        attribute5.selected = @NO;
+        attribute5.selectOrder = nil;
+        attribute5.domain = domain6;
+        
+        Attribute *attribute6 = [Attribute createInContext:localContext];
+        attribute6.entityID = @"6";
+        attribute6.name = @"Source";
+        attribute6.type = @"String";
+        attribute6.orderType = nil;
+        attribute6.orderPriority = nil;
+        attribute6.selected = @NO;
+        attribute6.selectOrder = nil;
+        attribute6.domain = domain6;
+        
+        Attribute *attribute7 = [Attribute createInContext:localContext];
+        attribute7.entityID = @"7";
+        attribute7.name = @"Is Gateway";
+        attribute7.type = @"Bit";
+        attribute7.orderType = nil;
+        attribute7.orderPriority = nil;
+        attribute7.selected = @NO;
+        attribute7.selectOrder = nil;
+        attribute7.domain = domain6;
         
         Domain *domain7 = [Domain createInContext:localContext];
         domain7.entityID = @"7";

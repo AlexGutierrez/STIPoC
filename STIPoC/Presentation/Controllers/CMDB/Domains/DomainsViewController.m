@@ -125,4 +125,15 @@
     domainCell.nameLabel.text = domain.name;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *sectionKey = self.domainSectionKeys[indexPath.section];
+    NSArray *sectionDomains = [self.domains objectForKey:sectionKey];
+    Domain *domain = sectionDomains[indexPath.row];
+    
+    if ([self.delegate respondsToSelector:@selector(domainsViewControllerDidSelectDomain:)]) {
+        [self.delegate domainsViewControllerDidSelectDomain:domain];
+    }
+}
+
 @end

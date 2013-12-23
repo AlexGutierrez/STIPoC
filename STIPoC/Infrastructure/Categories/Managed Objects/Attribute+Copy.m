@@ -9,6 +9,7 @@
 #import "Attribute+Copy.h"
 #import "Entity+Copy.h"
 #import "Filter+Copy.h"
+#import "AttributeTypeValue+Copy.h"
 
 @implementation Attribute (Copy)
 
@@ -18,6 +19,7 @@
     
     if (self.currentLocalContext) {
         attributeCopy = [Attribute createInContext:self.currentLocalContext];
+        attributeCopy.entityID = [NSString stringWithString:self.entityID];
         attributeCopy.name = [NSString stringWithString:self.name];
         attributeCopy.type = [NSString stringWithString:self.type];
         attributeCopy.orderType = [NSNumber numberWithInteger:self.orderType.integerValue];
@@ -29,6 +31,12 @@
             filter.currentLocalContext = self.currentLocalContext;
             [attributeCopy addFiltersObject:[filter copy]];
             filter.currentLocalContext = nil;
+        }
+        
+        for (AttributeTypeValue *attributeTypeValue in self.typeValues) {
+            attributeTypeValue.currentLocalContext = self.currentLocalContext;
+            [attributeCopy addTypeValuesObject:[attributeTypeValue copy]];
+            attributeTypeValue.currentLocalContext = nil;
         }
     }
     
