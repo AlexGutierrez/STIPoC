@@ -88,7 +88,7 @@ static NSString *const kSTIPoCSelfServiceErrorUpdateOrderStatusDomain = @"Update
 }
 
 #pragma mark -
-#pragma Self Service Operations
+#pragma mark Self Service Operations
 
 - (void)startGetOrdersRequestOperationWithPageSize:(NSInteger)pageSize
                                         pageNumber:(NSInteger)pageNumber

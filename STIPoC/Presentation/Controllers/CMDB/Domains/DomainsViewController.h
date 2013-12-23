@@ -13,6 +13,7 @@
 @protocol DomainsViewControllerDelegate <NSObject>
 
 - (void)domainsViewControllerDidSelectDomain:(Domain *)selectedDomain;
+- (void)domainsViewControllerRequestedDomainsFromServer;
 
 @end
 
@@ -20,5 +21,7 @@
 
 @property (weak, nonatomic) id<DomainsViewControllerDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@property (strong, nonatomic) NSDictionary *domains;
 
 @end

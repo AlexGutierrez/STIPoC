@@ -9,6 +9,7 @@
 #import "AttributesMainViewController.h"
 #import "AttributesTableViewController.h"
 #import "Domain.h"
+#import "DomainsService.h"
 
 #define DOMAINS_CONTAINER_OFFSET_X_HIDDEN -320.0f
 #define DOMAINS_CONTAINER_OFFSET_X_DISPLAYED 0.0f
@@ -22,7 +23,9 @@ static NSString *const kSTIPoCSegueEmbedDomainsViewController = @"DomainsViewCon
 @interface AttributesMainViewController ()
 
 @property (nonatomic) BOOL domainsContainerIsHidden;
+
 @property (strong, nonatomic) AttributesTableViewController *attributesTableViewController;
+@property (strong, nonatomic) DomainsViewController *domainsViewController;
 @property (strong, nonatomic) UIView *currentDisplayedMenu;
 
 - (void)setDomainsContainerIsHidden:(BOOL)domainsContainerIsHidden animated:(BOOL)animated;
@@ -37,7 +40,7 @@ static NSString *const kSTIPoCSegueEmbedDomainsViewController = @"DomainsViewCon
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
     self.sideMenuCollapserButton.alpha = 0.0f;
     
     self.domainsContainerIsHidden = (self.attributesTableViewController.selectedDomain == nil);
@@ -54,8 +57,8 @@ static NSString *const kSTIPoCSegueEmbedDomainsViewController = @"DomainsViewCon
         self.attributesTableViewController =(AttributesTableViewController *)segue.destinationViewController;
     }
     else if ([segue.identifier isEqualToString:kSTIPoCSegueEmbedDomainsViewController]) {
-        DomainsViewController *domainsViewController = (DomainsViewController *)segue.destinationViewController;
-        domainsViewController.delegate = self;
+        self.domainsViewController = (DomainsViewController *)segue.destinationViewController;
+        self.domainsViewController.delegate = self;
     }
 }
 
@@ -106,6 +109,20 @@ static NSString *const kSTIPoCSegueEmbedDomainsViewController = @"DomainsViewCon
     self.attributesTableViewController.selectedDomain = selectedDomain;
     self.domainsContainerTogglingButton.enabled = YES;
     [self setDomainsContainerIsHidden:YES animated:YES];
+}
+
+- (void)domainsViewControllerRequestedDomainsFromServer
+{
+    [self showOverlayWithMessage:NSLocalizedString(@"Loading Domains...", nil)];
+    
+    [[DomainsService sharedService] getDomainsWithCompletionBlock:^(NSDictionary *domains) {
+        [self dismissOverlay];
+        self.domainsViewController.domains = domains;
+    } andFailureBlock:^(NSError *error) {
+        [self dismissOverlay];
+        UIAlertView *alertView = [[AlertViewFactory sharedFactory] createAlertViewWithError:error];
+        [alertView show];
+    }];
 }
 
 #pragma mark -

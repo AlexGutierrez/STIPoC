@@ -14,7 +14,7 @@
 
 @interface Domain : Entity
 
-@property (nonatomic, retain) NSNumber * maxCount;
+@property (nonatomic, retain) NSNumber * instanceCount;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSSet *attributes;
 @end

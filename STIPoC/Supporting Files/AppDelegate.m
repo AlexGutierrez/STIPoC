@@ -13,8 +13,6 @@
 #import "SelfServiceRequestOperationManager.h"
 #import "OrderSummary.h"
 
-#import "DomainsService.h"
-
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -33,6 +31,7 @@
     }];
     
 #if (!defined(TEST))
+    
     [[GenericService sharedService] setupCoreDataStack];
     [[GenericService sharedService] createDummyDataForProd];
     

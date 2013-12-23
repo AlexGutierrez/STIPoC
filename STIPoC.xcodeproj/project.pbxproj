@@ -165,6 +165,8 @@
 		7C958452183ACF4E0065C878 /* SSKeychain.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7C95844C183ACF4E0065C878 /* SSKeychain.strings */; };
 		7C958453183ACF4E0065C878 /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C95844F183ACF4E0065C878 /* SSKeychain.m */; };
 		7C958454183ACF4E0065C878 /* SSKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C958451183ACF4E0065C878 /* SSKeychainQuery.m */; };
+		7C99A8821868CCD400527966 /* CMDBRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C99A8811868CCD400527966 /* CMDBRequestOperationManager.m */; };
+		7C99A8851868D21B00527966 /* DomainsTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C99A8841868D21B00527966 /* DomainsTranslator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -488,6 +490,10 @@
 		7C95844F183ACF4E0065C878 /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
 		7C958450183ACF4E0065C878 /* SSKeychainQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychainQuery.h; sourceTree = "<group>"; };
 		7C958451183ACF4E0065C878 /* SSKeychainQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychainQuery.m; sourceTree = "<group>"; };
+		7C99A8801868CCD400527966 /* CMDBRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMDBRequestOperationManager.h; sourceTree = "<group>"; };
+		7C99A8811868CCD400527966 /* CMDBRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMDBRequestOperationManager.m; sourceTree = "<group>"; };
+		7C99A8831868D21B00527966 /* DomainsTranslator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DomainsTranslator.h; sourceTree = "<group>"; };
+		7C99A8841868D21B00527966 /* DomainsTranslator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DomainsTranslator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1159,6 +1165,7 @@
 		7C2A35C41832A7CE004AE430 /* Service Agents */ = {
 			isa = PBXGroup;
 			children = (
+				7C99A87D1868CBAA00527966 /* CMDB */,
 				7C363C85183FA7CA00003723 /* Self Service */,
 			);
 			path = "Service Agents";
@@ -1375,6 +1382,33 @@
 			path = SSKeychain;
 			sourceTree = "<group>";
 		};
+		7C99A87D1868CBAA00527966 /* CMDB */ = {
+			isa = PBXGroup;
+			children = (
+				7C99A87E1868CBD700527966 /* Manager */,
+				7C99A87F1868CBD700527966 /* Translator */,
+			);
+			path = CMDB;
+			sourceTree = "<group>";
+		};
+		7C99A87E1868CBD700527966 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				7C99A8801868CCD400527966 /* CMDBRequestOperationManager.h */,
+				7C99A8811868CCD400527966 /* CMDBRequestOperationManager.m */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		7C99A87F1868CBD700527966 /* Translator */ = {
+			isa = PBXGroup;
+			children = (
+				7C99A8831868D21B00527966 /* DomainsTranslator.h */,
+				7C99A8841868D21B00527966 /* DomainsTranslator.m */,
+			);
+			path = Translator;
+			sourceTree = "<group>";
+		};
 		7C9D6BCF184501B20018E0E4 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -1507,6 +1541,7 @@
 				7C363CAB183FAFD600003723 /* GetOrdersXMLParser.m in Sources */,
 				7C2A35701832A734004AE430 /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */,
 				7C363C9C183FA96D00003723 /* GetOrdersResult.m in Sources */,
+				7C99A8851868D21B00527966 /* DomainsTranslator.m in Sources */,
 				7C2A359A1832A7AD004AE430 /* AFURLSessionManager.m in Sources */,
 				7C363C95183FA7CA00003723 /* LineItemAttribute.m in Sources */,
 				7AC68BC318528A190019A5A8 /* ECSlidingAnimationController.m in Sources */,
@@ -1516,6 +1551,7 @@
 				7C958448183AC4580065C878 /* SessionsService.m in Sources */,
 				7C8A3510183D109400802B89 /* User+CustomAccessors.m in Sources */,
 				7AC68BAB185219DE0019A5A8 /* UIScrollView+SVInfiniteScrolling.m in Sources */,
+				7C99A8821868CCD400527966 /* CMDBRequestOperationManager.m in Sources */,
 				7AA569FE18491F480095C98A /* SelfService.m in Sources */,
 				7C363C98183FA7CA00003723 /* GetOrderRequest.m in Sources */,
 				7C2A35941832A7AD004AE430 /* AFHTTPSessionManager.m in Sources */,

@@ -19,7 +19,7 @@
     if (self.currentLocalContext) {
         domainCopy = [Domain createInContext:self.currentLocalContext];
         domainCopy.name = [NSString stringWithString:self.name];
-        domainCopy.maxCount = [NSNumber numberWithInteger:self.maxCount.integerValue];
+        domainCopy.instanceCount = [NSNumber numberWithInteger:self.instanceCount.integerValue];
         
         for (Attribute *attribute in self.attributes) {
             attribute.currentLocalContext = self.currentLocalContext;

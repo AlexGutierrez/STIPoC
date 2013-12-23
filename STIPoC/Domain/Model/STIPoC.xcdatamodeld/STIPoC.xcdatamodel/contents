@@ -21,7 +21,7 @@
         <relationship name="users" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="User" inverseName="customer" inverseEntity="User" syncable="YES"/>
     </entity>
     <entity name="Domain" representedClassName="Domain" parentEntity="Entity" syncable="YES">
-        <attribute name="maxCount" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="instanceCount" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="attributes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Attribute" inverseName="domain" inverseEntity="Attribute" syncable="YES"/>
     </entity>
@@ -40,12 +40,12 @@
         <relationship name="customer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Customer" inverseName="users" inverseEntity="Customer" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Attribute" positionX="7" positionY="399" width="128" height="163"/>
-        <element name="Customer" positionX="430" positionY="252" width="128" height="73"/>
-        <element name="Domain" positionX="0" positionY="260" width="128" height="88"/>
-        <element name="Entity" positionX="-0" positionY="122" width="128" height="58"/>
-        <element name="Filter" positionX="9" positionY="603" width="128" height="90"/>
-        <element name="User" positionX="198" positionY="255" width="128" height="105"/>
-        <element name="AttributeTypeValue" positionX="216" positionY="387" width="128" height="43"/>
+        <element name="Attribute" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="AttributeTypeValue" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Customer" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Domain" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Entity" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Filter" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="User" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

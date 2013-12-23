@@ -12,7 +12,7 @@
 
 @implementation Domain
 
-@dynamic maxCount;
+@dynamic instanceCount;
 @dynamic name;
 @dynamic attributes;
 

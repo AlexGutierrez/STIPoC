@@ -36,8 +36,6 @@ static NSString *const kSTIPoCSegueModalOrderDetailViewController = @"OrderDetai
 
 - (void)finishOrderDetails:(NSArray *)orders forRefresh:(BOOL)forRefresh withSearchText:(NSString *)searchText;
 - (void)requestOrderDetailsForOrders:(NSArray *)orders forRefresh:(BOOL)forRefresh withSearchText:(NSString *)searchText;
-- (void)showOverlayWithMessage:(NSString *)message;
-- (void)dismissOverlay;
 
 @end
 
@@ -360,17 +358,6 @@ static NSString *const kSTIPoCSegueModalOrderDetailViewController = @"OrderDetai
     }
 }
 
-- (void)showOverlayWithMessage:(NSString *)message
-{
-    [MRProgressOverlayView showOverlayAddedTo:self.navigationController.view
-                                        title:message
-                                         mode:MRProgressOverlayViewModeIndeterminateSmall
-                                     animated:YES];
-}
 
-- (void)dismissOverlay
-{
-    [MRProgressOverlayView dismissAllOverlaysForView:self.navigationController.view animated:YES];
-}
 
 @end

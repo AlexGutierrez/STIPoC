@@ -11,4 +11,7 @@
 
 @interface GenericViewController : UIViewController
 
+- (void)showOverlayWithMessage:(NSString *)message;
+- (void)dismissOverlay;
+
 @end

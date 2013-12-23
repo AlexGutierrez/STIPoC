@@ -13,12 +13,13 @@
 
 @interface DomainsViewController ()
 
-@property (strong, nonatomic) NSDictionary *domains;
 @property (strong, nonatomic) NSArray *domainSectionKeys;
 
 @end
 
 @implementation DomainsViewController
+
+@synthesize domains = _domains;
 
 #pragma mark -
 #pragma mark View Lifecycle
@@ -31,14 +32,9 @@
     self.tableView.sectionIndexBackgroundColor = [UIColor colorWithColor:[UIColor verizonLightGrey] andAlpha:0.5];
     self.tableView.sectionIndexTrackingBackgroundColor = [UIColor colorWithColor:[UIColor verizonGrey] andAlpha:0.5];
     
-    [[DomainsService sharedService] getDomainsWithCompletionBlock:^(NSDictionary *domains) {
-        self.domains = domains;
-        self.domainSectionKeys = [[self.domains allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
-        [self.tableView reloadData];
-    } andFailureBlock:^(NSError *error) {
-        UIAlertView *alertView = [[AlertViewFactory sharedFactory] createAlertViewWithError:error];
-        [alertView show];
-    }];
+    if ([self.delegate respondsToSelector:@selector(domainsViewControllerRequestedDomainsFromServer)]) {
+        [self.delegate domainsViewControllerRequestedDomainsFromServer];
+    }
 }
 
 #pragma mark -
@@ -50,6 +46,16 @@
         _domains = [NSDictionary new];
     }
     return _domains;
+}
+
+- (void)setDomains:(NSDictionary *)domains
+{
+    if (_domains != domains) {
+        _domains = domains;
+        
+        self.domainSectionKeys = [[self.domains allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+        [self.tableView reloadData];
+    }
 }
 
 - (NSArray *)domainSectionKeys
