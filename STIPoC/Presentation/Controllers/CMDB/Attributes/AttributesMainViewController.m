@@ -8,6 +8,7 @@
 
 #import "AttributesMainViewController.h"
 #import "AttributesTableViewController.h"
+#import "Domain.h"
 
 #define DOMAINS_CONTAINER_OFFSET_X_HIDDEN -320.0f
 #define DOMAINS_CONTAINER_OFFSET_X_DISPLAYED 0.0f
@@ -37,8 +38,11 @@ static NSString *const kSTIPoCSegueEmbedDomainsViewController = @"DomainsViewCon
 {
     [super viewDidLoad];
     
-    [self setDomainsContainerIsHidden:YES animated:NO];
     self.sideMenuCollapserButton.alpha = 0.0f;
+    
+    self.domainsContainerIsHidden = (self.attributesTableViewController.selectedDomain == nil);
+    [self setDomainsContainerIsHidden:(self.attributesTableViewController.selectedDomain != nil) animated:YES];
+    self.domainsContainerTogglingButton.enabled = (self.attributesTableViewController.selectedDomain != nil);
 }
 
 #pragma mark -
@@ -98,7 +102,9 @@ static NSString *const kSTIPoCSegueEmbedDomainsViewController = @"DomainsViewCon
 
 - (void)domainsViewControllerDidSelectDomain:(Domain *)selectedDomain
 {
+    self.title = selectedDomain.name;
     self.attributesTableViewController.selectedDomain = selectedDomain;
+    self.domainsContainerTogglingButton.enabled = YES;
     [self setDomainsContainerIsHidden:YES animated:YES];
 }
 
@@ -107,7 +113,7 @@ static NSString *const kSTIPoCSegueEmbedDomainsViewController = @"DomainsViewCon
 
 - (IBAction)collapseSideMenus:(UIButton *)sender
 {
-    if ([self.currentDisplayedMenu isEqual:self.domainsContainer]) {
+    if ([self.currentDisplayedMenu isEqual:self.domainsContainer] && (self.attributesTableViewController.selectedDomain != nil)) {
         [self toggleDomainsContainer:nil];
     }
 }

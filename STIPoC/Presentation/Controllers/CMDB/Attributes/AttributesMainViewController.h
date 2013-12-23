@@ -13,6 +13,7 @@
 
 @property (weak, nonatomic) IBOutlet UIView *domainsContainer;
 @property (weak, nonatomic) IBOutlet UIButton *sideMenuCollapserButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *domainsContainerTogglingButton;
 
 - (IBAction)collapseSideMenus:(UIButton *)sender;
 - (IBAction)toggleDomainsContainer:(UIBarButtonItem *)sender;

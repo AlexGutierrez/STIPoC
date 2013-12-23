@@ -134,6 +134,8 @@
     if ([self.delegate respondsToSelector:@selector(domainsViewControllerDidSelectDomain:)]) {
         [self.delegate domainsViewControllerDidSelectDomain:domain];
     }
+    
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 @end

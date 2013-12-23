@@ -246,6 +246,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="domainsContainer" destination="6XW-PY-DNM" id="srA-bD-J82"/>
+                        <outlet property="domainsContainerTogglingButton" destination="xdF-AE-rft" id="UAJ-Kr-TGU"/>
                         <outlet property="sideMenuCollapserButton" destination="a4U-l8-Ugc" id="RrV-rg-H9K"/>
                     </connections>
                 </viewController>
