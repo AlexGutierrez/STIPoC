@@ -167,6 +167,8 @@
 		7C958454183ACF4E0065C878 /* SSKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C958451183ACF4E0065C878 /* SSKeychainQuery.m */; };
 		7C99A8821868CCD400527966 /* CMDBRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C99A8811868CCD400527966 /* CMDBRequestOperationManager.m */; };
 		7C99A8851868D21B00527966 /* DomainsTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C99A8841868D21B00527966 /* DomainsTranslator.m */; };
+		7C99A8881868EE2400527966 /* AttributesService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C99A8871868EE2400527966 /* AttributesService.m */; };
+		7C99A88B1868F72A00527966 /* AttributesTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C99A88A1868F72A00527966 /* AttributesTranslator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -494,6 +496,10 @@
 		7C99A8811868CCD400527966 /* CMDBRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMDBRequestOperationManager.m; sourceTree = "<group>"; };
 		7C99A8831868D21B00527966 /* DomainsTranslator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DomainsTranslator.h; sourceTree = "<group>"; };
 		7C99A8841868D21B00527966 /* DomainsTranslator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DomainsTranslator.m; sourceTree = "<group>"; };
+		7C99A8861868EE2400527966 /* AttributesService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttributesService.h; sourceTree = "<group>"; };
+		7C99A8871868EE2400527966 /* AttributesService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttributesService.m; sourceTree = "<group>"; };
+		7C99A8891868F72A00527966 /* AttributesTranslator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttributesTranslator.h; sourceTree = "<group>"; };
+		7C99A88A1868F72A00527966 /* AttributesTranslator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttributesTranslator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1096,6 +1102,8 @@
 				7AA569FD18491F480095C98A /* SelfService.m */,
 				7AB1011C1861F6A2008AD5FA /* DomainsService.h */,
 				7AB1011D1861F6A2008AD5FA /* DomainsService.m */,
+				7C99A8861868EE2400527966 /* AttributesService.h */,
+				7C99A8871868EE2400527966 /* AttributesService.m */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1405,6 +1413,8 @@
 			children = (
 				7C99A8831868D21B00527966 /* DomainsTranslator.h */,
 				7C99A8841868D21B00527966 /* DomainsTranslator.m */,
+				7C99A8891868F72A00527966 /* AttributesTranslator.h */,
+				7C99A88A1868F72A00527966 /* AttributesTranslator.m */,
 			);
 			path = Translator;
 			sourceTree = "<group>";
@@ -1594,6 +1604,7 @@
 				7C9569F6184394BC000A5595 /* GetOrderXMLParser.m in Sources */,
 				7C2A355F1832A734004AE430 /* NSAttributeDescription+MagicalDataImport.m in Sources */,
 				7C2A355E1832A734004AE430 /* MagicalImportFunctions.m in Sources */,
+				7C99A88B1868F72A00527966 /* AttributesTranslator.m in Sources */,
 				7A3937FA184947D800D3CF52 /* MenuViewController.m in Sources */,
 				7C2A35571832A734004AE430 /* DDAbstractDatabaseLogger.m in Sources */,
 				7C363CB9183FEE2C00003723 /* SelfServiceRequestOperationManager.m in Sources */,
@@ -1638,6 +1649,7 @@
 				7AC68BAC185219DE0019A5A8 /* UIScrollView+SVPullToRefresh.m in Sources */,
 				7C2A35D21832A7CE004AE430 /* GenericService.m in Sources */,
 				7A3937FD184947D800D3CF52 /* OrderStatusViewController.m in Sources */,
+				7C99A8881868EE2400527966 /* AttributesService.m in Sources */,
 				7A8DE2591863515900A91B75 /* Domain+Copy.m in Sources */,
 				7C2A35731832A734004AE430 /* MagicalRecord+iCloud.m in Sources */,
 				7C2A35601832A734004AE430 /* NSEntityDescription+MagicalDataImport.m in Sources */,

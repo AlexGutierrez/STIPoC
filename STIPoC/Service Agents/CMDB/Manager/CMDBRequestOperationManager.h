@@ -15,4 +15,8 @@
 - (void)startGetDomainsRequestOperationWithCompletionBlock:(void(^)(id responseObject))completion
                                            andFailureBlock:(void(^)(NSError *internalError))failure;
 
+- (void)startGetAttributesRequestOperationWithDomainId:(NSString *)domainId
+                                       completionBlock:(void(^)(id responseObject))completion
+                                       andFailureBlock:(void(^)(NSError *internalError))failure;
+
 @end

@@ -10,6 +10,7 @@
 #import "AttributesTableViewController.h"
 #import "Domain.h"
 #import "DomainsService.h"
+#import "AttributesService.h"
 
 #define DOMAINS_CONTAINER_OFFSET_X_HIDDEN -320.0f
 #define DOMAINS_CONTAINER_OFFSET_X_DISPLAYED 0.0f
@@ -105,10 +106,23 @@ static NSString *const kSTIPoCSegueEmbedDomainsViewController = @"DomainsViewCon
 
 - (void)domainsViewControllerDidSelectDomain:(Domain *)selectedDomain
 {
-    self.title = selectedDomain.name;
-    self.attributesTableViewController.selectedDomain = selectedDomain;
-    self.domainsContainerTogglingButton.enabled = YES;
-    [self setDomainsContainerIsHidden:YES animated:YES];
+    [self showOverlayWithMessage:NSLocalizedString(@"Loading Attributes...", nil)];
+    
+    [[AttributesService sharedService] getAttributesForDomain:selectedDomain
+                                          withCompletionBlock:^(NSArray *attributes) {
+                                              [self dismissOverlay];
+                                              selectedDomain.attributes = [NSSet setWithArray:attributes];
+                                              self.title = selectedDomain.name;
+                                              self.attributesTableViewController.selectedDomain = selectedDomain;
+                                              self.domainsContainerTogglingButton.enabled = YES;
+                                              [self setDomainsContainerIsHidden:YES animated:YES];
+                                          }
+                                              andFailureBlock:^(NSError *error) {
+                                                  [self dismissOverlay];
+                                                  UIAlertView *alertView = [[AlertViewFactory sharedFactory] createAlertViewWithError:error];
+                                                  [alertView show];
+                                                  
+                                          }];
 }
 
 - (void)domainsViewControllerRequestedDomainsFromServer

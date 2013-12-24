@@ -54,4 +54,26 @@ static NSString *const kSTIPoCCMDBEndpointURLBaseString = @"https://services-qa.
     [getDomainsRequestOperation start];
 }
 
+- (void)startGetAttributesRequestOperationWithDomainId:(NSString *)domainId
+                                       completionBlock:(void(^)(id responseObject))completion
+                                       andFailureBlock:(void(^)(NSError *internalError))failure
+{
+    AFHTTPRequestOperation *getAttributesRequestOperation = [self GET:@"Attributes"
+                                                           parameters:@{@"DomainId": domainId}
+                                                              success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                                                                  DDLogInfo(@"Get Attributes SUCCEEDED");
+                                                                  if (completion) {
+                                                                      completion(responseObject);
+                                                                  }
+                                                              }
+                                                              failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                                                  DDLogError(@"Get Attributes FAILED:\n%@", error);
+                                                                  if (failure) {
+                                                                      failure(error);
+                                                                  }
+                                                              }];
+    
+    [getAttributesRequestOperation start];
+}
+
 @end
