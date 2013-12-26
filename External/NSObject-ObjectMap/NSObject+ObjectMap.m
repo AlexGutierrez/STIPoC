@@ -511,7 +511,7 @@ static const char * getPropertyType(objc_property_t property) {
         }
     }
     else {
-        *error = [NSError errorWithDomain:@"MismatchedObjects" code:404 userInfo:@{@"Error":@"Mismatched Object Classes"}];
+        if (error != NULL) *error = [NSError errorWithDomain:@"MismatchedObjects" code:404 userInfo:@{@"Error":@"Mismatched Object Classes"}];
     }
     
     return self;

@@ -87,7 +87,7 @@ NSString *const kSTIPoCServiceName = @"com.STIPoC.SelfService";
     BOOL emptyFieldExists = (!userID || [userID isEqualToString:@""] || !password || [password isEqualToString:@""] || !customerID || [customerID isEqualToString:@""]);
     
     if (emptyFieldExists) {
-        (*error) = [[ErrorFactory sharedFactory] createErrorWithSelfServiceDomain:NSLocalizedString(@"Empty fields", nil) andDescription:NSLocalizedString(@"Please fill all the required fields.", nil)];
+        if (error != NULL) (*error) = [[ErrorFactory sharedFactory] createErrorWithSelfServiceDomain:NSLocalizedString(@"Empty fields", nil) andDescription:NSLocalizedString(@"Please fill all the required fields.", nil)];
         return NO;
     }
     else {
@@ -109,7 +109,7 @@ NSString *const kSTIPoCServiceName = @"com.STIPoC.SelfService";
         return YES;
     }
     else {
-        (*error) = [[ErrorFactory sharedFactory] createErrorWithSelfServiceDomain:NSLocalizedString(@"Wrong credentials", nil) andDescription:NSLocalizedString(@"Please verify your user ID, customer ID and password are correct.", nil)];
+        if (error != NULL) (*error) = [[ErrorFactory sharedFactory] createErrorWithSelfServiceDomain:NSLocalizedString(@"Wrong credentials", nil) andDescription:NSLocalizedString(@"Please verify your user ID, customer ID and password are correct.", nil)];
         return NO;
     }
 }
