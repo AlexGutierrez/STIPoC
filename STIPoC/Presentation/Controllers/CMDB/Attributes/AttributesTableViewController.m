@@ -8,7 +8,6 @@
 
 #import "AttributesTableViewController.h"
 #import "UnselectedAttributeCell.h"
-#import "SelectedAttributeCell.h"
 #import "Attribute.h"
 #import "Domain.h"
 
@@ -25,6 +24,16 @@
 #define DEFAULT_ATTRIBUTE_CELL_HEIGHT 60.0f
 
 @implementation AttributesTableViewController
+
+#pragma mark -
+#pragma mark View Lifecycle
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    self.tableView.editing = YES;
+}
 
 #pragma mark -
 #pragma mark Custom Accessors
@@ -100,8 +109,11 @@
     }
     else {
         SelectedAttributeCell *selectedAttributeCell = (SelectedAttributeCell *)cell;
+        selectedAttributeCell.delegate = self;
         
         Attribute *attribute = self.selectedAttributes[indexPath.row];
+        
+        [selectedAttributeCell changeOrderTypeButtonImageWithAttributeOrderType:(AttributeOrderType)attribute.orderType.integerValue];
         
         selectedAttributeCell.nameLabel.text = attribute.name;
         selectedAttributeCell.backgroundColor = [UIColor whiteColor];
@@ -110,7 +122,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSIndexPath *newIndexPath = nil;
+    NSIndexPath *destinationIndexPath = nil;
     
     if (indexPath.section == UNSELECTED_ATTRIBUTES_SECTION_INDEX) {
         Attribute *attribute = self.unselectedAttributes[indexPath.row];
@@ -119,11 +131,12 @@
         [self.selectedAttributes addObject:attribute];
         
         attribute.selected = @YES;
+        attribute.orderType = @(AttributeOrderTypeNone);
         
         NSInteger newIndex = [self.selectedAttributes indexOfObject:attribute];
         attribute.selectOrder = @(newIndex);
         
-        newIndexPath = [NSIndexPath indexPathForRow:newIndex inSection:SELECTED_ATTRIBUTES_SECTION_INDEX];
+        destinationIndexPath = [NSIndexPath indexPathForRow:newIndex inSection:SELECTED_ATTRIBUTES_SECTION_INDEX];
     }
     else {
         Attribute *attribute = self.selectedAttributes[indexPath.row];
@@ -142,21 +155,74 @@
         }
         [self.unselectedAttributes insertObject:attribute atIndex:newIndex];
         attribute.selectOrder = nil;
-        newIndexPath = [NSIndexPath indexPathForRow:newIndex inSection:UNSELECTED_ATTRIBUTES_SECTION_INDEX];
+        destinationIndexPath = [NSIndexPath indexPathForRow:newIndex inSection:UNSELECTED_ATTRIBUTES_SECTION_INDEX];
     }
 
-    [self.tableView moveRowAtIndexPath:indexPath toIndexPath:newIndexPath];
-    [self.tableView reloadRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+    [self.tableView moveRowAtIndexPath:indexPath toIndexPath:destinationIndexPath];
+    [self.tableView reloadRowsAtIndexPaths:@[destinationIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+}
+
+- (BOOL)tableView:(UITableView *)tableView shouldIndentWhileEditingRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return NO;
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return UITableViewCellEditingStyleNone;
 }
 
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return indexPath.section == SELECTED_ATTRIBUTES_SECTION_INDEX;
+    NSInteger section = indexPath.section;
+    return (section == SELECTED_ATTRIBUTES_SECTION_INDEX);
 }
 
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
 {
+    Attribute *attribute = self.selectedAttributes[sourceIndexPath.row];
+    attribute.selectOrder = @(destinationIndexPath.row);
     
+    [self.selectedAttributes removeObjectAtIndex:sourceIndexPath.row];
+    [self.unselectedAttributes insertObject:attribute atIndex:destinationIndexPath.row];
+    attribute.selectOrder = nil;
+}
+
+- (NSIndexPath *)tableView:(UITableView *)tableView targetIndexPathForMoveFromRowAtIndexPath:(NSIndexPath *)sourceIndexPath toProposedIndexPath:(NSIndexPath *)proposedDestinationIndexPath
+{
+    if (proposedDestinationIndexPath.section == UNSELECTED_ATTRIBUTES_SECTION_INDEX) {
+        NSInteger newRow = self.selectedAttributes.count - 1;
+        return [NSIndexPath indexPathForRow:newRow inSection:SELECTED_ATTRIBUTES_SECTION_INDEX];
+    }
+    
+    return proposedDestinationIndexPath;
+}
+
+#pragma mark -
+#pragma mark Selected Attribute Cell Protocols
+
+- (void)selectedAttributeCellDidChangeOrderType:(SelectedAttributeCell *)selectedAttributeCell
+{
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:selectedAttributeCell];
+    
+    Attribute *attribute = self.selectedAttributes[indexPath.row];
+    
+    if (attribute.orderType.integerValue == AttributeOrderTypeNone) {
+        attribute.orderType = @(AttributeOrderTypeAsc);
+    }
+    else if (attribute.orderType.integerValue == AttributeOrderTypeAsc) {
+        attribute.orderType = @(AttributeOrderTypeDesc);
+    }
+    else {
+        attribute.orderType = @(AttributeOrderTypeNone);
+    }
+    
+    [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
 }
 
 @end

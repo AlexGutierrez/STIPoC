@@ -8,7 +8,7 @@
 
 #import "Entity.h"
 
-@interface Entity (Copy)
+@interface Entity (Extra)
 
 @property (strong, nonatomic) NSManagedObjectContext *currentLocalContext;
 

@@ -7,10 +7,11 @@
 //
 
 #import "GenericViewController.h"
+#import "SelectedAttributeCell.h"
 
 @class Domain;
 
-@interface AttributesTableViewController : GenericViewController<UITableViewDataSource, UITableViewDelegate>
+@interface AttributesTableViewController : GenericViewController<UITableViewDataSource, UITableViewDelegate, SelectedAttributeCellDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 

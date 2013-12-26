@@ -13,22 +13,43 @@ NSString *const kSTIPoCSelectedAttributeWithFiltersCellIdentifier = @"SelectedAt
 NSString *const kSTIPoCSelectedOrderedAttributeCellIdentifier = @"SelectedOrderedAttributeCell";
 NSString *const kSTIPoCSelectedOrderedAttributeWithFiltersCellIdentifier = @"SelectedOrderedAttributeWithFiltersCell";
 
+static NSString *const kSTIPoCAttributeOrderTypeImageNone = @"OrderButtonNone.png";
+static NSString *const kSTIPoCAttributeOrderTypeImageASC = @"OrderButtonASC.png";
+static NSString *const kSTIPoCAttributeOrderTypeImageDESC = @"OrderButtonDESC.png";
+
 @implementation SelectedAttributeCell
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+#pragma mark -
+#pragma mark Public Methods
+
+- (void)changeOrderTypeButtonImageWithAttributeOrderType:(AttributeOrderType)attributeOrderType
 {
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        // Initialization code
+    UIImage *buttonImage = nil;
+    
+    if (attributeOrderType == AttributeOrderTypeNone) {
+        buttonImage = [UIImage imageNamed:kSTIPoCAttributeOrderTypeImageNone];
     }
-    return self;
+    else if (attributeOrderType == AttributeOrderTypeAsc) {
+        buttonImage = [UIImage imageNamed:kSTIPoCAttributeOrderTypeImageASC];
+    }
+    else {
+        buttonImage = [UIImage imageNamed:kSTIPoCAttributeOrderTypeImageDESC];
+    }
+    
+    [self.orderTypeButton setImage:buttonImage forState:UIControlStateNormal];
+    [self.orderTypeButton setImage:buttonImage forState:UIControlStateSelected];
+    [self.orderTypeButton setImage:buttonImage forState:UIControlStateApplication];
+    [self.orderTypeButton setImage:buttonImage forState:UIControlStateHighlighted];
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    [super setSelected:selected animated:animated];
+#pragma mark -
+#pragma mark IBActions
 
-    // Configure the view for the selected state
+- (IBAction)changeOrderType:(UIButton *)sender
+{
+    if ([self.delegate respondsToSelector:@selector(selectedAttributeCellDidChangeOrderType:)]) {
+        [self.delegate selectedAttributeCellDidChangeOrderType:self];
+    }
 }
 
 @end

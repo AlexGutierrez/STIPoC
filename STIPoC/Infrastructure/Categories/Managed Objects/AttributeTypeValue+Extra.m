@@ -6,10 +6,13 @@
 //  Copyright (c) 2013 Administrator. All rights reserved.
 //
 
-#import "AttributeTypeValue+Copy.h"
-#import "Entity+Copy.h"
+#import "AttributeTypeValue+Extra.h"
+#import "Entity+Extra.h"
 
-@implementation AttributeTypeValue (Copy)
+@implementation AttributeTypeValue (Extra)
+
+#pragma mark -
+#pragma mark Copying Protocols
 
 - (id)copyWithZone:(NSZone *)zone
 {

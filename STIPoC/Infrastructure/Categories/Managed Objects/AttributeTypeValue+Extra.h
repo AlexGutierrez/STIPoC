@@ -8,6 +8,6 @@
 
 #import "AttributeTypeValue.h"
 
-@interface AttributeTypeValue (Copy) <NSCopying>
+@interface AttributeTypeValue (Extra) <NSCopying>
 
 @end

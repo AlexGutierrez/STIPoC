@@ -6,11 +6,14 @@
 //  Copyright (c) 2013 Administrator. All rights reserved.
 //
 
-#import "Domain+Copy.h"
-#import "Attribute+Copy.h"
-#import "Entity+Copy.h"
+#import "Domain+Extra.h"
+#import "Attribute+Extra.h"
+#import "Entity+Extra.h"
 
-@implementation Domain (Copy)
+@implementation Domain (Extra)
+
+#pragma mark -
+#pragma mark Copying Protocols
 
 - (id)copyWithZone:(NSZone *)zone
 {

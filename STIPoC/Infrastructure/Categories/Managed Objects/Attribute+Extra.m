@@ -6,12 +6,15 @@
 //  Copyright (c) 2013 Administrator. All rights reserved.
 //
 
-#import "Attribute+Copy.h"
-#import "Entity+Copy.h"
-#import "Filter+Copy.h"
-#import "AttributeTypeValue+Copy.h"
+#import "Attribute+Extra.h"
+#import "Entity+Extra.h"
+#import "Filter+Extra.h"
+#import "AttributeTypeValue+Extra.h"
 
-@implementation Attribute (Copy)
+@implementation Attribute (Extra)
+
+#pragma mark - 
+#pragma mark Copying Protocols
 
 - (id)copyWithZone:(NSZone *)zone
 {
@@ -41,6 +44,26 @@
     }
     
     return attributeCopy;
+}
+
+#pragma mark -
+#pragma mark Attribute Order Type
+
++ (NSString *)stringFromAttributeOrderType:(AttributeOrderType)attributeOrderType
+{
+    switch (attributeOrderType) {
+        case AttributeOrderTypeNone:
+            return NSLocalizedString(@"None", nil);
+            break;
+        case AttributeOrderTypeAsc:
+            return NSLocalizedString(@"Ascendent", nil);
+            break;
+        case AttributeOrderTypeDesc:
+            return NSLocalizedString(@"Descendent", nil);
+            break;
+        default:
+            break;
+    }
 }
 
 @end

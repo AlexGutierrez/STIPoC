@@ -6,10 +6,13 @@
 //  Copyright (c) 2013 Administrator. All rights reserved.
 //
 
-#import "Filter+Copy.h"
-#import "Entity+Copy.h"
+#import "Filter+Extra.h"
+#import "Entity+Extra.h"
 
-@implementation Filter (Copy)
+@implementation Filter (Extra)
+
+#pragma mark -
+#pragma mark Copying Protocols
 
 - (id)copyWithZone:(NSZone *)zone
 {

@@ -27,10 +27,10 @@
 		7A8DE243186349B400A91B75 /* Filter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8DE242186349B400A91B75 /* Filter.m */; };
 		7A8DE246186349B400A91B75 /* Customer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8DE245186349B400A91B75 /* Customer.m */; };
 		7A8DE249186349B400A91B75 /* Entity.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8DE248186349B400A91B75 /* Entity.m */; };
-		7A8DE25018634A2900A91B75 /* Entity+Copy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8DE24F18634A2900A91B75 /* Entity+Copy.m */; };
-		7A8DE25318634D6000A91B75 /* Filter+Copy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8DE25218634D6000A91B75 /* Filter+Copy.m */; };
-		7A8DE25618634EFF00A91B75 /* Attribute+Copy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8DE25518634EFF00A91B75 /* Attribute+Copy.m */; };
-		7A8DE2591863515900A91B75 /* Domain+Copy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8DE2581863515900A91B75 /* Domain+Copy.m */; };
+		7A8DE25018634A2900A91B75 /* Entity+Extra.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8DE24F18634A2900A91B75 /* Entity+Extra.m */; };
+		7A8DE25318634D6000A91B75 /* Filter+Extra.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8DE25218634D6000A91B75 /* Filter+Extra.m */; };
+		7A8DE25618634EFF00A91B75 /* Attribute+Extra.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8DE25518634EFF00A91B75 /* Attribute+Extra.m */; };
+		7A8DE2591863515900A91B75 /* Domain+Extra.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8DE2581863515900A91B75 /* Domain+Extra.m */; };
 		7A8DE25C18635EAE00A91B75 /* UnselectedAttributeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8DE25B18635EAE00A91B75 /* UnselectedAttributeCell.m */; };
 		7A982327183552DE00CB0BA5 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A982326183552DE00CB0BA5 /* libOCMock.a */; };
 		7A9823281835533B00CB0BA5 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A982326183552DE00CB0BA5 /* libOCMock.a */; };
@@ -79,7 +79,7 @@
 		7C28A2401868827D00545A6B /* AttributesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C28A23F1868827D00545A6B /* AttributesTableViewController.m */; };
 		7C28A24318688E4000545A6B /* AttributeTypeValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C28A24218688E4000545A6B /* AttributeTypeValue.m */; };
 		7C28A24618688E5B00545A6B /* Attribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C28A24518688E5B00545A6B /* Attribute.m */; };
-		7C28A24918688E7600545A6B /* AttributeTypeValue+Copy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C28A24818688E7600545A6B /* AttributeTypeValue+Copy.m */; };
+		7C28A24918688E7600545A6B /* AttributeTypeValue+Extra.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C28A24818688E7600545A6B /* AttributeTypeValue+Extra.m */; };
 		7C2A34851832A6EB004AE430 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C2A34841832A6EB004AE430 /* Foundation.framework */; };
 		7C2A34871832A6EB004AE430 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C2A34861832A6EB004AE430 /* CoreGraphics.framework */; };
 		7C2A34891832A6EB004AE430 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C2A34881832A6EB004AE430 /* UIKit.framework */; };
@@ -222,14 +222,14 @@
 		7A8DE245186349B400A91B75 /* Customer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Customer.m; sourceTree = "<group>"; };
 		7A8DE247186349B400A91B75 /* Entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entity.h; sourceTree = "<group>"; };
 		7A8DE248186349B400A91B75 /* Entity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Entity.m; sourceTree = "<group>"; };
-		7A8DE24E18634A2900A91B75 /* Entity+Copy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Entity+Copy.h"; sourceTree = "<group>"; };
-		7A8DE24F18634A2900A91B75 /* Entity+Copy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Entity+Copy.m"; sourceTree = "<group>"; };
-		7A8DE25118634D6000A91B75 /* Filter+Copy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Filter+Copy.h"; sourceTree = "<group>"; };
-		7A8DE25218634D6000A91B75 /* Filter+Copy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Filter+Copy.m"; sourceTree = "<group>"; };
-		7A8DE25418634EFF00A91B75 /* Attribute+Copy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Attribute+Copy.h"; sourceTree = "<group>"; };
-		7A8DE25518634EFF00A91B75 /* Attribute+Copy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Attribute+Copy.m"; sourceTree = "<group>"; };
-		7A8DE2571863515900A91B75 /* Domain+Copy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Domain+Copy.h"; sourceTree = "<group>"; };
-		7A8DE2581863515900A91B75 /* Domain+Copy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Domain+Copy.m"; sourceTree = "<group>"; };
+		7A8DE24E18634A2900A91B75 /* Entity+Extra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Entity+Extra.h"; sourceTree = "<group>"; };
+		7A8DE24F18634A2900A91B75 /* Entity+Extra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Entity+Extra.m"; sourceTree = "<group>"; };
+		7A8DE25118634D6000A91B75 /* Filter+Extra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Filter+Extra.h"; sourceTree = "<group>"; };
+		7A8DE25218634D6000A91B75 /* Filter+Extra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Filter+Extra.m"; sourceTree = "<group>"; };
+		7A8DE25418634EFF00A91B75 /* Attribute+Extra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Attribute+Extra.h"; sourceTree = "<group>"; };
+		7A8DE25518634EFF00A91B75 /* Attribute+Extra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Attribute+Extra.m"; sourceTree = "<group>"; };
+		7A8DE2571863515900A91B75 /* Domain+Extra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Domain+Extra.h"; sourceTree = "<group>"; };
+		7A8DE2581863515900A91B75 /* Domain+Extra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Domain+Extra.m"; sourceTree = "<group>"; };
 		7A8DE25A18635EAE00A91B75 /* UnselectedAttributeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnselectedAttributeCell.h; sourceTree = "<group>"; };
 		7A8DE25B18635EAE00A91B75 /* UnselectedAttributeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnselectedAttributeCell.m; sourceTree = "<group>"; };
 		7A982326183552DE00CB0BA5 /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libOCMock.a; sourceTree = "<group>"; };
@@ -326,8 +326,8 @@
 		7C28A24218688E4000545A6B /* AttributeTypeValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttributeTypeValue.m; sourceTree = "<group>"; };
 		7C28A24418688E5B00545A6B /* Attribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Attribute.h; sourceTree = "<group>"; };
 		7C28A24518688E5B00545A6B /* Attribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Attribute.m; sourceTree = "<group>"; };
-		7C28A24718688E7600545A6B /* AttributeTypeValue+Copy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AttributeTypeValue+Copy.h"; sourceTree = "<group>"; };
-		7C28A24818688E7600545A6B /* AttributeTypeValue+Copy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AttributeTypeValue+Copy.m"; sourceTree = "<group>"; };
+		7C28A24718688E7600545A6B /* AttributeTypeValue+Extra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AttributeTypeValue+Extra.h"; sourceTree = "<group>"; };
+		7C28A24818688E7600545A6B /* AttributeTypeValue+Extra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AttributeTypeValue+Extra.m"; sourceTree = "<group>"; };
 		7C2A34811832A6EB004AE430 /* STIPoC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STIPoC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C2A34841832A6EB004AE430 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7C2A34861832A6EB004AE430 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -1351,16 +1351,16 @@
 			children = (
 				7C8A350E183D109400802B89 /* User+CustomAccessors.h */,
 				7C8A350F183D109400802B89 /* User+CustomAccessors.m */,
-				7A8DE24E18634A2900A91B75 /* Entity+Copy.h */,
-				7A8DE24F18634A2900A91B75 /* Entity+Copy.m */,
-				7A8DE25118634D6000A91B75 /* Filter+Copy.h */,
-				7A8DE25218634D6000A91B75 /* Filter+Copy.m */,
-				7A8DE25418634EFF00A91B75 /* Attribute+Copy.h */,
-				7A8DE25518634EFF00A91B75 /* Attribute+Copy.m */,
-				7A8DE2571863515900A91B75 /* Domain+Copy.h */,
-				7A8DE2581863515900A91B75 /* Domain+Copy.m */,
-				7C28A24718688E7600545A6B /* AttributeTypeValue+Copy.h */,
-				7C28A24818688E7600545A6B /* AttributeTypeValue+Copy.m */,
+				7A8DE24E18634A2900A91B75 /* Entity+Extra.h */,
+				7A8DE24F18634A2900A91B75 /* Entity+Extra.m */,
+				7A8DE25118634D6000A91B75 /* Filter+Extra.h */,
+				7A8DE25218634D6000A91B75 /* Filter+Extra.m */,
+				7A8DE25418634EFF00A91B75 /* Attribute+Extra.h */,
+				7A8DE25518634EFF00A91B75 /* Attribute+Extra.m */,
+				7A8DE2571863515900A91B75 /* Domain+Extra.h */,
+				7A8DE2581863515900A91B75 /* Domain+Extra.m */,
+				7C28A24718688E7600545A6B /* AttributeTypeValue+Extra.h */,
+				7C28A24818688E7600545A6B /* AttributeTypeValue+Extra.m */,
 			);
 			path = "Managed Objects";
 			sourceTree = "<group>";
@@ -1590,7 +1590,7 @@
 				7AB1011E1861F6A2008AD5FA /* DomainsService.m in Sources */,
 				7A3937FB184947D800D3CF52 /* OrderDetailViewController.m in Sources */,
 				7AC68BCA18528A190019A5A8 /* UIViewController+ECSlidingViewController.m in Sources */,
-				7A8DE25318634D6000A91B75 /* Filter+Copy.m in Sources */,
+				7A8DE25318634D6000A91B75 /* Filter+Extra.m in Sources */,
 				7C2A35631832A734004AE430 /* NSRelationshipDescription+MagicalDataImport.m in Sources */,
 				7C2A35691832A734004AE430 /* NSManagedObject+MagicalRequests.m in Sources */,
 				7C2A35DD1832A7CE004AE430 /* main.m in Sources */,
@@ -1602,7 +1602,7 @@
 				7AC68BC518528A190019A5A8 /* ECSlidingSegue.m in Sources */,
 				7A5342F8184AA88500FE9C54 /* UIColor+VerizonColors.m in Sources */,
 				7C2A35971832A7AD004AE430 /* AFURLConnectionOperation.m in Sources */,
-				7C28A24918688E7600545A6B /* AttributeTypeValue+Copy.m in Sources */,
+				7C28A24918688E7600545A6B /* AttributeTypeValue+Extra.m in Sources */,
 				7AB07C58184972EA001265E0 /* UIImage+MRImageEffects.m in Sources */,
 				7C2A356F1832A734004AE430 /* NSPersistentStore+MagicalRecord.m in Sources */,
 				7C2A356E1832A734004AE430 /* NSManagedObjectModel+MagicalRecord.m in Sources */,
@@ -1623,7 +1623,7 @@
 				7C2A35651832A734004AE430 /* NSManagedObject+MagicalAggregation.m in Sources */,
 				7C2A35761832A734004AE430 /* MagicalRecord+ShorthandSupport.m in Sources */,
 				7C1A98861847E1D10045ED8C /* OrderSummaryCell.m in Sources */,
-				7A8DE25618634EFF00A91B75 /* Attribute+Copy.m in Sources */,
+				7A8DE25618634EFF00A91B75 /* Attribute+Extra.m in Sources */,
 				7C2A35D41832A7CE004AE430 /* AlertViewFactory.m in Sources */,
 				7C958453183ACF4E0065C878 /* SSKeychain.m in Sources */,
 				7C2A355B1832A734004AE430 /* DDTTYLogger.m in Sources */,
@@ -1656,7 +1656,7 @@
 				7C2A35D21832A7CE004AE430 /* GenericService.m in Sources */,
 				7A3937FD184947D800D3CF52 /* OrderStatusViewController.m in Sources */,
 				7C99A8881868EE2400527966 /* AttributesService.m in Sources */,
-				7A8DE2591863515900A91B75 /* Domain+Copy.m in Sources */,
+				7A8DE2591863515900A91B75 /* Domain+Extra.m in Sources */,
 				7C2A35731832A734004AE430 /* MagicalRecord+iCloud.m in Sources */,
 				7C2A35601832A734004AE430 /* NSEntityDescription+MagicalDataImport.m in Sources */,
 				7C1168A118455EE300334AF9 /* XCDFormInputAccessoryView.m in Sources */,
@@ -1675,7 +1675,7 @@
 				7AB07C5B184972EA001265E0 /* MRIconView.m in Sources */,
 				7AA569F41848F2630095C98A /* UpdateOrderStatusRequest.m in Sources */,
 				7C956A051843A5C6000A5595 /* ModifyOrderDetailsResult.m in Sources */,
-				7A8DE25018634A2900A91B75 /* Entity+Copy.m in Sources */,
+				7A8DE25018634A2900A91B75 /* Entity+Extra.m in Sources */,
 				7C2A35931832A7AD004AE430 /* AFHTTPRequestOperationManager.m in Sources */,
 				7C9569FA18439C43000A5595 /* SelfServiceEnumTranslator.m in Sources */,
 				7AB07C5F184972EA001265E0 /* MRWeakProxy.m in Sources */,
