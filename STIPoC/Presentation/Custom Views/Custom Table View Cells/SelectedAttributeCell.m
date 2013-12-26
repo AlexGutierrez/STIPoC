@@ -9,6 +9,9 @@
 #import "SelectedAttributeCell.h"
 
 NSString *const kSTIPoCSelectedAttributeCellIdentifier = @"SelectedAttributeCell";
+NSString *const kSTIPoCSelectedAttributeWithFiltersCellIdentifier = @"SelectedAttributeWithFiltersCell";
+NSString *const kSTIPoCSelectedOrderedAttributeCellIdentifier = @"SelectedOrderedAttributeCell";
+NSString *const kSTIPoCSelectedOrderedAttributeWithFiltersCellIdentifier = @"SelectedOrderedAttributeWithFiltersCell";
 
 @implementation SelectedAttributeCell
 

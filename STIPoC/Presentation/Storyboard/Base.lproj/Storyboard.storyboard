@@ -1140,7 +1140,6 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.82352942230000004" green="0.82745099070000006" blue="0.83137255909999996" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="MI1-uM-do1" secondAttribute="trailing" constant="20" id="0Op-tQ-p8p"/>
                                                 <constraint firstItem="MI1-uM-do1" firstAttribute="top" secondItem="fgF-dS-WUN" secondAttribute="top" constant="19" id="BWd-2M-Fie"/>
@@ -1190,7 +1189,6 @@
                                                     </state>
                                                 </button>
                                             </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="centerY" secondItem="nW5-Ei-pde" secondAttribute="centerY" id="0R9-kl-DEK"/>
                                                 <constraint firstItem="nW5-Ei-pde" firstAttribute="leading" secondItem="qfU-VG-rql" secondAttribute="leading" constant="20" id="1RU-Ob-plZ"/>
@@ -1210,7 +1208,7 @@
                                             <outlet property="orderTypeButton" destination="nW5-Ei-pde" id="0AH-H6-RZa"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" showsReorderControl="YES" indentationWidth="10" reuseIdentifier="SelectedAttributeCell" rowHeight="60" id="9wS-mB-f29" customClass="SelectedAttributeCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" showsReorderControl="YES" indentationWidth="10" reuseIdentifier="SelectedOrderedAttributeCell" rowHeight="60" id="9wS-mB-f29" customClass="SelectedAttributeCell">
                                         <rect key="frame" x="0.0" y="142" width="724" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9wS-mB-f29" id="Sit-4M-234">
@@ -1259,7 +1257,6 @@
                                                     </state>
                                                 </button>
                                             </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="OLp-rI-Dgt" secondAttribute="trailing" constant="20" id="6Yg-xw-PUe"/>
                                                 <constraint firstItem="TAf-hm-lU8" firstAttribute="centerY" secondItem="fMY-D2-eoP" secondAttribute="centerY" id="7ua-Jc-GKW"/>
@@ -1291,7 +1288,7 @@
                                             <outlet property="orderTypeButton" destination="fMY-D2-eoP" id="nXl-0R-aEA"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" showsReorderControl="YES" indentationWidth="10" reuseIdentifier="SelectedAttributeCell" rowHeight="96" id="WyE-QD-Fuf" customClass="SelectedAttributeCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" showsReorderControl="YES" indentationWidth="10" reuseIdentifier="SelectedAttributeWithFiltersCell" rowHeight="96" id="WyE-QD-Fuf" customClass="SelectedAttributeCell">
                                         <rect key="frame" x="0.0" y="202" width="724" height="96"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WyE-QD-Fuf" id="hRJ-5E-tyv">
@@ -1348,7 +1345,6 @@
                                                     </state>
                                                 </button>
                                             </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstItem="roR-NX-kI5" firstAttribute="top" secondItem="hRJ-5E-tyv" secondAttribute="top" constant="33" id="4Ex-HE-Fi3"/>
                                                 <constraint firstAttribute="centerY" secondItem="ih2-cd-nIA" secondAttribute="centerY" id="5SY-jd-jhY"/>
@@ -1372,7 +1368,7 @@
                                             <outlet property="orderTypeButton" destination="ih2-cd-nIA" id="bD2-9O-ZUR"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" showsReorderControl="YES" indentationWidth="10" reuseIdentifier="SelectedAttributeCell" rowHeight="96" id="Fsq-35-GHR" customClass="SelectedAttributeCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" showsReorderControl="YES" indentationWidth="10" reuseIdentifier="SelectedOrderedAttributeWithFiltersCell" rowHeight="96" id="Fsq-35-GHR" customClass="SelectedAttributeCell">
                                         <rect key="frame" x="0.0" y="298" width="724" height="96"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fsq-35-GHR" id="XWd-Wh-l2A">
@@ -1441,7 +1437,6 @@
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                             </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="6XV-li-p5T" secondAttribute="trailing" constant="20" id="2Ad-Ui-vuq"/>
                                                 <constraint firstAttribute="centerY" secondItem="Ihq-cd-pMc" secondAttribute="centerY" id="5oO-XV-vnR"/>

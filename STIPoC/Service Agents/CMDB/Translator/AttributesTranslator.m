@@ -26,6 +26,8 @@ static NSString *const kSTIPoCSequenceAttributeKey = @"Sequence";
     attribute.entityID = [NSString stringWithFormat:@"%i", entityIDNumber.integerValue];
     attribute.type = [attributeDictionary objectForKey:kSTIPoCAttributeTypeAttributeKey];
     attribute.name = [attributeDictionary objectForKey:kSTIPoCNameAttributeKey];
+    attribute.selectOrder = nil;
+    attribute.selected = @NO;
     
     NSArray *typeValues = [attributeDictionary objectForKey:kSTIPoCTypeValuesAttributeKey];
     for (NSDictionary *typeValueDictionary in typeValues) {

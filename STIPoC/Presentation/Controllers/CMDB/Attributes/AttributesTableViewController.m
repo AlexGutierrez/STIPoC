@@ -8,6 +8,7 @@
 
 #import "AttributesTableViewController.h"
 #import "UnselectedAttributeCell.h"
+#import "SelectedAttributeCell.h"
 #import "Attribute.h"
 #import "Domain.h"
 
@@ -20,6 +21,8 @@
 
 #define SELECTED_ATTRIBUTES_SECTION_INDEX 0
 #define UNSELECTED_ATTRIBUTES_SECTION_INDEX 1
+
+#define DEFAULT_ATTRIBUTE_CELL_HEIGHT 60.0f
 
 @implementation AttributesTableViewController
 
@@ -64,6 +67,11 @@
     return 2;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return DEFAULT_ATTRIBUTE_CELL_HEIGHT;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     NSInteger numberOfRows = (section == SELECTED_ATTRIBUTES_SECTION_INDEX) ? self.selectedAttributes.count : self.unselectedAttributes.count;
@@ -73,7 +81,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *cellIdentifier = (indexPath.section == SELECTED_ATTRIBUTES_SECTION_INDEX)? kSTIPoCUnselectedAttributeCellIdentifier : kSTIPoCUnselectedAttributeCellIdentifier;
+    NSString *cellIdentifier = (indexPath.section == SELECTED_ATTRIBUTES_SECTION_INDEX)? kSTIPoCSelectedAttributeCellIdentifier : kSTIPoCUnselectedAttributeCellIdentifier;
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     
@@ -88,7 +96,67 @@
         Attribute *attribute = self.unselectedAttributes[indexPath.row];
         
         unselectedAttributeCell.nameLabel.text = attribute.name;
+        unselectedAttributeCell.backgroundColor = [UIColor verizonGrey];
     }
+    else {
+        SelectedAttributeCell *selectedAttributeCell = (SelectedAttributeCell *)cell;
+        
+        Attribute *attribute = self.selectedAttributes[indexPath.row];
+        
+        selectedAttributeCell.nameLabel.text = attribute.name;
+        selectedAttributeCell.backgroundColor = [UIColor whiteColor];
+    }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSIndexPath *newIndexPath = nil;
+    
+    if (indexPath.section == UNSELECTED_ATTRIBUTES_SECTION_INDEX) {
+        Attribute *attribute = self.unselectedAttributes[indexPath.row];
+        
+        [self.unselectedAttributes removeObject:attribute];
+        [self.selectedAttributes addObject:attribute];
+        
+        attribute.selected = @YES;
+        
+        NSInteger newIndex = [self.selectedAttributes indexOfObject:attribute];
+        attribute.selectOrder = @(newIndex);
+        
+        newIndexPath = [NSIndexPath indexPathForRow:newIndex inSection:SELECTED_ATTRIBUTES_SECTION_INDEX];
+    }
+    else {
+        Attribute *attribute = self.selectedAttributes[indexPath.row];
+        
+        [self.selectedAttributes removeObject:attribute];
+        
+        attribute.selected = @NO;
+        
+        NSInteger newIndex = 0;
+        for (int i = 0; i < self.unselectedAttributes.count; i++) {
+            Attribute *indexAttribute = self.unselectedAttributes[i];
+            if ([indexAttribute.name compare:attribute.name] == NSOrderedDescending || [indexAttribute.name compare:attribute.name] == NSOrderedSame) {
+                break;
+            }
+            newIndex++;
+        }
+        [self.unselectedAttributes insertObject:attribute atIndex:newIndex];
+        attribute.selectOrder = nil;
+        newIndexPath = [NSIndexPath indexPathForRow:newIndex inSection:UNSELECTED_ATTRIBUTES_SECTION_INDEX];
+    }
+
+    [self.tableView moveRowAtIndexPath:indexPath toIndexPath:newIndexPath];
+    [self.tableView reloadRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+}
+
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return indexPath.section == SELECTED_ATTRIBUTES_SECTION_INDEX;
+}
+
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
+{
+    
 }
 
 @end

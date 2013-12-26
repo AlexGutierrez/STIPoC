@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 extern NSString *const kSTIPoCSelectedAttributeCellIdentifier;
+extern NSString *const kSTIPoCSelectedAttributeWithFiltersCellIdentifier;
+extern NSString *const kSTIPoCSelectedOrderedAttributeCellIdentifier;
+extern NSString *const kSTIPoCSelectedOrderedAttributeWithFiltersCellIdentifier;
 
 @interface SelectedAttributeCell : UITableViewCell
 
