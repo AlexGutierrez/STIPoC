@@ -73,7 +73,9 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kSTIPoCUnselectedAttributeCellIdentifier forIndexPath:indexPath];
+    NSString *cellIdentifier = (indexPath.section == SELECTED_ATTRIBUTES_SECTION_INDEX)? kSTIPoCUnselectedAttributeCellIdentifier : kSTIPoCUnselectedAttributeCellIdentifier;
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     
     return cell;
 }

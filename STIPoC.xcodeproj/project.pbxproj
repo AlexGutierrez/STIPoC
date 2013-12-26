@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A10E3C1186CBB06009AF95A /* SelectedAttributeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A10E3C0186CBB06009AF95A /* SelectedAttributeCell.m */; };
 		7A3937F6184947D800D3CF52 /* GenericViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A3937E4184947D800D3CF52 /* GenericViewController.m */; };
 		7A3937F7184947D800D3CF52 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A3937E6184947D800D3CF52 /* MainViewController.m */; };
 		7A3937F8184947D800D3CF52 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A3937E9184947D800D3CF52 /* LoginViewController.m */; };
@@ -182,6 +183,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7A10E3BF186CBB06009AF95A /* SelectedAttributeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectedAttributeCell.h; sourceTree = "<group>"; };
+		7A10E3C0186CBB06009AF95A /* SelectedAttributeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectedAttributeCell.m; sourceTree = "<group>"; };
 		7A3937E3184947D800D3CF52 /* GenericViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenericViewController.h; sourceTree = "<group>"; };
 		7A3937E4184947D800D3CF52 /* GenericViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenericViewController.m; sourceTree = "<group>"; };
 		7A3937E5184947D800D3CF52 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
@@ -1440,6 +1443,8 @@
 				7AB1012318622255008AD5FA /* DomainCell.m */,
 				7A8DE25A18635EAE00A91B75 /* UnselectedAttributeCell.h */,
 				7A8DE25B18635EAE00A91B75 /* UnselectedAttributeCell.m */,
+				7A10E3BF186CBB06009AF95A /* SelectedAttributeCell.h */,
+				7A10E3C0186CBB06009AF95A /* SelectedAttributeCell.m */,
 			);
 			path = "Custom Table View Cells";
 			sourceTree = "<group>";
@@ -1639,6 +1644,7 @@
 				7A8DE25C18635EAE00A91B75 /* UnselectedAttributeCell.m in Sources */,
 				7C2A35741832A734004AE430 /* MagicalRecord+Options.m in Sources */,
 				7A3937F6184947D800D3CF52 /* GenericViewController.m in Sources */,
+				7A10E3C1186CBB06009AF95A /* SelectedAttributeCell.m in Sources */,
 				7C2A35681832A734004AE430 /* NSManagedObject+MagicalRecord.m in Sources */,
 				7C2A35D51832A7CE004AE430 /* LoggingHelper.m in Sources */,
 				7C956A081843A5E6000A5595 /* ModifyOrderDetailsXMLParser.m in Sources */,
