@@ -8,6 +8,25 @@
 
 #import "GenericViewController.h"
 
-@interface OrderPriorityPopoverViewController : GenericViewController
+@class OrderPriorityPopoverViewController;
+@class Attribute;
+
+@protocol OrderPriorityPopoverViewControllerDelegate <NSObject>
+
+- (void)orderPriorityPopoverViewController:(OrderPriorityPopoverViewController *)orderPriorityPopoverViewController didSelectNewPriority:(NSInteger)newOrderPriority;
+
+@end
+
+@interface OrderPriorityPopoverViewController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate>
+
+@property (nonatomic) NSInteger maxPriority;
+@property (strong, nonatomic) Attribute *popoverAttribute;
+
+@property (weak, nonatomic) id<OrderPriorityPopoverViewControllerDelegate> delegate;
+
+@property (weak, nonatomic) IBOutlet UIPickerView *pickerView;
+@property (weak, nonatomic) IBOutlet UINavigationBar *customNavigationBar;
+
+- (IBAction)doneButtonTapped:(UIBarButtonItem *)sender;
 
 @end

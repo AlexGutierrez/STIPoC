@@ -14,6 +14,7 @@
 @protocol SelectedAttributeCellDelegate <NSObject>
 
 - (void)selectedAttributeCellDidChangeOrderType:(SelectedAttributeCell *)selectedAttributeCell;
+- (void)selectedAttributeCellDidTapOrderPriorityButton:(SelectedAttributeCell *)selectedAttributeCell;
 
 @end
 
@@ -33,5 +34,9 @@ extern NSString *const kSTIPoCSelectedOrderedAttributeWithFiltersCellIdentifier;
 @property (weak, nonatomic) id<SelectedAttributeCellDelegate> delegate;
 
 - (void)changeOrderTypeButtonImageWithAttributeOrderType:(AttributeOrderType)attributeOrderType;
+- (void)changeOrderPriorityTextWithOrderPriority:(NSInteger)orderPriority;
+
+- (IBAction)changeOrderType:(UIButton *)sender;
+- (IBAction)changeOrderPriority:(UIButton *)sender;
 
 @end

@@ -42,6 +42,14 @@ static NSString *const kSTIPoCAttributeOrderTypeImageDESC = @"OrderButtonDESC.pn
     [self.orderTypeButton setImage:buttonImage forState:UIControlStateHighlighted];
 }
 
+- (void)changeOrderPriorityTextWithOrderPriority:(NSInteger)orderPriority
+{
+    [self.orderPriorityButton setTitle:[NSString stringWithFormat:@"%i", orderPriority] forState:UIControlStateNormal];
+    [self.orderPriorityButton setTitle:[NSString stringWithFormat:@"%i", orderPriority] forState:UIControlStateSelected];
+    [self.orderPriorityButton setTitle:[NSString stringWithFormat:@"%i", orderPriority] forState:UIControlStateApplication];
+    [self.orderPriorityButton setTitle:[NSString stringWithFormat:@"%i", orderPriority] forState:UIControlStateHighlighted];
+}
+
 #pragma mark -
 #pragma mark IBActions
 
@@ -49,6 +57,13 @@ static NSString *const kSTIPoCAttributeOrderTypeImageDESC = @"OrderButtonDESC.pn
 {
     if ([self.delegate respondsToSelector:@selector(selectedAttributeCellDidChangeOrderType:)]) {
         [self.delegate selectedAttributeCellDidChangeOrderType:self];
+    }
+}
+
+- (IBAction)changeOrderPriority:(UIButton *)sender
+{
+    if ([self.delegate respondsToSelector:@selector(selectedAttributeCellDidTapOrderPriorityButton:)]) {
+        [self.delegate selectedAttributeCellDidTapOrderPriorityButton:self];
     }
 }
 

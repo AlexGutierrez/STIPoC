@@ -9,12 +9,17 @@
 #import "AttributesTableViewController.h"
 #import "UnselectedAttributeCell.h"
 #import "Attribute.h"
+#import "AttributesService.h"
 #import "Domain.h"
+#import "SelectedAttributeCell.h"
+
+static NSString *const kSTIPoCOrderPriorityPopoverViewControllerIdentifier = @"OrderPriorityPopoverViewController";
 
 @interface AttributesTableViewController ()
 
 @property (strong, nonatomic) NSMutableArray *selectedAttributes;
 @property (strong, nonatomic) NSMutableArray *unselectedAttributes;
+@property (strong, nonatomic) UIPopoverController *orderPriorityPopoverController;
 
 @end
 
@@ -90,7 +95,22 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *cellIdentifier = (indexPath.section == SELECTED_ATTRIBUTES_SECTION_INDEX)? kSTIPoCSelectedAttributeCellIdentifier : kSTIPoCUnselectedAttributeCellIdentifier;
+    NSString *cellIdentifier = nil;
+    
+    if (indexPath.section == SELECTED_ATTRIBUTES_SECTION_INDEX) {
+        
+        Attribute *attribute = self.selectedAttributes[indexPath.row];
+        
+        if (attribute.orderType && (attribute.orderType.integerValue != AttributeOrderTypeNone)) {
+            cellIdentifier = kSTIPoCSelectedOrderedAttributeCellIdentifier;
+        }
+        else {
+            cellIdentifier = kSTIPoCSelectedAttributeCellIdentifier;
+        }
+    }
+    else {
+        cellIdentifier = kSTIPoCUnselectedAttributeCellIdentifier;
+    }
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     
@@ -114,6 +134,7 @@
         Attribute *attribute = self.selectedAttributes[indexPath.row];
         
         [selectedAttributeCell changeOrderTypeButtonImageWithAttributeOrderType:(AttributeOrderType)attribute.orderType.integerValue];
+        [selectedAttributeCell changeOrderPriorityTextWithOrderPriority:attribute.orderPriority.integerValue];
         
         selectedAttributeCell.nameLabel.text = attribute.name;
         selectedAttributeCell.backgroundColor = [UIColor whiteColor];
@@ -159,7 +180,7 @@
     }
 
     [self.tableView moveRowAtIndexPath:indexPath toIndexPath:destinationIndexPath];
-    [self.tableView reloadRowsAtIndexPaths:@[destinationIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+    [self.tableView reloadRowsAtIndexPaths:@[destinationIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
 - (BOOL)tableView:(UITableView *)tableView shouldIndentWhileEditingRowAtIndexPath:(NSIndexPath *)indexPath
@@ -189,7 +210,7 @@
     attribute.selectOrder = @(destinationIndexPath.row);
     
     [self.selectedAttributes removeObjectAtIndex:sourceIndexPath.row];
-    [self.unselectedAttributes insertObject:attribute atIndex:destinationIndexPath.row];
+    [self.selectedAttributes insertObject:attribute atIndex:destinationIndexPath.row];
     attribute.selectOrder = nil;
 }
 
@@ -213,16 +234,44 @@
     Attribute *attribute = self.selectedAttributes[indexPath.row];
     
     if (attribute.orderType.integerValue == AttributeOrderTypeNone) {
+        attribute.orderPriority = [[AttributesService sharedService] orderPriorityForNewOrdererdAttributeWithinSelectedAttributes:self.selectedAttributes];
         attribute.orderType = @(AttributeOrderTypeAsc);
+        [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     }
     else if (attribute.orderType.integerValue == AttributeOrderTypeAsc) {
         attribute.orderType = @(AttributeOrderTypeDesc);
+        [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     }
     else {
-        attribute.orderType = @(AttributeOrderTypeNone);
+        
+        [[AttributesService sharedService] updateOrderPrioritiesForSelectedAttributes:self.selectedAttributes withUnorderedAttribute:attribute];
+        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:SELECTED_ATTRIBUTES_SECTION_INDEX] withRowAnimation:UITableViewRowAnimationAutomatic];
     }
+}
+
+- (void)selectedAttributeCellDidTapOrderPriorityButton:(SelectedAttributeCell *)selectedAttributeCell
+{
+    OrderPriorityPopoverViewController *orderPriorityPopoverViewController = [self.storyboard instantiateViewControllerWithIdentifier:kSTIPoCOrderPriorityPopoverViewControllerIdentifier];
+    orderPriorityPopoverViewController.maxPriority = [[AttributesService sharedService] currentMaxOrderPriorityWithinSelectedAttributes:self.selectedAttributes];
+    orderPriorityPopoverViewController.delegate = self;
     
-    [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    self.orderPriorityPopoverController = [[UIPopoverController alloc] initWithContentViewController:orderPriorityPopoverViewController];
+    
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:selectedAttributeCell];
+    orderPriorityPopoverViewController.popoverAttribute = self.selectedAttributes[indexPath.row];
+    
+    [self.orderPriorityPopoverController presentPopoverFromRect:selectedAttributeCell.orderPriorityButton.frame inView:selectedAttributeCell.orderPriorityButton permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+}
+
+#pragma mark -
+#pragma mark Order Priority Popover View Protocols
+
+- (void)orderPriorityPopoverViewController:(OrderPriorityPopoverViewController *)orderPriorityPopoverViewController didSelectNewPriority:(NSInteger)newOrderPriority
+{
+    [[AttributesService sharedService] updateOrderPrioritiesForSelectedAttributes:self.selectedAttributes withAttributeToUpdate:orderPriorityPopoverViewController.popoverAttribute withNewOrderPriority:newOrderPriority];
+    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:SELECTED_ATTRIBUTES_SECTION_INDEX] withRowAnimation:UITableViewRowAnimationAutomatic];
+    
+    [self.orderPriorityPopoverController dismissPopoverAnimated:YES];
 }
 
 @end

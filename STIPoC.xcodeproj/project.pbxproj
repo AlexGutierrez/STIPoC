@@ -22,6 +22,7 @@
 		7A5342F8184AA88500FE9C54 /* UIColor+VerizonColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A5342F7184AA88500FE9C54 /* UIColor+VerizonColors.m */; };
 		7A5342FC184BC49C00FE9C54 /* OrderDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A5342FB184BC49C00FE9C54 /* OrderDetailTableViewController.m */; };
 		7A534304184BF82900FE9C54 /* QuoteLineItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A534303184BF82900FE9C54 /* QuoteLineItemCell.m */; };
+		7A6150351875B7A500E8A0F3 /* OrderPriorityPopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6150341875B7A500E8A0F3 /* OrderPriorityPopoverViewController.m */; };
 		7A8DE23D186349B300A91B75 /* Domain.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8DE23C186349B300A91B75 /* Domain.m */; };
 		7A8DE240186349B400A91B75 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8DE23F186349B400A91B75 /* User.m */; };
 		7A8DE243186349B400A91B75 /* Filter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8DE242186349B400A91B75 /* Filter.m */; };
@@ -212,6 +213,8 @@
 		7A5342FB184BC49C00FE9C54 /* OrderDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderDetailTableViewController.m; sourceTree = "<group>"; };
 		7A534302184BF82900FE9C54 /* QuoteLineItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteLineItemCell.h; sourceTree = "<group>"; };
 		7A534303184BF82900FE9C54 /* QuoteLineItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteLineItemCell.m; sourceTree = "<group>"; };
+		7A6150331875B7A500E8A0F3 /* OrderPriorityPopoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderPriorityPopoverViewController.h; sourceTree = "<group>"; };
+		7A6150341875B7A500E8A0F3 /* OrderPriorityPopoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderPriorityPopoverViewController.m; sourceTree = "<group>"; };
 		7A8DE23B186349B300A91B75 /* Domain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Domain.h; sourceTree = "<group>"; };
 		7A8DE23C186349B300A91B75 /* Domain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Domain.m; sourceTree = "<group>"; };
 		7A8DE23E186349B400A91B75 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
@@ -725,6 +728,8 @@
 				7AB10136186247BF008AD5FA /* AttributesMainViewController.m */,
 				7C28A23E1868827D00545A6B /* AttributesTableViewController.h */,
 				7C28A23F1868827D00545A6B /* AttributesTableViewController.m */,
+				7A6150331875B7A500E8A0F3 /* OrderPriorityPopoverViewController.h */,
+				7A6150341875B7A500E8A0F3 /* OrderPriorityPopoverViewController.m */,
 			);
 			path = Attributes;
 			sourceTree = "<group>";
@@ -1614,6 +1619,7 @@
 				7C2A35571832A734004AE430 /* DDAbstractDatabaseLogger.m in Sources */,
 				7C363CB9183FEE2C00003723 /* SelfServiceRequestOperationManager.m in Sources */,
 				7C2A356A1832A734004AE430 /* NSManagedObjectContext+MagicalObserving.m in Sources */,
+				7A6150351875B7A500E8A0F3 /* OrderPriorityPopoverViewController.m in Sources */,
 				7A8DE243186349B400A91B75 /* Filter.m in Sources */,
 				7C363CBC1840082000003723 /* GenericSelfServiceRequest.m in Sources */,
 				7C363CAF183FB35000003723 /* NSObject+ObjectMap.m in Sources */,
