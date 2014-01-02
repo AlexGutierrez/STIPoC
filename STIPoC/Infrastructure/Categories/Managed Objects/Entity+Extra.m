@@ -6,11 +6,11 @@
 //  Copyright (c) 2013 Administrator. All rights reserved.
 //
 
-#import "Entity+Copy.h"
+#import "Entity+Extra.h"
 
 static NSManagedObjectContext *_currentLocalContext;
 
-@implementation Entity (Copy)
+@implementation Entity (Extra)
 
 - (void)setCurrentLocalContext:(NSManagedObjectContext *)currentLocalContext
 {

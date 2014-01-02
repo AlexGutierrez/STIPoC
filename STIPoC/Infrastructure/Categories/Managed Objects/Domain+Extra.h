@@ -1,13 +1,13 @@
 //
-//  Filter+Copy.h
+//  Domain+Copy.h
 //  STIPoC
 //
 //  Created by Alex Gutierrez on 12/19/13.
 //  Copyright (c) 2013 Administrator. All rights reserved.
 //
 
-#import "Filter.h"
+#import "Domain.h"
 
-@interface Filter (Copy) <NSCopying>
+@interface Domain (Extra) <NSCopying>
 
 @end
