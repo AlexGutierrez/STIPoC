@@ -1038,7 +1038,7 @@
         <!--Domains View Controller-->
         <scene sceneID="QC9-sB-ZES">
             <objects>
-                <viewController id="iyD-ZC-qoO" customClass="DomainsViewController" sceneMemberID="viewController">
+                <viewController extendedLayoutIncludesOpaqueBars="YES" id="iyD-ZC-qoO" customClass="DomainsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="e84-4K-SwW"/>
                         <viewControllerLayoutGuide type="bottom" id="EjU-sg-ZHq"/>
@@ -1053,9 +1053,17 @@
                                 <color key="backgroundColor" red="0.92549019607843142" green="0.92941176470588238" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <color key="sectionIndexTrackingBackgroundColor" red="0.92549019610000005" green="0.92941176469999998" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" searchBarStyle="prominent" translucent="NO" id="ido-uu-Uzf">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="iyD-ZC-qoO" id="lCM-Lk-sbw"/>
+                                    </connections>
+                                </searchBar>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DomainCell" id="tI6-6T-5uB" customClass="DomainCell">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="66" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tI6-6T-5uB" id="uRm-jZ-A9y">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -1097,12 +1105,23 @@
                             <constraint firstItem="QYx-De-v5J" firstAttribute="leading" secondItem="DVL-zH-h9L" secondAttribute="leading" id="dP5-rK-b1Q"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <toolbarItems/>
                     <connections>
+                        <outlet property="searchDisplayController" destination="tCq-Dt-DnH" id="DOL-9u-oSU"/>
                         <outlet property="tableView" destination="QYx-De-v5J" id="c45-lG-Oc7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rSf-9B-sr4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="tCq-Dt-DnH">
+                    <connections>
+                        <outlet property="delegate" destination="iyD-ZC-qoO" id="Wbp-fv-PkZ"/>
+                        <outlet property="searchBar" destination="ido-uu-Uzf" id="ny8-js-ehf"/>
+                        <outlet property="searchContentsController" destination="iyD-ZC-qoO" id="1X6-Nw-j3S"/>
+                        <outlet property="searchResultsDataSource" destination="iyD-ZC-qoO" id="d5u-OT-m72"/>
+                        <outlet property="searchResultsDelegate" destination="iyD-ZC-qoO" id="Cw0-ou-b53"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="1940" y="5650"/>
         </scene>

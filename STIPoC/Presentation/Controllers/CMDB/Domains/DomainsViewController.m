@@ -13,7 +13,10 @@
 
 @interface DomainsViewController ()
 
+@property (strong, nonatomic) NSArray *searchResults;
 @property (strong, nonatomic) NSArray *domainSectionKeys;
+
+- (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope;
 
 @end
 
@@ -32,6 +35,8 @@
     self.tableView.sectionIndexBackgroundColor = [UIColor colorWithColor:[UIColor verizonLightGrey] andAlpha:0.5];
     self.tableView.sectionIndexTrackingBackgroundColor = [UIColor colorWithColor:[UIColor verizonGrey] andAlpha:0.5];
     
+    self.searchDisplayController.searchResultsTableView.backgroundColor = [UIColor verizonLightGrey];
+    
     if ([self.delegate respondsToSelector:@selector(domainsViewControllerRequestedDomainsFromServer)]) {
         [self.delegate domainsViewControllerRequestedDomainsFromServer];
     }
@@ -39,6 +44,14 @@
 
 #pragma mark -
 #pragma mark Custom Accessors
+
+- (NSArray *)searchResults
+{
+    if (!_searchResults) {
+        _searchResults = [NSArray new];
+    }
+    return _searchResults;
+}
 
 - (NSDictionary *)domains
 {
@@ -67,23 +80,65 @@
 }
 
 #pragma mark -
+#pragma mark Search Methods
+
+- (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
+{
+    NSPredicate *resultPredicate = [NSPredicate
+                                    predicateWithFormat:@"SELF.name contains[cd] %@",
+                                    searchText];
+    
+    NSMutableArray *allDomains = [NSMutableArray array];
+    for (NSArray *indexDomains in self.domains.allValues) {
+        [allDomains addObjectsFromArray:indexDomains];
+    }
+    
+    NSArray *filteredDomains = [allDomains filteredArrayUsingPredicate:resultPredicate];
+    
+    self.searchResults = [filteredDomains sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]]];
+}
+
+-(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
+{
+    [self filterContentForSearchText:searchString
+                               scope:[[self.searchDisplayController.searchBar scopeButtonTitles]
+                                      objectAtIndex:[self.searchDisplayController.searchBar
+                                                     selectedScopeButtonIndex]]];
+    
+    return YES;
+}
+
+#pragma mark -
 #pragma mark Table View Protocols
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    NSInteger sections = self.domainSectionKeys.count;
+    NSInteger sections = (tableView == self.searchDisplayController.searchResultsTableView)? 1 : self.domainSectionKeys.count;
     return sections;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        return self.searchResults.count;
+    }
+    
     NSString *sectionKey = self.domainSectionKeys[section];
     NSArray *sectionDomains = [self.domains objectForKey:sectionKey];
     return sectionDomains.count;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return (tableView == self.searchDisplayController.searchResultsTableView)? 0.0f : 30.0f;
+}
+
 - (UIView *) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        return nil;
+    }
+    
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.bounds.size.width, 30)];
     [headerView setBackgroundColor:[UIColor verizonGrey]];
     
@@ -99,6 +154,10 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        return nil;
+    }
+    
     NSString *sectionKey = self.domainSectionKeys[section];
     
     return sectionKey;
@@ -106,36 +165,54 @@
 
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
 {
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        return nil;
+    }
+    
     return self.domainSectionKeys;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index {
+- (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index
+{
     return index;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kSTIPoCDomainCellIdentifier forIndexPath:indexPath];
+    UITableViewCell *cell = (tableView == self.searchDisplayController.searchResultsTableView)? [self.tableView dequeueReusableCellWithIdentifier:kSTIPoCDomainCellIdentifier] :[self.tableView dequeueReusableCellWithIdentifier:kSTIPoCDomainCellIdentifier forIndexPath:indexPath];
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    Domain *domain = nil;
+    
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        domain = self.searchResults[indexPath.row];
+    }
+    else {
+        NSString *sectionKey = self.domainSectionKeys[indexPath.section];
+        NSArray *sectionDomains = [self.domains objectForKey:sectionKey];
+        domain = sectionDomains[indexPath.row];
+    }
+    
     DomainCell *domainCell = (DomainCell *)cell;
-    
-    NSString *sectionKey = self.domainSectionKeys[indexPath.section];
-    NSArray *sectionDomains = [self.domains objectForKey:sectionKey];
-    Domain *domain = sectionDomains[indexPath.row];
-    
     domainCell.nameLabel.text = domain.name;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *sectionKey = self.domainSectionKeys[indexPath.section];
-    NSArray *sectionDomains = [self.domains objectForKey:sectionKey];
-    Domain *domain = sectionDomains[indexPath.row];
+    Domain *domain = nil;
+    
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        domain = self.searchResults[indexPath.row];
+    }
+    else {
+        NSString *sectionKey = self.domainSectionKeys[indexPath.section];
+        NSArray *sectionDomains = [self.domains objectForKey:sectionKey];
+        domain = sectionDomains[indexPath.row];
+    }
     
     if ([self.delegate respondsToSelector:@selector(domainsViewControllerDidSelectDomain:)]) {
         [self.delegate domainsViewControllerDidSelectDomain:domain];
