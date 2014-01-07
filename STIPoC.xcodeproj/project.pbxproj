@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		692ACB931875B20B0002AA2F /* GridResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 692ACB921875B20B0002AA2F /* GridResultsViewController.m */; };
+		692ACB961875B8750002AA2F /* GridResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 692ACB951875B8750002AA2F /* GridResultCell.m */; };
 		7A10E3C1186CBB06009AF95A /* SelectedAttributeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A10E3C0186CBB06009AF95A /* SelectedAttributeCell.m */; };
 		7A3937F6184947D800D3CF52 /* GenericViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A3937E4184947D800D3CF52 /* GenericViewController.m */; };
 		7A3937F7184947D800D3CF52 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A3937E6184947D800D3CF52 /* MainViewController.m */; };
@@ -184,6 +186,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		692ACB911875B20B0002AA2F /* GridResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridResultsViewController.h; sourceTree = "<group>"; };
+		692ACB921875B20B0002AA2F /* GridResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GridResultsViewController.m; sourceTree = "<group>"; };
+		692ACB941875B8750002AA2F /* GridResultCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridResultCell.h; sourceTree = "<group>"; };
+		692ACB951875B8750002AA2F /* GridResultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GridResultCell.m; sourceTree = "<group>"; };
 		7A10E3BF186CBB06009AF95A /* SelectedAttributeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectedAttributeCell.h; sourceTree = "<group>"; };
 		7A10E3C0186CBB06009AF95A /* SelectedAttributeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectedAttributeCell.m; sourceTree = "<group>"; };
 		7A3937E3184947D800D3CF52 /* GenericViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenericViewController.h; sourceTree = "<group>"; };
@@ -757,6 +763,8 @@
 			children = (
 				7AB1013C18624875008AD5FA /* ResultsViewController.h */,
 				7AB1013D18624875008AD5FA /* ResultsViewController.m */,
+				692ACB911875B20B0002AA2F /* GridResultsViewController.h */,
+				692ACB921875B20B0002AA2F /* GridResultsViewController.m */,
 			);
 			path = Results;
 			sourceTree = "<group>";
@@ -843,7 +851,6 @@
 			children = (
 				7C2A350A1832A734004AE430 /* External */,
 				7C2A348A1832A6EB004AE430 /* STIPoC */,
-				7C2A34A31832A6EB004AE430 /* STIPoCTests */,
 				7C2A34831832A6EB004AE430 /* Frameworks */,
 				7C2A34821832A6EB004AE430 /* Products */,
 			);
@@ -883,6 +890,7 @@
 				7C2A35A51832A7CE004AE430 /* Infrastructure */,
 				7C2A35B81832A7CE004AE430 /* Presentation */,
 				7C2A35C41832A7CE004AE430 /* Service Agents */,
+				7C2A34A31832A6EB004AE430 /* STIPoCTests */,
 				7C2A35CB1832A7CE004AE430 /* Supporting Files */,
 				7C2A34961832A6EB004AE430 /* Images.xcassets */,
 			);
@@ -897,7 +905,7 @@
 				7C2A34A41832A6EB004AE430 /* Supporting Files */,
 			);
 			path = STIPoCTests;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 		7C2A34A41832A6EB004AE430 /* Supporting Files */ = {
 			isa = PBXGroup;
@@ -1450,6 +1458,8 @@
 				7A8DE25B18635EAE00A91B75 /* UnselectedAttributeCell.m */,
 				7A10E3BF186CBB06009AF95A /* SelectedAttributeCell.h */,
 				7A10E3C0186CBB06009AF95A /* SelectedAttributeCell.m */,
+				692ACB941875B8750002AA2F /* GridResultCell.h */,
+				692ACB951875B8750002AA2F /* GridResultCell.m */,
 			);
 			path = "Custom Table View Cells";
 			sourceTree = "<group>";
@@ -1585,6 +1595,7 @@
 				7C958454183ACF4E0065C878 /* SSKeychainQuery.m in Sources */,
 				7C2A35611832A734004AE430 /* NSNumber+MagicalDataImport.m in Sources */,
 				7AC68BC718528A190019A5A8 /* ECDynamicTransition.m in Sources */,
+				692ACB931875B20B0002AA2F /* GridResultsViewController.m in Sources */,
 				7C2A356B1832A734004AE430 /* NSManagedObjectContext+MagicalRecord.m in Sources */,
 				7AA56A0418492C030095C98A /* ErrorFactory.m in Sources */,
 				7C2A35981832A7AD004AE430 /* AFURLRequestSerialization.m in Sources */,
@@ -1692,6 +1703,7 @@
 				7C2A35921832A7AD004AE430 /* AFHTTPRequestOperation.m in Sources */,
 				7C2A35721832A734004AE430 /* MagicalRecord+ErrorHandling.m in Sources */,
 				7AC68BC418528A190019A5A8 /* ECSlidingInteractiveTransition.m in Sources */,
+				692ACB961875B8750002AA2F /* GridResultCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
