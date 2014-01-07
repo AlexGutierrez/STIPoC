@@ -1532,6 +1532,76 @@
             </objects>
             <point key="canvasLocation" x="1940" y="4448"/>
         </scene>
+        <!--Order Priority Popover View Controller-->
+        <scene sceneID="IfW-qj-dQI">
+            <objects>
+                <viewController storyboardIdentifier="OrderPriorityPopoverViewController" definesPresentationContext="YES" id="HJK-tM-MBt" customClass="OrderPriorityPopoverViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cCi-Ui-JAd"/>
+                        <viewControllerLayoutGuide type="bottom" id="C6O-Ka-dwY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Cyi-r9-Xpm">
+                        <rect key="frame" x="0.0" y="0.0" width="260" height="260"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="u1b-cX-8FN">
+                                <rect key="frame" x="0.0" y="0.0" width="260" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.92549020049999997" green="0.92941176889999999" blue="0.93333333730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="260" id="Kg5-wo-ca4"/>
+                                    <constraint firstAttribute="height" constant="44" id="Zmq-Hd-NBH"/>
+                                </constraints>
+                                <color key="tintColor" red="0.92549020049999997" green="0.92941176889999999" blue="0.93333333730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="0.92549020049999997" green="0.92941176889999999" blue="0.93333333730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Order Priority" id="Ctu-pe-ocp">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="EA6-MZ-qVt">
+                                            <color key="tintColor" red="0.18823531270027161" green="0.41176474094390869" blue="0.69019609689712524" alpha="1" colorSpace="deviceRGB"/>
+                                            <connections>
+                                                <action selector="doneButtonTapped:" destination="HJK-tM-MBt" id="xYB-Je-xkN"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GTx-nV-aJx">
+                                <rect key="frame" x="0.0" y="44" width="260" height="216"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="260" id="5BO-vO-OJ0"/>
+                                    <constraint firstAttribute="height" constant="216" id="Xfz-1J-8FS"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="HJK-tM-MBt" id="1bp-5j-hj7"/>
+                                    <outlet property="delegate" destination="HJK-tM-MBt" id="2ma-EV-CaQ"/>
+                                </connections>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.92549020051956177" green="0.92941176891326904" blue="0.93333333730697632" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="u1b-cX-8FN" secondAttribute="trailing" id="GYn-8z-6Hj"/>
+                            <constraint firstItem="u1b-cX-8FN" firstAttribute="leading" secondItem="Cyi-r9-Xpm" secondAttribute="leading" id="Oqw-TY-xEI"/>
+                            <constraint firstItem="GTx-nV-aJx" firstAttribute="leading" secondItem="Cyi-r9-Xpm" secondAttribute="leading" id="QqS-Lc-Hia"/>
+                            <constraint firstItem="u1b-cX-8FN" firstAttribute="top" secondItem="Cyi-r9-Xpm" secondAttribute="top" id="X0n-SK-LfE"/>
+                            <constraint firstItem="C6O-Ka-dwY" firstAttribute="top" secondItem="GTx-nV-aJx" secondAttribute="bottom" id="dOr-UO-5nY"/>
+                            <constraint firstAttribute="trailing" secondItem="GTx-nV-aJx" secondAttribute="trailing" id="q0I-gc-7bM"/>
+                        </constraints>
+                    </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="260" height="260"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="customNavigationBar" destination="u1b-cX-8FN" id="vPP-Z0-rS9"/>
+                        <outlet property="pickerView" destination="GTx-nV-aJx" id="tdo-ML-b7s"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Zu-8X-G4M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2408" y="5460"/>
+        </scene>
         <!--Results View Controller-->
         <scene sceneID="fpU-qy-6f4">
             <objects>
