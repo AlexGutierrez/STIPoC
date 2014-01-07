@@ -227,9 +227,6 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="420" id="p1d-kY-ebg"/>
                                 </constraints>
-                                <connections>
-                                    <segue destination="XJX-zJ-7av" kind="embed" id="ATJ-ed-RkQ"/>
-                                </connections>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" red="0.92549020051956177" green="0.92941176891326904" blue="0.93333333730697632" alpha="1" colorSpace="calibratedRGB"/>
@@ -1145,7 +1142,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1948" y="5498"/>
+            <point key="canvasLocation" x="1959" y="5506"/>
         </scene>
         <!--Attributes Table View Controller-->
         <scene sceneID="sh9-1Y-nZq">
@@ -1557,7 +1554,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ofF-Cr-ILs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1940" y="4448"/>
+            <point key="canvasLocation" x="1924" y="4448"/>
         </scene>
         <!--Order Priority Popover View Controller-->
         <scene sceneID="IfW-qj-dQI">
@@ -1662,7 +1659,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LfH-ly-Q4a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2753" y="4461"/>
+            <point key="canvasLocation" x="2737" y="4461"/>
         </scene>
         <!--Grid Results View Controller-->
         <scene sceneID="isz-ot-8st">
@@ -1765,26 +1762,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p5N-ec-gPc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3615" y="4493"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="a2f-YH-Sba">
-            <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="XJX-zJ-7av" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="xmO-Rg-Jnd"/>
-                        <viewControllerLayoutGuide type="bottom" id="Kv2-nn-aUn"/>
-                    </layoutGuides>
-                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ubc-yG-Jdf">
-                        <rect key="frame" x="0.0" y="0.0" width="420" height="960"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <toolbarItems/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="r8w-78-AFH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1940" y="6776"/>
+            <point key="canvasLocation" x="3599" y="4493"/>
         </scene>
     </scenes>
     <resources>
