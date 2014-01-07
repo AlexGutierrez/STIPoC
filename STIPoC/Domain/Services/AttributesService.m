@@ -9,7 +9,7 @@
 #import "AttributesService.h"
 #import "CMDBRequestOperationManager.h"
 #import "Domain.h"
-#import "Attribute.h"
+#import "Attribute+Extra.h"
 #import "AttributesTranslator.h"
 
 @implementation AttributesService
@@ -66,6 +66,84 @@
     });
 
     
+}
+
+- (NSInteger)currentMaxOrderPriorityWithinSelectedAttributes:(NSMutableArray *)selectedAttributes
+{
+    NSInteger orderPriority = 0;
+    for (Attribute *selectedAttribute in selectedAttributes) {
+        if (selectedAttribute.orderPriority) {
+            if (selectedAttribute.orderPriority.integerValue > orderPriority) {
+                orderPriority = selectedAttribute.orderPriority.integerValue;
+            }
+        }
+    }
+    
+    return orderPriority;
+}
+
+- (NSNumber *)orderPriorityForNewOrdererdAttributeWithinSelectedAttributes:(NSMutableArray *)selectedAttributes
+{
+    NSInteger orderPriority = [self currentMaxOrderPriorityWithinSelectedAttributes:selectedAttributes];
+    return @(orderPriority + 1);
+}
+
+- (void)updateOrderPrioritiesForSelectedAttributes:(NSMutableArray *)selectedAttributes withUnorderedAttribute:(Attribute *)unorderedAttribute
+{
+    if (unorderedAttribute.orderType.integerValue == AttributeOrderTypeNone) {
+        return;
+    }
+    
+    for (Attribute *selectedAttribute in selectedAttributes) {
+        
+        // verify that the attribute is different to the one which order type we are going to set to None
+        if (![selectedAttribute isEqual:unorderedAttribute]) {
+            
+            // verify that the attribute is ordered
+            if (selectedAttribute.orderType && selectedAttribute.orderType.integerValue != AttributeOrderTypeNone) {
+                
+                // verify that the attribute order priority is greater than the one which order type we are going to set to None
+                if (selectedAttribute.orderPriority.integerValue > unorderedAttribute.orderPriority.integerValue) {
+                    selectedAttribute.orderPriority = @(selectedAttribute.orderPriority.integerValue - 1);
+                }
+            }
+        }
+    }
+    
+    unorderedAttribute.orderPriority = nil;
+    unorderedAttribute.orderType = @(AttributeOrderTypeNone);
+}
+
+- (void)updateOrderPrioritiesForSelectedAttributes:(NSMutableArray *)selectedAttributes withAttributeToUpdate:(Attribute *)attributeToUpdate withNewOrderPriority:(NSInteger)orderPriority
+{
+    if (attributeToUpdate.orderType.integerValue == AttributeOrderTypeNone || !attributeToUpdate.orderPriority ||  attributeToUpdate.orderPriority.integerValue == orderPriority) {
+        return;
+    }
+    
+    for (Attribute *selectedAttribute in selectedAttributes) {
+        
+        // verify that the attribute is different to the one which order type we are going to set to None
+        if (![selectedAttribute isEqual:attributeToUpdate]) {
+            
+            // verify that the attribute is ordered
+            if (selectedAttribute.orderType && selectedAttribute.orderType.integerValue != AttributeOrderTypeNone) {
+                
+                if (attributeToUpdate.orderPriority.integerValue < orderPriority) {
+                    if (selectedAttribute.orderPriority.integerValue <= orderPriority && selectedAttribute.orderPriority.integerValue > attributeToUpdate.orderPriority.integerValue) {
+                        selectedAttribute.orderPriority = @(selectedAttribute.orderPriority.integerValue - 1);
+                    }
+                }
+                else {
+                    if (selectedAttribute.orderPriority.integerValue >= orderPriority && selectedAttribute.orderPriority.integerValue < attributeToUpdate.orderPriority.integerValue) {
+                        selectedAttribute.orderPriority = @(selectedAttribute.orderPriority.integerValue + 1);
+                    }
+                }
+                
+            }
+        }
+    }
+    
+    attributeToUpdate.orderPriority = @(orderPriority);
 }
 
 

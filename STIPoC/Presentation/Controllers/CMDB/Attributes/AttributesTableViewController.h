@@ -8,10 +8,11 @@
 
 #import "GenericViewController.h"
 #import "SelectedAttributeCell.h"
+#import "OrderPriorityPopoverViewController.h"
 
 @class Domain;
 
-@interface AttributesTableViewController : GenericViewController<UITableViewDataSource, UITableViewDelegate, SelectedAttributeCellDelegate>
+@interface AttributesTableViewController : GenericViewController<UITableViewDataSource, UITableViewDelegate, SelectedAttributeCellDelegate, OrderPriorityPopoverViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
