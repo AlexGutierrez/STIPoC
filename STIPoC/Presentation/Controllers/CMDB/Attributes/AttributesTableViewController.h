@@ -12,9 +12,17 @@
 
 @class Domain;
 
+@protocol AttributesTableViewControllerDelegate <NSObject>
+
+- (void)attributesTableViewControllerDidRequestFilterChangeForAttribute:(Attribute *)attribute;
+
+@end
+
 @interface AttributesTableViewController : GenericViewController<UITableViewDataSource, UITableViewDelegate, SelectedAttributeCellDelegate, OrderPriorityPopoverViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@property (weak, nonatomic) id<AttributesTableViewControllerDelegate> delegate;
 
 @property (strong, nonatomic) Domain *selectedDomain;
 

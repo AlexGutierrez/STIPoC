@@ -67,4 +67,11 @@ static NSString *const kSTIPoCAttributeOrderTypeImageDESC = @"OrderButtonDESC.pn
     }
 }
 
+- (IBAction)changeFilters:(UIButton *)sender
+{
+    if ([self.delegate respondsToSelector:@selector(selectedAttributeCellDidTapFiltersButton:)]) {
+        [self.delegate selectedAttributeCellDidTapFiltersButton:self];
+    }
+}
+
 @end
