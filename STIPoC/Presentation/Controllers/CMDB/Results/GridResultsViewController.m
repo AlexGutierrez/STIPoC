@@ -26,7 +26,7 @@
     /*for testing only*/
     NSArray *arr1 = @[@"320234",@"2qwertyui",@"2012-12-12",@"sadsadas fdfghhjjg fdfsadg gfhgfgfeerttryf",@"sdffsgreewrewrr dfvc dsfdsfsdfdsfdf",@"ceewcrercwrwrwecds"];
     NSArray *arr2 = @[@"320235",@"234ewrewrwer",@"2012-12-12",@"cvbbvnbnvbn fdfghhjjg fdfsadg gfhgfgfeerttryf",@"vbnvbn dfvc dsfdsfsdfdsfdf",@"ceewcrercwrwrwecds"];
-   self.queryResults = @[arr1, arr2];
+   //self.queryResults = @[arr1, arr2];
     
     [super viewDidLoad];
     [self resizeScrollViewForOrientation];
@@ -88,6 +88,12 @@
     cell.contentView.backgroundColor = [UIColor verizonRed];
     cell.values = self.headerFields;
     return cell;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    GridResultCell *cell = (GridResultCell *) [tableView dequeueReusableCellWithIdentifier:kSTIPoCGridHeaderAttributeCellIdentifier];
+    return [cell calculatePreferedHeightForValues:self.headerFields];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

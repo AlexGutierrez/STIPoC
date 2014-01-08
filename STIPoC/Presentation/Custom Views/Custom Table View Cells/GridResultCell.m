@@ -29,38 +29,36 @@ NSString *const kSTIPoCGridDetailAttributeCellIdentifier = @"GridDetailCell";
 
 -(void)updateConstraints
 {
-    if ([self.reuseIdentifier isEqualToString:kSTIPoCGridDetailAttributeCellIdentifier]) {
-        for (UILabel *label in self.contentView.subviews) {
-            label.translatesAutoresizingMaskIntoConstraints = NO; //important
-            
-            NSLayoutConstraint* c1 = [NSLayoutConstraint constraintWithItem:label
-                                                                  attribute:NSLayoutAttributeBottom
-                                                                  relatedBy:NSLayoutRelationEqual
-                                                                     toItem:self.contentView
-                                                                  attribute:NSLayoutAttributeBottom
-                                                                 multiplier:1
-                                                                   constant:-10];
-            
-            NSLayoutConstraint* c2 = [NSLayoutConstraint constraintWithItem:label
-                                                                  attribute:NSLayoutAttributeTop
-                                                                  relatedBy:NSLayoutRelationEqual
-                                                                     toItem:self.contentView
-                                                                  attribute:NSLayoutAttributeTop
-                                                                 multiplier:1
-                                                                   constant:10];
-            
-            NSLayoutConstraint* c3 = [NSLayoutConstraint constraintWithItem:label
-                                                                  attribute:NSLayoutAttributeLeft
-                                                                  relatedBy:NSLayoutRelationEqual
-                                                                     toItem:self.contentView
-                                                                  attribute:NSLayoutAttributeLeft
-                                                                 multiplier:1
-                                                                   constant:label.frame.origin.x];
-            
-            [self.contentView addConstraint:c1];
-            [self.contentView addConstraint:c2];
-            [self.contentView addConstraint:c3];
-        }
+    for (UILabel *label in self.contentView.subviews) {
+        label.translatesAutoresizingMaskIntoConstraints = NO; //important
+        
+        NSLayoutConstraint* c1 = [NSLayoutConstraint constraintWithItem:label
+                                                              attribute:NSLayoutAttributeBottom
+                                                              relatedBy:NSLayoutRelationEqual
+                                                                 toItem:self.contentView
+                                                              attribute:NSLayoutAttributeBottom
+                                                             multiplier:1
+                                                               constant:-10];
+        
+        NSLayoutConstraint* c2 = [NSLayoutConstraint constraintWithItem:label
+                                                              attribute:NSLayoutAttributeTop
+                                                              relatedBy:NSLayoutRelationEqual
+                                                                 toItem:self.contentView
+                                                              attribute:NSLayoutAttributeTop
+                                                             multiplier:1
+                                                               constant:10];
+        
+        NSLayoutConstraint* c3 = [NSLayoutConstraint constraintWithItem:label
+                                                              attribute:NSLayoutAttributeLeft
+                                                              relatedBy:NSLayoutRelationEqual
+                                                                 toItem:self.contentView
+                                                              attribute:NSLayoutAttributeLeft
+                                                             multiplier:1
+                                                               constant:label.frame.origin.x];
+        
+        [self.contentView addConstraint:c1];
+        [self.contentView addConstraint:c2];
+        [self.contentView addConstraint:c3];
     }
     [super updateConstraints];
 }
@@ -70,7 +68,6 @@ NSString *const kSTIPoCGridDetailAttributeCellIdentifier = @"GridDetailCell";
 - (void)createLabelsForValues
 {
     [self.valueLabel removeFromSuperview];
-    
     if ([self.values count] != 0) {
         for (int i=0; i < [self.values count]; i++) {
             UILabel *label = [self cloneLabel:self.valueLabel];
@@ -111,7 +108,7 @@ NSString *const kSTIPoCGridDetailAttributeCellIdentifier = @"GridDetailCell";
     for (NSString *value in values) {
         CGRect r = [self getTextLabelRectFromText:value withMaxWith:self.valueLabel.frame.size.width];
         float newHeightFactor = r.size.height / self.valueLabel.frame.size.height;
-        heightFactor = (newHeightFactor > heightFactor) ? (int)newHeightFactor : heightFactor;
+        heightFactor = (newHeightFactor > heightFactor) ? (int)round(newHeightFactor) : heightFactor;
     }
     return self.frame.size.height * heightFactor;
 }
