@@ -1142,7 +1142,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1959" y="5506"/>
+            <point key="canvasLocation" x="1924" y="5506"/>
         </scene>
         <!--Attributes Table View Controller-->
         <scene sceneID="sh9-1Y-nZq">
@@ -1554,7 +1554,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ofF-Cr-ILs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1924" y="4448"/>
+            <point key="canvasLocation" x="1924" y="4454"/>
         </scene>
         <!--Order Priority Popover View Controller-->
         <scene sceneID="IfW-qj-dQI">
@@ -1624,7 +1624,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Zu-8X-G4M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2408" y="5460"/>
+            <point key="canvasLocation" x="2388" y="5506"/>
         </scene>
         <!--Results View Controller-->
         <scene sceneID="fpU-qy-6f4">
@@ -1659,7 +1659,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LfH-ly-Q4a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2737" y="4461"/>
+            <point key="canvasLocation" x="2739" y="4400"/>
         </scene>
         <!--Grid Results View Controller-->
         <scene sceneID="isz-ot-8st">
