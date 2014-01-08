@@ -220,18 +220,29 @@
                                     <segue destination="iyD-ZC-qoO" kind="embed" identifier="DomainsViewControllerEmbedSegue" id="M8N-di-V68"/>
                                 </connections>
                             </containerView>
+                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bSK-ee-5Vo">
+                                <rect key="frame" x="348" y="64" width="420" height="960"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="420" id="p1d-kY-ebg"/>
+                                </constraints>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" red="0.92549020051956177" green="0.92941176891326904" blue="0.93333333730697632" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="bSK-ee-5Vo" secondAttribute="trailing" id="1In-Dr-EFN"/>
                             <constraint firstItem="mNR-V4-ghZ" firstAttribute="top" secondItem="wqo-2m-EEW" secondAttribute="bottom" constant="22" id="5ah-oW-F4u"/>
                             <constraint firstAttribute="trailing" secondItem="mNR-V4-ghZ" secondAttribute="trailing" constant="22" id="AQu-jE-PfJ"/>
                             <constraint firstItem="D5F-Hd-VyS" firstAttribute="top" secondItem="a4U-l8-Ugc" secondAttribute="bottom" id="BpU-Pj-Wqe"/>
                             <constraint firstItem="6XW-PY-DNM" firstAttribute="leading" secondItem="DBY-mQ-XcW" secondAttribute="leading" id="JuA-vX-Vfb"/>
                             <constraint firstAttribute="bottom" secondItem="6XW-PY-DNM" secondAttribute="bottom" id="KJp-tk-Pox"/>
+                            <constraint firstItem="D5F-Hd-VyS" firstAttribute="top" secondItem="bSK-ee-5Vo" secondAttribute="bottom" id="Pli-q8-rEm"/>
                             <constraint firstItem="6XW-PY-DNM" firstAttribute="top" secondItem="DBY-mQ-XcW" secondAttribute="top" constant="64" id="T4A-hg-1mQ"/>
                             <constraint firstItem="mNR-V4-ghZ" firstAttribute="leading" secondItem="DBY-mQ-XcW" secondAttribute="leading" constant="22" id="bgQ-gb-LDq"/>
                             <constraint firstAttribute="trailing" secondItem="a4U-l8-Ugc" secondAttribute="trailing" id="f3r-fp-epE"/>
                             <constraint firstItem="D5F-Hd-VyS" firstAttribute="top" secondItem="mNR-V4-ghZ" secondAttribute="bottom" constant="22" id="fIw-Hb-eUu"/>
+                            <constraint firstItem="bSK-ee-5Vo" firstAttribute="top" secondItem="wqo-2m-EEW" secondAttribute="bottom" id="gZb-SU-7lv"/>
                             <constraint firstItem="a4U-l8-Ugc" firstAttribute="leading" secondItem="DBY-mQ-XcW" secondAttribute="leading" id="m3L-O8-BZR"/>
                             <constraint firstItem="a4U-l8-Ugc" firstAttribute="top" secondItem="DBY-mQ-XcW" secondAttribute="top" id="sju-7I-cm4"/>
                         </constraints>
@@ -254,6 +265,7 @@
                     <connections>
                         <outlet property="domainsContainer" destination="6XW-PY-DNM" id="srA-bD-J82"/>
                         <outlet property="domainsContainerTogglingButton" destination="xdF-AE-rft" id="UAJ-Kr-TGU"/>
+                        <outlet property="filtersContainer" destination="bSK-ee-5Vo" id="qPa-sI-J0H"/>
                         <outlet property="sideMenuCollapserButton" destination="a4U-l8-Ugc" id="RrV-rg-H9K"/>
                     </connections>
                 </viewController>
@@ -1130,7 +1142,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1948" y="5498"/>
+            <point key="canvasLocation" x="1959" y="5506"/>
         </scene>
         <!--Attributes Table View Controller-->
         <scene sceneID="sh9-1Y-nZq">
@@ -1216,6 +1228,9 @@
                                                     <state key="normal" image="FilterButton">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="changeFilters:" destination="MZH-Ey-ODG" eventType="touchUpInside" id="NuG-rJ-sSc"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -1290,6 +1305,9 @@
                                                     <state key="normal" image="FilterButton">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="changeFilters:" destination="9wS-mB-f29" eventType="touchUpInside" id="umU-R8-g56"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -1381,6 +1399,9 @@
                                                     <state key="normal" image="FilterButton">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="changeFilters:" destination="WyE-QD-Fuf" eventType="touchUpInside" id="stK-JZ-mfr"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -1452,6 +1473,9 @@
                                                     <state key="normal" image="FilterButton">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="changeFilters:" destination="Fsq-35-GHR" eventType="touchUpInside" id="1A4-Im-jPI"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jfP-pd-9rz">
                                                     <rect key="frame" x="100" y="14" width="561" height="22"/>
@@ -1530,7 +1554,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ofF-Cr-ILs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1940" y="4448"/>
+            <point key="canvasLocation" x="1924" y="4448"/>
         </scene>
         <!--Order Priority Popover View Controller-->
         <scene sceneID="IfW-qj-dQI">
@@ -1635,7 +1659,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LfH-ly-Q4a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2753" y="4461"/>
+            <point key="canvasLocation" x="2737" y="4461"/>
         </scene>
         <!--Grid Results View Controller-->
         <scene sceneID="isz-ot-8st">
@@ -1738,7 +1762,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p5N-ec-gPc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3615" y="4493"/>
+            <point key="canvasLocation" x="3599" y="4493"/>
         </scene>
     </scenes>
     <resources>

@@ -15,7 +15,7 @@
 
 - (void)selectedAttributeCellDidChangeOrderType:(SelectedAttributeCell *)selectedAttributeCell;
 - (void)selectedAttributeCellDidTapOrderPriorityButton:(SelectedAttributeCell *)selectedAttributeCell;
-
+- (void)selectedAttributeCellDidTapFiltersButton:(SelectedAttributeCell *)selectedAttributeCell;
 @end
 
 extern NSString *const kSTIPoCSelectedAttributeCellIdentifier;
@@ -38,5 +38,6 @@ extern NSString *const kSTIPoCSelectedOrderedAttributeWithFiltersCellIdentifier;
 
 - (IBAction)changeOrderType:(UIButton *)sender;
 - (IBAction)changeOrderPriority:(UIButton *)sender;
+- (IBAction)changeFilters:(UIButton *)sender;
 
 @end

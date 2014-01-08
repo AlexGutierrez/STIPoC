@@ -8,9 +8,11 @@
 
 #import "GenericViewController.h"
 #import "DomainsViewController.h"
+#import "AttributesTableViewController.h"
 
-@interface AttributesMainViewController : GenericViewController<DomainsViewControllerDelegate>
+@interface AttributesMainViewController : GenericViewController<DomainsViewControllerDelegate, AttributesTableViewControllerDelegate>
 
+@property (weak, nonatomic) IBOutlet UIView *filtersContainer;
 @property (weak, nonatomic) IBOutlet UIView *domainsContainer;
 @property (weak, nonatomic) IBOutlet UIButton *sideMenuCollapserButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *domainsContainerTogglingButton;

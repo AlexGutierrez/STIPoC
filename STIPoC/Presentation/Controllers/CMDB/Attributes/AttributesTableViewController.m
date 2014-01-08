@@ -262,6 +262,17 @@ static NSString *const kSTIPoCOrderPriorityPopoverViewControllerIdentifier = @"O
     [self.orderPriorityPopoverController presentPopoverFromRect:selectedAttributeCell.orderPriorityButton.frame inView:selectedAttributeCell.orderPriorityButton permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 }
 
+- (void)selectedAttributeCellDidTapFiltersButton:(SelectedAttributeCell *)selectedAttributeCell
+{
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:selectedAttributeCell];
+    
+    Attribute *attribute = self.selectedAttributes[indexPath.row];
+    
+    if ([self.delegate respondsToSelector:@selector(attributesTableViewControllerDidRequestFilterChangeForAttribute:)]) {
+        [self.delegate attributesTableViewControllerDidRequestFilterChangeForAttribute:attribute];
+    }
+}
+
 #pragma mark -
 #pragma mark Order Priority Popover View Protocols
 
