@@ -15,6 +15,7 @@
 @protocol AttributesTableViewControllerDelegate <NSObject>
 
 - (void)attributesTableViewControllerDidRequestFilterChangeForAttribute:(Attribute *)attribute;
+- (void)attributesTableViewControllerRequestToShowRunButton:(BOOL)showButton;
 
 @end
 

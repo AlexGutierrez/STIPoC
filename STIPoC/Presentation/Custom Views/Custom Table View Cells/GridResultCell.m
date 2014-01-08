@@ -38,7 +38,7 @@ NSString *const kSTIPoCGridDetailAttributeCellIdentifier = @"GridDetailCell";
                                                                  toItem:self.contentView
                                                               attribute:NSLayoutAttributeBottom
                                                              multiplier:1
-                                                               constant:-10];
+                                                               constant:-5];
         
         NSLayoutConstraint* c2 = [NSLayoutConstraint constraintWithItem:label
                                                               attribute:NSLayoutAttributeTop
@@ -46,7 +46,7 @@ NSString *const kSTIPoCGridDetailAttributeCellIdentifier = @"GridDetailCell";
                                                                  toItem:self.contentView
                                                               attribute:NSLayoutAttributeTop
                                                              multiplier:1
-                                                               constant:10];
+                                                               constant:5];
         
         NSLayoutConstraint* c3 = [NSLayoutConstraint constraintWithItem:label
                                                               attribute:NSLayoutAttributeLeft

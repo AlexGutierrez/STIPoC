@@ -33,6 +33,7 @@ static NSString *const kSTIPoCSeguePushResultsViewController = @"ResultsViewCont
 @property (nonatomic) BOOL domainsContainerIsHidden;
 @property (nonatomic) BOOL filtersContainerIsHidden;
 
+@property (strong, nonatomic) id rightbarButtonItem;
 @property (strong, nonatomic) AttributesTableViewController *attributesTableViewController;
 @property (strong, nonatomic) DomainsViewController *domainsViewController;
 @property (strong, nonatomic) UIView *currentDisplayedMenu;
@@ -50,7 +51,8 @@ static NSString *const kSTIPoCSeguePushResultsViewController = @"ResultsViewCont
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    self.rightbarButtonItem = self.navigationItem.rightBarButtonItem;
+    self.navigationItem.rightBarButtonItem = nil;
     self.sideMenuCollapserButton.alpha = 0.0f;
     
     if (UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation])) {
@@ -215,6 +217,11 @@ static NSString *const kSTIPoCSeguePushResultsViewController = @"ResultsViewCont
 - (void)attributesTableViewControllerDidRequestFilterChangeForAttribute:(Attribute *)attribute
 {
     [self setFiltersContainerIsHidden:NO animated:YES];
+}
+
+- (void)attributesTableViewControllerRequestToShowRunButton:(BOOL)showButton
+{
+    self.navigationItem.rightBarButtonItem = (showButton) ? self.rightbarButtonItem : nil;
 }
 
 #pragma mark -

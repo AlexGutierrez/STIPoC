@@ -180,6 +180,7 @@ static NSString *const kSTIPoCOrderPriorityPopoverViewControllerIdentifier = @"O
 
     [self.tableView moveRowAtIndexPath:indexPath toIndexPath:destinationIndexPath];
     [self.tableView reloadRowsAtIndexPaths:@[destinationIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    [self.delegate attributesTableViewControllerRequestToShowRunButton:[self.selectedAttributes count]];
 }
 
 - (BOOL)tableView:(UITableView *)tableView shouldIndentWhileEditingRowAtIndexPath:(NSIndexPath *)indexPath
