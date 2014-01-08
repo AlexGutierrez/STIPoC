@@ -14,7 +14,6 @@
 @property (weak, nonatomic) IBOutlet UITableView *gridTableView;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIView *gridView;
-@property (strong, nonatomic) NSArray *queryResults;
 
 @end
 
@@ -25,10 +24,9 @@
 - (void)viewDidLoad
 {
     /*for testing only*/
-    self.headerFields = @[@"InstanceID",@"Name",@"CreationDate",@"Field1",@"Field2",@"Field3"];
     NSArray *arr1 = @[@"320234",@"2qwertyui",@"2012-12-12",@"sadsadas fdfghhjjg fdfsadg gfhgfgfeerttryf",@"sdffsgreewrewrr dfvc dsfdsfsdfdsfdf",@"ceewcrercwrwrwecds"];
     NSArray *arr2 = @[@"320235",@"234ewrewrwer",@"2012-12-12",@"cvbbvnbnvbn fdfghhjjg fdfsadg gfhgfgfeerttryf",@"vbnvbn dfvc dsfdsfsdfdsfdf",@"ceewcrercwrwrwecds"];
-    self.queryResults = @[arr1, arr2];
+   self.queryResults = @[arr1, arr2];
     
     [super viewDidLoad];
     [self resizeScrollViewForOrientation];
@@ -146,12 +144,11 @@
 
 - (float)calculatePreferedWidthForTableView
 {
-    GridResultCell *cell = (GridResultCell *) [self.gridTableView dequeueReusableCellWithIdentifier:kSTIPoCGridDetailAttributeCellIdentifier];
     float maxWidth = 0;
     for (NSArray *rowValue in self.queryResults) {
-        float rowWidth = [cell calculatePreferedWidthForValues:rowValue];
-        maxWidth = (rowWidth > maxWidth) ? rowWidth : maxWidth;
+        maxWidth = [self getMaxWidthForRowValues:rowValue currentMaxWidth:maxWidth];
     }
+    maxWidth = [self getMaxWidthForRowValues:self.headerFields currentMaxWidth:maxWidth];
     
     CGSize screenSize = [UIScreen mainScreen].bounds.size;
     if (UIDeviceOrientationIsPortrait([[UIApplication sharedApplication] statusBarOrientation])) {
@@ -163,10 +160,11 @@
     return maxWidth;
 }
 
-#pragma mark -
-#pragma Private methods
-- (void)setResult:(NSArray *)results
+- (float)getMaxWidthForRowValues:(NSArray *)rowValues currentMaxWidth:(float)maxWidth
 {
+    GridResultCell *cell = (GridResultCell *) [self.gridTableView dequeueReusableCellWithIdentifier:kSTIPoCGridDetailAttributeCellIdentifier];
+    float rowWidth = [cell calculatePreferedWidthForValues:rowValues];
+    return (rowWidth > maxWidth) ? rowWidth : maxWidth;
 }
 
 @end

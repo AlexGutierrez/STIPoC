@@ -12,5 +12,6 @@
 @interface GridResultsViewController : GenericViewController<UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) NSArray *headerFields;
+@property (strong, nonatomic) NSArray *queryResults;
 
 @end

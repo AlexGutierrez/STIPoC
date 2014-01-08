@@ -8,6 +8,7 @@
 
 #import "AttributesMainViewController.h"
 #import "AttributesTableViewController.h"
+#import "ResultsViewController.h"
 #import "Domain.h"
 #import "DomainsService.h"
 #import "AttributesService.h"
@@ -20,6 +21,8 @@
 
 static NSString *const kSTIPoCSegueEmbedAttributesTableViewController = @"AttributesTableViewControllerEmbedSegue";
 static NSString *const kSTIPoCSegueEmbedDomainsViewController = @"DomainsViewControllerEmbedSegue";
+
+static NSString *const kSTIPoCSeguePushResultsViewController = @"ResultsViewControllerPushSegue";
 
 @interface AttributesMainViewController ()
 
@@ -55,11 +58,15 @@ static NSString *const kSTIPoCSegueEmbedDomainsViewController = @"DomainsViewCon
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:kSTIPoCSegueEmbedAttributesTableViewController]) {
-        self.attributesTableViewController =(AttributesTableViewController *)segue.destinationViewController;
+        self.attributesTableViewController = (AttributesTableViewController *)segue.destinationViewController;
     }
     else if ([segue.identifier isEqualToString:kSTIPoCSegueEmbedDomainsViewController]) {
         self.domainsViewController = (DomainsViewController *)segue.destinationViewController;
         self.domainsViewController.delegate = self;
+    }
+    else if ([segue.identifier isEqualToString:kSTIPoCSeguePushResultsViewController]) {
+        [segue.destinationViewController setHeadAttributes:self.attributesTableViewController.selectedAttributes];
+        [segue.destinationViewController setDomain:self.attributesTableViewController.selectedDomain];
     }
 }
 

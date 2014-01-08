@@ -17,7 +17,6 @@ static NSString *const kSTIPoCOrderPriorityPopoverViewControllerIdentifier = @"O
 
 @interface AttributesTableViewController ()
 
-@property (strong, nonatomic) NSMutableArray *selectedAttributes;
 @property (strong, nonatomic) NSMutableArray *unselectedAttributes;
 @property (strong, nonatomic) UIPopoverController *orderPriorityPopoverController;
 

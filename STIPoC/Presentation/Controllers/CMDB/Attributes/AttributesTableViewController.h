@@ -17,5 +17,6 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (strong, nonatomic) Domain *selectedDomain;
+@property (strong, nonatomic) NSMutableArray *selectedAttributes;
 
 @end
