@@ -77,6 +77,7 @@ static NSString *const kSTIPoCSeguePushResultsViewController = @"ResultsViewCont
 {
     if ([segue.identifier isEqualToString:kSTIPoCSegueEmbedAttributesTableViewController]) {
         self.attributesTableViewController = (AttributesTableViewController *)segue.destinationViewController;
+        self.attributesTableViewController.delegate = self;
     }
     else if ([segue.identifier isEqualToString:kSTIPoCSegueEmbedDomainsViewController]) {
         self.domainsViewController = (DomainsViewController *)segue.destinationViewController;
